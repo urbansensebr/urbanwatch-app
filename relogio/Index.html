@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relógio UrbanWatch 9A</title>
 
+<style>
+:root{
+  --dourado:#D4AF37;
+  --champagne:#F1E5AC;
+  --preto:#0A0A0A;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  font-family:Arial, Helvetica, sans-serif;
+
+  background-image:url("fundo-urbanwatch.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.42),
+    rgba(0,0,0,.62)
+  );
+  z-index:1;
+}
+
+.container{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+}
+
+.brand{
+  color:var(--dourado);
+  font-size:34px;
+  letter-spacing:10px;
+  margin-bottom:10px;
+  text-shadow:0 0 20px black;
+}
+
+.subtitle{
+  color:var(--champagne);
+  font-size:14px;
+  letter-spacing:3px;
+  margin-bottom:35px;
+  text-shadow:0 0 15px black;
+}
+
+.clock{
+  width:430px;
+  height:430px;
+  border-radius:50%;
+  position:relative;
+  margin:auto;
+
+  background:rgba(10,10,10,.25);
+  border:1px solid rgba(212,175,55,.45);
+  backdrop-filter:blur(6px);
+  box-shadow:0 0 45px rgba(0,0,0,.65);
+}
+
+.mark{
+  position:absolute;
+  width:2px;
+  height:12px;
+  background:rgba(241,229,172,.75);
+  top:12px;
+  left:50%;
+  transform-origin:center 203px;
+}
+
+.mark.big{
+  width:3px;
+  height:24px;
+  background:var(--dourado);
+}
+
+.hand{
+  position:absolute;
+  width:5px;
+  height:160px;
+  background:linear-gradient(to top, var(--dourado), var(--champagne));
+  top:55px;
+  left:50%;
+  transform-origin:bottom center;
+  transform:translateX(-50%) rotate(0deg);
+  border-radius:10px;
+  z-index:4;
+  box-shadow:0 0 12px rgba(212,175,55,.5);
+}
+
+.center{
+  position:absolute;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--dourado);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+  box-shadow:0 0 15px rgba(212,175,55,.6);
+}
+
+.logo{
+  position:absolute;
+  width:100%;
+  top:66%;
+  text-align:center;
+  color:var(--dourado);
+  letter-spacing:5px;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.phrase{
+  margin-top:35px;
+  font-size:24px;
+  letter-spacing:3px;
+  text-shadow:0 0 18px black;
+}
+
+.small{
+  margin-top:14px;
+  font-size:17px;
+  color:var(--dourado);
+  text-shadow:0 0 12px black;
+}
+
+@media(max-width:700px){
+  .clock{
+    width:330px;
+    height:330px;
+  }
+
+  .mark{
+    transform-origin:center 153px;
+  }
+
+  .hand{
+    height:120px;
+    top:45px;
+  }
+
+  .brand{
+    font-size:24px;
+    letter-spacing:7px;
+  }
+
+  .phrase{
+    font-size:18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+  <div class="brand">URBANWATCH</div>
+
+  <div class="subtitle">
+    O TEMPO SEM PRESSA. A TRAVESSIA SEM IMPROVISO.
+  </div>
+
+  <div class="clock" id="clock">
+    <div class="hand" id="hand"></div>
+    <div class="center"></div>
+    <div class="logo">URBANWATCH<br>9A</div>
+  </div>
+
+  <div class="phrase">INTELIGÊNCIA PARA QUEM NÃO IMPROVISA.</div>
+  <div class="small">Desacelere. A travessia começou.</div>
+
+</div>
+
+<script>
+const clock = document.getElementById("clock");
+const hand = document.getElementById("hand");
+
+function createMarks(){
+  for(let i = 0; i < 72; i++){
+    const mark = document.createElement("div");
+    mark.className = i % 6 === 0 ? "mark big" : "mark";
+    mark.style.transform = `translateX(-50%) rotate(${i * 5}deg)`;
+    clock.appendChild(mark);
+  }
+}
+
+function updateClock(){
+  const now = new Date();
+
+  const hours = now.getHours() % 12;
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const totalMinutes = hours * 60 + minutes + seconds / 60;
+
+  const angle = totalMinutes * 0.5;
+
+  hand.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+}
+
+createMarks();
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
