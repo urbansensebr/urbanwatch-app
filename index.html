@@ -1,296 +1,122 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>UrbanWatch | Inteligência para quem não improvisa</title>
-
-<style>
-:root{
-  --preto:#0A0A0A;
-  --grafite:#1A1A1A;
-  --dourado:#D4AF37;
-  --champagne:#F1E5AC;
-  --branco:#FFFFFF;
-}
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UrbanWatch | Inteligência para quem não improvisa</title><meta name="description" content="UrbanWatch. Inteligência para quem não improvisa. Fortaleza - Cidade Fundadora."><style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
+html,
 body{
-  background:var(--preto);
-  color:var(--branco);
-  font-family:Arial, Helvetica, sans-serif;
+background:#000;
+overflow-x:hidden;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 .hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
-    url("/assets/home.png") center top / cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
+position:relative;
+width:100%;
+max-width:1400px;
+margin:auto;
 }
 
-.hero-content{
-  max-width:900px;
-  margin-top:40px;
+.hero img{
+width:100%;
+display:block;
 }
 
-.symbol{
-  color:var(--dourado);
-  font-size:54px;
-  margin-bottom:20px;
+/* BOTÃO INICIAR TRAVESSIA */
+
+.btn-travessia{
+position:absolute;
+
+left:34%;
+top:43%;
+
+width:38%;
+height:6.5%;
+
+display:block;
 }
 
-h1{
-  color:var(--champagne);
-  font-size:clamp(48px, 9vw, 110px);
-  letter-spacing:12px;
-  font-weight:400;
-  margin-bottom:22px;
+/* CLUBE TRAVESSIA */
+
+.btn-clube{
+position:absolute;
+
+left:5%;
+top:67%;
+
+width:28%;
+height:23%;
+
+display:block;
 }
 
-.subtitle{
-  font-size:clamp(16px, 2.5vw, 26px);
-  letter-spacing:6px;
-  text-transform:uppercase;
-  margin-bottom:18px;
+/* PORTAIS */
+
+.btn-portais{
+position:absolute;
+
+left:36%;
+top:67%;
+
+width:28%;
+height:23%;
+
+display:block;
 }
 
-.founder{
-  color:var(--dourado);
-  font-size:clamp(15px, 2.2vw, 22px);
-  letter-spacing:4px;
-  margin-bottom:28px;
+/* RELÓGIO */
+
+.btn-relogio{
+position:absolute;
+
+left:67%;
+top:67%;
+
+width:28%;
+height:23%;
+
+display:block;
 }
 
-.location{
-  color:var(--champagne);
-  letter-spacing:4px;
-  margin-bottom:34px;
+.footer{
+background:#050505;
+padding:30px;
+text-align:center;
+color:#999;
+font-size:14px;
+letter-spacing:2px;
 }
 
-.btn-main{
-  display:inline-block;
-  padding:20px 46px;
-  border-radius:999px;
-  background:linear-gradient(135deg, #F1E5AC, #D4AF37);
-  color:#111;
-  text-decoration:none;
-  font-weight:bold;
-  letter-spacing:3px;
-  font-size:18px;
-  box-shadow:0 0 28px rgba(212,175,55,.35);
+@media(max-width:768px){
+
+.btn-travessia{
+left:26%;
+width:48%;
 }
 
-.section{
-  padding:80px 22px;
-  background:linear-gradient(#090909, #111);
-  text-align:center;
 }
 
-.section h2{
-  color:var(--dourado);
-  letter-spacing:5px;
-  font-size:clamp(26px, 4vw, 42px);
-  margin-bottom:45px;
-}
+</style></head><body><div class="hero"><img src="/assets/home.png" alt="UrbanWatch"><a class="btn-travessia" href="/sobre/" aria-label="Iniciar Travessia"></a>
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  gap:28px;
-  max-width:1100px;
-  margin:0 auto;
-}
+<a class="btn-clube"
+href="https://taggo.one/urbanwatch"
+target="_blank"
+aria-label="Clube Travessia"></a>
 
-.card{
-  min-height:330px;
-  padding:34px 28px;
-  border:1px solid rgba(212,175,55,.55);
-  border-radius:22px;
-  background:rgba(255,255,255,.07);
-  backdrop-filter:blur(14px);
-  box-shadow:0 0 30px rgba(212,175,55,.12);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
+<a class="btn-portais"
+href="/portal/"
+aria-label="Portais Profissionais"></a>
 
-.icon{
-  font-size:48px;
-  margin-bottom:20px;
-}
+<a class="btn-relogio"
+href="/relogio/"
+aria-label="Relógio 9A"></a>
 
-.card h3{
-  color:var(--dourado);
-  font-size:25px;
-  letter-spacing:2px;
-  margin-bottom:18px;
-}
-
-.card p{
-  line-height:1.7;
-  color:#eee;
-  font-size:17px;
-}
-
-.btn-card{
-  margin-top:26px;
-  display:inline-block;
-  border:1px solid var(--dourado);
-  color:var(--dourado);
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:999px;
-  letter-spacing:2px;
-}
-
-.about{
-  max-width:900px;
-  margin:0 auto;
-  line-height:1.9;
-  font-size:18px;
-  color:#eee;
-}
-
-.about strong{
-  color:var(--dourado);
-}
-
-.values{
-  margin-top:35px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
-  gap:18px;
-}
-
-.value{
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:16px;
-  padding:20px;
-  color:var(--champagne);
-}
-
-footer{
-  padding:50px 20px;
-  background:#050505;
-  text-align:center;
-  border-top:1px solid rgba(212,175,55,.25);
-}
-
-footer h3{
-  color:var(--dourado);
-  letter-spacing:6px;
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-footer p{
-  color:#ccc;
-  margin:8px 0;
-}
-</style>
-</head>
-
-<body>
-
-<header class="hero">
-  <div class="hero-content">
-    <div class="symbol">☼</div>
-    <h1>URBANWATCH</h1>
-
-    <div class="subtitle">Inteligência para quem não improvisa.</div>
-    <div class="founder">O tempo sem pressa. A travessia sem improviso.</div>
-    <div class="location">📍 Fortaleza — Cidade Fundadora</div>
-
-    <a class="btn-main" href="#descobrir">INICIAR TRAVESSIA →</a>
-  </div>
-</header>
-
-<section class="section">
-  <h2>ESCOLHA SUA EXPERIÊNCIA</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <div>
-        <div class="icon">🚗</div>
-        <h3>CLUBE TRAVESSIA</h3>
-        <p>Travessias agendadas para quem não pode improvisar.</p>
-      </div>
-      <a class="btn-card" href="https://taggo.one/urbanwatch">CONHECER →</a>
-    </div>
-
-    <div class="card">
-      <div>
-        <div class="icon">💼</div>
-        <h3>PORTAIS PROFISSIONAIS</h3>
-        <p>Seu endereço digital profissional. Presença, credibilidade e conexão.</p>
-      </div>
-      <a class="btn-card" href="/portal/">CONHECER →</a>
-    </div>
-
-    <div class="card">
-      <div>
-        <div class="icon">⌚</div>
-        <h3>RELÓGIO 9A</h3>
-        <p>O tempo sem pressa. A travessia sem improviso.</p>
-      </div>
-      <a class="btn-card" href="/relogio/">ABRIR RELÓGIO →</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="descobrir">
-  <h2>DESCOBRIR URBANWATCH</h2>
-
-  <div class="about">
-    <p>
-      A <strong>UrbanWatch</strong> nasceu em Fortaleza a partir de uma ideia simples:
-      transformar deslocamentos, serviços e presença digital em experiências mais
-      humanas, organizadas e inteligentes.
-    </p>
-
-    <p>
-      Mais do que transporte, a UrbanWatch trabalha com <strong>travessias</strong>:
-      momentos em que pessoas, profissionais e projetos precisam chegar com clareza,
-      previsibilidade e propósito.
-    </p>
-
-    <p>
-      Nosso propósito é perceber o que passa despercebido, reduzir improvisos e criar
-      conexões genuínas entre cidade, tecnologia e pessoas.
-    </p>
-
-    <div class="values">
-      <div class="value">🛡️ Confiança</div>
-      <div class="value">⭐ Excelência</div>
-      <div class="value">🎯 Propósito</div>
-      <div class="value">🌻 Hospitalidade inteligente</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <h3>URBANWATCH®</h3>
-  <p>Inteligência para quem não improvisa.</p>
-  <p>O tempo sem pressa. A travessia sem improviso.</p>
-  <p>Fortaleza • Ceará • Brasil</p>
-  <p>© UrbanWatch 9A — Todos os direitos reservados</p>
-</footer>
-
-</body>
+</div><div class="footer">
+UrbanWatch® • Fortaleza • Ceará • Brasil
+</div></body>
 </html>
