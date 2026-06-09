@@ -1,109 +1,177 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GD Lanches | Portal UrbanWatch</title>
+
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      background: #fff4e6;
+      background: #fff3e3;
       font-family: Arial, sans-serif;
-      text-align: center;
     }
 
-    .container {
+    .portal {
       max-width: 720px;
       margin: 0 auto;
       padding: 12px;
     }
 
-    img {
+    .arte-wrap {
+      position: relative;
       width: 100%;
       border-radius: 18px;
-      display: block;
-      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+      background: #fff;
     }
 
-    .btn {
+    .arte-wrap img {
+      width: 100%;
       display: block;
-      padding: 18px;
-      margin: 12px 0;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 10;
       border-radius: 14px;
-      color: white;
       text-decoration: none;
-      font-size: 22px;
-      font-weight: bold;
+      -webkit-tap-highlight-color: rgba(255, 214, 0, 0.25);
     }
 
-    .whatsapp { background: #0ba84a; }
-    .cardapio { background: #f5b400; color: #111; }
-    .cobranca { background: #c90000; }
-    .delivery { background: #e60000; }
-    .instagram { background: #d62976; }
-
-    .info {
-      font-size: 16px;
-      color: #222;
-      margin-top: 20px;
-      line-height: 1.5;
+    .hotspot:active {
+      background: rgba(255, 255, 255, 0.18);
     }
 
-    .powered {
-      margin-top: 24px;
-      font-size: 13px;
+    /* Botões principais */
+    .whatsapp {
+      left: 3%;
+      top: 52%;
+      width: 29%;
+      height: 13%;
+    }
+
+    .cardapio {
+      left: 34%;
+      top: 52%;
+      width: 30%;
+      height: 13%;
+    }
+
+    .cobranca {
+      left: 67%;
+      top: 52%;
+      width: 30%;
+      height: 13%;
+    }
+
+    /* Linha de informações */
+    .telefone {
+      left: 41%;
+      top: 68%;
+      width: 18%;
+      height: 8%;
+    }
+
+    .instagram {
+      left: 60%;
+      top: 68%;
+      width: 18%;
+      height: 8%;
+    }
+
+    .delivery-info {
+      left: 79%;
+      top: 68%;
+      width: 18%;
+      height: 8%;
+    }
+
+    .endereco {
+      left: 22%;
+      top: 68%;
+      width: 18%;
+      height: 8%;
+    }
+
+    /* Faixa 99Food */
+    .delivery-faixa {
+      left: 3%;
+      top: 78%;
+      width: 94%;
+      height: 6%;
+    }
+
+    /* QR / Portal */
+    .portal-qr {
+      left: 38%;
+      top: 85%;
+      width: 24%;
+      height: 11%;
+    }
+
+    .rodape {
+      text-align: center;
       color: #555;
+      font-size: 13px;
+      padding: 18px 10px 28px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <main class="portal">
+    <section class="arte-wrap">
 
-    <img src="arte-gd-lanches.png" alt="GD Lanches Tapiocaria" />
+      <img src="arte-gd-lanches.png" alt="Portal GD Lanches Tapiocaria" />
 
-    <a class="btn whatsapp" href="https://wa.me/5585988705695?text=Olá! Gostaria de fazer um pedido na GD Lanches.">
-      Pedir no WhatsApp
-    </a>
+      <a class="hotspot whatsapp"
+         href="https://wa.me/5585988705695?text=Olá! Gostaria de fazer um pedido na GD Lanches."
+         aria-label="Pedir no WhatsApp"></a>
 
-    <a class="btn cardapio" href="#cardapio">
-      Cardápio
-    </a>
+      <a class="hotspot cardapio"
+         href="#cardapio"
+         aria-label="Ver cardápio"></a>
 
-    <a class="btn cobranca" href="https://wa.me/5585988705695?text=Olá! Gostaria de solicitar uma cobrança para pagar por Pix ou cartão.">
-      Solicitar Cobrança
-    </a>
+      <a class="hotspot cobranca"
+         href="https://wa.me/5585988705695?text=Olá! Gostaria de solicitar uma cobrança para pagamento via Pix ou cartão referente ao meu pedido."
+         aria-label="Solicitar cobrança Pix ou cartão"></a>
 
-    <a class="btn delivery" href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP">
-      Peça pelo 99Food
-    </a>
+      <a class="hotspot telefone"
+         href="https://wa.me/5585988705695"
+         aria-label="Falar com a GD Lanches pelo WhatsApp"></a>
 
-    <a class="btn instagram" href="https://www.instagram.com/gd_lanchesoficial">
-      Instagram
-    </a>
+      <a class="hotspot instagram"
+         href="https://www.instagram.com/gd_lanchesoficial"
+         aria-label="Abrir Instagram da GD Lanches"></a>
 
-    <div id="cardapio" class="info">
+      <a class="hotspot delivery-info"
+         href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
+         aria-label="Pedir pelo 99Food"></a>
+
+      <a class="hotspot endereco"
+         href="https://www.google.com/maps/search/?api=1&query=Rua%20Nunes%20Valente%20422%20Casa%2030%20Meireles%20Fortaleza%20CE"
+         aria-label="Abrir endereço no mapa"></a>
+
+      <a class="hotspot delivery-faixa"
+         href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
+         aria-label="Peça pelo 99Food"></a>
+
+      <a class="hotspot portal-qr"
+         href="https://urbanwatch.app/portal/gd-lanches/"
+         aria-label="Acessar portal GD Lanches"></a>
+
+    </section>
+
+    <section id="cardapio" class="rodape">
       <strong>Cardápio GD Lanches</strong><br><br>
       Tapiocas, lanches, sucos, cafés e muito mais.<br>
       Pedido mínimo: R$ 15,00.
-    </div>
-
-    <div class="info">
-      <strong>Horário de funcionamento</strong><br>
-      Segunda a sexta: 6h às 10h e 14h30 às 19h<br>
-      Sábado e domingo: 6h às 11h
-    </div>
-
-    <div class="info">
-      <strong>Endereço</strong><br>
-      Rua Nunes Valente, 422 – Casa 30<br>
-      Meireles, Fortaleza – CE
-    </div>
-
-    <div class="powered">
-      Powered by UrbanWatch Portais Profissionais
-    </div>
-
-  </div>
+    </section>
+  </main>
 </body>
 </html>
