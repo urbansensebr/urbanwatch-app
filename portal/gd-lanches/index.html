@@ -1,167 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GD Lanches | UrbanWatch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GD Lanches | Portal UrbanWatch</title>
 
-  <style>
-    html { scroll-behavior: smooth; }
+<style>
+html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      background: #f4eee4;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-    }
+body {
+  margin: 0;
+  background: #f4eee4;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 14px;
+}
 
-    .portal {
-      position: relative;
-      width: 100%;
-    }
+.portal {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,.18);
+}
 
-    .portal img {
-      width: 100%;
-      display: block;
-    }
+.portal img {
+  width: 100%;
+  display: block;
+}
 
-    .hotspot {
-      position: absolute;
-      display: block;
-      z-index: 10;
-      text-decoration: none;
-    }
+.hotspot {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  text-decoration: none;
+}
 
-    .whatsapp {
-      left: 4%;
-      top: 43%;
-      width: 28%;
-      height: 12%;
-    }
+/* Botões principais da arte */
+.whatsapp {
+  left: 3%;
+  top: 52%;
+  width: 30%;
+  height: 13%;
+}
 
-    .cardapio {
-      left: 36%;
-      top: 43%;
-      width: 28%;
-      height: 12%;
-    }
+.cardapio {
+  left: 35%;
+  top: 52%;
+  width: 30%;
+  height: 13%;
+}
 
-    .cobranca {
-      left: 68%;
-      top: 43%;
-      width: 28%;
-      height: 12%;
-    }
+.cobranca {
+  left: 67%;
+  top: 52%;
+  width: 30%;
+  height: 13%;
+}
 
-    .food99 {
-      left: 0%;
-      top: 73%;
-      width: 100%;
-      height: 7%;
-    }
+/* Linha de informações */
+.endereco {
+  left: 22%;
+  top: 67%;
+  width: 18%;
+  height: 8%;
+}
 
-    .instagram {
-      left: 60%;
-      top: 82%;
-      width: 22%;
-      height: 10%;
-    }
+.telefone {
+  left: 41%;
+  top: 67%;
+  width: 18%;
+  height: 8%;
+}
 
-    .cardapio-section {
-      padding: 30px 15px;
-    }
+.instagram {
+  left: 60%;
+  top: 67%;
+  width: 18%;
+  height: 8%;
+}
 
-    .cardapio-section h2 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 25px;
-    }
+.delivery-info {
+  left: 79%;
+  top: 67%;
+  width: 18%;
+  height: 8%;
+}
 
-    .cardapio-img {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.15);
-    }
+/* Faixa 99Food */
+.food99 {
+  left: 3%;
+  top: 77%;
+  width: 94%;
+  height: 7%;
+}
 
-    .contatos {
-      background: #fff;
-      margin: 30px 15px;
-      border-radius: 16px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
+/* QR Code central */
+.qrcode {
+  left: 39%;
+  top: 84%;
+  width: 22%;
+  height: 12%;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-      font-size: 14px;
-    }
-  </style>
+footer {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  padding: 20px 10px 30px;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <div class="portal">
-      <img src="arte-gd-lanches.png" alt="Portal GD Lanches">
+<div class="container">
 
-      <a class="hotspot whatsapp"
-         href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20GD%20Lanches."
-         target="_blank"
-         aria-label="Pedir no WhatsApp"></a>
+  <div class="portal">
+    <img src="arte-gd-lanches.png" alt="Portal GD Lanches">
 
-      <a class="hotspot cardapio"
-         href="#cardapio"
-         aria-label="Ver cardápio"></a>
+    <a class="hotspot whatsapp"
+       href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20GD%20Lanches."
+       target="_blank"></a>
 
-      <a class="hotspot cobranca"
-         href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cobrança%20para%20pagamento%20via%20Pix%20ou%20cartão."
-         target="_blank"
-         aria-label="Solicitar cobrança"></a>
+    <a class="hotspot cardapio"
+       href="https://urbanwatch.app/portal/gd-lanches/cardapio/"></a>
 
-      <a class="hotspot food99"
-         href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
-         target="_blank"
-         aria-label="Pedir pelo 99Food"></a>
+    <a class="hotspot cobranca"
+       href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cobrança%20para%20pagamento%20via%20Pix%20ou%20cartão."
+       target="_blank"></a>
 
-      <a class="hotspot instagram"
-         href="https://www.instagram.com/gd_lanchesoficial"
-         target="_blank"
-         aria-label="Abrir Instagram"></a>
-    </div>
+    <a class="hotspot endereco"
+       href="https://www.google.com/maps/search/?api=1&query=Rua%20Nunes%20Valente%20422%20Casa%2030%20Meireles%20Fortaleza%20CE"
+       target="_blank"></a>
 
-    <section id="cardapio" class="cardapio-section">
-      <h2>Cardápio GD Lanches</h2>
+    <a class="hotspot telefone"
+       href="https://wa.me/5585988705695"
+       target="_blank"></a>
 
-      <img src="cardapio-01.jpg" class="cardapio-img" alt="Cardápio GD Lanches 01">
-      <img src="cardapio-02.jpg" class="cardapio-img" alt="Cardápio GD Lanches 02">
-      <img src="cardapio-03.jpg" class="cardapio-img" alt="Cardápio GD Lanches 03">
-      <img src="cardapio-04.jpg" class="cardapio-img" alt="Cardápio GD Lanches 04">
-      <img src="cardapio-05.jpg" class="cardapio-img" alt="Cardápio GD Lanches 05">
-      <img src="cardapio-06.jpg" class="cardapio-img" alt="Cardápio GD Lanches 06">
-      <img src="cardapio-07.jpg" class="cardapio-img" alt="Cardápio GD Lanches 07">
-    </section>
+    <a class="hotspot instagram"
+       href="https://www.instagram.com/gd_lanchesoficial"
+       target="_blank"></a>
 
-    <section class="contatos">
-      <h3>GD Lanches</h3>
-      <p><strong>WhatsApp:</strong> (85) 98870-5695</p>
-      <p><strong>Endereço:</strong><br>Rua Nunes Valente, 422 – Casa 30<br>Meireles – Fortaleza/CE</p>
-      <p><strong>Funcionamento:</strong><br>Segunda a Sexta: 6h às 10h e 14h30 às 19h<br>Sábado e Domingo: 6h às 11h</p>
-    </section>
+    <a class="hotspot delivery-info"
+       href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
+       target="_blank"></a>
 
-    <footer>
-      Powered by UrbanWatch Portais Profissionais
-    </footer>
+    <a class="hotspot food99"
+       href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
+       target="_blank"></a>
 
+    <a class="hotspot qrcode"
+       href="https://urbanwatch.app/portal/gd-lanches/"></a>
   </div>
+
+  <footer>
+    Powered by UrbanWatch Portais Profissionais
+  </footer>
+
+</div>
+
 </body>
 </html>
