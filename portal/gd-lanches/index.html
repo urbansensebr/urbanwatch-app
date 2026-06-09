@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GD Lanches | UrbanWatch</title>
 
-<title>GD Lanches | UrbanWatch</title>
+  <style>
+    html { scroll-behavior: smooth; }
 
-<style>
+    body {
+      margin: 0;
+      background: #f4eee4;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+    }
 
-body{
-    margin:0;
-    background:#f4eee4;
-    font-family:Arial, sans-serif;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-.container{
-    max-width:900px;
-    margin:auto;
-}
+    .portal {
+      position: relative;
+      width: 100%;
+    }
 
-.portal{
-    position:relative;
-}
+    .portal img {
+      width: 100%;
+      display: block;
+    }
 
-.portal img{
-    width:100%;
-    display:block;
-}
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 10;
+      text-decoration: none;
+    }
 
-/* HOTSPOTS DA ARTE */
+    .whatsapp {
+      left: 4%;
+      top: 43%;
+      width: 28%;
+      height: 12%;
+    }
 
-.hotspot{
-    position:absolute;
-    display:block;
-}
+    .cardapio {
+      left: 36%;
+      top: 43%;
+      width: 28%;
+      height: 12%;
+    }
 
-/* Ajustar se necessário */
+    .cobranca {
+      left: 68%;
+      top: 43%;
+      width: 28%;
+      height: 12%;
+    }
 
-.whatsapp{
-    left:4%;
-    top:42%;
-    width:28%;
-    height:13%;
-}
+    .food99 {
+      left: 0%;
+      top: 73%;
+      width: 100%;
+      height: 7%;
+    }
 
-.cardapio{
-    left:36%;
-    top:42%;
-    width:28%;
-    height:13%;
-}
+    .instagram {
+      left: 60%;
+      top: 82%;
+      width: 22%;
+      height: 10%;
+    }
 
-.cobranca{
-    left:68%;
-    top:42%;
-    width:28%;
-    height:13%;
-}
+    .cardapio-section {
+      padding: 30px 15px;
+    }
 
-.portalqr{
-    left:36%;
-    top:81%;
-    width:16%;
-    height:11%;
-}
+    .cardapio-section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
 
-.instagram{
-    left:58%;
-    top:81%;
-    width:20%;
-    height:11%;
-}
+    .cardapio-img {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
+    }
 
-.food99{
-    left:0%;
-    top:73%;
-    width:100%;
-    height:8%;
-}
+    .contatos {
+      background: #fff;
+      margin: 30px 15px;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    }
 
-section{
-    padding:25px;
-}
-
-.cardapio-titulo{
-    text-align:center;
-    font-size:32px;
-    font-weight:bold;
-    margin-bottom:20px;
-}
-
-.cardapio-img{
-    width:100%;
-    margin-bottom:20px;
-    border-radius:12px;
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
-}
-
-</style>
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
+    <div class="portal">
+      <img src="arte-gd-lanches.png" alt="Portal GD Lanches">
 
-<div class="portal">
+      <a class="hotspot whatsapp"
+         href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20GD%20Lanches."
+         target="_blank"
+         aria-label="Pedir no WhatsApp"></a>
 
-<img src="arte-gd-lanches.jpg" alt="GD Lanches">
+      <a class="hotspot cardapio"
+         href="#cardapio"
+         aria-label="Ver cardápio"></a>
 
-<a class="hotspot whatsapp"
-href="https://wa.me/5585988705695">
-</a>
+      <a class="hotspot cobranca"
+         href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cobrança%20para%20pagamento%20via%20Pix%20ou%20cartão."
+         target="_blank"
+         aria-label="Solicitar cobrança"></a>
 
-<a class="hotspot cardapio"
-href="#cardapio">
-</a>
+      <a class="hotspot food99"
+         href="https://oia.99app.com/dlp9/aH8Cpt?share_media=WHATSAPP"
+         target="_blank"
+         aria-label="Pedir pelo 99Food"></a>
 
-<a class="hotspot cobranca"
-href="https://wa.me/5585988705695?text=Olá,%20gostaria%20de%20solicitar%20uma%20cobrança.">
-</a>
+      <a class="hotspot instagram"
+         href="https://www.instagram.com/gd_lanchesoficial"
+         target="_blank"
+         aria-label="Abrir Instagram"></a>
+    </div>
 
-<a class="hotspot food99"
-href="LINK_DO_99FOOD">
-</a>
+    <section id="cardapio" class="cardapio-section">
+      <h2>Cardápio GD Lanches</h2>
 
-<a class="hotspot instagram"
-href="https://instagram.com/gd_lanchesoficial">
-</a>
+      <img src="cardapio-01.jpg" class="cardapio-img" alt="Cardápio GD Lanches 01">
+      <img src="cardapio-02.jpg" class="cardapio-img" alt="Cardápio GD Lanches 02">
+      <img src="cardapio-03.jpg" class="cardapio-img" alt="Cardápio GD Lanches 03">
+      <img src="cardapio-04.jpg" class="cardapio-img" alt="Cardápio GD Lanches 04">
+      <img src="cardapio-05.jpg" class="cardapio-img" alt="Cardápio GD Lanches 05">
+      <img src="cardapio-06.jpg" class="cardapio-img" alt="Cardápio GD Lanches 06">
+      <img src="cardapio-07.jpg" class="cardapio-img" alt="Cardápio GD Lanches 07">
+    </section>
 
-</div>
+    <section class="contatos">
+      <h3>GD Lanches</h3>
+      <p><strong>WhatsApp:</strong> (85) 98870-5695</p>
+      <p><strong>Endereço:</strong><br>Rua Nunes Valente, 422 – Casa 30<br>Meireles – Fortaleza/CE</p>
+      <p><strong>Funcionamento:</strong><br>Segunda a Sexta: 6h às 10h e 14h30 às 19h<br>Sábado e Domingo: 6h às 11h</p>
+    </section>
 
-<section id="cardapio">
+    <footer>
+      Powered by UrbanWatch Portais Profissionais
+    </footer>
 
-<div class="cardapio-titulo">
-CARDÁPIO GD LANCHES
-</div>
-
-<img class="cardapio-img" src="cardapio-01.jpg">
-<img class="cardapio-img" src="cardapio-02.jpg">
-<img class="cardapio-img" src="cardapio-03.jpg">
-<img class="cardapio-img" src="cardapio-04.jpg">
-<img class="cardapio-img" src="cardapio-05.jpg">
-<img class="cardapio-img" src="cardapio-06.jpg">
-<img class="cardapio-img" src="cardapio-07.jpg">
-
-</section>
-
-<footer>
-Powered by UrbanWatch Portais Profissionais
-</footer>
-
-</div>
-
+  </div>
 </body>
 </html>
