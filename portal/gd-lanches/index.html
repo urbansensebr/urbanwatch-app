@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+       <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -6,8 +6,6 @@
 <title>GD Lanches | Portal UrbanWatch</title>
 
 <style>
-html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
   background: #f4eee4;
@@ -40,78 +38,53 @@ body {
   text-decoration: none;
 }
 
-/* Botões principais da arte */
-.whatsapp {
-  left: 3%;
-  top: 52%;
-  width: 30%;
-  height: 13%;
+.hand {
+  position: absolute;
+  z-index: 20;
+  font-size: 30px;
+  animation: pulse 1.2s infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.35));
 }
 
-.cardapio {
-  left: 35%;
-  top: 52%;
-  width: 30%;
-  height: 13%;
+@keyframes pulse {
+  0% { transform: scale(1); opacity: .75; }
+  50% { transform: scale(1.25); opacity: 1; }
+  100% { transform: scale(1); opacity: .75; }
 }
 
-.cobranca {
-  left: 67%;
-  top: 52%;
-  width: 30%;
-  height: 13%;
-}
+/* Áreas clicáveis */
+.whatsapp { left: 3%; top: 52%; width: 30%; height: 13%; }
+.cardapio { left: 35%; top: 52%; width: 30%; height: 13%; }
+.cobranca { left: 67%; top: 52%; width: 30%; height: 13%; }
 
-/* Linha de informações */
-.endereco {
-  left: 22%;
-  top: 67%;
-  width: 18%;
-  height: 8%;
-}
+.endereco { left: 22%; top: 67%; width: 18%; height: 8%; }
+.telefone { left: 41%; top: 67%; width: 18%; height: 8%; }
+.instagram { left: 60%; top: 67%; width: 18%; height: 8%; }
+.delivery-info { left: 79%; top: 67%; width: 18%; height: 8%; }
 
-.telefone {
-  left: 41%;
-  top: 67%;
-  width: 18%;
-  height: 8%;
-}
+.food99 { left: 3%; top: 77%; width: 94%; height: 7%; }
+.qrcode { left: 39%; top: 84%; width: 22%; height: 12%; }
 
-.instagram {
-  left: 60%;
-  top: 67%;
-  width: 18%;
-  height: 8%;
-}
+/* Mãozinhas */
+.hand-whatsapp { left: 24%; top: 51%; }
+.hand-cardapio { left: 57%; top: 51%; }
+.hand-cobranca { left: 90%; top: 51%; }
+.hand-instagram { left: 72%; top: 66%; font-size: 24px; }
+.hand-delivery { left: 88%; top: 76%; font-size: 24px; }
 
-.delivery-info {
-  left: 79%;
-  top: 67%;
-  width: 18%;
-  height: 8%;
-}
-
-/* Faixa 99Food */
-.food99 {
-  left: 3%;
-  top: 77%;
-  width: 94%;
-  height: 7%;
-}
-
-/* QR Code central */
-.qrcode {
-  left: 39%;
-  top: 84%;
-  width: 22%;
-  height: 12%;
+.hint {
+  text-align: center;
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: #333;
 }
 
 footer {
   text-align: center;
   color: #666;
   font-size: 13px;
-  padding: 20px 10px 30px;
+  padding: 18px 10px 28px;
 }
 </style>
 </head>
@@ -122,6 +95,12 @@ footer {
 
   <div class="portal">
     <img src="arte-gd-lanches.png" alt="Portal GD Lanches">
+
+    <span class="hand hand-whatsapp">👆</span>
+    <span class="hand hand-cardapio">👆</span>
+    <span class="hand hand-cobranca">👆</span>
+    <span class="hand hand-instagram">👆</span>
+    <span class="hand hand-delivery">👆</span>
 
     <a class="hotspot whatsapp"
        href="https://wa.me/5585988705695?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20GD%20Lanches."
@@ -157,6 +136,8 @@ footer {
     <a class="hotspot qrcode"
        href="https://urbanwatch.app/portal/gd-lanches/"></a>
   </div>
+
+  <div class="hint">👆 Toque nos botões da arte para interagir</div>
 
   <footer>
     Powered by UrbanWatch Portais Profissionais
