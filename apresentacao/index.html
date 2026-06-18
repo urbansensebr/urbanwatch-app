@@ -3,164 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UrbanWatch | Apresentação</title>
+
+  <title>UrbanWatch | Apresentação Institucional</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      background: #0A0A0A;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
+    html{
+      scroll-behavior:smooth;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-      padding: 14px 20px;
-      text-align: center;
+    body{
+      background:#0A0A0A;
+      color:#FFFFFF;
+      font-family:Arial, Helvetica, sans-serif;
     }
 
-    header h1 {
-      font-size: 18px;
-      letter-spacing: 1px;
-      color: #D4AF37;
-      font-weight: 600;
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      background:rgba(10,10,10,.95);
+      backdrop-filter:blur(10px);
+
+      border-bottom:1px solid rgba(212,175,55,.25);
+
+      padding:14px 20px;
+      text-align:center;
     }
 
-    main {
-      width: 100%;
+    header h1{
+      color:#D4AF37;
+      font-size:18px;
+      font-weight:600;
+      letter-spacing:1px;
     }
 
-    .slide {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 12px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    main{
+      width:100%;
     }
 
-    .slide img {
-      width: 100%;
-      max-width: 1200px;
-      height: auto;
-      display: block;
-      border-radius: 14px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    .slide{
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:24px 12px;
+
+      border-bottom:1px solid rgba(212,175,55,.12);
     }
 
-    footer {
-      padding: 28px 20px;
-      text-align: center;
-      color: #F1E5AC;
-      font-size: 14px;
-      border-top: 1px solid rgba(212, 175, 55, 0.25);
+    .slide img{
+      width:100%;
+      max-width:1200px;
+      height:auto;
+
+      display:block;
+
+      border-radius:14px;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.55);
     }
 
-    footer a {
-      color: #D4AF37;
-      text-decoration: none;
-      font-weight: 600;
+    footer{
+      text-align:center;
+
+      padding:30px 20px;
+
+      color:#F1E5AC;
+
+      border-top:1px solid rgba(212,175,55,.25);
     }
 
-    .nav {
-      margin-top: 12px;
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
+    footer p{
+      margin-bottom:16px;
+      font-size:14px;
     }
 
-    .nav a {
-      color: #ffffff;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 15px;
+    .nav a{
+      text-decoration:none;
+
+      color:#FFFFFF;
+
+      border:1px solid rgba(212,175,55,.45);
+
+      padding:10px 14px;
+
+      border-radius:999px;
+
+      transition:.25s;
+    }
+
+    .nav a:hover{
+      background:#D4AF37;
+      color:#0A0A0A;
+    }
+
+    @media (max-width:768px){
+
+      header h1{
+        font-size:15px;
       }
 
-      .slide {
-        min-height: auto;
-        padding: 18px 8px;
+      .slide{
+        min-height:auto;
+        padding:16px 8px;
       }
 
-      .slide img {
-        border-radius: 10px;
+      .slide img{
+        border-radius:10px;
       }
+
+      .nav a{
+        font-size:13px;
+      }
+
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <h1>URBANWATCH | APRESENTAÇÃO INSTITUCIONAL</h1>
   </header>
 
   <main>
+
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide00.jpg" alt="Slide 00 - Conexões Genuínas">
+      <img src="../assets/img/apresentacao/slide00.png" alt="Slide 00">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide01.jpg" alt="Slide 01 - Caso Rapidin e GWM">
+      <img src="../assets/img/apresentacao/slide01.png" alt="Slide 01">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide02.jpg" alt="Slide 02 - O Problema">
+      <img src="../assets/img/apresentacao/slide02.png" alt="Slide 02">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide03.jpg" alt="Slide 03 - A Solução UrbanWatch">
+      <img src="../assets/img/apresentacao/slide03.png" alt="Slide 03">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide04.jpg" alt="Slide 04 - Ecossistema UrbanWatch">
+      <img src="../assets/img/apresentacao/slide04.png" alt="Slide 04">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide05.jpg" alt="Slide 05 - Portal Profissional">
+      <img src="../assets/img/apresentacao/slide05.png" alt="Slide 05">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide06.jpg" alt="Slide 06 - Cartão NFC">
+      <img src="../assets/img/apresentacao/slide06.png" alt="Slide 06">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide07.jpg" alt="Slide 07 - Mini Totem UrbanWatch">
+      <img src="../assets/img/apresentacao/slide07.png" alt="Slide 07">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide08.jpg" alt="Slide 08 - Possibilidades Futuras">
+      <img src="../assets/img/apresentacao/slide08.png" alt="Slide 08">
     </section>
 
     <section class="slide">
-      <img src="../assets/img/apresentacao/slide09.jpg" alt="Slide 09 - Encerramento e Agradecimento">
+      <img src="../assets/img/apresentacao/slide09.png" alt="Slide 09">
     </section>
+
   </main>
 
   <footer>
-    <p>UrbanWatch — Conexões Genuínas geram oportunidades reais.</p>
+
+    <p>
+      UrbanWatch • Conexões Genuínas geram oportunidades reais.
+    </p>
 
     <div class="nav">
-      <a href="../">Home</a>
-      <a href="../portal/">Portais</a>
-      <a href="../portal/rapidin/">Rapidin</a>
-      <a href="../experiencia/">Experiência</a>
+
+      <a href="../">
+        Home
+      </a>
+
+      <a href="../portal/">
+        Portais
+      </a>
+
+      <a href="../portal/rapidin/">
+        Rapidin
+      </a>
+
+      <a href="../portal/mairton/">
+        Dr. Mairton
+      </a>
+
+      <a href="../experiencia/">
+        Experiência
+      </a>
+
     </div>
+
   </footer>
+
 </body>
 </html>
