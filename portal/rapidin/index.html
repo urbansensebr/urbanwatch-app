@@ -3,66 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rapidin | Portal UrbanWatch</title>
+
+<title>Rapidin | UrbanWatch</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-  background:#050805;
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
+    background:#000;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .container{
-  max-width:1200px;
-  margin:auto;
-  padding:18px;
+    max-width:1200px;
+    margin:auto;
+    padding:15px;
+}
+
+.banner{
+    width:100%;
 }
 
 .banner img{
-  width:100%;
-  display:block;
-  border-radius:18px;
-  box-shadow:0 0 30px rgba(0,0,0,.45);
+    width:100%;
+    display:block;
+    border-radius:18px;
 }
 
 .buttons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:14px;
-  margin:26px 0 34px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    margin-bottom:35px;
 }
 
 .btn{
-  padding:15px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  color:#fff;
-  border:1px solid #41ff4a;
+    text-decoration:none;
+    color:#ffffff;
+    border:1px solid #2cff47;
+    border-radius:12px;
+    padding:16px 28px;
+    font-weight:bold;
+    min-width:180px;
+    text-align:center;
+    transition:.2s;
 }
 
-.btn-whatsapp{
-  background:#18b718;
-  border:none;
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.whatsapp{
+    background:#19c81b;
+    border:none;
+}
+
+.instagram{
+    background:transparent;
+}
+
+.localizacao{
+    background:transparent;
 }
 
 .footer{
-  text-align:center;
-  color:#aaa;
-  font-size:14px;
-  padding:18px 0 8px;
+    text-align:center;
+    color:#777;
+    font-size:13px;
+    margin-bottom:25px;
 }
-
-.footer strong{color:#41ff4a}
 
 @media(max-width:768px){
-  .container{padding:10px}
-  .banner img{border-radius:10px}
-  .btn{width:100%;text-align:center}
+
+    .container{
+        padding:8px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
 }
+
 </style>
 </head>
 
@@ -70,20 +99,49 @@ body{
 
 <div class="container">
 
-  <section class="banner">
-    <img src="../../assets/rapidin/rapidin-banner.png" alt="Rapidin Mobilidade Elétrica">
-  </section>
+    <!-- ARTE PRINCIPAL RAPIDIN -->
 
-  <div class="buttons">
-    <a class="btn btn-whatsapp" href="https://wa.me/5585986890282" target="_blank">WhatsApp</a>
-    <a class="btn" href="https://instagram.com/rapidin_eletroposto" target="_blank">Instagram</a>
-    <a class="btn" href="https://maps.google.com/?q=Avenida+Barão+de+Studart+1480+Fortaleza" target="_blank">Localização</a>
-  </div>
+    <section class="banner">
 
-  <div class="footer">
-    Portal Profissional <strong>UrbanWatch</strong><br>
-    Conexões Genuínas geram oportunidades reais.
-  </div>
+        <img
+        src="../../assets/rapidin/rapidin-banner.png"
+        alt="Rapidin Mobilidade Elétrica">
+
+    </section>
+
+    <!-- BOTÕES -->
+
+    <div class="buttons">
+
+        <a
+        class="btn whatsapp"
+        href="https://wa.me/55SEUNUMERO"
+        target="_blank">
+        WhatsApp
+        </a>
+
+        <a
+        class="btn instagram"
+        href="https://instagram.com/rapidin_eletroposto"
+        target="_blank">
+        Instagram
+        </a>
+
+        <a
+        class="btn localizacao"
+        href="https://maps.google.com/"
+        target="_blank">
+        Localização
+        </a>
+
+    </div>
+
+    <div class="footer">
+
+        Portal Profissional UrbanWatch<br>
+        Conexões genuínas geram oportunidades reais.
+
+    </div>
 
 </div>
 
