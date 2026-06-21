@@ -11,148 +11,54 @@
 body{
   margin:0;
   background:#050505;
-  color:#f5f0df;
-  font-family:Georgia, serif;
 }
 
-.hero img{
+.home{
+  position:relative;
+  width:100%;
+  max-width:1080px;
+  margin:0 auto;
+}
+
+.home img{
   width:100%;
   display:block;
 }
 
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:50px 22px;
-}
-
-h1,h2,h3{
-  color:#d4af37;
-  letter-spacing:2px;
-}
-
-p{
-  line-height:1.7;
-  font-size:18px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:18px;
-  padding:14px 28px;
-  border:1px solid #d4af37;
-  border-radius:40px;
-  color:#d4af37;
-  text-decoration:none;
-  letter-spacing:1px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:24px;
-}
-
-.card{
-  border:1px solid #d4af37;
-  border-radius:18px;
-  padding:28px;
-  background:linear-gradient(180deg,#111,#050505);
-  text-align:center;
-}
-
-.card p{
-  font-size:16px;
-}
-
-.principios{
-  border:1px solid #d4af37;
-  border-radius:18px;
-  padding:32px;
-  background:#0b0b0b;
-}
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  color:#c9b77a;
-  font-size:14px;
+/* links invisíveis sobre a arte */
+.link{
+  position:absolute;
+  display:block;
+  text-indent:-9999px;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<div class="home">
   <img src="/assets/home-urbanwatch-nova.png" alt="UrbanWatch">
-</section>
 
-<section class="section">
-  <h2>Sobre a UrbanWatch</h2>
+  <a class="link" href="/sobre/" style="left:48%; top:45%; width:35%; height:5%;">
+    Conhecer a UrbanWatch
+  </a>
 
-  <p>
-    A UrbanWatch nasceu da observação de que muitas conexões importantes acontecem por acaso.
-  </p>
+  <a class="link" href="/clube-travessia/" style="left:8%; top:61%; width:26%; height:17%;">
+    Clube Travessia
+  </a>
 
-  <p>
-    Unimos tecnologia, mobilidade, presença digital e inteligência humana para criar travessias
-    mais seguras, eficientes e significativas.
-  </p>
+  <a class="link" href="/portais-profissionais/" style="left:37%; top:61%; width:26%; height:17%;">
+    Portais Profissionais
+  </a>
 
-  <p>
-    Tecnologia quando faz sentido. Humanidade quando faz diferença.
-  </p>
+  <a class="link" href="/relogio-9a/" style="left:66%; top:61%; width:26%; height:17%;">
+    Relógio 9A
+  </a>
 
-  <a class="btn" href="/sobre/">Conhecer a UrbanWatch →</a>
-</section>
-
-<section class="section">
-  <h2>Escolha sua experiência</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Clube Travessia</h3>
-      <p>Travessias agendadas para quem não pode improvisar.</p>
-      <a class="btn" href="/clube-travessia/">Conhecer →</a>
-    </div>
-
-    <div class="card">
-      <h3>Portais Profissionais</h3>
-      <p>Seu endereço digital profissional. Presença, credibilidade e conexão.</p>
-      <a class="btn" href="/portais-profissionais/">Conhecer →</a>
-    </div>
-
-    <div class="card">
-      <h3>Relógio 9A</h3>
-      <p>O tempo sem pressa. A travessia sem improviso.</p>
-      <a class="btn" href="/relogio-9a/">Abrir relógio →</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="section">
-  <div class="principios">
-    <h2>Princípios UrbanWatch</h2>
-
-    <p>
-      Algumas ideias nascem da tecnologia. Outras nascem durante a travessia.
-    </p>
-
-    <p>
-      Aqui registramos aprendizados que compartilham caminhos, não fórmulas.
-    </p>
-
-    <a class="btn" href="/principios-urbanwatch/">Explorar princípios →</a>
-  </div>
-</section>
-
-<footer>
-  <p><strong>UrbanWatch®</strong></p>
-  <p>Inteligência para quem não improvisa.</p>
-  <p>Fortaleza • Ceará • Brasil</p>
-</footer>
+  <a class="link" href="/principios-urbanwatch/" style="left:8%; top:82%; width:84%; height:10%;">
+    Princípios UrbanWatch
+  </a>
+</div>
 
 </body>
 </html>
