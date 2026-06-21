@@ -3,68 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portal Essencial | UrbanWatch</title>
 
 <style>
-*{box-sizing:border-box}
 
 body{
-  margin:0;
-  background:#050505;
-  color:#f5f0df;
-  font-family:Georgia, serif;
+    margin:0;
+    background:#050505;
+}
+
+.hero{
+    position:relative;
+    width:100%;
 }
 
 .hero img{
-  width:100%;
-  display:block;
+    width:100%;
+    display:block;
 }
+
+/* Área clicável sobre o botão FALAR AGORA da arte */
+
+.whatsapp{
+    position:absolute;
+
+    left:63%;
+    top:78.5%;
+
+    width:28%;
+    height:5.5%;
+
+    display:block;
+
+    text-indent:-9999px;
+}
+
+/* Botões inferiores */
 
 .links{
-  max-width:900px;
-  margin:auto;
-  padding:36px 22px 50px;
-  text-align:center;
+    text-align:center;
+    padding:35px 20px;
+    background:#050505;
 }
 
-a{
-  display:inline-block;
-  margin:10px;
-  padding:14px 24px;
-  border:1px solid #d4af37;
-  border-radius:40px;
-  color:#d4af37;
-  text-decoration:none;
-  letter-spacing:1px;
+.links a{
+    display:block;
+
+    max-width:420px;
+
+    margin:18px auto;
+
+    padding:18px 25px;
+
+    border:1px solid #d4af37;
+
+    border-radius:50px;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    font-family:Georgia, serif;
+
+    font-size:20px;
+
+    letter-spacing:1px;
 }
 
-a:hover{
-  text-decoration:underline;
+.links a:hover{
+    background:#111;
 }
 
 footer{
-  text-align:center;
-  padding:20px;
-  color:#c9b77a;
-  font-size:14px;
+    text-align:center;
+
+    color:#b8943c;
+
+    padding:15px 0 35px;
+
+    font-family:Georgia, serif;
 }
+
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <img src="/assets/portal-essencial-urbanwatch.png" alt="Portal Essencial UrbanWatch">
-</section>
+<div class="hero">
+
+<img
+src="/assets/portal-essencial-urbanwatch.png"
+alt="Portal Essencial UrbanWatch">
+
+<a
+class="whatsapp"
+href="https://wa.me/55SEUNUMERO?text=Olá%20UrbanWatch.%20Gostaria%20de%20saber%20mais%20sobre%20o%20Portal%20Essencial."
+target="_blank">
+WhatsApp
+</a>
+
+</div>
 
 <div class="links">
-  <a href="/portal/">← Voltar para Portais UrbanWatch</a>
-  <a href="/">🏠 Voltar para Home UrbanWatch</a>
+
+<a href="/portal/">
+← Voltar para Portais UrbanWatch
+</a>
+
+<a href="/">
+🏠 Voltar para Home UrbanWatch
+</a>
+
 </div>
 
 <footer>
-  <p><strong>UrbanWatch®</strong></p>
-  <p>Fortaleza • Ceará • Brasil</p>
+
+<p><strong>UrbanWatch®</strong></p>
+
+<p>Fortaleza • Ceará • Brasil</p>
+
 </footer>
 
 </body>
