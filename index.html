@@ -1,122 +1,158 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>UrbanWatch | Inteligência para quem não improvisa</title><meta name="description" content="UrbanWatch. Inteligência para quem não improvisa. Fortaleza - Cidade Fundadora."><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UrbanWatch</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+<style>
+*{box-sizing:border-box}
 
-html,
 body{
-background:#000;
-overflow-x:hidden;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-.hero{
-position:relative;
-width:100%;
-max-width:1400px;
-margin:auto;
+  margin:0;
+  background:#050505;
+  color:#f5f0df;
+  font-family:Georgia, serif;
 }
 
 .hero img{
-width:100%;
-display:block;
+  width:100%;
+  display:block;
 }
 
-/* BOTÃO INICIAR TRAVESSIA */
-
-.btn-travessia{
-position:absolute;
-
-left:34%;
-top:43%;
-
-width:38%;
-height:6.5%;
-
-display:block;
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 22px;
 }
 
-/* CLUBE TRAVESSIA */
-
-.btn-clube{
-position:absolute;
-
-left:5%;
-top:67%;
-
-width:28%;
-height:23%;
-
-display:block;
+h1,h2,h3{
+  color:#d4af37;
+  letter-spacing:2px;
 }
 
-/* PORTAIS */
-
-.btn-portais{
-position:absolute;
-
-left:36%;
-top:67%;
-
-width:28%;
-height:23%;
-
-display:block;
+p{
+  line-height:1.7;
+  font-size:18px;
 }
 
-/* RELÓGIO */
-
-.btn-relogio{
-position:absolute;
-
-left:67%;
-top:67%;
-
-width:28%;
-height:23%;
-
-display:block;
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:14px 28px;
+  border:1px solid #d4af37;
+  border-radius:40px;
+  color:#d4af37;
+  text-decoration:none;
+  letter-spacing:1px;
 }
 
-.footer{
-background:#050505;
-padding:30px;
-text-align:center;
-color:#999;
-font-size:14px;
-letter-spacing:2px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;
 }
 
-@media(max-width:768px){
-
-.btn-travessia{
-left:26%;
-width:48%;
+.card{
+  border:1px solid #d4af37;
+  border-radius:18px;
+  padding:28px;
+  background:linear-gradient(180deg,#111,#050505);
+  text-align:center;
 }
 
+.card p{
+  font-size:16px;
 }
 
-</style></head><body><div class="hero"><img src="/assets/home.png" alt="UrbanWatch"><a class="btn-travessia" href="/sobre/" aria-label="Iniciar Travessia"></a>
+.principios{
+  border:1px solid #d4af37;
+  border-radius:18px;
+  padding:32px;
+  background:#0b0b0b;
+}
 
-<a class="btn-clube"
-href="https://taggo.one/urbanwatch"
-target="_blank"
-aria-label="Clube Travessia"></a>
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:#c9b77a;
+  font-size:14px;
+}
+</style>
+</head>
 
-<a class="btn-portais"
-href="/portal/"
-aria-label="Portais Profissionais"></a>
+<body>
 
-<a class="btn-relogio"
-href="/relogio/"
-aria-label="Relógio 9A"></a>
+<section class="hero">
+  <img src="/assets/home-urbanwatch-nova.png" alt="UrbanWatch">
+</section>
 
-</div><div class="footer">
-UrbanWatch® • Fortaleza • Ceará • Brasil
-</div></body>
+<section class="section">
+  <h2>Sobre a UrbanWatch</h2>
+
+  <p>
+    A UrbanWatch nasceu da observação de que muitas conexões importantes acontecem por acaso.
+  </p>
+
+  <p>
+    Unimos tecnologia, mobilidade, presença digital e inteligência humana para criar travessias
+    mais seguras, eficientes e significativas.
+  </p>
+
+  <p>
+    Tecnologia quando faz sentido. Humanidade quando faz diferença.
+  </p>
+
+  <a class="btn" href="/sobre/">Conhecer a UrbanWatch →</a>
+</section>
+
+<section class="section">
+  <h2>Escolha sua experiência</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Clube Travessia</h3>
+      <p>Travessias agendadas para quem não pode improvisar.</p>
+      <a class="btn" href="/clube-travessia/">Conhecer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Portais Profissionais</h3>
+      <p>Seu endereço digital profissional. Presença, credibilidade e conexão.</p>
+      <a class="btn" href="/portais-profissionais/">Conhecer →</a>
+    </div>
+
+    <div class="card">
+      <h3>Relógio 9A</h3>
+      <p>O tempo sem pressa. A travessia sem improviso.</p>
+      <a class="btn" href="/relogio-9a/">Abrir relógio →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="principios">
+    <h2>Princípios UrbanWatch</h2>
+
+    <p>
+      Algumas ideias nascem da tecnologia. Outras nascem durante a travessia.
+    </p>
+
+    <p>
+      Aqui registramos aprendizados que compartilham caminhos, não fórmulas.
+    </p>
+
+    <a class="btn" href="/principios-urbanwatch/">Explorar princípios →</a>
+  </div>
+</section>
+
+<footer>
+  <p><strong>UrbanWatch®</strong></p>
+  <p>Inteligência para quem não improvisa.</p>
+  <p>Fortaleza • Ceará • Brasil</p>
+</footer>
+
+</body>
 </html>
