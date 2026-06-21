@@ -3,48 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Portal Premium | UrbanWatch</title>
 
 <style>
-*{box-sizing:border-box}
 
 body{
-  margin:0;
-  background:#050505;
+    margin:0;
+    background:#050505;
 }
 
-img{
-  width:100%;
-  display:block;
+.hero{
+    position:relative;
+    width:100%;
 }
+
+.hero img{
+    width:100%;
+    display:block;
+}
+
+/* Botão invisível sobre FALAR AGORA */
+
+.whatsapp{
+    position:absolute;
+
+    left:63%;
+    top:78.5%;
+
+    width:28%;
+    height:5.5%;
+
+    display:block;
+
+    text-indent:-9999px;
+}
+
+/* Área dos botões inferiores */
 
 .links{
-  text-align:center;
-  padding:35px 20px;
-  background:#050505;
+    text-align:center;
+    padding:35px 20px;
+    background:#050505;
 }
 
 .links a{
-  display:inline-block;
-  margin:8px;
-  padding:14px 24px;
-  border:1px solid #d4af37;
-  border-radius:40px;
-  color:#d4af37;
-  text-decoration:none;
-  font-family:Georgia, serif;
+    display:block;
+    margin:18px auto;
+    max-width:420px;
+
+    padding:18px 25px;
+
+    border:1px solid #d4af37;
+    border-radius:50px;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    font-family:Georgia, serif;
+    font-size:20px;
+
+    letter-spacing:1px;
 }
+
+.links a:hover{
+    background:#111;
+}
+
+footer{
+    text-align:center;
+    color:#b8943c;
+    padding:15px 0 35px;
+    font-family:Georgia, serif;
+}
+
 </style>
 </head>
 
 <body>
 
-<img src="/assets/portal-premium-urbanwatch.png" alt="Portal Premium UrbanWatch">
+<div class="hero">
+
+<img src="/assets/portal-premium-urbanwatch.png"
+alt="Portal Premium UrbanWatch">
+
+<a
+class="whatsapp"
+href="https://wa.me/55SEUNUMERO?text=Olá%20UrbanWatch.%20Gostaria%20de%20saber%20mais%20sobre%20o%20Portal%20Premium."
+target="_blank">
+WhatsApp
+</a>
+
+</div>
 
 <div class="links">
-  <a href="/portal/">← Voltar para Portais</a>
-  <a href="/">🏠 Voltar para Home</a>
+
+<a href="/portal/">
+← Voltar para Portais UrbanWatch
+</a>
+
+<a href="/">
+🏠 Voltar para Home UrbanWatch
+</a>
+
 </div>
+
+<footer>
+
+<p><strong>UrbanWatch®</strong></p>
+<p>Fortaleza • Ceará • Brasil</p>
+
+</footer>
 
 </body>
 </html>
