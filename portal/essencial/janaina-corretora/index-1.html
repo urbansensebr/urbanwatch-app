@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaína Mota | Corretora de Imóveis</title>
+  <meta name="description" content="Portal profissional de Janaína Mota, corretora de imóveis em Caucaia e região. Casas, duplex, lotes, financiamento e atendimento via WhatsApp." />
+
+  <style>
+    :root {
+      --bg: #fbf8f3;
+      --card: #ffffff;
+      --text: #2c2825;
+      --muted: #7b7169;
+      --gold: #c8954e;
+      --gold-dark: #9d6f33;
+      --line: rgba(157,111,51,.22);
+      --shadow: 0 18px 45px rgba(84, 61, 35, .12);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(200,149,78,.14), transparent 32%),
+        linear-gradient(180deg, #fffdf9 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page {
+      width: min(100%, 520px);
+      margin: 0 auto;
+      padding: 18px 14px 34px;
+    }
+
+    .shell {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(200,149,78,.16);
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 270px;
+      padding: 28px 24px 26px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 48%, rgba(255,255,255,.38) 100%),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=75") center/cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      padding: 4px;
+      border: 2px solid var(--gold);
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f7efe5, #fff);
+      color: var(--gold-dark);
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .name {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 9vw, 50px);
+      line-height: .92;
+      letter-spacing: -.05em;
+    }
+
+    .role {
+      margin: 12px 0 6px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .creci, .location {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 5px 0;
+    }
+
+    .location {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .intro {
+      padding: 26px 24px 18px;
+      text-align: center;
+    }
+
+    .slogan {
+      margin: 0;
+      color: var(--gold-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    .divider {
+      margin: 14px auto 18px;
+      width: 180px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      position: relative;
+    }
+
+    .divider::after {
+      content: "♡";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -52%);
+      background: #fff;
+      color: var(--gold-dark);
+      padding: 0 12px;
+      font-size: 20px;
+    }
+
+    .desc {
+      margin: 0 auto;
+      max-width: 430px;
+      color: #4b4540;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .actions {
+      padding: 16px 24px 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(200,149,78,.20);
+      background: #fff;
+      padding: 17px 18px;
+      box-shadow: 0 10px 22px rgba(84,61,35,.06);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:active {
+      transform: scale(.985);
+    }
+
+    .btn.primary {
+      color: #fff;
+      border: 0;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 16px 30px rgba(157,111,51,.25);
+    }
+
+    .icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      color: var(--gold-dark);
+    }
+
+    .primary .icon,
+    .primary .arrow { color: #fff; }
+
+    .btn-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .btn-title {
+      display: block;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    .btn-sub {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+      font-size: 14px;
+    }
+
+    .primary .btn-sub {
+      color: rgba(255,255,255,.82);
+    }
+
+    .arrow {
+      color: var(--gold-dark);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .grid-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .grid-actions .btn {
+      min-height: 92px;
+      padding: 14px;
+      align-items: flex-start;
+    }
+
+    .grid-actions .icon {
+      font-size: 26px;
+      width: 30px;
+      height: 30px;
+      flex-basis: 30px;
+    }
+
+    .section {
+      padding: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .see-all {
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .properties {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .property {
+      min-width: 138px;
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(84,61,35,.07);
+    }
+
+    .property-img {
+      height: 96px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .property-body {
+      padding: 11px 12px 13px;
+    }
+
+    .tag {
+      display: block;
+      color: var(--gold-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .property h3 {
+      margin: 0 0 4px;
+      font-size: 15px;
+    }
+
+    .property p {
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .price {
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .why {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(200,149,78,.16);
+      border-radius: 22px;
+      padding: 20px 12px;
+      text-align: center;
+    }
+
+    .why-title {
+      margin: 0 0 18px;
+      color: var(--gold-dark);
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .why-item {
+      padding: 0 6px;
+      border-right: 1px solid var(--line);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .why-item:last-child {
+      border-right: 0;
+    }
+
+    .why-icon {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-dark);
+      font-size: 26px;
+    }
+
+    .contact-box {
+      background: #fff;
+      border: 1px solid rgba(200,149,78,.14);
+      border-radius: 22px;
+      padding: 18px 12px;
+      text-align: center;
+    }
+
+    .contact-title {
+      color: var(--gold-dark);
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+      font-size: 14px;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .contact-link {
+      padding: 10px 6px;
+      border-radius: 12px;
+      background: rgba(200,149,78,.08);
+    }
+
+    footer {
+      padding: 18px 12px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--gold-dark);
+      font-weight: 800;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(44,40,37,.96);
+      color: #fff;
+      padding: 13px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      z-index: 20;
+      width: max-content;
+      max-width: calc(100% - 28px);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 430px) {
+      .page { padding: 10px 8px 28px; }
+      .shell { border-radius: 26px; }
+      .hero { padding: 22px 18px; min-height: 230px; }
+      .profile {
+        grid-template-columns: 92px 1fr;
+        gap: 14px;
+      }
+      .avatar { width: 88px; height: 88px; }
+      .avatar-inner { font-size: 27px; }
+      .role { font-size: 12px; }
+      .creci, .location { font-size: 14px; }
+      .intro, .actions, .section { padding-left: 18px; padding-right: 18px; }
+      .grid-actions { grid-template-columns: 1fr; }
+      .properties { grid-template-columns: repeat(3, 140px); }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .why-item:nth-child(2) { border-right: 0; }
+      .why-item { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+      .why-item:nth-child(3), .why-item:nth-child(4) { border-bottom: 0; padding-top: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="shell" aria-label="Portal profissional de Janaína Mota">
+      <header class="hero">
+        <div class="profile">
+          <div class="avatar" aria-label="Foto de Janaína Mota">
+            <div class="avatar-inner">JM</div>
+          </div>
+
+          <div>
+            <h1 class="name">Janaína Mota</h1>
+            <p class="role">Corretora de Imóveis</p>
+            <p class="creci">CRECI 20763</p>
+            <p class="location">📍 Caucaia, Ceará</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="intro">
+        <p class="slogan">Deus à frente de cada conquista</p>
+        <div class="divider"></div>
+        <p class="desc">
+          Especialista em casas, duplex e lotes em Caucaia e região.
+          Atendimento personalizado, confiança e experiência para te ajudar
+          a realizar o sonho do seu novo lar.
+        </p>
+      </section>
+
+      <section class="actions">
+        <a class="btn primary pending-link" href="#" aria-label="Falar comigo no WhatsApp">
+          <span class="icon">☏</span>
+          <span class="btn-text">
+            <span class="btn-title">Falar comigo no WhatsApp</span>
+            <span class="btn-sub">Atendimento rápido e personalizado</span>
+          </span>
+          <span class="arrow">›</span>
+        </a>
+
+        <div class="grid-actions">
+          <a class="btn pending-link" href="#">
+            <span class="icon">☎</span>
+            <span class="btn-text">
+              <span class="btn-title">Ligar agora</span>
+              <span class="btn-sub">Fale diretamente</span>
+            </span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="btn pending-link" href="#">
+            <span class="icon">◎</span>
+            <span class="btn-text">
+              <span class="btn-title">Meu Instagram</span>
+              <span class="btn-sub">Acompanhe meu dia a dia</span>
+            </span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="btn pending-link" href="#">
+            <span class="icon">▥</span>
+            <span class="btn-text">
+              <span class="btn-title">Ver imóveis</span>
+              <span class="btn-sub">Casas, duplex e lotes</span>
+            </span>
+            <span class="arrow">›</span>
+          </a>
+
+          <a class="btn pending-link" href="#">
+            <span class="icon">▤</span>
+            <span class="btn-text">
+              <span class="btn-title">Financiamento</span>
+              <span class="btn-sub">Simule seu crédito</span>
+            </span>
+            <span class="arrow">›</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="imoveis">
+        <div class="section-head">
+          <h2>Imóveis em destaque</h2>
+          <a class="see-all pending-link" href="#">Ver todos ›</a>
+        </div>
+
+        <div class="properties">
+          <a class="property pending-link" href="#">
+            <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=75');"></div>
+            <div class="property-body">
+              <span class="tag">Casa à venda</span>
+              <h3>Icaraí</h3>
+              <p>Caucaia • 3 quartos • 2 vagas</p>
+              <span class="price">R$ 320.000</span>
+            </div>
+          </a>
+
+          <a class="property pending-link" href="#">
+            <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=75');"></div>
+            <div class="property-body">
+              <span class="tag">Duplex à venda</span>
+              <h3>Pacheco</h3>
+              <p>3 suítes • Área gourmet</p>
+              <span class="price">R$ 450.000</span>
+            </div>
+          </a>
+
+          <a class="property pending-link" href="#">
+            <div class="property-img" style="background-image:url('https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&w=500&q=75');"></div>
+            <div class="property-body">
+              <span class="tag">Loteamento</span>
+              <h3>Alto do Garrote</h3>
+              <p>Lotes a partir de 200m²</p>
+              <span class="price">R$ 85.000</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="why">
+          <p class="why-title">Por que escolher a Janaína?</p>
+          <div class="why-grid">
+            <div class="why-item"><span class="why-icon">🛡</span>Experiência e credibilidade</div>
+            <div class="why-item"><span class="why-icon">🤝</span>Atendimento humanizado</div>
+            <div class="why-item"><span class="why-icon">⌂</span>Imóveis selecionados</div>
+            <div class="why-item"><span class="why-icon">🔒</span>Negociação segura</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-box">
+          <p class="contact-title">Vamos conversar?</p>
+          <div class="contact-row">
+            <a class="contact-link pending-link" href="#">☏ (85) 98599-0031</a>
+            <a class="contact-link pending-link" href="#">◎ @janainamotacorretora</a>
+            <a class="contact-link pending-link" href="#">📍 Caucaia, Ceará</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Powered by <a class="pending-link" href="#" aria-label="UrbanWatch.app">UrbanWatch.app</a>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Link em configuração</div>
+
+  <script>
+    const toast = document.getElementById("toast");
+    let timer;
+
+    document.querySelectorAll(".pending-link").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (!href || href === "#") {
+          event.preventDefault();
+          toast.classList.add("show");
+          clearTimeout(timer);
+          timer = setTimeout(() => toast.classList.remove("show"), 1800);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
