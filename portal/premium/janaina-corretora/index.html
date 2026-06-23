@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaína Mota | Portal Premium UrbanWatch</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f7f1e8;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .portal-wrapper {
+      width: 100%;
+      max-width: 820px;
+      position: relative;
+      background: #fff;
+      box-shadow: 0 18px 55px rgba(60, 42, 20, 0.18);
+    }
+
+    .portal-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      border-radius: 16px;
+      cursor: pointer;
+      text-indent: -9999px;
+      overflow: hidden;
+      -webkit-tap-highlight-color: rgba(200,149,78,.18);
+    }
+
+    .hotspot:focus-visible {
+      outline: 3px solid rgba(200,149,78,.75);
+      outline-offset: 2px;
+    }
+
+    .whatsapp-main { left: 5%; top: 32.2%; width: 90%; height: 5.6%; }
+    .call-now { left: 5%; top: 39.4%; width: 44%; height: 5.7%; }
+    .instagram { left: 51%; top: 39.4%; width: 44%; height: 5.7%; }
+    .properties-link { left: 5%; top: 46.4%; width: 44%; height: 5.7%; }
+    .financing { left: 51%; top: 46.4%; width: 44%; height: 5.7%; }
+
+    .see-all { left: 78%; top: 54.8%; width: 17%; height: 3.2%; }
+
+    .property-01 { left: 4.5%; top: 58%; width: 29.7%; height: 18.9%; }
+    .property-02 { left: 35.4%; top: 58%; width: 29.7%; height: 18.9%; }
+    .property-03 { left: 66.2%; top: 58%; width: 29.7%; height: 18.9%; }
+
+    .footer-whatsapp { left: 6%; top: 92.8%; width: 25%; height: 3.8%; }
+    .footer-instagram { left: 37%; top: 92.8%; width: 28%; height: 3.8%; }
+    .footer-location { left: 70%; top: 92.8%; width: 24%; height: 3.8%; }
+    .powered { left: 38%; top: 97.2%; width: 25%; height: 2.4%; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%) translateY(18px);
+      background: rgba(42,34,27,.96);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      z-index: 999;
+      box-shadow: 0 14px 30px rgba(0,0,0,.22);
+      max-width: calc(100% - 28px);
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="portal-wrapper" aria-label="Portal Premium Janaína Mota">
+    <img
+      src="../../../assets/janaina-portal-slim-clean.png"
+      alt="Portal Premium Janaína Mota - Corretora de Imóveis"
+      class="portal-img"
+    />
+
+    <a class="hotspot whatsapp-main pending" href="#" aria-label="Falar comigo no WhatsApp">WhatsApp</a>
+    <a class="hotspot call-now pending" href="#" aria-label="Ligar agora">Ligar agora</a>
+    <a class="hotspot instagram pending" href="#" aria-label="Meu Instagram">Instagram</a>
+    <a class="hotspot properties-link pending" href="#" aria-label="Ver imóveis">Ver imóveis</a>
+    <a class="hotspot financing pending" href="#" aria-label="Financiamento">Financiamento</a>
+
+    <a class="hotspot see-all pending" href="#" aria-label="Ver todos os imóveis">Ver todos</a>
+    <a class="hotspot property-01 pending" href="#" aria-label="Imóvel em Icaraí, Caucaia">Icaraí</a>
+    <a class="hotspot property-02 pending" href="#" aria-label="Imóvel em Pacheco, Caucaia">Pacheco</a>
+    <a class="hotspot property-03 pending" href="#" aria-label="Loteamento Alto do Garrote, Caucaia">Alto do Garrote</a>
+
+    <a class="hotspot footer-whatsapp pending" href="#" aria-label="WhatsApp Janaína">WhatsApp rodapé</a>
+    <a class="hotspot footer-instagram pending" href="#" aria-label="Instagram Janaína">Instagram rodapé</a>
+    <a class="hotspot footer-location pending" href="#" aria-label="Localização Caucaia">Localização</a>
+    <a class="hotspot powered pending" href="#" aria-label="Powered by UrbanWatch.app">UrbanWatch.app</a>
+  </main>
+
+  <div class="toast" id="toast">Link em configuração</div>
+
+  <script>
+    const toast = document.getElementById("toast");
+    let timer;
+
+    document.querySelectorAll(".pending").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+
+        if (!href || href === "#") {
+          event.preventDefault();
+          toast.classList.add("show");
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1700);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
