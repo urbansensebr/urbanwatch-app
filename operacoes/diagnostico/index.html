@@ -7,175 +7,214 @@
 
   <style>
     :root {
-      --bg: #050505;
-      --panel: #111;
-      --gold: #d4af37;
-      --gold2: #b8860b;
-      --white: #fff;
-      --muted: #aaa;
-      --border: rgba(212,175,55,.35);
+      --bg:#050505;
+      --panel:#111;
+      --gold:#d4af37;
+      --gold2:#b8860b;
+      --white:#fff;
+      --muted:#aaa;
+      --border:rgba(212,175,55,.35);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing:border-box; }
 
     body {
-      margin: 0;
-      background: radial-gradient(circle at top, #1a1a1a 0%, #050505 65%);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
+      margin:0;
+      background:radial-gradient(circle at top,#1a1a1a 0%,#050505 65%);
+      color:var(--white);
+      font-family:Arial, Helvetica, sans-serif;
     }
 
     header {
-      padding: 34px 20px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      background: rgba(0,0,0,.75);
+      padding:34px 20px;
+      text-align:center;
+      border-bottom:1px solid var(--border);
+      background:rgba(0,0,0,.75);
     }
 
     .brand {
-      color: var(--gold);
-      font-weight: 800;
-      letter-spacing: 2px;
-      font-size: 14px;
-      margin-bottom: 14px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:14px;
+      margin-bottom:14px;
     }
 
     h1 {
-      margin: 0;
-      color: var(--gold);
-      font-size: clamp(34px, 7vw, 68px);
-      line-height: 1;
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(34px,7vw,68px);
+      line-height:1;
     }
 
     h2 {
-      margin: 16px 0 0;
-      font-weight: normal;
-      color: var(--white);
+      margin:16px 0 0;
+      font-weight:normal;
     }
 
     .intro {
-      max-width: 850px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 17px;
+      max-width:850px;
+      margin:22px auto 0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:17px;
     }
 
     main {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 32px 18px 60px;
+      max-width:980px;
+      margin:0 auto;
+      padding:32px 18px 60px;
     }
 
     form {
-      display: grid;
-      gap: 24px;
+      display:grid;
+      gap:24px;
     }
 
     section {
-      background: rgba(17,17,17,.86);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 0 28px rgba(212,175,55,.08);
+      background:rgba(17,17,17,.86);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 0 28px rgba(212,175,55,.08);
     }
 
     section h3 {
-      margin: 0 0 18px;
-      color: var(--gold);
-      font-size: 24px;
+      margin:0 0 18px;
+      color:var(--gold);
+      font-size:24px;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
     }
 
     label {
-      display: block;
-      color: var(--white);
-      font-size: 14px;
-      margin-bottom: 7px;
+      display:block;
+      color:var(--white);
+      font-size:14px;
+      margin-bottom:7px;
     }
 
     input, select, textarea {
-      width: 100%;
-      padding: 13px;
-      border-radius: 10px;
-      border: 1px solid rgba(212,175,55,.25);
-      background: #070707;
-      color: var(--white);
-      font-size: 15px;
-      outline: none;
+      width:100%;
+      padding:13px;
+      border-radius:10px;
+      border:1px solid rgba(212,175,55,.25);
+      background:#070707;
+      color:var(--white);
+      font-size:15px;
+      outline:none;
     }
 
     input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
+      border-color:var(--gold);
     }
 
     textarea {
-      min-height: 110px;
-      resize: vertical;
+      min-height:110px;
+      resize:vertical;
+      margin-bottom:14px;
     }
 
     .check-group {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
     }
 
     .check {
-      border: 1px solid rgba(212,175,55,.22);
-      border-radius: 12px;
-      padding: 12px;
-      background: rgba(0,0,0,.35);
-      display: flex;
-      gap: 10px;
-      align-items: center;
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:12px;
+      padding:12px;
+      background:rgba(0,0,0,.35);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:0;
     }
 
     .check input {
-      width: auto;
-      accent-color: var(--gold);
+      width:auto;
+      accent-color:var(--gold);
+    }
+
+    .lgpd {
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(0,0,0,.45);
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .lgpd label {
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color:var(--muted);
+      margin:0;
+    }
+
+    .lgpd input {
+      width:auto;
+      margin-top:4px;
+      accent-color:var(--gold);
+    }
+
+    .confidencialidade {
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(0,0,0,.35);
+    }
+
+    .confidencialidade strong {
+      color:var(--gold);
     }
 
     button {
-      border: none;
-      border-radius: 14px;
-      padding: 16px 20px;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color: #000;
+      border:none;
+      border-radius:14px;
+      padding:16px 20px;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#000;
     }
 
     button:hover {
-      filter: brightness(1.08);
+      filter:brightness(1.08);
     }
 
     .success {
-      display: none;
-      text-align: center;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(0,0,0,.55);
-      margin-top: 24px;
+      display:none;
+      text-align:center;
+      padding:28px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:rgba(0,0,0,.55);
+      margin-top:24px;
     }
 
     .success h3 {
-      color: var(--gold);
-      font-size: 28px;
+      color:var(--gold);
+      font-size:28px;
     }
 
     footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 34px 20px;
-      border-top: 1px solid rgba(212,175,55,.2);
-      font-size: 14px;
+      text-align:center;
+      color:var(--muted);
+      padding:34px 20px;
+      border-top:1px solid rgba(212,175,55,.2);
+      font-size:14px;
     }
   </style>
 </head>
@@ -187,9 +226,7 @@
   <h1>Diagnóstico Operacional</h1>
   <h2>UrbanWatch Operações™</h2>
   <p class="intro">
-    Entenda o nível de maturidade operacional da sua equipe e identifique
-    oportunidades de melhoria através de presença inteligente, evidências
-    operacionais e supervisão em tempo real.
+    Entenda o nível de maturidade operacional da sua equipe e identifique oportunidades de melhoria através de presença inteligente, evidências operacionais e supervisão em tempo real.
   </p>
 </header>
 
@@ -269,6 +306,16 @@
           <option>Acima de R$ 1 milhão</option>
         </select>
       </div>
+
+      <div>
+        <label>Prioridade do projeto</label>
+        <select name="prioridade">
+          <option>Baixa</option>
+          <option>Média</option>
+          <option>Alta</option>
+          <option>Urgente</option>
+        </select>
+      </div>
     </div>
 
     <br>
@@ -299,6 +346,19 @@
 
     <div class="grid">
       <div>
+        <label>Sistema utilizado atualmente</label>
+        <select name="sistema_atual">
+          <option>Nenhum</option>
+          <option>WhatsApp</option>
+          <option>Planilhas</option>
+          <option>Sistema próprio</option>
+          <option>Aplicativo terceirizado</option>
+          <option>ERP</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div>
         <label>Existe checklist operacional?</label>
         <select name="checklist">
           <option>Sim</option>
@@ -325,6 +385,11 @@
         </select>
       </div>
     </div>
+
+    <br>
+
+    <label>Qual foi a última tentativa de resolver esse problema?</label>
+    <textarea name="tentativa_anterior"></textarea>
   </section>
 
   <section>
@@ -396,6 +461,18 @@
     <textarea name="comentarios"></textarea>
   </section>
 
+  <div class="lgpd">
+    <label>
+      <input type="checkbox" required>
+      Declaro estar ciente de que as informações fornecidas serão utilizadas pela UrbanWatch exclusivamente para diagnóstico operacional, contato comercial e elaboração de propostas relacionadas aos serviços UrbanWatch Operações™.
+    </label>
+  </div>
+
+  <div class="confidencialidade">
+    <strong>Política de Confidencialidade UrbanWatch</strong><br><br>
+    A UrbanWatch não divulga nomes, marcas, operações ou informações de clientes, parceiros ou potenciais clientes sem autorização expressa.
+  </div>
+
   <button type="submit">Enviar Diagnóstico Operacional</button>
 
 </form>
@@ -403,7 +480,10 @@
 <div class="success" id="successMessage">
   <h3>Diagnóstico recebido com sucesso.</h3>
   <p>
-    As informações serão analisadas para identificar oportunidades de melhoria operacional.
+    As informações serão analisadas para identificação de oportunidades de melhoria operacional.
+  </p>
+  <p>
+    Caso faça sentido, entraremos em contato para aprofundar o diagnóstico ou estruturar um projeto piloto.
   </p>
   <p>
     UrbanWatch Operações™<br>
@@ -449,4 +529,4 @@
 </script>
 
 </body>
-          </html>
+</html>
