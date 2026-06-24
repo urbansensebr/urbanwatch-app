@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>UrbanWatch Operações™</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #111111;
+      --gold: #d4af37;
+      --gold2: #b8860b;
+      --white: #ffffff;
+      --muted: #aaaaaa;
+      --border: rgba(212, 175, 55, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1a1a1a 0%, #050505 65%);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      padding: 28px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .brand {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 8vw, 78px);
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    h2 {
+      margin: 16px 0 0;
+      font-weight: normal;
+      color: var(--white);
+      font-size: clamp(18px, 3vw, 28px);
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 36px 18px 60px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .phrase {
+      margin-top: 24px;
+      color: var(--white);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: rgba(17, 17, 17, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.08);
+    }
+
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      transition: 0.25s;
+    }
+
+    .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+
+    a.button {
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #000;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+    }
+
+    a.button.secondary {
+      color: var(--white);
+      background: #111;
+      border: 1px solid var(--border);
+    }
+
+    a.button.secondary:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .pillars {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+    }
+
+    .pillar {
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--white);
+    }
+
+    .status {
+      margin-top: 42px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.38);
+      text-align: center;
+    }
+
+    .status strong {
+      color: var(--gold);
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px 20px;
+      color: var(--muted);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding-top: 22px;
+      }
+
+      main {
+        padding-top: 26px;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">URBANWATCH.APP</div>
+    <h1>UrbanWatch Operações™</h1>
+    <h2>Presença • Evidências • Supervisão</h2>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <p>
+        Plataforma desenvolvida para transformar operações externas em informações
+        confiáveis para gestão inteligente.
+      </p>
+
+      <div class="phrase">
+        Saber o que aconteceu.<br>
+        Onde aconteceu.<br>
+        E provar que aconteceu.
+      </div>
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+        <div>
+          <div class="icon">▶</div>
+          <h3>Apresentação Institucional</h3>
+          <p>
+            Conheça a visão geral do UrbanWatch Operações™, seus pilares,
+            fluxo operacional, aplicação prática e benefícios estratégicos.
+          </p>
+        </div>
+
+        <a class="button" href="/operacoes/apresentacao/">
+          Acessar Apresentação
+        </a>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="icon">📋</div>
+          <h3>Diagnóstico Operacional</h3>
+          <p>
+            Formulário para mapear equipes, pontos de venda, rotina de campo,
+            evidências, dores operacionais e viabilidade de projeto piloto.
+          </p>
+        </div>
+
+        <a class="button" href="/operacoes/diagnostico/">
+          Iniciar Diagnóstico
+        </a>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="icon">🚧</div>
+          <h3>Piloto em Desenvolvimento</h3>
+          <p>
+            Ambiente futuro para simulação prática com NFC, registro de visitas,
+            evidências fotográficas, supervisão e relatórios.
+          </p>
+        </div>
+
+        <a class="button secondary" href="#">
+          Em Breve
+        </a>
+      </div>
+
+    </section>
+
+    <section class="pillars">
+      <div class="pillar">📍 Presença Inteligente</div>
+      <div class="pillar">📸 Evidências Operacionais</div>
+      <div class="pillar">📊 Supervisão em Tempo Real</div>
+      <div class="pillar">🤖 Inteligência Operacional</div>
+    </section>
+
+    <section class="status">
+      <p>
+        <strong>Status:</strong> Plataforma em estruturação conceitual e preparação de piloto operacional.
+      </p>
+      <p>
+        Primeiro caso potencial de validação: <strong>Usibras</strong>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    Powered by UrbanWatch.app<br><br>
+    Inteligência para quem não improvisa.
+  </footer>
+
+</body>
+</html>
