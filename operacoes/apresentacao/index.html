@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>UrbanWatch Operações™ | Apresentação</title>
 
   <style>
@@ -105,7 +106,7 @@
 
     .slide-img {
       max-width: 100%;
-      max-height: calc(100vh - 145px);
+      max-height: calc(100vh - 165px);
       border-radius: 14px;
       border: 1px solid var(--border);
       box-shadow: 0 0 40px rgba(212,175,55,.16);
@@ -146,7 +147,10 @@
       font-weight: bold;
     }
 
-    .primary:hover { color: #000; filter: brightness(1.08); }
+    .primary:hover {
+      color: #000;
+      filter: brightness(1.08);
+    }
 
     .counter {
       color: var(--muted);
@@ -155,12 +159,22 @@
       text-align: right;
     }
 
+    .legal-note {
+      text-align: center;
+      color: #777;
+      font-size: 12px;
+      padding: 8px 14px;
+      border-top: 1px solid rgba(212,175,55,.16);
+      background: rgba(0,0,0,.82);
+      line-height: 1.4;
+    }
+
     .hidden { display: none; }
 
     footer.note {
       position: fixed;
       left: 18px;
-      bottom: 18px;
+      bottom: 104px;
       font-size: 12px;
       color: var(--muted);
       z-index: 30;
@@ -169,11 +183,18 @@
     @media (max-width: 760px) {
       body { overflow: auto; }
 
-      header { height: 58px; padding: 10px; }
+      header {
+        height: 58px;
+        padding: 10px;
+      }
 
-      .brand { font-size: 12px; }
+      .brand {
+        font-size: 12px;
+      }
 
-      .counter { display: none; }
+      .counter {
+        display: none;
+      }
 
       main {
         align-items: flex-start;
@@ -201,6 +222,15 @@
       .top-actions button:nth-child(2) {
         display: none;
       }
+
+      footer.note {
+        display: none;
+      }
+
+      .legal-note {
+        font-size: 11px;
+        padding: 7px 10px;
+      }
     }
   </style>
 </head>
@@ -222,12 +252,20 @@
       <section class="screen" id="homeScreen">
         <h1>URBANWATCH OPERAÇÕES™</h1>
         <h2>Presença • Evidências • Supervisão</h2>
+
         <p>
           Plataforma desenvolvida para transformar operações externas
           em informações confiáveis para gestão inteligente.
         </p>
+
         <p>
           Saber o que aconteceu. Onde aconteceu. E provar que aconteceu.
+        </p>
+
+        <p>
+          Esta apresentação possui caráter institucional e demonstrativo.
+          Exemplos operacionais apresentados utilizam cenários genéricos e não representam
+          necessariamente operações reais de clientes específicos.
         </p>
 
         <button class="primary" onclick="startPresentation()">▶ Iniciar Apresentação</button>
@@ -237,7 +275,7 @@
           <button onclick="goToSlide(2)">Slide 01 — Visão Geral</button>
           <button onclick="goToSlide(4)">Slide 03 — Evidências</button>
           <button onclick="goToSlide(6)">Slide 05 — NFC</button>
-          <button onclick="goToSlide(8)">Slide 07 — Caso Usibras</button>
+          <button onclick="goToSlide(8)">Slide 07 — Caso Piloto</button>
           <button onclick="goToSlide(10)">Slide 09 — Institucional</button>
         </div>
       </section>
@@ -247,10 +285,16 @@
       <section class="screen hidden" id="endScreen">
         <h1>FIM DA APRESENTAÇÃO</h1>
         <h2>UrbanWatch Operações™</h2>
+
         <p>
-          Obrigado pelo seu tempo. Esta apresentação é um protótipo conceitual
-          para validação operacional.
+          Obrigado pelo seu tempo.
         </p>
+
+        <p>
+          A UrbanWatch acredita que operações eficientes dependem de presença,
+          evidências e supervisão inteligente.
+        </p>
+
         <p>
           Próximo passo: testar o fluxo em ambiente real com NFC, registro de visita,
           evidências e supervisão.
@@ -270,6 +314,11 @@
     </div>
 
     <footer class="note">Powered by UrbanWatch.app</footer>
+
+    <div class="legal-note">
+      A UrbanWatch não divulga informações operacionais, nomes ou marcas de clientes sem autorização expressa.
+    </div>
+
   </div>
 
   <script>
@@ -282,7 +331,7 @@
       { title: "Slide 04 — Supervisão em Tempo Real", file: "/assets/operacoes/uwo-slide04.png" },
       { title: "Slide 05 — NFC nos Pontos de Venda", file: "/assets/operacoes/uwo-slide05.png" },
       { title: "Slide 06 — Fluxo Completo da Operação", file: "/assets/operacoes/uwo-slide06.png" },
-      { title: "Slide 07 — Caso Usibras", file: "/assets/operacoes/uwo-slide07.png" },
+      { title: "Slide 07 — Caso Piloto", file: "/assets/operacoes/uwo-slide07.png" },
       { title: "Slide 08 — Antes x Depois", file: "/assets/operacoes/uwo-slide08.png" },
       { title: "Slide 09 — UrbanWatch Operações™", file: "/assets/operacoes/uwo-slide09.png" }
     ];
@@ -334,6 +383,7 @@
       hideAll();
 
       current = Number(index);
+
       if (current < 0) current = slides.length - 1;
       if (current >= slides.length) return goEnd();
 
@@ -398,4 +448,4 @@
     goHome();
   </script>
 </body>
-        </html>
+            </html>
