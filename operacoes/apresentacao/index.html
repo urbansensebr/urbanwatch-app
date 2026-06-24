@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UrbanWatch Operações™ | Apresentação Institucional</title>
+  <title>UrbanWatch Operações™ | Apresentação</title>
 
   <style>
     :root {
       --bg: #050505;
-      --panel: #111;
       --gold: #d4af37;
       --gold2: #b8860b;
-      --white: #ffffff;
-      --muted: #aaaaaa;
-      --border: rgba(212, 175, 55, 0.35);
+      --white: #fff;
+      --muted: #aaa;
+      --border: rgba(212,175,55,.35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #1a1a1a 0%, #050505 60%);
+      background: radial-gradient(circle at top, #1a1a1a 0%, #050505 65%);
       color: var(--white);
       font-family: Arial, Helvetica, sans-serif;
       overflow: hidden;
@@ -42,24 +39,22 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.78);
       z-index: 10;
     }
 
     .brand {
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1px;
       color: var(--gold);
     }
 
-    .brand span {
-      color: var(--white);
-    }
+    .brand span { color: var(--white); }
 
-    .counter {
-      color: var(--muted);
-      font-size: 14px;
+    .top-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
 
     main {
@@ -69,14 +64,51 @@
       align-items: center;
       justify-content: center;
       padding: 12px;
+      overflow: hidden;
+    }
+
+    .screen {
+      width: min(980px, 92vw);
+      text-align: center;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(0,0,0,.45);
+      box-shadow: 0 0 35px rgba(212,175,55,.12);
+    }
+
+    .screen h1 {
+      font-size: clamp(34px, 6vw, 68px);
+      margin: 0;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .screen h2 {
+      font-weight: normal;
+      margin: 16px 0;
+    }
+
+    .screen p {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 16px auto;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 22px;
     }
 
     .slide-img {
       max-width: 100%;
-      max-height: calc(100vh - 140px);
+      max-height: calc(100vh - 145px);
       border-radius: 14px;
       border: 1px solid var(--border);
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.16);
+      box-shadow: 0 0 40px rgba(212,175,55,.16);
       background: #000;
       object-fit: contain;
     }
@@ -86,10 +118,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       padding: 10px;
       border-top: 1px solid var(--border);
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0,0,0,.82);
       z-index: 10;
     }
 
@@ -114,65 +146,16 @@
       font-weight: bold;
     }
 
-    .primary:hover {
-      color: #000;
-      filter: brightness(1.08);
-    }
+    .primary:hover { color: #000; filter: brightness(1.08); }
 
-    .thumbs {
-      position: fixed;
-      right: 16px;
-      top: 78px;
-      bottom: 90px;
-      width: 105px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 20;
-    }
-
-    .thumb {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      opacity: 0.55;
-    }
-
-    .thumb.active {
-      opacity: 1;
-      border-color: var(--gold);
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
-    }
-
-    .start {
-      text-align: center;
-      padding: 30px;
-      max-width: 720px;
-    }
-
-    .start h1 {
-      font-size: clamp(34px, 6vw, 72px);
-      margin: 0;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .start h2 {
-      font-weight: normal;
-      color: var(--white);
-      margin: 18px 0;
-    }
-
-    .start p {
+    .counter {
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 14px;
+      min-width: 120px;
+      text-align: right;
     }
 
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
 
     footer.note {
       position: fixed;
@@ -183,22 +166,14 @@
       z-index: 30;
     }
 
-    @media (max-width: 900px) {
-      .thumbs {
-        display: none;
-      }
+    @media (max-width: 760px) {
+      header { height: 58px; padding: 10px; }
 
-      header {
-        height: 58px;
-      }
+      .brand { font-size: 12px; }
 
-      .brand {
-        font-size: 13px;
-      }
+      .counter { display: none; }
 
-      .slide-img {
-        max-height: calc(100vh - 132px);
-      }
+      .slide-img { max-height: calc(100vh - 132px); }
 
       button, select {
         padding: 10px;
@@ -206,7 +181,11 @@
       }
 
       .controls {
-        gap: 6px;
+        gap: 5px;
+      }
+
+      .top-actions button:nth-child(2) {
+        display: none;
       }
     }
   </style>
@@ -217,37 +196,66 @@
 
     <header>
       <div class="brand">URBAN<span>WATCH</span> OPERAÇÕES™</div>
-      <div class="counter" id="counter">Capa</div>
+
+      <div class="top-actions">
+        <button onclick="goHome()">🏠 Início</button>
+        <button onclick="goEnd()">Fim</button>
+        <div class="counter" id="counter">Apresentação</div>
+      </div>
     </header>
 
-    <main id="main">
-      <section class="start" id="startScreen">
+    <main>
+      <section class="screen" id="homeScreen">
         <h1>URBANWATCH OPERAÇÕES™</h1>
         <h2>Presença • Evidências • Supervisão</h2>
         <p>
-          Apresentação Institucional da plataforma UrbanWatch Operações™.
-          Controle operacional, evidências em campo e supervisão inteligente.
+          Plataforma desenvolvida para transformar operações externas
+          em informações confiáveis para gestão inteligente.
         </p>
-        <button class="primary" onclick="startPresentation()">Iniciar Apresentação</button>
+        <p>
+          Saber o que aconteceu. Onde aconteceu. E provar que aconteceu.
+        </p>
+
+        <button class="primary" onclick="startPresentation()">▶ Iniciar Apresentação</button>
+
+        <div class="quick-grid">
+          <button onclick="goToSlide(1)">Slide 00 — Índice</button>
+          <button onclick="goToSlide(2)">Slide 01 — Visão Geral</button>
+          <button onclick="goToSlide(4)">Slide 03 — Evidências</button>
+          <button onclick="goToSlide(6)">Slide 05 — NFC</button>
+          <button onclick="goToSlide(8)">Slide 07 — Caso Usibras</button>
+          <button onclick="goToSlide(10)">Slide 09 — Institucional</button>
+        </div>
       </section>
 
       <img id="slideImage" class="slide-img hidden" src="" alt="Slide UrbanWatch Operações" />
-    </main>
 
-    <div class="thumbs" id="thumbs"></div>
+      <section class="screen hidden" id="endScreen">
+        <h1>FIM DA APRESENTAÇÃO</h1>
+        <h2>UrbanWatch Operações™</h2>
+        <p>
+          Obrigado pelo seu tempo. Esta apresentação é um protótipo conceitual
+          para validação operacional.
+        </p>
+        <p>
+          Próximo passo: testar o fluxo em ambiente real com NFC, registro de visita,
+          evidências e supervisão.
+        </p>
+
+        <button class="primary" onclick="goHome()">🏠 Voltar ao Início</button>
+        <button onclick="goToSlide(1)">📑 Revisar Índice</button>
+        <button onclick="startPresentation()">↻ Recomeçar</button>
+      </section>
+    </main>
 
     <div class="controls">
       <button onclick="prevSlide()">◀ Anterior</button>
-
       <select id="slideSelect" onchange="goToSlide(this.value)"></select>
-
       <button onclick="nextSlide()">Próximo ▶</button>
       <button onclick="toggleFullscreen()">⛶ Tela cheia</button>
     </div>
 
-    <footer class="note">
-      Powered by UrbanWatch.app
-    </footer>
+    <footer class="note">Powered by UrbanWatch.app</footer>
   </div>
 
   <script>
@@ -266,68 +274,75 @@
     ];
 
     let current = 0;
-    let started = false;
+    let mode = "home";
 
-    const startScreen = document.getElementById("startScreen");
+    const homeScreen = document.getElementById("homeScreen");
+    const endScreen = document.getElementById("endScreen");
     const slideImage = document.getElementById("slideImage");
     const counter = document.getElementById("counter");
     const slideSelect = document.getElementById("slideSelect");
-    const thumbs = document.getElementById("thumbs");
 
-    function buildNavigation() {
+    function buildSelect() {
       slides.forEach((slide, index) => {
         const option = document.createElement("option");
         option.value = index;
         option.textContent = slide.title;
         slideSelect.appendChild(option);
-
-        const img = document.createElement("img");
-        img.src = slide.file;
-        img.alt = slide.title;
-        img.className = "thumb";
-        img.onclick = () => goToSlide(index);
-        thumbs.appendChild(img);
       });
+    }
+
+    function hideAll() {
+      homeScreen.classList.add("hidden");
+      endScreen.classList.add("hidden");
+      slideImage.classList.add("hidden");
+    }
+
+    function goHome() {
+      mode = "home";
+      hideAll();
+      homeScreen.classList.remove("hidden");
+      counter.textContent = "Apresentação";
+    }
+
+    function goEnd() {
+      mode = "end";
+      hideAll();
+      endScreen.classList.remove("hidden");
+      counter.textContent = "Fim";
     }
 
     function startPresentation() {
-      started = true;
-      startScreen.classList.add("hidden");
-      slideImage.classList.remove("hidden");
-      showSlide(0);
+      goToSlide(0);
     }
 
     function showSlide(index) {
+      mode = "slide";
+      hideAll();
+
       current = Number(index);
-
       if (current < 0) current = slides.length - 1;
-      if (current >= slides.length) current = 0;
+      if (current >= slides.length) return goEnd();
 
-      const slide = slides[current];
+      slideImage.src = slides[current].file;
+      slideImage.classList.remove("hidden");
 
-      slideImage.src = slide.file;
-      counter.textContent = `${current + 1} / ${slides.length} — ${slide.title}`;
+      counter.textContent = `${current + 1} / ${slides.length} — ${slides[current].title}`;
       slideSelect.value = current;
-
-      document.querySelectorAll(".thumb").forEach((thumb, i) => {
-        thumb.classList.toggle("active", i === current);
-      });
     }
 
     function goToSlide(index) {
-      if (!started) {
-        startPresentation();
-      }
       showSlide(index);
     }
 
     function nextSlide() {
-      if (!started) return startPresentation();
+      if (mode === "home") return startPresentation();
+      if (mode === "end") return goHome();
       showSlide(current + 1);
     }
 
     function prevSlide() {
-      if (!started) return startPresentation();
+      if (mode === "home") return startPresentation();
+      if (mode === "end") return showSlide(slides.length - 1);
       showSlide(current - 1);
     }
 
@@ -342,8 +357,9 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") nextSlide();
       if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "Home") goHome();
+      if (e.key === "End") goEnd();
       if (e.key === "f" || e.key === "F") toggleFullscreen();
-      if (e.key === "Escape" && document.fullscreenElement) document.exitFullscreen();
     });
 
     let touchStartX = 0;
@@ -353,16 +369,14 @@
     });
 
     document.addEventListener("touchend", (e) => {
-      const touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-
+      const diff = touchStartX - e.changedTouches[0].screenX;
       if (Math.abs(diff) > 60) {
-        if (diff > 0) nextSlide();
-        else prevSlide();
+        diff > 0 ? nextSlide() : prevSlide();
       }
     });
 
-    buildNavigation();
+    buildSelect();
+    goHome();
   </script>
 </body>
   </html>
