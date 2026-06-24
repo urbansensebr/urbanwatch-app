@@ -64,7 +64,7 @@
       align-items: center;
       justify-content: center;
       padding: 12px;
-      overflow: hidden;
+      overflow: auto;
     }
 
     .screen {
@@ -167,13 +167,25 @@
     }
 
     @media (max-width: 760px) {
+      body { overflow: auto; }
+
       header { height: 58px; padding: 10px; }
 
       .brand { font-size: 12px; }
 
       .counter { display: none; }
 
-      .slide-img { max-height: calc(100vh - 132px); }
+      main {
+        align-items: flex-start;
+        padding-top: 18px;
+      }
+
+      .slide-img {
+        max-width: none;
+        width: 100%;
+        height: auto;
+        max-height: none;
+      }
 
       button, select {
         padding: 10px;
@@ -182,6 +194,8 @@
 
       .controls {
         gap: 5px;
+        position: sticky;
+        bottom: 0;
       }
 
       .top-actions button:nth-child(2) {
@@ -328,6 +342,8 @@
 
       counter.textContent = `${current + 1} / ${slides.length} — ${slides[current].title}`;
       slideSelect.value = current;
+
+      document.querySelector("main").scrollTop = 0;
     }
 
     function goToSlide(index) {
@@ -369,7 +385,10 @@
     });
 
     document.addEventListener("touchend", (e) => {
+      if (window.innerWidth <= 900) return;
+
       const diff = touchStartX - e.changedTouches[0].screenX;
+
       if (Math.abs(diff) > 60) {
         diff > 0 ? nextSlide() : prevSlide();
       }
@@ -379,4 +398,4 @@
     goHome();
   </script>
 </body>
-  </html>
+        </html>
