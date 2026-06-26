@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Sala de Projeto 001 | UrbanWatch Operações™</title>
+
+  <style>
+    :root {
+      --bg:#050505;
+      --gold:#d4af37;
+      --gold2:#b8860b;
+      --white:#fff;
+      --muted:#aaa;
+      --border:rgba(212,175,55,.35);
+      --panel:rgba(17,17,17,.88);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      background:radial-gradient(circle at top,#1a1a1a 0%,#050505 65%);
+      color:var(--white);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .box {
+      width:min(760px,100%);
+      border:1px solid var(--border);
+      border-radius:20px;
+      background:var(--panel);
+      padding:32px;
+      text-align:center;
+      box-shadow:0 0 36px rgba(212,175,55,.12);
+    }
+
+    .brand {
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    h1 {
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(34px,7vw,62px);
+      line-height:1;
+    }
+
+    h2 {
+      margin:14px 0 8px;
+      font-weight:normal;
+      color:var(--white);
+    }
+
+    p {
+      color:var(--muted);
+      line-height:1.6;
+      margin:16px auto;
+      max-width:620px;
+    }
+
+    input {
+      width:100%;
+      max-width:360px;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid rgba(212,175,55,.35);
+      background:#070707;
+      color:var(--white);
+      font-size:16px;
+      text-align:center;
+      outline:none;
+      margin-top:12px;
+    }
+
+    input:focus {
+      border-color:var(--gold);
+    }
+
+    button, a.button {
+      display:inline-block;
+      border:none;
+      text-decoration:none;
+      border-radius:12px;
+      padding:14px 18px;
+      margin-top:14px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      color:#000;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+    }
+
+    button:hover, a.button:hover {
+      filter:brightness(1.08);
+    }
+
+    .error {
+      display:none;
+      color:#ffb3b3;
+      margin-top:12px;
+      font-size:14px;
+    }
+
+    .hidden { display:none; }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:14px;
+      margin-top:28px;
+      text-align:left;
+    }
+
+    .card {
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(0,0,0,.35);
+    }
+
+    .card h3 {
+      color:var(--gold);
+      margin:0 0 10px;
+      font-size:20px;
+    }
+
+    .card p {
+      margin:0 0 10px;
+      font-size:14px;
+    }
+
+    .card a {
+      width:100%;
+      text-align:center;
+    }
+
+    .conf {
+      margin-top:28px;
+      padding:18px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      background:rgba(0,0,0,.35);
+    }
+
+    footer {
+      margin-top:24px;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+
+  <section class="box" id="loginBox">
+    <div class="brand">URBANWATCH.APP</div>
+
+    <h1>UrbanWatch Operações™</h1>
+    <h2>Sala de Projeto 001</h2>
+
+    <p>
+      Esta sala reúne os materiais institucionais para avaliação da solução
+      UrbanWatch Operações™.
+    </p>
+
+    <p>Digite a senha para acessar.</p>
+
+    <input id="passwordInput" type="password" placeholder="Senha de acesso" />
+
+    <br>
+
+    <button onclick="checkPassword()">Entrar</button>
+
+    <div class="error" id="errorMsg">
+      Senha incorreta. Verifique e tente novamente.
+    </div>
+
+    <footer>
+      Powered by UrbanWatch.app
+    </footer>
+  </section>
+
+  <section class="box hidden" id="projectBox">
+    <div class="brand">URBANWATCH.APP</div>
+
+    <h1>Sala de Projeto</h1>
+    <h2>Projeto Piloto 001</h2>
+
+    <p>
+      Bem-vindo. Esta área concentra os materiais principais para análise,
+      diagnóstico e próximos passos da solução UrbanWatch Operações™.
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>📽️ Apresentação</h3>
+        <p>Conheça a proposta institucional UrbanWatch Operações™.</p>
+        <a class="button" href="/operacoes/apresentacao/">Acessar</a>
+      </div>
+
+      <div class="card">
+        <h3>📋 Diagnóstico</h3>
+        <p>Preencha o diagnóstico para mapear a operação e suas necessidades.</p>
+        <a class="button" href="/operacoes/diagnostico/">Responder</a>
+      </div>
+
+      <div class="card">
+        <h3>📞 Contato</h3>
+        <p>Fale com a UrbanWatch para dúvidas, alinhamentos ou próximos passos.</p>
+        <a class="button" href="https://wa.me/5585999999999" target="_blank">WhatsApp</a>
+      </div>
+
+    </div>
+
+    <div class="conf">
+      Esta Sala de Projeto possui caráter institucional e demonstrativo.
+      As informações disponibilizadas destinam-se exclusivamente ao processo
+      de avaliação da solução UrbanWatch Operações™.
+      <br><br>
+      A UrbanWatch não divulga nomes, marcas ou operações de clientes,
+      parceiros ou potenciais clientes sem autorização expressa.
+    </div>
+
+    <footer>
+      Powered by UrbanWatch.app<br>
+      Inteligência para quem não improvisa.
+    </footer>
+  </section>
+
+</main>
+
+<script>
+  const PASSWORD = "OPERACOES001";
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value.trim();
+    const error = document.getElementById("errorMsg");
+
+    if (input === PASSWORD) {
+      document.getElementById("loginBox").classList.add("hidden");
+      document.getElementById("projectBox").classList.remove("hidden");
+      error.style.display = "none";
+    } else {
+      error.style.display = "block";
+    }
+  }
+
+  document.getElementById("passwordInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      checkPassword();
+    }
+  });
+</script>
+
+</body>
+</html>
