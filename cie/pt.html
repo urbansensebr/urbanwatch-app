@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIE | Consultor de Inovação Estratégica</title>
 
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --graphite: #1A1A1A;
+      --gold: #D4AF37;
+      --champagne: #F1E5AC;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--champagne);
+      text-transform: uppercase;
+    }
+
+    .lang-button {
+      color: var(--black);
+      background: var(--gold);
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 22px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 38%),
+        var(--black);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .tag {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--champagne);
+      margin-bottom: 32px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #ddd;
+      font-size: 1.05rem;
+    }
+
+    section {
+      padding: 70px 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: var(--graphite);
+      border: 1px solid rgba(212,175,55,0.22);
+      padding: 26px;
+      border-radius: 18px;
+    }
+
+    .card h3 {
+      color: var(--champagne);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .quote {
+      font-size: clamp(1.4rem, 4vw, 2.5rem);
+      color: var(--champagne);
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.25;
+    }
+
+    .signature {
+      margin-top: 24px;
+      color: var(--gold);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 36px 22px;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">UrbanWatch.app</div>
+    <a class="lang-button" href="./index.html">EN</a>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="tag">CIE · Consultor de Inovação Estratégica</div>
+        <h1>Enxergar oportunidades antes que elas fiquem óbvias.</h1>
+        <p class="subtitle">
+          CIE significa Consultor de Inovação Estratégica.
+        </p>
+        <p class="hero-text">
+          Um papel profissional criado para observar empresas, pessoas e operações
+          com visão estratégica — conectando ideias, tecnologia, experiência e
+          oportunidades reais de mercado.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>O que faz um CIE</h2>
+      <p>
+        Um Consultor de Inovação Estratégica não chega vendendo respostas prontas.
+        Primeiro, ele escuta. Observa o contexto, entende a operação, identifica
+        gargalos silenciosos e descobre possibilidades que muitas vezes estão
+        escondidas dentro da rotina.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Visão de Negócio</h3>
+          <p>Lê o cenário, as pessoas, o mercado e o potencial escondido por trás da operação.</p>
+        </div>
+
+        <div class="card">
+          <h3>Perguntas Estratégicas</h3>
+          <p>Ajuda empresas a fazerem perguntas melhores antes de gastarem dinheiro com soluções aleatórias.</p>
+        </div>
+
+        <div class="card">
+          <h3>Inovação Simples</h3>
+          <p>Inovar nem sempre é caro. Às vezes, um pequeno ajuste abre um grande portal.</p>
+        </div>
+
+        <div class="card">
+          <h3>Desenho de Oportunidades</h3>
+          <p>Transforma ideias soltas em caminhos práticos, serviços, experiências e modelos de receita.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Onde a inovação pode aparecer</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Experiência do Cliente</h3>
+          <p>Jornadas melhores, atendimento mais cuidadoso e mais confiança na relação.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tecnologia</h3>
+          <p>Portais, cartões NFC, ferramentas digitais, automações e interfaces inteligentes.</p>
+        </div>
+
+        <div class="card">
+          <h3>Comunicação</h3>
+          <p>Posicionamento claro, narrativa mais forte e apresentação mais profissional.</p>
+        </div>
+
+        <div class="card">
+          <h3>Modelos de Receita</h3>
+          <p>Novas ofertas, serviços recorrentes, parcerias e pacotes estratégicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>O Método UrbanWatch</h2>
+      <p>
+        O método UrbanWatch começa com conversa real. Sem ruído, sem fórmula genérica.
+        O objetivo é entender o momento, identificar o que já existe e conectar
+        pontos invisíveis até que um novo caminho se torne visível.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Escutar</h3>
+          <p>Entender a pessoa, a empresa e a dor real por trás da demanda.</p>
+        </div>
+
+        <div class="card">
+          <h3>Observar</h3>
+          <p>Analisar processos, experiência do cliente, comunicação e oportunidades perdidas.</p>
+        </div>
+
+        <div class="card">
+          <h3>Conectar</h3>
+          <p>Unir ideias, pessoas, ferramentas e possibilidades que antes estavam separadas.</p>
+        </div>
+
+        <div class="card">
+          <h3>Abrir Portais</h3>
+          <p>Criar pontos práticos de acesso a novo valor, novos clientes e novos movimentos estratégicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="quote">
+        “Não vendo apenas ideias. Eu abro portais de oportunidade.”
+      </p>
+      <p class="signature">
+        CIE · Consultor de Inovação Estratégica
+      </p>
+
+      <div class="cta">
+        <a href="https://urbanwatch.app">Powered by UrbanWatch.app</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    UrbanWatch.app · Inovação Estratégica · Luxo Silencioso · Fortaleza, Brasil
+  </footer>
+
+</body>
+</html>
