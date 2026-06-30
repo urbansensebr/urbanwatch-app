@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIE | Strategic Innovation Consultant</title>
 
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --graphite: #1A1A1A;
+      --gold: #D4AF37;
+      --champagne: #F1E5AC;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--champagne);
+      text-transform: uppercase;
+    }
+
+    .pt-button {
+      color: var(--black);
+      background: var(--gold);
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 22px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 38%),
+        var(--black);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .tag {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--champagne);
+      margin-bottom: 32px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #ddd;
+      font-size: 1.05rem;
+    }
+
+    section {
+      padding: 70px 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: var(--graphite);
+      border: 1px solid rgba(212,175,55,0.22);
+      padding: 26px;
+      border-radius: 18px;
+    }
+
+    .card h3 {
+      color: var(--champagne);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    .quote {
+      font-size: clamp(1.4rem, 4vw, 2.5rem);
+      color: var(--champagne);
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.25;
+    }
+
+    .signature {
+      margin-top: 24px;
+      color: var(--gold);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      padding: 36px 22px;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">UrbanWatch.app</div>
+    <a class="pt-button" href="./pt.html">PT-BR</a>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="tag">CIE · Strategic Innovation Consultant</div>
+        <h1>Seeing opportunities before they become obvious.</h1>
+        <p class="subtitle">
+          CIE means Strategic Innovation Consultant.
+        </p>
+        <p class="hero-text">
+          A professional role designed to observe businesses, people and operations
+          with strategic eyes — connecting ideas, technology, experience and real-world
+          opportunities.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What a CIE does</h2>
+      <p>
+        A Strategic Innovation Consultant does not arrive selling ready-made answers.
+        First, he listens. He observes the context, understands the operation, identifies
+        silent bottlenecks and discovers possibilities that are often hidden inside the
+        daily routine.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Business Vision</h3>
+          <p>Reads the scenario, the people, the market and the hidden potential behind the operation.</p>
+        </div>
+
+        <div class="card">
+          <h3>Strategic Questions</h3>
+          <p>Helps companies ask better questions before spending money on random solutions.</p>
+        </div>
+
+        <div class="card">
+          <h3>Simple Innovation</h3>
+          <p>Innovation is not always expensive. Sometimes a small adjustment opens a big portal.</p>
+        </div>
+
+        <div class="card">
+          <h3>Opportunity Design</h3>
+          <p>Transforms loose ideas into practical paths, services, experiences and revenue models.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Where innovation can appear</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Customer Experience</h3>
+          <p>Better journeys, better attention, better trust.</p>
+        </div>
+
+        <div class="card">
+          <h3>Technology</h3>
+          <p>Portals, NFC cards, digital tools, automation and intelligent interfaces.</p>
+        </div>
+
+        <div class="card">
+          <h3>Communication</h3>
+          <p>Clear positioning, stronger narrative and more professional presentation.</p>
+        </div>
+
+        <div class="card">
+          <h3>Revenue Models</h3>
+          <p>New offers, recurring services, partnerships and strategic packages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The UrbanWatch Method</h2>
+      <p>
+        The UrbanWatch method starts with real conversation. No noise, no generic formula.
+        The goal is to understand the moment, identify what already exists, and connect
+        invisible dots until a new path becomes visible.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Listen</h3>
+          <p>Understand the person, the company and the real pain behind the request.</p>
+        </div>
+
+        <div class="card">
+          <h3>Observe</h3>
+          <p>Look at processes, customer experience, communication and missed opportunities.</p>
+        </div>
+
+        <div class="card">
+          <h3>Connect</h3>
+          <p>Bring together ideas, people, tools and possibilities.</p>
+        </div>
+
+        <div class="card">
+          <h3>Open Portals</h3>
+          <p>Create practical access points to new value, new clients and new strategic moves.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="quote">
+        “I do not just sell ideas. I open portals of opportunity.”
+      </p>
+      <p class="signature">
+        CIE · Strategic Innovation Consultant
+      </p>
+
+      <div class="cta">
+        <a href="https://urbanwatch.app">Powered by UrbanWatch.app</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    UrbanWatch.app · Strategic Innovation · Silent Luxury · Fortaleza, Brazil
+  </footer>
+
+</body>
+  </html>
