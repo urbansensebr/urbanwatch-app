@@ -42,14 +42,34 @@
       text-transform: uppercase;
     }
 
-    .pt-button {
-      color: var(--black);
-      background: var(--gold);
-      padding: 10px 16px;
-      border-radius: 999px;
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      font-size: .88rem;
+    }
+
+    .languages a {
+      color: var(--champagne);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 0.85rem;
+      transition: .3s;
+    }
+
+    .languages a:hover {
+      color: var(--gold);
+    }
+
+    .languages strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .coming {
+      color: #777;
+      cursor: default;
+      font-size: .85rem;
     }
 
     .hero {
@@ -89,7 +109,7 @@
     }
 
     .hero-text {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       color: #ddd;
       font-size: 1.05rem;
@@ -143,14 +163,6 @@
       letter-spacing: 1px;
     }
 
-    footer {
-      padding: 36px 22px;
-      text-align: center;
-      color: #aaa;
-      border-top: 1px solid rgba(212, 175, 55, 0.25);
-      font-size: 0.9rem;
-    }
-
     .cta {
       text-align: center;
       margin-top: 36px;
@@ -165,6 +177,25 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    footer {
+      padding: 36px 22px;
+      text-align: center;
+      color: #aaa;
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      font-size: 0.9rem;
+    }
+
+    @media(max-width:900px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .languages {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -172,7 +203,16 @@
 
   <header>
     <div class="brand">UrbanWatch.app</div>
-    <a class="pt-button" href="./pt.html">PT-BR</a>
+
+    <nav class="languages">
+      <strong>🇺🇸 English</strong>
+      <a href="./pt.html">🇧🇷 Português</a>
+      <a href="./ch.html">🇨🇳 中文</a>
+      <span class="coming">🇩🇪 Deutsch</span>
+      <span class="coming">🇳🇴 Norsk</span>
+      <span class="coming">🇪🇸 Español</span>
+      <span class="coming">🇫🇷 Français</span>
+    </nav>
   </header>
 
   <main>
@@ -180,20 +220,25 @@
     <section class="hero">
       <div class="hero-content">
         <div class="tag">CIE · Strategic Innovation Consultant</div>
+
         <h1>Seeing opportunities before they become obvious.</h1>
+
         <p class="subtitle">
           CIE means Strategic Innovation Consultant.
         </p>
+
         <p class="hero-text">
-          A professional role designed to observe businesses, people and operations
-          with strategic eyes — connecting ideas, technology, experience and real-world
-          opportunities.
+          A professional role dedicated to observing businesses, people and markets
+          through strategic thinking. By connecting ideas, technology, experience and
+          genuine relationships, a CIE helps transform hidden opportunities into
+          practical innovation.
         </p>
       </div>
     </section>
 
     <section>
       <h2>What a CIE does</h2>
+
       <p>
         A Strategic Innovation Consultant does not arrive selling ready-made answers.
         First, he listens. He observes the context, understands the operation, identifies
@@ -252,6 +297,7 @@
 
     <section>
       <h2>The UrbanWatch Method</h2>
+
       <p>
         The UrbanWatch method starts with real conversation. No noise, no generic formula.
         The goal is to understand the moment, identify what already exists, and connect
@@ -282,9 +328,28 @@
     </section>
 
     <section>
-      <p class="quote">
-        “I do not just sell ideas. I open portals of opportunity.”
+      <h2>Global Mindset</h2>
+
+      <p>
+        Innovation has no borders. The CIE concept was born in Brazil with an
+        international mindset, prepared to connect entrepreneurs, professionals and
+        organizations across different cultures and languages.
       </p>
+
+      <p style="margin-top: 18px;">
+        Every genuine connection is a potential portal to new opportunities.
+      </p>
+    </section>
+
+    <section>
+      <p class="quote">
+        “Innovation begins where someone learns to see what everyone else walks past.”
+      </p>
+
+      <p class="signature">
+        I open portals of opportunity.
+      </p>
+
       <p class="signature">
         CIE · Strategic Innovation Consultant
       </p>
@@ -297,8 +362,10 @@
   </main>
 
   <footer>
-    UrbanWatch.app · Strategic Innovation · Silent Luxury · Fortaleza, Brazil
+    UrbanWatch.app · CIE · Strategic Innovation Consultant<br />
+    Connecting Ideas · People · Technology · Opportunities<br />
+    Fortaleza · Ceará · Brazil
   </footer>
 
 </body>
-  </html>
+</html>
