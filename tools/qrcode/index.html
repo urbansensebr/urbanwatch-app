@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador QR Code | UrbanWatch</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card {
+      max-width: 520px;
+      margin: auto;
+      background: #111111;
+      border: 1px solid #D4AF37;
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    h1 {
+      color: #D4AF37;
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #F1E5AC;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #D4AF37;
+      background: #0A0A0A;
+      color: white;
+      font-size: 16px;
+      margin-top: 12px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #D4AF37;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .secondary {
+      background: transparent;
+      color: #D4AF37;
+      border: 1px solid #D4AF37;
+    }
+
+    canvas {
+      background: white;
+      padding: 14px;
+      border-radius: 16px;
+      margin-top: 22px;
+      max-width: 90%;
+    }
+
+    .url {
+      margin-top: 18px;
+      word-break: break-all;
+      color: #FFFFFF;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Gerador QR Code</h1>
+    <p>UrbanWatch Tools</p>
+
+    <input id="slug" placeholder="Ex: mairton, rapidin, gd-lanches" />
+
+    <button onclick="gerarQR()">Gerar QR Code</button>
+    <button class="secondary" onclick="baixarQR()">Baixar PNG</button>
+
+    <canvas id="qr"></canvas>
+
+    <div class="url" id="urlFinal"></div>
+
+    <div class="footer">
+      Inteligência para quem não improvisa.
+    </div>
+  </div>
+
+  <script>
+    const baseUrl = "https://urbanwatch.app/portal/";
+
+    const qr = new QRious({
+      element: document.getElementById("qr"),
+      value: baseUrl,
+      size: 800,
+      level: "H",
+      background: "white",
+      foreground: "black"
+    });
+
+    function limparSlug(texto) {
+      return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function gerarQR() {
+      const slugOriginal = document.getElementById("slug").value.trim();
+      const slug = limparSlug(slugOriginal);
+
+      const urlFinal = slug ? baseUrl + slug + "/" : baseUrl;
+
+      qr.value = urlFinal;
+      document.getElementById("urlFinal").innerText = urlFinal;
+    }
+
+    function baixarQR() {
+      gerarQR();
+
+      const link = document.createElement("a");
+      link.download = "qr-urbanwatch.png";
+      link.href = document.getElementById("qr").toDataURL("image/png");
+      link.click();
+    }
+
+    gerarQR();
+  </script>
+
+</body>
+</html>
