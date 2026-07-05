@@ -1,1 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>UrbanWatch Tools | NFC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Montserrat,sans-serif;
+}
+
+body{
+
+background:#0A0A0A;
+color:white;
+
+padding:40px;
+
+}
+
+.container{
+
+max-width:700px;
+margin:auto;
+
+}
+
+.card{
+
+background:#111;
+
+border-radius:22px;
+
+border:1px solid #D4AF37;
+
+padding:30px;
+
+}
+
+h1{
+
+color:#D4AF37;
+
+margin-bottom:10px;
+
+}
+
+p{
+
+color:#F1E5AC;
+
+margin-bottom:25px;
+
+}
+
+input{
+
+width:100%;
+
+padding:16px;
+
+margin-bottom:18px;
+
+background:#1A1A1A;
+
+border:1px solid #444;
+
+border-radius:12px;
+
+color:white;
+
+font-size:16px;
+
+}
+
+button{
+
+width:100%;
+
+padding:16px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:12px;
+
+background:#D4AF37;
+
+color:black;
+
+font-weight:bold;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+.output{
+
+margin-top:30px;
+
+padding:20px;
+
+background:#000;
+
+border-radius:14px;
+
+word-break:break-all;
+
+border:1px solid #333;
+
+}
+
+.url{
+
+font-size:18px;
+
+color:#F1E5AC;
+
+margin-top:10px;
+
+}
+
+.copy{
+
+background:#222;
+
+color:#D4AF37;
+
+border:1px solid #D4AF37;
+
+}
+
+.footer{
+
+margin-top:25px;
+
+text-align:center;
+
+font-size:13px;
+
+color:#888;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Programador NFC</h1>
+
+<p>
+
+Digite apenas o nome do portal.
+
+</p>
+
+<input
+
+id="slug"
+
+placeholder="Ex: mairton"
+
+>
+
+<button onclick="gerar()">
+
+Gerar Link NFC
+
+</button>
+
+<div class="output">
+
+<div>
+
+Link que será gravado no cartão NFC
+
+</div>
+
+<div
+
+id="resultado"
+
+class="url">
+
+https://urbanwatch.app/portal/
+
+</div>
+
+</div>
+
+<button
+
+class="copy"
+
+onclick="copiar()">
+
+Copiar Link
+
+</button>
+
+<div class="footer">
+
+UrbanWatch Tools
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const BASE="https://urbanwatch.app/portal/";
+
+function limpar(texto){
+
+return texto
+
+.toLowerCase()
+
+.normalize("NFD")
+
+.replace(/[\u0300-\u036f]/g,"")
+
+.replace(/[^a-z0-9]+/g,"-")
+
+.replace(/^-+|-+$/g,"");
+
+}
+
+function gerar(){
+
+let slug=limpar(document.getElementById("slug").value);
+
+let url=BASE;
+
+if(slug!=""){
+
+url+=slug+"/";
+
+}
+
+document.getElementById("resultado").innerHTML=url;
+
+}
+
+function copiar(){
+
+navigator.clipboard.writeText(
+
+document.getElementById("resultado").innerText
+
+);
+
+alert("Link copiado.");
+
+}
+
+gerar();
+
+</script>
+
+</body>
+
+</html>
