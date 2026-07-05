@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Reposição Inteligente | UrbanWatch Operações</title>
+
+  <style>
+    :root {
+      --black: #050505;
+      --dark: #0d0d0d;
+      --card: #121212;
+      --gold: #d4af37;
+      --gold-soft: #f1d77a;
+      --text: #ffffff;
+      --muted: #b8b8b8;
+      --border: rgba(212, 175, 55, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--text);
+    }
+
+    header {
+      text-align: center;
+      padding: 58px 22px 52px;
+      background:
+        radial-gradient(circle at top, rgba(212,175,55,0.12), transparent 38%),
+        linear-gradient(180deg, #111, #050505);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      color: var(--gold);
+      font-size: clamp(42px, 10vw, 76px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    .subtitle {
+      font-size: clamp(24px, 5vw, 36px);
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: clamp(19px, 4.5vw, 27px);
+      line-height: 1.55;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 16px 26px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      background: linear-gradient(90deg, #d4af37, #f1d77a);
+      color: #111;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--gold-soft);
+      margin-top: 12px;
+    }
+
+    section {
+      padding: 48px 20px;
+      border-bottom: 1px solid rgba(212,175,55,0.18);
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.15;
+      margin: 0 0 24px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: clamp(18px, 4vw, 23px);
+      line-height: 1.55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #121212, #080808);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px 22px;
+      box-shadow: 0 0 30px rgba(212,175,55,0.05);
+    }
+
+    .card h3 {
+      color: var(--gold-soft);
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    .card p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .num {
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 700;
+      min-width: 42px;
+    }
+
+    .step strong {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(212,175,55,0.12), transparent 45%),
+        #050505;
+    }
+
+    .note {
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 36px 20px;
+      font-size: 16px;
+    }
+
+    @media (min-width: 760px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .btn.secondary {
+        margin-left: 12px;
+        margin-top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">URBANWATCH.APP</div>
+
+    <h1>Reposição Inteligente</h1>
+
+    <div class="subtitle">UrbanWatch Operações™</div>
+
+    <p class="intro">
+      Transforme a rotina de repositores, promotores e supervisores em uma
+      operação organizada, rastreável e orientada por evidências.
+    </p>
+
+    <a href="/operacoes/distribuidora/reposicao/diagnostico/" class="btn">
+      Realizar Diagnóstico Operacional
+    </a>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>A operação acontece nas lojas.</h2>
+
+      <p>
+        Mas a gestão normalmente acontece longe delas. Entre a execução no ponto
+        de venda e a tomada de decisão surgem ruídos, atrasos, informações
+        desencontradas e perda de visibilidade.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Falta de evidências</h3>
+          <p>Atividades realizadas sem registro claro, histórico ou comprovação organizada.</p>
+        </div>
+
+        <div class="card">
+          <h3>Supervisão difícil</h3>
+          <p>Gestores dependem de mensagens soltas, fotos avulsas e atualizações manuais.</p>
+        </div>
+
+        <div class="card">
+          <h3>Retrabalho operacional</h3>
+          <p>Falhas simples se repetem por ausência de fluxo, padrão e acompanhamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Uma camada inteligente entre campo e gestão.</h2>
+
+      <p>
+        A UrbanWatch organiza a presença da equipe em campo, registra evidências
+        operacionais e transforma a rotina em dados úteis para acompanhamento,
+        supervisão e melhoria contínua.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>QR Codes</h3>
+          <p>Identificação rápida de lojas, setores, pontos de reposição ou rotas.</p>
+        </div>
+
+        <div class="card">
+          <h3>NFC</h3>
+          <p>Interações instantâneas para presença, check-in, tarefas ou validações.</p>
+        </div>
+
+        <div class="card">
+          <h3>Checklists</h3>
+          <p>Execução padronizada, simples de preencher e fácil de acompanhar.</p>
+        </div>
+
+        <div class="card">
+          <h3>Fotos e evidências</h3>
+          <p>Registros visuais organizados por loja, equipe, data e atividade.</p>
+        </div>
+
+        <div class="card">
+          <h3>Histórico operacional</h3>
+          <p>Informações deixam de se perder em conversas e passam a compor histórico.</p>
+        </div>
+
+        <div class="card">
+          <h3>Visão gerencial</h3>
+          <p>Base para dashboards, indicadores e decisões mais rápidas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Como começa</h2>
+
+      <p>
+        A apresentação personalizada não é genérica. Primeiro entendemos a sua
+        operação através de um diagnóstico inicial. A partir das respostas,
+        identificamos oportunidades e estruturamos uma proposta mais adequada.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <strong>Diagnóstico operacional</strong>
+            <span>A empresa informa dados básicos, rotina da equipe, principais falhas e nível atual de controle.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <strong>Análise UrbanWatch</strong>
+            <span>As informações são analisadas para identificar oportunidades de organização, presença e evidências.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <strong>Apresentação personalizada</strong>
+            <span>A UrbanWatch estrutura uma apresentação alinhada ao cenário real informado pela empresa.</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <strong>Projeto piloto</strong>
+            <span>Quando fizer sentido, iniciamos com uma implantação controlada para validar valor antes da expansão.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Para quem faz sentido</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Distribuidoras</h3>
+          <p>Equipes que atuam em múltiplas lojas, rotas ou pontos de venda.</p>
+        </div>
+
+        <div class="card">
+          <h3>Indústrias</h3>
+          <p>Marcas que precisam acompanhar execução, exposição e presença em campo.</p>
+        </div>
+
+        <div class="card">
+          <h3>Supervisores</h3>
+          <p>Gestores que precisam enxergar a operação sem depender apenas de mensagens soltas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Vamos conhecer sua operação?</h2>
+
+      <p>
+        O primeiro passo para uma apresentação personalizada é o preenchimento
+        do diagnóstico operacional.
+      </p>
+
+      <a href="/operacoes/distribuidora/reposicao/diagnostico/" class="btn">
+        Realizar Diagnóstico Operacional
+      </a>
+
+      <a href="/operacoes/" class="btn secondary">
+        UrbanWatch Operações
+      </a>
+
+      <p class="note">
+        As informações enviadas serão usadas apenas para compreender o cenário
+        operacional e avaliar possíveis caminhos de melhoria.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    UrbanWatch Operações™<br>
+    Reposição Inteligente<br>
+    Powered by UrbanWatch.app
+  </footer>
+
+</body>
+</html>
