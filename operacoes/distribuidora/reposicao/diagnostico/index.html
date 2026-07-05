@@ -1,1 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Operacional | UrbanWatch Operações™</title>
 
+  <style>
+    :root {
+      --bg:#050505;
+      --panel:#111;
+      --gold:#d4af37;
+      --gold2:#b8860b;
+      --white:#fff;
+      --muted:#aaa;
+      --border:rgba(212,175,55,.35);
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      background:radial-gradient(circle at top,#1a1a1a 0%,#050505 65%);
+      color:var(--white);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      padding:34px 20px;
+      text-align:center;
+      border-bottom:1px solid var(--border);
+      background:rgba(0,0,0,.75);
+    }
+
+    .brand {
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:2px;
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      margin:0;
+      color:var(--gold);
+      font-size:clamp(34px,7vw,68px);
+      line-height:1;
+    }
+
+    h2 {
+      margin:16px 0 0;
+      font-weight:normal;
+    }
+
+    .intro {
+      max-width:850px;
+      margin:22px auto 0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:17px;
+    }
+
+    main {
+      max-width:980px;
+      margin:0 auto;
+      padding:32px 18px 60px;
+    }
+
+    form {
+      display:grid;
+      gap:24px;
+    }
+
+    section {
+      background:rgba(17,17,17,.86);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 0 28px rgba(212,175,55,.08);
+    }
+
+    section h3 {
+      margin:0 0 18px;
+      color:var(--gold);
+      font-size:24px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    label {
+      display:block;
+      color:var(--white);
+      font-size:14px;
+      margin-bottom:7px;
+    }
+
+    input, select, textarea {
+      width:100%;
+      padding:13px;
+      border-radius:10px;
+      border:1px solid rgba(212,175,55,.25);
+      background:#070707;
+      color:var(--white);
+      font-size:15px;
+      outline:none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color:var(--gold);
+    }
+
+    textarea {
+      min-height:110px;
+      resize:vertical;
+      margin-bottom:14px;
+    }
+
+    .check-group {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
+    }
+
+    .check {
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:12px;
+      padding:12px;
+      background:rgba(0,0,0,.35);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:0;
+    }
+
+    .check input {
+      width:auto;
+      accent-color:var(--gold);
+    }
+
+    .lgpd {
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(0,0,0,.45);
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .lgpd label {
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      color:var(--muted);
+      margin:0;
+    }
+
+    .lgpd input {
+      width:auto;
+      margin-top:4px;
+      accent-color:var(--gold);
+    }
+
+    .confidencialidade {
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;
+      padding:18px;
+      background:rgba(0,0,0,.35);
+    }
+
+    .confidencialidade strong {
+      color:var(--gold);
+    }
+
+    button {
+      border:none;
+      border-radius:14px;
+      padding:16px 20px;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#000;
+    }
+
+    button:hover {
+      filter:brightness(1.08);
+    }
+
+    .success {
+      display:none;
+      text-align:center;
+      padding:28px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:rgba(0,0,0,.55);
+      margin-top:24px;
+    }
+
+    .success h3 {
+      color:var(--gold);
+      font-size:28px;
+    }
+
+    footer {
+      text-align:center;
+      color:var(--muted);
+      padding:34px 20px;
+      border-top:1px solid rgba(212,175,55,.2);
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">URBANWATCH.APP</div>
+  <h1>Diagnóstico Operacional</h1>
+  <h2>UrbanWatch Operações™</h2>
+  <p class="intro">
+    Entenda o nível de maturidade operacional da sua equipe e identifique oportunidades de melhoria através de presença inteligente, evidências operacionais e supervisão em tempo real.
+  </p>
+</header>
+
+<main>
+
+<form id="diagnosticoForm">
+
+  <section>
+    <h3>1. Dados da Empresa</h3>
+    <div class="grid">
+      <div>
+        <label>Nome da empresa</label>
+        <input name="empresa" required>
+      </div>
+      <div>
+        <label>Responsável</label>
+        <input name="responsavel" required>
+      </div>
+      <div>
+        <label>Cargo</label>
+        <input name="cargo">
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input type="email" name="email">
+      </div>
+      <div>
+        <label>WhatsApp</label>
+        <input name="whatsapp">
+      </div>
+      <div>
+        <label>Cidade / Região</label>
+        <input name="cidade">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>2. Estrutura Operacional</h3>
+    <div class="grid">
+      <div>
+        <label>Colaboradores em campo</label>
+        <select name="colaboradores">
+          <option>1 a 5</option>
+          <option>6 a 10</option>
+          <option>11 a 20</option>
+          <option>Mais de 20</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Supervisores</label>
+        <select name="supervisores">
+          <option>1</option>
+          <option>2 a 5</option>
+          <option>Mais de 5</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Pontos de atendimento</label>
+        <select name="pontos">
+          <option>Até 20</option>
+          <option>21 a 50</option>
+          <option>51 a 100</option>
+          <option>Mais de 100</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Orçamento anual aproximado da operação</label>
+        <select name="orcamento">
+          <option>Não informado</option>
+          <option>Até R$ 100 mil</option>
+          <option>R$ 100 mil a R$ 500 mil</option>
+          <option>R$ 500 mil a R$ 1 milhão</option>
+          <option>Acima de R$ 1 milhão</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Prioridade do projeto</label>
+        <select name="prioridade">
+          <option>Baixa</option>
+          <option>Média</option>
+          <option>Alta</option>
+          <option>Urgente</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <label>Área de atuação</label>
+    <div class="check-group">
+      <label class="check"><input type="checkbox" name="atuacao" value="Uma cidade"> Uma cidade</label>
+      <label class="check"><input type="checkbox" name="atuacao" value="Região Metropolitana"> Região Metropolitana</label>
+      <label class="check"><input type="checkbox" name="atuacao" value="Estado inteiro"> Estado inteiro</label>
+      <label class="check"><input type="checkbox" name="atuacao" value="Mais de um estado"> Mais de um estado</label>
+    </div>
+  </section>
+
+  <section>
+    <h3>3. Processo Atual</h3>
+
+    <label>Como as visitas são registradas atualmente?</label>
+    <div class="check-group">
+      <label class="check"><input type="checkbox" name="registro" value="WhatsApp"> WhatsApp</label>
+      <label class="check"><input type="checkbox" name="registro" value="Fotos"> Fotos</label>
+      <label class="check"><input type="checkbox" name="registro" value="Planilhas"> Planilhas</label>
+      <label class="check"><input type="checkbox" name="registro" value="Aplicativo"> Aplicativo</label>
+      <label class="check"><input type="checkbox" name="registro" value="Papel"> Papel</label>
+      <label class="check"><input type="checkbox" name="registro" value="Outro"> Outro</label>
+    </div>
+
+    <br>
+
+    <div class="grid">
+      <div>
+        <label>Sistema utilizado atualmente</label>
+        <select name="sistema_atual">
+          <option>Nenhum</option>
+          <option>WhatsApp</option>
+          <option>Planilhas</option>
+          <option>Sistema próprio</option>
+          <option>Aplicativo terceirizado</option>
+          <option>ERP</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Existe checklist operacional?</label>
+        <select name="checklist">
+          <option>Sim</option>
+          <option>Não</option>
+          <option>Parcialmente</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Existe comprovação fotográfica?</label>
+        <select name="foto">
+          <option>Sim</option>
+          <option>Não</option>
+          <option>Parcialmente</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Existe histórico centralizado?</label>
+        <select name="historico">
+          <option>Sim</option>
+          <option>Não</option>
+          <option>Parcialmente</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <label>Qual foi a última tentativa de resolver esse problema?</label>
+    <textarea name="tentativa_anterior"></textarea>
+  </section>
+
+  <section>
+    <h3>4. Supervisão</h3>
+
+    <div class="grid">
+      <div>
+        <label>O supervisor acompanha em tempo real?</label>
+        <select name="tempoReal">
+          <option>Sim</option>
+          <option>Não</option>
+          <option>Parcialmente</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <label>Informações mais importantes para um dashboard</label>
+    <div class="check-group">
+      <label class="check"><input type="checkbox" name="dashboard" value="Presença"> Presença</label>
+      <label class="check"><input type="checkbox" name="dashboard" value="Evidências"> Evidências</label>
+      <label class="check"><input type="checkbox" name="dashboard" value="Pendências"> Pendências</label>
+      <label class="check"><input type="checkbox" name="dashboard" value="Produtividade"> Produtividade</label>
+      <label class="check"><input type="checkbox" name="dashboard" value="Relatórios"> Relatórios</label>
+      <label class="check"><input type="checkbox" name="dashboard" value="Histórico"> Histórico</label>
+    </div>
+  </section>
+
+  <section>
+    <h3>5. Principais Dores</h3>
+
+    <label>O que mais gera retrabalho?</label>
+    <textarea name="retrabalho"></textarea>
+
+    <label>O que mais dificulta a supervisão?</label>
+    <textarea name="dificuldade"></textarea>
+
+    <label>Quais são os 3 maiores problemas atuais?</label>
+    <textarea name="problemas"></textarea>
+  </section>
+
+  <section>
+    <h3>6. Projeto Piloto</h3>
+
+    <div class="grid">
+      <div>
+        <label>Existe interesse em testar uma solução piloto?</label>
+        <select name="interesse">
+          <option>Sim</option>
+          <option>Talvez</option>
+          <option>Não</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Prazo ideal para teste</label>
+        <select name="prazo">
+          <option>30 dias</option>
+          <option>60 dias</option>
+          <option>90 dias</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+
+    <label>Comentários adicionais</label>
+    <textarea name="comentarios"></textarea>
+  </section>
+
+  <div class="lgpd">
+    <label>
+      <input type="checkbox" required>
+      Declaro estar ciente de que as informações fornecidas serão utilizadas pela UrbanWatch exclusivamente para diagnóstico operacional, contato comercial e elaboração de propostas relacionadas aos serviços UrbanWatch Operações™.
+    </label>
+  </div>
+
+  <div class="confidencialidade">
+    <strong>Política de Confidencialidade UrbanWatch</strong><br><br>
+    A UrbanWatch não divulga nomes, marcas, operações ou informações de clientes, parceiros ou potenciais clientes sem autorização expressa.
+  </div>
+
+  <button type="submit">Enviar Diagnóstico Operacional</button>
+
+</form>
+
+<div class="success" id="successMessage">
+  <h3>Diagnóstico recebido com sucesso.</h3>
+  <p>
+    As informações serão analisadas para identificação de oportunidades de melhoria operacional.
+  </p>
+  <p>
+    Caso faça sentido, entraremos em contato para aprofundar o diagnóstico ou estruturar um projeto piloto.
+  </p>
+  <p>
+    UrbanWatch Operações™<br>
+    Powered by UrbanWatch.app
+  </p>
+</div>
+
+</main>
+
+<footer>
+  UrbanWatch Operações™<br><br>
+  Inteligência para quem não improvisa.
+</footer>
+
+<script>
+  const form = document.getElementById("diagnosticoForm");
+  const success = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const dados = new FormData(form);
+    const resultado = {};
+
+    dados.forEach((valor, chave) => {
+      if (resultado[chave]) {
+        if (!Array.isArray(resultado[chave])) {
+          resultado[chave] = [resultado[chave]];
+        }
+        resultado[chave].push(valor);
+      } else {
+        resultado[chave] = valor;
+      }
+    });
+
+    console.log("Diagnóstico UrbanWatch:", resultado);
+
+    form.style.display = "none";
+    success.style.display = "block";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+          </html>
