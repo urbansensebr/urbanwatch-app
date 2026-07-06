@@ -29,14 +29,24 @@ body{
     position:absolute;
 
     left:63%;
-    top:78.5%;
+    top:78.4%;
 
-    width:28%;
-    height:5.5%;
+    width:31%;
+    height:7%;
+
+    transform:translate(-2%, -2%);
 
     display:block;
+    z-index:20;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    -webkit-tap-highlight-color:transparent;
 
     text-indent:-9999px;
+    overflow:hidden;
 }
 
 /* Área dos botões inferiores */
@@ -91,7 +101,9 @@ alt="Portal Premium UrbanWatch">
 <a
 class="whatsapp"
 href="https://wa.me/5585920089357?text=Ola%20UrbanWatch.%20Gostaria%20de%20saber%20mais%20sobre%20o%20Portal%20Premium."
-target="_blank">
+target="_blank"
+rel="noopener"
+aria-label="Falar com a UrbanWatch pelo WhatsApp">
 WhatsApp
 </a>
 
