@@ -1,158 +1,361 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gerador QR Code | UrbanWatch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+<title>UrbanWatch | Gerador QR Code</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #0A0A0A;
-      color: #FFFFFF;
-      font-family: Arial, sans-serif;
-      padding: 24px;
-      text-align: center;
-    }
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 
-    .card {
-      max-width: 520px;
-      margin: auto;
-      background: #111111;
-      border: 1px solid #D4AF37;
-      border-radius: 22px;
-      padding: 24px;
-    }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-    h1 {
-      color: #D4AF37;
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    padding: 24px;
+}
 
-    p {
-      color: #F1E5AC;
-      font-size: 14px;
-    }
+.container {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
 
-    input {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid #D4AF37;
-      background: #0A0A0A;
-      color: white;
-      font-size: 16px;
-      margin-top: 12px;
-    }
+.card {
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    border-radius: 24px;
+    padding: 26px;
+    background: #111111;
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.08);
+}
 
-    button {
-      width: 100%;
-      margin-top: 14px;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: #D4AF37;
-      color: #000;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.logo {
+    width: 86px;
+    display: block;
+    margin: 0 auto 18px;
+}
 
-    .secondary {
-      background: transparent;
-      color: #D4AF37;
-      border: 1px solid #D4AF37;
-    }
+h1 {
+    color: #D4AF37;
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 8px;
+}
 
-    canvas {
-      background: white;
-      padding: 14px;
-      border-radius: 16px;
-      margin-top: 22px;
-      max-width: 90%;
-    }
+.subtitle {
+    text-align: center;
+    color: #F1E5AC;
+    margin: 0 0 24px;
+    font-size: 15px;
+}
 
-    .url {
-      margin-top: 18px;
-      word-break: break-all;
-      color: #FFFFFF;
-      font-size: 13px;
-    }
+.mode-box {
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 18px;
+}
 
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #888;
-    }
-  </style>
+.mode-title {
+    color: #D4AF37;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: #D8D8D8;
+    margin: 12px 0 7px;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.7);
+    background: #0A0A0A;
+    color: #FFFFFF;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #888888;
+}
+
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    background: #D4AF37;
+    color: #0A0A0A;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: transparent;
+    color: #D4AF37;
+    border: 1px solid rgba(212, 175, 55, 0.75);
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+.hidden {
+    display: none;
+}
+
+.qr-area {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.qr-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+}
+
+.url-final {
+    margin-top: 18px;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.nfc-box {
+    margin-top: 16px;
+    padding: 14px;
+    background: #0A0A0A;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 14px;
+    color: #F1E5AC;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.note {
+    margin-top: 22px;
+    text-align: center;
+    color: #8F8F8F;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer {
+    margin-top: 22px;
+    text-align: center;
+    color: #777777;
+    font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>Gerador QR Code</h1>
-    <p>UrbanWatch Tools</p>
+<main class="container">
+    <section class="card">
 
-    <input id="slug" placeholder="Ex: mairton, rapidin, gd-lanches" />
+        <img src="/assets/brand/logo/logo.png" alt="UrbanWatch" class="logo">
 
-    <button onclick="gerarQR()">Gerar QR Code</button>
-    <button class="secondary" onclick="baixarQR()">Baixar PNG</button>
+        <h1>Gerador QR Code</h1>
+        <p class="subtitle">UrbanWatch Tools</p>
 
-    <canvas id="qr"></canvas>
+        <div class="mode-box">
+            <div class="mode-title">Escolha o modo</div>
 
-    <div class="url" id="urlFinal"></div>
+            <select id="modo" onchange="trocarModo()">
+                <option value="livre">Modo 1 — URL Livre</option>
+                <option value="urbanwatch">Modo 2 — UrbanWatch Operações</option>
+                <option value="nfc">Modo 3 — NFC UrbanWatch</option>
+                <option value="cliente">Modo 4 — Portal Cliente</option>
+            </select>
+        </div>
 
-    <div class="footer">
-      Inteligência para quem não improvisa.
-    </div>
-  </div>
+        <div id="box-livre" class="mode-box">
+            <div class="mode-title">Modo 1 — URL Livre</div>
+            <label>Cole o caminho completo</label>
+            <input id="urlLivre" type="text" placeholder="https://urbanwatch.app/operacoes/restaurante/cangaceiro/">
+        </div>
 
-  <script>
-    const baseUrl = "https://urbanwatch.app/portal/";
+        <div id="box-urbanwatch" class="mode-box hidden">
+            <div class="mode-title">Modo 2 — UrbanWatch Operações</div>
+            <label>Digite o caminho após /operacoes/</label>
+            <input id="slugOperacoes" type="text" placeholder="restaurante/cangaceiro">
+        </div>
 
-    const qr = new QRious({
-      element: document.getElementById("qr"),
-      value: baseUrl,
-      size: 800,
-      level: "H",
-      background: "white",
-      foreground: "black"
-    });
+        <div id="box-nfc" class="mode-box hidden">
+            <div class="mode-title">Modo 3 — NFC UrbanWatch</div>
+            <label>URL para gravar no cartão NFC</label>
+            <input id="urlNfc" type="text" placeholder="https://urbanwatch.app/portal/premium/cangaceiro/">
+        </div>
 
-    function limparSlug(texto) {
-      return texto
+        <div id="box-cliente" class="mode-box hidden">
+            <div class="mode-title">Modo 4 — Portal Cliente</div>
+
+            <label>Tipo de portal</label>
+            <select id="tipoPortal">
+                <option value="essencial">Essencial</option>
+                <option value="premium">Premium</option>
+            </select>
+
+            <label>Nome ou palavra do cliente</label>
+            <input id="nomeCliente" type="text" placeholder="cangaceiro">
+        </div>
+
+        <button onclick="gerarQRCode()">Gerar QR Code</button>
+        <button class="secondary" onclick="baixarPNG()">Baixar PNG</button>
+
+        <section id="resultado" class="qr-area hidden">
+            <div class="qr-card">
+                <canvas id="qrCanvas"></canvas>
+            </div>
+
+            <div id="urlFinal" class="url-final"></div>
+
+            <div id="nfcInfo" class="nfc-box hidden"></div>
+        </section>
+
+        <p class="note">
+            Inteligência para quem não improvisa.
+        </p>
+
+        <div class="footer">
+            UrbanWatch.app
+        </div>
+
+    </section>
+</main>
+
+<script>
+function trocarModo() {
+    const modo = document.getElementById("modo").value;
+
+    document.getElementById("box-livre").classList.add("hidden");
+    document.getElementById("box-urbanwatch").classList.add("hidden");
+    document.getElementById("box-nfc").classList.add("hidden");
+    document.getElementById("box-cliente").classList.add("hidden");
+
+    document.getElementById("box-" + modo).classList.remove("hidden");
+}
+
+function limparTexto(texto) {
+    return texto
+        .trim()
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
+        .replace(/[^a-z0-9\/\-\s]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/\/+/g, "/")
+        .replace(/^\/|\/$/g, "");
+}
+
+function garantirBarraFinal(url) {
+    if (!url.endsWith("/")) {
+        return url + "/";
+    }
+    return url;
+}
+
+function gerarUrlFinal() {
+    const modo = document.getElementById("modo").value;
+
+    if (modo === "livre") {
+        return document.getElementById("urlLivre").value.trim();
     }
 
-    function gerarQR() {
-      const slugOriginal = document.getElementById("slug").value.trim();
-      const slug = limparSlug(slugOriginal);
-
-      const urlFinal = slug ? baseUrl + slug + "/" : baseUrl;
-
-      qr.value = urlFinal;
-      document.getElementById("urlFinal").innerText = urlFinal;
+    if (modo === "urbanwatch") {
+        const slug = limparTexto(document.getElementById("slugOperacoes").value);
+        return "https://urbanwatch.app/operacoes/" + slug + "/";
     }
 
-    function baixarQR() {
-      gerarQR();
-
-      const link = document.createElement("a");
-      link.download = "qr-urbanwatch.png";
-      link.href = document.getElementById("qr").toDataURL("image/png");
-      link.click();
+    if (modo === "nfc") {
+        return document.getElementById("urlNfc").value.trim();
     }
 
-    gerarQR();
-  </script>
+    if (modo === "cliente") {
+        const tipo = document.getElementById("tipoPortal").value;
+        const nome = limparTexto(document.getElementById("nomeCliente").value);
+        return "https://urbanwatch.app/portal/" + tipo + "/" + nome + "/";
+    }
+
+    return "";
+}
+
+function gerarQRCode() {
+    const url = garantirBarraFinal(gerarUrlFinal());
+
+    if (!url || url === "/") {
+        alert("Informe um caminho para gerar o QR Code.");
+        return;
+    }
+
+    QRCode.toCanvas(document.getElementById("qrCanvas"), url, {
+        width: 800,
+        margin: 2,
+        color: {
+            dark: "#000000",
+            light: "#FFFFFF"
+        }
+    }, function(error) {
+        if (error) {
+            alert("Erro ao gerar QR Code.");
+            return;
+        }
+
+        document.getElementById("resultado").classList.remove("hidden");
+        document.getElementById("urlFinal").innerText = url;
+
+        const modo = document.getElementById("modo").value;
+        const nfcInfo = document.getElementById("nfcInfo");
+
+        if (modo === "nfc") {
+            nfcInfo.classList.remove("hidden");
+            nfcInfo.innerText = "Dados para gravação NFC: " + url;
+        } else {
+            nfcInfo.classList.add("hidden");
+            nfcInfo.innerText = "";
+        }
+    });
+}
+
+function baixarPNG() {
+    const canvas = document.getElementById("qrCanvas");
+
+    if (!canvas || canvas.width === 0) {
+        alert("Gere um QR Code antes de baixar.");
+        return;
+    }
+
+    const link = document.createElement("a");
+    link.download = "urbanwatch-qrcode.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+}
+</script>
 
 </body>
 </html>
