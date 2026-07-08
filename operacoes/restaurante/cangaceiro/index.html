@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portal Home | Cangaceiro • UrbanWatch.app</title>
+<style>
+:root{--bg:#050505;--gold:#d4af37;--gold2:#f1e5ac;--muted:#b9b9b9;--line:rgba(212,175,55,.72)}
+*{box-sizing:border-box;margin:0;padding:0} body{min-height:100vh;background:radial-gradient(circle at top,rgba(212,175,55,.11),transparent 35%),#050505;color:#fff;font-family:Arial,Helvetica,sans-serif} a{color:inherit;text-decoration:none}
+.page{width:100%;max-width:1120px;margin:0 auto;padding:10px 10px 28px}.frame{position:relative;width:100%;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050505;box-shadow:0 0 40px rgba(212,175,55,.12)}
+.hero-img{display:block;width:100%;height:auto}.fallback{display:none;padding:28px 18px;text-align:center}.fallback h1{font-size:42px;letter-spacing:3px;color:#eee}.fallback p{color:var(--gold2);margin:12px auto 22px;font-size:19px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto}.card{border:1px solid var(--line);border-radius:18px;padding:22px 12px;background:#0b0b0b;color:var(--gold);font-weight:800}.hotspot{position:absolute;display:block;border-radius:12px;outline:0;background:rgba(212,175,55,0);transition:.18s ease}.hotspot:hover,.hotspot:focus{background:rgba(212,175,55,.12);box-shadow:0 0 0 2px rgba(241,229,172,.45),0 0 22px rgba(212,175,55,.22)}
+/* Coordenadas baseadas na arte vertical 1024x1536. Ajustáveis depois. */
+.premium{left:2.5%;top:1.1%;width:27.5%;height:7.4%}.redes{left:3%;top:68.4%;width:17.4%;height:10.3%}.conheca{left:21.8%;top:68.4%;width:17.6%;height:10.3%}.cardapio{left:40.9%;top:68.4%;width:18%;height:10.3%}.portal-uwo{left:60.1%;top:68.4%;width:18%;height:10.3%}.whatsapp{left:79.1%;top:68.4%;width:17.9%;height:10.3%}.nfc{left:2.9%;top:81.3%;width:30%;height:15.7%}.qrcode{left:36.8%;top:82.2%;width:18%;height:14.5%}.delivery{left:75.1%;top:80.1%;width:22%;height:16.6%}
+.top-note{text-align:center;color:#777;font-size:13px;letter-spacing:1.5px;margin-top:14px}.sr{position:absolute;left:-9999px}
+@media(max-width:680px){.page{padding:0}.frame{border-radius:0;border-left:0;border-right:0}.grid{grid-template-columns:1fr}.top-note{font-size:12px}}
+@media(max-width:420px){.fallback h1{font-size:34px}.fallback p{font-size:17px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <section class="frame" aria-label="Portal Home Cangaceiro">
+    <!-- Coloque a arte oficial neste caminho no GitHub/Wix. Se preferir, altere o src abaixo. -->
+    <img class="hero-img" src="/assets/cangaceiro/portal-home-cangaceiro-premium.png" alt="Portal Profissional Premium Cangaceiro Sanduíches Artesanais" onerror="this.style.display='none';document.querySelector('.fallback').style.display='block'" />
+
+    <div class="fallback">
+      <h1>CANGACEIRO</h1>
+      <p>Portal Profissional Premium • UrbanWatch.app</p>
+      <div class="grid">
+        <a class="card" href="#redes-sociais">Redes Sociais</a>
+        <a class="card" href="#conheca-o-cangaceiro">Conheça o Cangaceiro</a>
+        <a class="card" href="#cardapio-completo">Cardápio Completo</a>
+        <a class="card" href="/portal/uwo/acess/cangaceiro/">Portal UWO | Cangaceiro</a>
+        <a class="card" href="https://wa.me/558532318993">WhatsApp</a>
+        <a class="card" href="#delivery">Delivery</a>
+      </div>
+    </div>
+
+    <!-- Hotspots transparentes. Troque os hrefs depois pelos caminhos oficiais. -->
+    <a class="hotspot premium" href="/portal/" aria-label="Portal Premium UrbanWatch"></a>
+    <a class="hotspot redes" href="#redes-sociais" aria-label="Redes Sociais"></a>
+    <a class="hotspot conheca" href="#conheca-o-cangaceiro" aria-label="Conheça o Cangaceiro"></a>
+    <a class="hotspot cardapio" href="#cardapio-completo" aria-label="Cardápio Completo"></a>
+    <a class="hotspot portal-uwo" href="/portal/uwo/acess/cangaceiro/" aria-label="Portal UWO Cangaceiro"></a>
+    <a class="hotspot whatsapp" href="https://wa.me/558532318993" aria-label="WhatsApp Fale Conosco"></a>
+    <a class="hotspot nfc" href="/portal/uwo/acess/cangaceiro/" aria-label="Acesso NFC Cangaceiro"></a>
+    <a class="hotspot qrcode" href="/portal/uwo/acess/cangaceiro/" aria-label="QR Code Cangaceiro"></a>
+    <a class="hotspot delivery" href="#delivery" aria-label="Delivery pelo WhatsApp"></a>
+  </section>
+  <div class="top-note">UrbanWatch Platform • Portal Home Cangaceiro • v1.1</div>
+</main>
+</body>
+</html>
 
