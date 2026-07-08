@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portal de Acesso UWO | Cangaceiro</title>
+<title>Portal de Acesso UWO | Cangaceiro Mesas</title>
 <style>
 :root{
   --bg:#070707;
@@ -142,7 +142,7 @@ p.lead{font-size:clamp(18px,4vw,25px);text-align:center;color:var(--gold2);margi
     <div class="cards">
       <button class="card-btn" onclick="go('cliente-publico')"><strong>Sou Cliente</strong><span>Acessar serviços e informações.</span></button>
       <button class="card-btn" onclick="go('equipe')"><strong>Sou Equipe</strong><span>Acesso operacional.</span></button>
-      <button class="card-btn" onclick="go('urbanwatch')"><strong>UrbanWatch.app</strong><span>Conheça a plataforma.</span></button>
+      <button class="card-btn" onclick="window.location.href='/'"><strong>UrbanWatch.app</strong><span>Conheça a plataforma.</span></button>
     </div>
     <div class="footer-note">Inteligência para quem não improvisa.</div>
     <div class="small-version">UrbanWatch Platform • v1.1</div>
@@ -280,5 +280,5 @@ function avatarName(){return state.genero==='Feminino'?'Maria Bonita':'Lampião'
 function renderCliente(){document.getElementById('avatar').textContent=avatarSymbol();document.getElementById('clienteBadge').textContent=`${state.nick} • Avatar ${avatarName()} • ${state.idade}`}
 </script>
 </body>
-        </html>
-        
+      </html>
+                                                
