@@ -1,280 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Elias Silva | Portal Premium | UrbanWatch</title>
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    background:#020B12;
-    font-family:Arial,Helvetica,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+  background:#020B12;
+  font-family:Arial, Helvetica, sans-serif;
+  min-height:100vh;
 }
 
-/* ---------- LOGIN ---------- */
+/* LOGIN */
 
 #login{
-    width:100%;
-    max-width:420px;
-    padding:35px;
-    text-align:center;
-    color:#FFF;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  background:linear-gradient(180deg,#03131d,#020B12);
 }
 
-.logo{
-    width:120px;
-    margin-bottom:25px;
+.login-box{
+  width:100%;
+  max-width:420px;
+  text-align:center;
+  color:#fff;
 }
 
-h1{
-    font-size:32px;
-    margin-bottom:8px;
+.logo-login{
+  width:150px;
+  max-width:65%;
+  margin:0 auto 26px;
+  display:block;
+  border-radius:50%;
 }
 
-h2{
-    font-size:18px;
-    color:#D4AF37;
-    margin-bottom:30px;
-    font-weight:normal;
+.login-box h1{
+  font-size:30px;
+  letter-spacing:3px;
+  margin-bottom:8px;
 }
 
-input{
-
-    width:100%;
-    padding:18px;
-
-    border:none;
-    outline:none;
-
-    border-radius:12px;
-
-    background:#13232E;
-    color:#FFF;
-
-    font-size:18px;
-    text-align:center;
-
+.login-box h2{
+  font-size:16px;
+  letter-spacing:2px;
+  color:#D4AF37;
+  font-weight:400;
+  margin-bottom:28px;
 }
 
-button{
-
-    width:100%;
-    margin-top:18px;
-
-    padding:18px;
-
-    border:none;
-    border-radius:12px;
-
-    background:#D4AF37;
-    color:#000;
-
-    font-size:18px;
-    font-weight:bold;
-
-    cursor:pointer;
-
+.login-box input{
+  width:100%;
+  padding:17px;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:14px;
+  background:#071A26;
+  color:#fff;
+  font-size:18px;
+  text-align:center;
+  outline:none;
 }
 
-button:hover{
-    background:#E6C86A;
+.login-box button{
+  width:100%;
+  margin-top:16px;
+  padding:17px;
+  border:none;
+  border-radius:14px;
+  background:#D4AF37;
+  color:#020B12;
+  font-size:17px;
+  font-weight:bold;
+  letter-spacing:1px;
+  cursor:pointer;
 }
 
 #erro{
-
-    display:none;
-
-    color:#FF6464;
-
-    margin-top:20px;
-
+  display:none;
+  margin-top:16px;
+  color:#ff6b6b;
+  font-size:15px;
 }
 
-/* ---------- PORTAL ---------- */
+/* PORTAL */
 
 #portal{
-
-    display:none;
-
-    width:100%;
-    max-width:768px;
-    margin:auto;
-    position:relative;
-
+  display:none;
+  width:100%;
+  max-width:768px;
+  margin:0 auto;
+  position:relative;
 }
 
 #portal img{
-
-    width:100%;
-    display:block;
-
+  width:100%;
+  display:block;
 }
 
 .botao{
-
-    position:absolute;
-
-    left:6%;
-    width:88%;
-    height:5.9%;
-
-    border-radius:20px;
-
-    z-index:100;
-
+  position:absolute;
+  left:6%;
+  width:88%;
+  height:5.7%;
+  border-radius:18px;
+  z-index:10;
 }
 
-/* posições */
+.whatsapp{ top:55.9%; }
+.sobre{ top:62.9%; }
+.email{ top:69.9%; }
+.linkedin{ top:76.9%; }
+.urbanwatch{ top:83.9%; }
+.galeria{ top:90.8%; }
 
-.whatsapp{
-    top:55.7%;
+.botao:active{
+  background:rgba(212,175,55,.12);
 }
-
-.sobre{
-    top:62.7%;
-}
-
-.email{
-    top:69.7%;
-}
-
-.linkedin{
-    top:76.7%;
-}
-
-.urbanwatch{
-    top:83.7%;
-}
-
-.galeria{
-    top:90.7%;
-}
-
-.botao:hover{
-
-    background:rgba(212,175,55,.08);
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<section id="login">
+  <div class="login-box">
 
-<div id="login">
+    <img
+      src="/assets/logo.png"
+      alt="UrbanWatch"
+      class="logo-login">
 
-<img src="https://urbanwatch.app/assets/logo/logo.png" class="logo">
+    <h1>ELIAS SILVA</h1>
+    <h2>PORTAL PREMIUM URBANWATCH</h2>
 
-<h1>Elias Silva</h1>
+    <input
+      type="password"
+      id="senha"
+      placeholder="Senha de acesso"
+      autocomplete="off">
 
-<h2>Portal Premium UrbanWatch</h2>
+    <button onclick="entrar()">ENTRAR</button>
 
-<input
-type="password"
-id="senha"
-placeholder="Senha de acesso">
+    <div id="erro">Senha incorreta.</div>
 
-<button onclick="entrar()">
+  </div>
+</section>
 
-Entrar
+<main id="portal">
 
-</button>
+  <img src="home_es.png" alt="Portal Premium UrbanWatch - Elias Silva">
 
-<div id="erro">
+  <a class="botao whatsapp"
+     href="https://wa.me/55859920089357"
+     target="_blank"
+     aria-label="Falar no WhatsApp"></a>
 
-Senha incorreta.
+  <a class="botao sobre"
+     href="#"
+     aria-label="Sobre mim"></a>
 
-</div>
+  <a class="botao email"
+     href="mailto:urbanwatch.app@gmail.com"
+     aria-label="Enviar e-mail"></a>
 
-</div>
+  <a class="botao linkedin"
+     href="./LinkedIn/"
+     aria-label="LinkedIn"></a>
 
-<!-- PORTAL -->
+  <a class="botao urbanwatch"
+     href="https://urbanwatch.app"
+     target="_blank"
+     aria-label="UrbanWatch.app"></a>
 
-<div id="portal">
+  <a class="botao galeria"
+     href="./galeria/"
+     aria-label="Galeria de Conexões Genuínas"></a>
 
-<img
-src="home_es.png"
-alt="Portal Elias Silva">
-
-<a
-class="botao whatsapp"
-href="https://wa.me/5585920089357"
-target="_blank"></a>
-
-<a
-class="botao sobre"
-href="#"></a>
-
-<a
-class="botao email"
-href="mailto:urbanwatch.app@gmail.com"></a>
-
-<a
-class="botao linkedin"
-href="./LinkedIn/"></a>
-
-<a
-class="botao urbanwatch"
-href="https://urbanwatch.app"
-target="_blank"></a>
-
-<a
-class="botao galeria"
-href="./galeria/"></a>
-
-</div>
+</main>
 
 <script>
-
 function entrar(){
+  const senha = document.getElementById("senha").value;
 
-let senha=document.getElementById("senha").value;
-
-if(senha==="2026"){
-
-document.getElementById("login").style.display="none";
-
-document.getElementById("portal").style.display="block";
-
-window.scrollTo(0,0);
-
-}else{
-
-document.getElementById("erro").style.display="block";
-
+  if(senha === "2026"){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("portal").style.display = "block";
+    window.scrollTo(0,0);
+  }else{
+    document.getElementById("erro").style.display = "block";
+  }
 }
 
-}
-
-document.getElementById("senha").addEventListener("keypress",function(e){
-
-if(e.key==="Enter"){
-
-entrar();
-
-}
-
+document.getElementById("senha").addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    entrar();
+  }
 });
-
 </script>
 
 </body>
-
 </html>
