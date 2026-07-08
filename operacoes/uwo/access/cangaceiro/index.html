@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portal de Acesso UWO | Cangaceiro</title>
+<style>
+:root{
+  --bg:#070707;
+  --card:#0d0d0d;
+  --card2:#111;
+  --gold:#d4af37;
+  --gold2:#f1e5ac;
+  --text:#fff;
+  --muted:#a8a8a8;
+  --line:rgba(212,175,55,.65);
+  --shadow:0 0 45px rgba(212,175,55,.13);
+  --radius:26px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(212,175,55,.12), transparent 34%),
+    linear-gradient(180deg,#151515 0%,#070707 42%,#000 100%);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.screen{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px 18px;
+}
+.screen.active{display:flex}
+.wrap{
+  width:100%;
+  max-width:760px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(17,17,17,.96),rgba(7,7,7,.98));
+  box-shadow:var(--shadow);
+  padding:34px 22px;
+}
+.logo-box{text-align:center;margin-bottom:22px}
+.logo-mark{
+  width:138px;height:138px;margin:0 auto 18px;
+  border:1px solid rgba(212,175,55,.5);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#050505;
+  box-shadow:0 0 30px rgba(212,175,55,.14);
+}
+.logo-mark span{font-size:44px;color:var(--gold);font-weight:700;letter-spacing:-3px}
+.brand{font-size:15px;letter-spacing:7px;color:white;text-transform:uppercase;margin-top:10px}
+.subbrand{font-size:9px;color:var(--gold2);letter-spacing:2px;margin-top:8px;text-transform:uppercase}
+h1{font-size:clamp(32px,8vw,54px);line-height:1.05;text-align:center;margin-bottom:18px}
+h2{font-size:clamp(26px,6vw,38px);text-align:center;margin-bottom:12px}
+p.lead{font-size:clamp(18px,4vw,25px);text-align:center;color:var(--gold2);margin-bottom:28px;line-height:1.35}
+.cards{display:grid;gap:18px;margin-top:18px}
+.card-btn{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:rgba(10,10,10,.84);
+  color:white;
+  padding:24px 18px;
+  cursor:pointer;
+  transition:.2s ease;
+  text-align:center;
+}
+.card-btn:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(212,175,55,.12)}
+.card-btn strong{display:block;color:var(--gold);font-size:clamp(24px,5vw,33px);margin-bottom:10px}
+.card-btn span{display:block;color:var(--muted);font-size:clamp(16px,4vw,21px);line-height:1.4}
+.footer-note{text-align:center;color:#777;margin-top:34px;font-size:15px;line-height:1.8;letter-spacing:.5px}
+.small-version{text-align:center;color:#555;margin-top:18px;font-size:14px;letter-spacing:3px}
+.back{
+  border:none;background:transparent;color:var(--gold2);margin-bottom:18px;cursor:pointer;font-size:15px;
+}
+.panel-title{color:var(--gold);font-size:20px;text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:2px}
+.section-box{
+  border:1px solid rgba(212,175,55,.45);
+  border-radius:20px;
+  background:rgba(0,0,0,.28);
+  padding:20px;
+  margin:16px 0;
+}
+.menu-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
+.item{
+  border:1px solid rgba(212,175,55,.5);
+  border-radius:18px;
+  padding:20px 16px;
+  background:#0b0b0b;
+  cursor:pointer;
+}
+.item strong{display:block;color:var(--gold);font-size:22px;margin-bottom:7px}
+.item span{color:var(--muted);font-size:16px;line-height:1.4}
+.form{display:grid;gap:14px;margin-top:20px}
+.field label{display:block;color:var(--gold2);font-size:14px;margin-bottom:7px}
+.field input,.field select{
+  width:100%;background:#050505;color:white;border:1px solid rgba(212,175,55,.55);
+  border-radius:14px;padding:15px 14px;outline:none;
+}
+.actions{display:grid;gap:12px;margin-top:18px}
+.primary{
+  border:none;border-radius:16px;background:linear-gradient(135deg,#b98e21,#f1d470,#a87918);
+  color:#111;font-weight:800;padding:16px;cursor:pointer;
+}
+.secondary{
+  border:1px solid rgba(212,175,55,.55);border-radius:16px;background:#080808;color:var(--gold2);
+  font-weight:700;padding:16px;cursor:pointer;
+}
+.avatar{
+  width:120px;height:120px;border-radius:50%;border:1px solid var(--gold);margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;background:#050505;font-size:54px;box-shadow:0 0 24px rgba(212,175,55,.16)
+}
+.badge{text-align:center;color:var(--gold2);font-size:16px;margin-bottom:12px}
+.order-list{display:grid;gap:12px;margin-top:15px}
+.product{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(212,175,55,.2);padding:13px 0;color:#ddd}
+.product b{color:var(--gold)}
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.role{border:1px solid rgba(212,175,55,.5);border-radius:16px;padding:18px 10px;text-align:center;color:var(--gold);background:#090909;font-weight:800}
+.notice{color:#bbb;text-align:center;line-height:1.55;font-size:16px;margin-top:12px}
+@media(min-width:700px){.wrap{padding:48px}.menu-grid{grid-template-columns:1fr 1fr}.cards{gap:22px}.screen{padding:42px}.role-grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+
+<section id="home" class="screen active">
+  <main class="wrap">
+    <div class="logo-box">
+      <div class="logo-mark"><span>UW</span></div>
+      <div class="brand">UrbanWatch</div>
+      <div class="subbrand">Inteligência para quem não improvisa</div>
+    </div>
+    <h1>Portal de Acesso UWO | Cangaceiro</h1>
+    <p class="lead">Uma aproximação. Três caminhos.</p>
+    <div class="cards">
+      <button class="card-btn" onclick="go('cliente-publico')"><strong>Sou Cliente</strong><span>Acessar serviços e informações.</span></button>
+      <button class="card-btn" onclick="go('equipe')"><strong>Sou Equipe</strong><span>Acesso operacional.</span></button>
+      <button class="card-btn" onclick="go('urbanwatch')"><strong>UrbanWatch.app</strong><span>Conheça a plataforma.</span></button>
+    </div>
+    <div class="footer-note">Inteligência para quem não improvisa.</div>
+    <div class="small-version">UrbanWatch Platform • v1.1</div>
+  </main>
+</section>
+
+<section id="cliente-publico" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('home')">← Voltar</button>
+    <div class="panel-title">Cliente</div>
+    <h2>Portal Público</h2>
+    <p class="lead">Cangaceiro Sanduíches Artesanais</p>
+    <div class="section-box">
+      <h2>📝 Cardápio Digital</h2>
+      <p class="notice">Você pode visualizar o cardápio. Para escolher e fazer pedido, acesse ou crie seu cadastro Cangaceiro.</p>
+      <div class="order-list">
+        <div class="product"><span>Combo Paracuru</span><b>R$ 39,90</b></div>
+        <div class="product"><span>Combo Sobral</span><b>R$ 49,50</b></div>
+        <div class="product"><span>Combo Cumbuco</span><b>R$ 41,90</b></div>
+        <div class="product"><span>Combo Icapuí</span><b>R$ 38,50</b></div>
+        <div class="product"><span>Combo Jeri</span><b>R$ 39,90</b></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="primary" onclick="go('login')">Fazer Pedido / Login</button>
+      <button class="secondary" onclick="go('home')">Voltar ao Portal de Acesso</button>
+    </div>
+  </main>
+</section>
+
+<section id="login" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('cliente-publico')">← Voltar</button>
+    <div class="panel-title">Login Cliente</div>
+    <h2>Já é Cangaceiro?</h2>
+    <p class="lead">Entre com seu nickname ou crie seu cadastro rápido.</p>
+    <form class="form" onsubmit="event.preventDefault(); loginCliente();">
+      <div class="field"><label>Nickname / Usuário</label><input id="loginNick" placeholder="Ex: Joao@" /></div>
+      <div class="actions">
+        <button class="primary" type="submit">Entrar</button>
+        <button class="secondary" type="button" onclick="go('cadastro')">Quero Ser Cangaceiro!</button>
+      </div>
+    </form>
+  </main>
+</section>
+
+<section id="cadastro" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('login')">← Voltar</button>
+    <div class="panel-title">Cadastro Cliente</div>
+    <h2>Quero Ser Cangaceiro!</h2>
+    <p class="lead">Cadastro simples com identificador técnico interno.</p>
+    <form class="form" onsubmit="event.preventDefault(); finalizarCadastro();">
+      <div class="field"><label>Nickname / Usuário</label><input id="nick" required placeholder="Use algum caractere especial. Ex: Joao@" /></div>
+      <div class="field"><label>Faixa Etária</label><select id="idade" required><option value="">Escolha</option><option value="0-18">0 a 18</option><option value="19-45">19 a 45</option><option value="46-59">46 a 59</option><option value="60+">60+</option></select></div>
+      <div class="field"><label>Gênero</label><select id="genero" required><option value="">Escolha</option><option value="Masculino">Masculino</option><option value="Feminino">Feminino</option></select></div>
+      <div class="actions"><button class="primary" type="submit">Finalizar Cadastro</button></div>
+    </form>
+    <p class="notice">O avatar será definido conforme faixa etária e gênero: Lampião ou Maria Bonita.</p>
+  </main>
+</section>
+
+<section id="painel-cliente" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('home')">← Sair</button>
+    <div id="avatar" class="avatar">🤠</div>
+    <div id="clienteBadge" class="badge">Cliente Cangaceiro</div>
+    <h2>Painel do Cliente Cangaceiro</h2>
+    <p class="lead">Escolha seu caminho dentro da experiência UWO.</p>
+    <div class="menu-grid">
+      <div class="item" onclick="go('cardapio-logado')"><strong>📝 Cardápio Digital</strong><span>Escolher pedidos digitalmente.</span></div>
+      <div class="item" onclick="go('pedidos')"><strong>🎯 Pedidos</strong><span>Alterar pedidos já feitos.</span></div>
+      <div class="item" onclick="go('garcons')"><strong>👔 Garçons</strong><span>Interagir com garçons disponíveis.</span></div>
+      <div class="item" onclick="go('gerente')"><strong>👔 Falar com Gerente</strong><span>Dúvidas, reclamações, sugestões e elogios.</span></div>
+    </div>
+  </main>
+</section>
+
+<section id="cardapio-logado" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('painel-cliente')">← Voltar</button>
+    <div class="panel-title">Cardápio Digital</div>
+    <h2>Monte seu pedido</h2>
+    <div class="order-list">
+      <div class="product"><span>Combo Paracuru</span><b>Adicionar</b></div>
+      <div class="product"><span>Combo Sobral</span><b>Adicionar</b></div>
+      <div class="product"><span>Combo Cumbuco</span><b>Adicionar</b></div>
+      <div class="product"><span>Combo Icapuí</span><b>Adicionar</b></div>
+      <div class="product"><span>Combo Jeri</span><b>Adicionar</b></div>
+    </div>
+    <div class="actions"><button class="primary" onclick="alert('Pedido registrado em modo piloto UWO v1.1')">Confirmar Pedido</button></div>
+  </main>
+</section>
+
+<section id="pedidos" class="screen"><main class="wrap"><button class="back" onclick="go('painel-cliente')">← Voltar</button><h2>🎯 Pedidos</h2><p class="lead">Área para acompanhar ou alterar pedidos já feitos.</p><div class="section-box"><p class="notice">Modo piloto: integração futura com cozinha, garçons e status operacional.</p></div></main></section>
+<section id="garcons" class="screen"><main class="wrap"><button class="back" onclick="go('painel-cliente')">← Voltar</button><h2>👔 Garçons</h2><p class="lead">Interaja com garçons disponíveis.</p><div class="section-box"><p class="notice">Solicitar atendimento, pedir apoio ou chamar alguém para a mesa.</p></div></main></section>
+<section id="gerente" class="screen"><main class="wrap"><button class="back" onclick="go('painel-cliente')">← Voltar</button><h2>👔 Falar com Gerente</h2><p class="lead">Dúvidas, reclamações, sugestões e elogios.</p><div class="actions"><button class="primary" onclick="window.location.href='https://wa.me/558532318993'">Chamar no WhatsApp</button></div></main></section>
+
+<section id="equipe" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('home')">← Voltar</button>
+    <div class="panel-title">Equipe</div>
+    <h2>Painel Operacional UWO | Cangaceiro</h2>
+    <p class="lead">Acesso operacional por perfil.</p>
+    <div class="role-grid">
+      <div class="role">Administrador</div>
+      <div class="role">Supervisor</div>
+      <div class="role">Gerente</div>
+      <div class="role">Colaborador</div>
+    </div>
+    <div class="section-box"><p class="notice">Modo piloto v1.1. Área preparada para login de equipe, permissões e integração operacional futura.</p></div>
+  </main>
+</section>
+
+<section id="urbanwatch" class="screen">
+  <main class="wrap">
+    <button class="back" onclick="go('home')">← Voltar</button>
+    <div class="logo-box"><div class="logo-mark"><span>UW</span></div></div>
+    <h2>UrbanWatch.app</h2>
+    <p class="lead">Inteligência para quem não improvisa.</p>
+    <div class="section-box"><p class="notice">A UrbanWatch cria portais digitais, experiências NFC/QR Code e soluções operacionais para negócios locais, restaurantes, equipes e clientes.</p></div>
+    <div class="actions"><button class="primary" onclick="window.location.href='https://urbanwatch.app'">Conhecer a plataforma</button></div>
+  </main>
+</section>
+
+<script>
+const state={nick:'Cliente@',idade:'19-45',genero:'Masculino',technicalId:null};
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function hasSpecialChar(text){return /[^A-Za-z0-9]/.test(text)}
+function loginCliente(){const nick=document.getElementById('loginNick').value.trim()||'Cangaceiro@';state.nick=nick;state.technicalId=state.technicalId||makeId();renderCliente();go('painel-cliente')}
+function finalizarCadastro(){const nick=document.getElementById('nick').value.trim();const idade=document.getElementById('idade').value;const genero=document.getElementById('genero').value;if(!hasSpecialChar(nick)){alert('O nickname precisa ter pelo menos um caractere especial. Ex: Joao@');return}state.nick=nick;state.idade=idade;state.genero=genero;state.technicalId=makeId();renderCliente();go('painel-cliente')}
+function makeId(){return 'UWO-CANG-'+Date.now().toString(36).toUpperCase()}
+function avatarSymbol(){if(state.genero==='Feminino')return '💃';return '🤠'}
+function avatarName(){return state.genero==='Feminino'?'Maria Bonita':'Lampião'}
+function renderCliente(){document.getElementById('avatar').textContent=avatarSymbol();document.getElementById('clienteBadge').textContent=`${state.nick} • Avatar ${avatarName()} • ${state.idade}`}
+</script>
+</body>
+        </html>
+        
