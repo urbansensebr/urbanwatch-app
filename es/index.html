@@ -1,88 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Elias Silva | Portal Premium UrbanWatch</title>
+<title>Elias Silva | Portal Premium | UrbanWatch</title>
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  background:#020b12;
-  font-family:Arial, Helvetica, sans-serif;
+    background:#020B12;
+    font-family:Arial,Helvetica,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-.portal{
-  position:relative;
-  width:100%;
-  max-width:768px;
-  margin:0 auto;
+/* ---------- LOGIN ---------- */
+
+#login{
+    width:100%;
+    max-width:420px;
+    padding:35px;
+    text-align:center;
+    color:#FFF;
 }
 
-.portal img{
-  width:100%;
-  display:block;
+.logo{
+    width:120px;
+    margin-bottom:25px;
 }
 
-.link{
-  position:absolute;
-  left:6%;
-  width:88%;
-  height:5.7%;
-  border-radius:18px;
-  z-index:10;
+h1{
+    font-size:32px;
+    margin-bottom:8px;
 }
 
-/* Ajuste fino dos botões */
-.whatsapp{ top:55.9%; }
-.sobre{ top:62.9%; }
-.email{ top:69.9%; }
-.linkedin{ top:76.9%; }
-.urbanwatch{ top:83.9%; }
-.galeria{ top:90.8%; }
-
-.link:active{
-  background:rgba(212,175,55,0.12);
+h2{
+    font-size:18px;
+    color:#D4AF37;
+    margin-bottom:30px;
+    font-weight:normal;
 }
+
+input{
+
+    width:100%;
+    padding:18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:12px;
+
+    background:#13232E;
+    color:#FFF;
+
+    font-size:18px;
+    text-align:center;
+
+}
+
+button{
+
+    width:100%;
+    margin-top:18px;
+
+    padding:18px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#D4AF37;
+    color:#000;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+    background:#E6C86A;
+}
+
+#erro{
+
+    display:none;
+
+    color:#FF6464;
+
+    margin-top:20px;
+
+}
+
+/* ---------- PORTAL ---------- */
+
+#portal{
+
+    display:none;
+
+    width:100%;
+    max-width:768px;
+    margin:auto;
+    position:relative;
+
+}
+
+#portal img{
+
+    width:100%;
+    display:block;
+
+}
+
+.botao{
+
+    position:absolute;
+
+    left:6%;
+    width:88%;
+    height:5.9%;
+
+    border-radius:20px;
+
+    z-index:100;
+
+}
+
+/* posições */
+
+.whatsapp{
+    top:55.7%;
+}
+
+.sobre{
+    top:62.7%;
+}
+
+.email{
+    top:69.7%;
+}
+
+.linkedin{
+    top:76.7%;
+}
+
+.urbanwatch{
+    top:83.7%;
+}
+
+.galeria{
+    top:90.7%;
+}
+
+.botao:hover{
+
+    background:rgba(212,175,55,.08);
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<main class="portal">
+<!-- LOGIN -->
 
-  <img src="home_es.png" alt="Portal Premium UrbanWatch - Elias Silva">
+<div id="login">
 
-  <a class="link whatsapp"
-     href="https://wa.me/55859920089357"
-     target="_blank"
-     aria-label="Falar no WhatsApp"></a>
+<img src="https://urbanwatch.app/assets/logo/logo.png" class="logo">
 
-  <a class="link sobre"
-     href="#sobre"
-     aria-label="Sobre mim"></a>
+<h1>Elias Silva</h1>
 
-  <a class="link email"
-     href="mailto: UrbanWatch.app@gmail.com"
-     aria-label="Enviar e-mail"></a>
+<h2>Portal Premium UrbanWatch</h2>
 
+<input
+type="password"
+id="senha"
+placeholder="Senha de acesso">
 
-  <a class="link urbanwatch"
-     href="https://urbanwatch.app"
-     target="_blank"
-     aria-label="UrbanWatch.app"></a>
+<button onclick="entrar()">
 
-  <a class="link galeria"
-     href="./galeria/"
-     aria-label="Galeria de Conexões Genuínas"></a>
+Entrar
 
-</main>
+</button>
+
+<div id="erro">
+
+Senha incorreta.
+
+</div>
+
+</div>
+
+<!-- PORTAL -->
+
+<div id="portal">
+
+<img
+src="home_es.png"
+alt="Portal Elias Silva">
+
+<a
+class="botao whatsapp"
+href="https://wa.me/55859920089357"
+target="_blank"></a>
+
+<a
+class="botao sobre"
+href="#"></a>
+
+<a
+class="botao email"
+href="mailto:urbanwatch.app@gmail.com"></a>
+
+<a
+class="botao linkedin"
+href="./LinkedIn/"></a>
+
+<a
+class="botao urbanwatch"
+href="https://urbanwatch.app"
+target="_blank"></a>
+
+<a
+class="botao galeria"
+href="./galeria/"></a>
+
+</div>
+
+<script>
+
+function entrar(){
+
+let senha=document.getElementById("senha").value;
+
+if(senha==="2026"){
+
+document.getElementById("login").style.display="none";
+
+document.getElementById("portal").style.display="block";
+
+window.scrollTo(0,0);
+
+}else{
+
+document.getElementById("erro").style.display="block";
+
+}
+
+}
+
+document.getElementById("senha").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+entrar();
+
+}
+
+});
+
+</script>
 
 </body>
+
 </html>
