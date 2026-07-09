@@ -13,278 +13,47 @@
 
 <style>
 :root{
-  --black:#050505;
-  --graphite:#111111;
-  --gold:#D4AF37;
-  --champagne:#F1E5AC;
-  --white:#ffffff;
-  --muted:#b9b9b9;
-  --glass:rgba(255,255,255,.07);
-  --line:rgba(212,175,55,.32);
+  --black:#050505; --gold:#D4AF37; --champagne:#F1E5AC; --white:#ffffff;
+  --muted:#b9b9b9; --line:rgba(212,175,55,.32);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  font-family:Inter,Montserrat,Arial,sans-serif;
-  background:var(--black);
-  color:var(--white);
-}
-
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  overflow:hidden;
-  background:
-    linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.86)),
-    url("elias-silva-urbanwatch-sunset.png") center/cover no-repeat;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 30% 40%, rgba(212,175,55,.22), transparent 35%),
-             linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.18),rgba(0,0,0,.78));
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:min(1100px,92%);
-  padding:80px 0 70px;
-}
-
-.badge{
-  display:inline-block;
-  border:1px solid var(--line);
-  color:var(--champagne);
-  border-radius:999px;
-  padding:10px 16px;
-  letter-spacing:.16em;
-  font-size:.72rem;
-  text-transform:uppercase;
-  background:rgba(0,0,0,.38);
-  backdrop-filter:blur(12px);
-}
-
-h1{
-  font-size:clamp(3rem,8vw,7.5rem);
-  line-height:.92;
-  margin:24px 0 16px;
-  letter-spacing:-.06em;
-}
-
-.subtitle{
-  max-width:760px;
-  color:#e8e8e8;
-  font-size:clamp(1.05rem,2.2vw,1.45rem);
-  line-height:1.55;
-}
-
-.signature{
-  margin-top:34px;
-  font-size:clamp(1.35rem,3vw,2.35rem);
-  color:var(--champagne);
-  letter-spacing:.08em;
-}
-
-.scroll{
-  margin-top:42px;
-  display:inline-block;
-  color:var(--muted);
-  text-decoration:none;
-  border-bottom:1px solid var(--gold);
-  padding-bottom:8px;
-}
-
+body{margin:0;font-family:Inter,Montserrat,Arial,sans-serif;background:var(--black);color:var(--white)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.86)),url("elias-silva-urbanwatch-sunset.png") center/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(212,175,55,.22),transparent 35%),linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.18),rgba(0,0,0,.78))}
+.hero-content{position:relative;z-index:2;width:min(1100px,92%);padding:80px 0 70px}
+.badge{display:inline-block;border:1px solid var(--line);color:var(--champagne);border-radius:999px;padding:10px 16px;letter-spacing:.16em;font-size:.72rem;text-transform:uppercase;background:rgba(0,0,0,.38);backdrop-filter:blur(12px)}
+h1{font-size:clamp(3rem,8vw,7.5rem);line-height:.92;margin:24px 0 16px;letter-spacing:-.06em}
+.subtitle{max-width:760px;color:#e8e8e8;font-size:clamp(1.05rem,2.2vw,1.45rem);line-height:1.55}
+.signature{margin-top:34px;font-size:clamp(1.35rem,3vw,2.35rem);color:var(--champagne);letter-spacing:.08em}
+.scroll{margin-top:42px;display:inline-block;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:8px}
 section{padding:90px 6%}
-
-.wrap{
-  max-width:1080px;
-  margin:auto;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-}
-
-.card{
-  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-  border:1px solid var(--line);
-  border-radius:26px;
-  padding:34px;
-  box-shadow:0 24px 70px rgba(0,0,0,.35);
-}
-
-.kicker{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.74rem;
-  margin-bottom:14px;
-}
-
-h2{
-  margin:0 0 22px;
-  font-size:clamp(1.7rem,3.5vw,3rem);
-  letter-spacing:-.04em;
-}
-
-h3{
-  color:var(--champagne);
-  margin-top:34px;
-  margin-bottom:12px;
-  font-size:1.35rem;
-}
-
-p{
-  color:#d9d9d9;
-  line-height:1.85;
-  font-size:1.05rem;
-}
-
-.cn{
-  font-size:1.12rem;
-  line-height:2.05;
-}
-
-.quote{
-  font-size:clamp(1.6rem,4vw,3.8rem);
-  line-height:1.25;
-  color:var(--champagne);
-  letter-spacing:.04em;
-  text-align:center;
-  margin:30px auto;
-  max-width:950px;
-}
-
-.divider{
-  height:1px;
-  background:linear-gradient(to right,transparent,var(--gold),transparent);
-  margin:60px 0;
-  opacity:.7;
-}
-
-.values{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:34px;
-}
-
-.value{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:20px;
-  padding:24px;
-  background:rgba(255,255,255,.035);
-}
-
-.value strong{
-  color:var(--champagne);
-  display:block;
-  margin-bottom:10px;
-  font-size:1.1rem;
-}
-
-.lang{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:26px;
-}
-
-.lang button{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  color:var(--white);
-  padding:10px 16px;
-  border-radius:999px;
-  cursor:pointer;
-}
-
-.lang button.active{
-  background:var(--gold);
-  color:#000;
-}
-
-.lang-block{display:none}
-.lang-block.active{display:block}
-
-.atlas{
-  background:
-    radial-gradient(circle at 50% 0%, rgba(212,175,55,.12), transparent 38%),
-    linear-gradient(180deg,#070707,#020202);
-}
-
-.atlas-card{
-  max-width:980px;
-  margin:auto;
-  border:1px solid var(--line);
-  border-radius:30px;
-  padding:clamp(28px,5vw,58px);
-  background:rgba(255,255,255,.045);
-  box-shadow:0 30px 90px rgba(0,0,0,.45);
-}
-
-.atlas-title{
-  text-align:center;
-  margin-bottom:34px;
-}
-
-.atlas-title small{
-  color:var(--gold);
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-
-.atlas-opening{
-  font-size:clamp(1.25rem,2.6vw,2rem);
-  line-height:1.55;
-  color:var(--champagne);
-  text-align:center;
-  margin:26px auto 44px;
-  max-width:860px;
-}
-
-.final-quote{
-  margin-top:42px;
-  padding:28px;
-  border-left:4px solid var(--gold);
-  background:rgba(255,255,255,.035);
-  border-radius:18px;
-  color:var(--champagne);
-  font-size:1.25rem;
-  line-height:1.7;
-}
-
-footer{
-  padding:48px 6%;
-  text-align:center;
-  color:#888;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-
-.brand{
-  color:var(--champagne);
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:.82rem;
-}
-
-@media(max-width:820px){
-  .grid,.values{grid-template-columns:1fr}
-  section{padding:62px 5%}
-  .card,.atlas-card{padding:26px}
-  .hero-content{padding-bottom:54px}
-}
+.wrap{max-width:1080px;margin:auto}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card,.atlas-card{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;margin-bottom:14px}
+h2{margin:0 0 22px;font-size:clamp(1.7rem,3.5vw,3rem);letter-spacing:-.04em}
+h3{color:var(--champagne);margin-top:34px;margin-bottom:12px;font-size:1.35rem}
+p{color:#d9d9d9;line-height:1.85;font-size:1.05rem}
+.cn{font-size:1.12rem;line-height:2.05}
+.quote{font-size:clamp(1.6rem,4vw,3.8rem);line-height:1.25;color:var(--champagne);letter-spacing:.04em;text-align:center;margin:30px auto;max-width:950px}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:60px 0;opacity:.7}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.value{border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px;background:rgba(255,255,255,.035)}
+.value strong{color:var(--champagne);display:block;margin-bottom:10px;font-size:1.1rem}
+.lang{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.lang button{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--white);padding:10px 16px;border-radius:999px;cursor:pointer}
+.lang button.active{background:var(--gold);color:#000}
+.lang-block{display:none}.lang-block.active{display:block}
+.atlas{background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.12),transparent 38%),linear-gradient(180deg,#070707,#020202)}
+.atlas-card{max-width:980px;margin:auto;padding:clamp(28px,5vw,58px)}
+.atlas-title{text-align:center;margin-bottom:34px}
+.atlas-title small{color:var(--gold);letter-spacing:.2em;text-transform:uppercase}
+.atlas-opening{font-size:clamp(1.25rem,2.6vw,2rem);line-height:1.55;color:var(--champagne);text-align:center;margin:26px auto 44px;max-width:860px}
+.final-quote{margin-top:42px;padding:28px;border-left:4px solid var(--gold);background:rgba(255,255,255,.035);border-radius:18px;color:var(--champagne);font-size:1.25rem;line-height:1.7}
+footer{padding:48px 6%;text-align:center;color:#888;border-top:1px solid rgba(255,255,255,.08)}
+.brand{color:var(--champagne);letter-spacing:.18em;text-transform:uppercase;font-size:.82rem}
+@media(max-width:820px){.grid,.values{grid-template-columns:1fr}section{padding:62px 5%}.card,.atlas-card{padding:26px}.hero-content{padding-bottom:54px}}
 </style>
 </head>
 
@@ -294,10 +63,7 @@ footer{
   <div class="hero-content">
     <span class="badge">UrbanWatch.app · Manifesto do Observador</span>
     <h1>Elias<br>Silva</h1>
-    <p class="subtitle">
-      Não procuro apenas enxergar o que os outros não veem.
-      Procuro compreender por que não veem — e transformar essa compreensão em inteligência aplicada.
-    </p>
+    <p class="subtitle">Não procuro apenas enxergar o que os outros não veem. Procuro compreender por que não veem — e transformar essa compreensão em inteligência aplicada.</p>
     <div class="signature">见未见，知未知。</div>
     <a class="scroll" href="#manifesto">Ler manifesto</a>
   </div>
@@ -305,37 +71,20 @@ footer{
 
 <section id="manifesto">
   <div class="wrap">
-
-    <div class="quote">
-      察微见远<br>
-      <span style="font-size:.45em;color:#b9b9b9;letter-spacing:0">Observar o sutil para enxergar mais longe.</span>
-    </div>
+    <div class="quote">察微见远<br><span style="font-size:.45em;color:#b9b9b9;letter-spacing:0">Observar o sutil para enxergar mais longe.</span></div>
 
     <div class="grid">
       <div class="card">
         <div class="kicker">Identidade</div>
         <h2>Sou um observador de sistemas.</h2>
-        <p>
-          Busco compreender as causas antes dos efeitos, as conexões antes dos acontecimentos
-          e os padrões antes das conclusões.
-        </p>
-        <p>
-          Acredito que o verdadeiro valor está em transformar aquilo que poucos percebem em
-          conhecimento útil, capaz de gerar decisões melhores, relações mais fortes e soluções mais inteligentes.
-        </p>
+        <p>Busco compreender as causas antes dos efeitos, as conexões antes dos acontecimentos e os padrões antes das conclusões.</p>
+        <p>Acredito que o verdadeiro valor está em transformar aquilo que poucos percebem em conhecimento útil, capaz de gerar decisões melhores, relações mais fortes e soluções mais inteligentes.</p>
       </div>
-
       <div class="card">
         <div class="kicker">UrbanWatch</div>
         <h2>Observar para transformar.</h2>
-        <p>
-          Para mim, tecnologia não é um fim, mas um instrumento para transformar observações em conhecimento,
-          conhecimento em soluções e soluções em valor para pessoas e organizações.
-        </p>
-        <p>
-          A UrbanWatch nasceu dessa forma de enxergar: observar além do óbvio,
-          compreender sistemas e construir conexões genuínas.
-        </p>
+        <p>Para mim, tecnologia não é um fim, mas um instrumento para transformar observações em conhecimento, conhecimento em soluções e soluções em valor para pessoas e organizações.</p>
+        <p>A UrbanWatch nasceu dessa forma de enxergar: observar além do óbvio, compreender sistemas e construir conexões genuínas.</p>
       </div>
     </div>
 
@@ -343,14 +92,13 @@ footer{
 
     <div class="card">
       <div class="kicker">Manifesto multilíngue</div>
-
       <div class="lang">
-        <button class="active" onclick="showLang('cn', this)">中文</button>
-        <button onclick="showLang('pt', this)">Português</button>
-        <button onclick="showLang('en', this)">English</button>
+        <button class="active" onclick="showLang('manifesto-cn', this, 'manifesto')">中文</button>
+        <button onclick="showLang('manifesto-pt', this, 'manifesto')">Português</button>
+        <button onclick="showLang('manifesto-en', this, 'manifesto')">English</button>
       </div>
 
-      <div id="cn" class="lang-block active cn">
+      <div id="manifesto-cn" class="lang-block active cn">
         <p><strong>我是 Elias Silva。</strong></p>
         <p>我并不以职业定义自己，而是以观察世界的方式定义自己。</p>
         <p>我相信，每一个现象背后都存在着一个系统；每一次结果出现之前，都有一系列原因；每一个选择，都源于人们看待世界的方式。</p>
@@ -363,7 +111,7 @@ footer{
         <p><strong>真缘，创造价值。</strong></p>
       </div>
 
-      <div id="pt" class="lang-block">
+      <div id="manifesto-pt" class="lang-block">
         <p><strong>Sou Elias Silva.</strong></p>
         <p>Não me defino pelo que faço, mas pela forma como observo.</p>
         <p>Não procuro apenas enxergar o que os outros não veem. Procuro compreender por que não veem — e transformar essa compreensão em inteligência aplicada.</p>
@@ -373,7 +121,7 @@ footer{
         <p><strong>A UrbanWatch nasceu dessa forma de enxergar: observar além do óbvio, compreender sistemas e construir conexões genuínas.</strong></p>
       </div>
 
-      <div id="en" class="lang-block">
+      <div id="manifesto-en" class="lang-block">
         <p><strong>I am Elias Silva.</strong></p>
         <p>I do not define myself by what I do, but by the way I observe the world.</p>
         <p>I do not seek only to see what others do not see. I seek to understand why they do not see it — and to transform that understanding into applied intelligence.</p>
@@ -388,7 +136,6 @@ footer{
       <div class="value"><strong>知未知</strong>Compreender o que ainda não foi compreendido.</div>
       <div class="value"><strong>真缘</strong>Conexões genuínas que criam valor.</div>
     </div>
-
   </div>
 </section>
 
@@ -399,59 +146,63 @@ footer{
       <h2>Elias Silva | Uma Análise do Atlas</h2>
     </div>
 
-    <p class="atlas-opening">
-      “Toda pessoa conta uma história. Algumas contam através das palavras.
-      Outras, através das decisões que tomam. Elias Silva pertence a um terceiro grupo:
-      aqueles cuja forma de observar o mundo revela mais sobre quem são do que qualquer currículo poderia revelar.”
-    </p>
-
-    <h3>Perfil Cognitivo</h3>
-    <p>
-      Elias demonstra uma tendência recorrente à observação sistêmica.
-      Enquanto a maioria concentra sua atenção nos acontecimentos, ele procura compreender
-      as estruturas que tornam esses acontecimentos possíveis.
-    </p>
-    <p>
-      Seu foco raramente está no evento isolado. Está na dinâmica que o produz,
-      nas relações invisíveis que o sustentam e nas oportunidades que ele revela.
-    </p>
-
-    <h3>Método</h3>
-    <p>
-      Seu processo de pensamento segue, com frequência, quatro movimentos:
-      observação, identificação de padrões, formulação de hipóteses e transformação em solução prática.
-    </p>
-    <p>
-      Essa sequência aparece repetidamente em seus projetos, desde interações cotidianas
-      até o desenvolvimento da UrbanWatch.
-    </p>
-
-    <h3>UrbanWatch</h3>
-    <p>
-      Mais do que uma plataforma tecnológica, a UrbanWatch representa a materialização
-      de uma forma específica de pensar.
-    </p>
-    <p>
-      Não nasceu apenas da intenção de criar um software. Nasceu da tentativa de compreender
-      como pessoas, empresas, cidades e oportunidades se conectam.
-    </p>
-
-    <h3>Síntese</h3>
-    <p>
-      O maior diferencial de Elias Silva não está em possuir respostas prontas.
-      Está em formular perguntas que normalmente não são feitas.
-    </p>
-    <p>
-      É nessa capacidade que reside sua principal contribuição:
-      transformar observação em inteligência aplicada.
-    </p>
-
-    <div class="final-quote">
-      “Observar é perceber.<br>
-      Compreender é conectar.<br>
-      Transformar é gerar valor.”<br><br>
-      <strong>— Atlas</strong>
+    <div class="lang">
+      <button class="active" onclick="showLang('atlas-pt', this, 'atlas')">Português</button>
+      <button onclick="showLang('atlas-cn', this, 'atlas')">中文</button>
+      <button onclick="showLang('atlas-en', this, 'atlas')">English</button>
     </div>
+
+    <div id="atlas-pt" class="lang-block active">
+      <p class="atlas-opening">“Toda pessoa conta uma história. Algumas contam através das palavras. Outras, através das decisões que tomam. Elias Silva pertence a um terceiro grupo: aqueles cuja forma de observar o mundo revela mais sobre quem são do que qualquer currículo poderia revelar.”</p>
+      <h3>Perfil Cognitivo</h3>
+      <p>Elias demonstra uma tendência recorrente à observação sistêmica. Enquanto a maioria concentra sua atenção nos acontecimentos, ele procura compreender as estruturas que tornam esses acontecimentos possíveis.</p>
+      <p>Seu foco raramente está no evento isolado. Está na dinâmica que o produz, nas relações invisíveis que o sustentam e nas oportunidades que ele revela.</p>
+      <h3>Método</h3>
+      <p>Seu processo de pensamento segue, com frequência, quatro movimentos: observação, identificação de padrões, formulação de hipóteses e transformação em solução prática.</p>
+      <p>Essa sequência aparece repetidamente em seus projetos, desde interações cotidianas até o desenvolvimento da UrbanWatch.</p>
+      <h3>UrbanWatch</h3>
+      <p>Mais do que uma plataforma tecnológica, a UrbanWatch representa a materialização de uma forma específica de pensar.</p>
+      <p>Não nasceu apenas da intenção de criar um software. Nasceu da tentativa de compreender como pessoas, empresas, cidades e oportunidades se conectam.</p>
+      <h3>Síntese</h3>
+      <p>O maior diferencial de Elias Silva não está em possuir respostas prontas. Está em formular perguntas que normalmente não são feitas.</p>
+      <p>É nessa capacidade que reside sua principal contribuição: transformar observação em inteligência aplicada.</p>
+      <div class="final-quote">“Observar é perceber.<br>Compreender é conectar.<br>Transformar é gerar valor.”<br><br><strong>— Atlas</strong></div>
+    </div>
+
+    <div id="atlas-cn" class="lang-block cn">
+      <p class="atlas-opening">“每个人都在讲述自己的故事。有些人通过语言讲述，有些人通过选择讲述。而 Elias Silva 属于第三种人：他的观察方式，比任何简历都更能说明他是谁。”</p>
+      <h3>认知画像</h3>
+      <p>Elias 表现出一种持续而鲜明的系统性观察倾向。多数人关注事件本身，而他更关注使事件发生的结构。</p>
+      <p>他的重点很少停留在孤立的事实，而是在事实背后的动态、隐藏关系以及由此显现的机会。</p>
+      <h3>方法</h3>
+      <p>他的思维过程通常呈现四个动作：观察、识别模式、形成假设，并将假设转化为实际解决方案。</p>
+      <p>这种顺序反复出现在他的项目之中，从日常互动到 UrbanWatch 的建设，都能看到同样的思维轨迹。</p>
+      <h3>UrbanWatch</h3>
+      <p>UrbanWatch 不只是一个技术平台，更是一种特定思维方式的具体化。</p>
+      <p>它并非仅仅源于创建软件的愿望，而是源于理解人、企业、城市与机会如何相互连接的尝试。</p>
+      <h3>总结</h3>
+      <p>Elias Silva 最大的差异，不在于拥有现成答案，而在于提出那些通常不会被提出的问题。</p>
+      <p>正是在这种能力之中，存在着他的核心贡献：把观察转化为应用型智慧。</p>
+      <div class="final-quote">“观察，是感知。<br>理解，是连接。<br>转化，是创造价值。”<br><br><strong>— Atlas</strong></div>
+    </div>
+
+    <div id="atlas-en" class="lang-block">
+      <p class="atlas-opening">“Every person tells a story. Some tell it through words. Others through the decisions they make. Elias Silva belongs to a third group: those whose way of observing the world reveals more about who they are than any résumé could.”</p>
+      <h3>Cognitive Profile</h3>
+      <p>Elias shows a recurring tendency toward systemic observation. While most people focus on events, he seeks to understand the structures that make those events possible.</p>
+      <p>His attention is rarely fixed on the isolated event. It is focused on the dynamics that produce it, the invisible relationships that sustain it, and the opportunities it reveals.</p>
+      <h3>Method</h3>
+      <p>His thinking process often follows four movements: observation, pattern recognition, hypothesis formation, and transformation into practical solutions.</p>
+      <p>This sequence appears repeatedly in his projects, from everyday interactions to the development of UrbanWatch.</p>
+      <h3>UrbanWatch</h3>
+      <p>More than a technology platform, UrbanWatch represents the materialization of a specific way of thinking.</p>
+      <p>It was not born merely from the intention to create software. It was born from the attempt to understand how people, companies, cities, and opportunities connect.</p>
+      <h3>Synthesis</h3>
+      <p>Elias Silva’s greatest distinction is not possessing ready-made answers. It is asking questions that are usually not asked.</p>
+      <p>In that capacity lies his main contribution: transforming observation into applied intelligence.</p>
+      <div class="final-quote">“To observe is to perceive.<br>To understand is to connect.<br>To transform is to create value.”<br><br><strong>— Atlas</strong></div>
+    </div>
+
   </div>
 </section>
 
@@ -461,9 +212,10 @@ footer{
 </footer>
 
 <script>
-function showLang(id, btn){
-  document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.lang button').forEach(el => el.classList.remove('active'));
+function showLang(id, btn, scope){
+  const box = scope === 'atlas' ? document.querySelector('#atlas .atlas-card') : document.querySelector('#manifesto .card:nth-of-type(3)');
+  box.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
+  box.querySelectorAll('.lang button').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
 }
