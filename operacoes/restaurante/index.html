@@ -2,29 +2,31 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <title>UrbanWatch.app Operações | Restaurante</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-body{
+html, body{
   background:#050505;
   color:#fff;
   font-family:Arial, Helvetica, sans-serif;
   min-height:100vh;
-  overflow-x:hidden;
+  overflow:auto;
 }
 
 header{
-  position:fixed;
+  position:sticky;
   top:0;
-  left:0;
-  width:100%;
-  z-index:10;
-  background:rgba(0,0,0,.82);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(212,175,55,.25);
+  z-index:50;
+  background:rgba(0,0,0,.9);
+  border-bottom:1px solid rgba(212,175,55,.28);
   padding:14px 18px;
   display:flex;
   justify-content:space-between;
@@ -34,10 +36,12 @@ header{
 .brand{
   font-size:18px;
   font-weight:700;
-  letter-spacing:.5px;
+  letter-spacing:.4px;
 }
 
-.brand span{color:#d4af37}
+.brand span{
+  color:#d4af37;
+}
 
 .counter{
   color:#d4af37;
@@ -46,40 +50,39 @@ header{
 }
 
 main{
-  padding-top:72px;
-  min-height:100vh;
+  width:100%;
+  overflow:auto;
+  padding:0 0 90px 0;
 }
 
 .slide{
   display:none;
-  width:100%;
-  min-height:calc(100vh - 72px);
-  align-items:center;
-  justify-content:center;
-  padding:10px;
+  width:max-content;
+  min-width:100%;
 }
 
-.slide.active{display:flex}
+.slide.active{
+  display:block;
+}
 
 .slide img{
-  width:100%;
-  max-width:1600px;
-  max-height:calc(100vh - 95px);
-  object-fit:contain;
-  border-radius:10px;
-  box-shadow:0 0 35px rgba(212,175,55,.16);
+  display:block;
+  width:1600px;
+  max-width:none;
+  height:auto;
+  margin:0 auto;
 }
 
 .controls{
   position:fixed;
-  bottom:18px;
+  bottom:14px;
   left:50%;
   transform:translateX(-50%);
-  z-index:20;
+  z-index:100;
   display:flex;
-  gap:12px;
-  background:rgba(0,0,0,.72);
-  border:1px solid rgba(212,175,55,.35);
+  gap:10px;
+  background:rgba(0,0,0,.78);
+  border:1px solid rgba(212,175,55,.38);
   border-radius:999px;
   padding:10px 14px;
   backdrop-filter:blur(8px);
@@ -90,7 +93,7 @@ button{
   color:#fff;
   border:1px solid rgba(212,175,55,.55);
   border-radius:999px;
-  padding:10px 16px;
+  padding:10px 15px;
   font-size:15px;
   cursor:pointer;
 }
@@ -100,35 +103,29 @@ button:hover{
   color:#000;
 }
 
-.dots{
-  position:fixed;
-  bottom:76px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:20;
-  display:flex;
-  gap:8px;
-}
-
-.dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:rgba(255,255,255,.35);
-}
-
-.dot.active{
-  background:#d4af37;
-}
-
 @media(max-width:768px){
-  header{padding:12px 14px}
-  .brand{font-size:15px}
-  .counter{font-size:12px}
-  main{padding-top:62px}
-  .slide{min-height:calc(100vh - 62px);padding:6px}
-  .slide img{max-height:calc(100vh - 120px)}
-  button{padding:9px 13px;font-size:14px}
+  header{
+    padding:12px 14px;
+  }
+
+  .brand{
+    font-size:15px;
+  }
+
+  .counter{
+    font-size:12px;
+  }
+
+  .slide img{
+    width:1200px;
+    max-width:none;
+    margin:0;
+  }
+
+  button{
+    padding:9px 13px;
+    font-size:14px;
+  }
 }
 </style>
 </head>
@@ -140,18 +137,39 @@ button:hover{
   <div class="counter" id="counter">00 / 07</div>
 </header>
 
-<main>
-  <section class="slide active"><img src="00.png" alt="Apresentação UWO Restaurante 00"></section>
-  <section class="slide"><img src="01.png" alt="Apresentação UWO Restaurante 01"></section>
-  <section class="slide"><img src="02.png" alt="Apresentação UWO Restaurante 02"></section>
-  <section class="slide"><img src="03.png" alt="Apresentação UWO Restaurante 03"></section>
-  <section class="slide"><img src="04.png" alt="Apresentação UWO Restaurante 04"></section>
-  <section class="slide"><img src="05.png" alt="Apresentação UWO Restaurante 05"></section>
-  <section class="slide"><img src="06.png" alt="Apresentação UWO Restaurante 06"></section>
-  <section class="slide"><img src="07.png" alt="Apresentação UWO Restaurante 07"></section>
-</main>
+<main id="viewer">
+  <section class="slide active">
+    <img src="00.png" alt="UWO Restaurante 00">
+  </section>
 
-<div class="dots" id="dots"></div>
+  <section class="slide">
+    <img src="01.png" alt="UWO Restaurante 01">
+  </section>
+
+  <section class="slide">
+    <img src="02.png" alt="UWO Restaurante 02">
+  </section>
+
+  <section class="slide">
+    <img src="03.png" alt="UWO Restaurante 03">
+  </section>
+
+  <section class="slide">
+    <img src="04.png" alt="UWO Restaurante 04">
+  </section>
+
+  <section class="slide">
+    <img src="05.png" alt="UWO Restaurante 05">
+  </section>
+
+  <section class="slide">
+    <img src="06.png" alt="UWO Restaurante 06">
+  </section>
+
+  <section class="slide">
+    <img src="07.png" alt="UWO Restaurante 07">
+  </section>
+</main>
 
 <div class="controls">
   <button onclick="prevSlide()">←</button>
@@ -162,50 +180,39 @@ button:hover{
 <script>
 const slides = document.querySelectorAll('.slide');
 const counter = document.getElementById('counter');
-const dotsBox = document.getElementById('dots');
 let current = 0;
-
-slides.forEach((_, i)=>{
-  const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
-  dot.onclick = () => showSlide(i);
-  dotsBox.appendChild(dot);
-});
-
-const dots = document.querySelectorAll('.dot');
 
 function showSlide(index){
   slides[current].classList.remove('active');
-  dots[current].classList.remove('active');
 
   current = (index + slides.length) % slides.length;
 
   slides[current].classList.add('active');
-  dots[current].classList.add('active');
-
   counter.textContent = String(current).padStart(2,'0') + ' / 07';
+
+  window.scrollTo({
+    top:0,
+    left:0,
+    behavior:'instant'
+  });
 }
 
-function nextSlide(){ showSlide(current + 1); }
-function prevSlide(){ showSlide(current - 1); }
-function goHome(){ showSlide(0); }
+function nextSlide(){
+  showSlide(current + 1);
+}
 
-document.addEventListener('keydown', e=>{
+function prevSlide(){
+  showSlide(current - 1);
+}
+
+function goHome(){
+  showSlide(0);
+}
+
+document.addEventListener('keydown', function(e){
   if(e.key === 'ArrowRight') nextSlide();
   if(e.key === 'ArrowLeft') prevSlide();
   if(e.key === 'Home') goHome();
-});
-
-let touchStartX = 0;
-
-document.addEventListener('touchstart', e=>{
-  touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', e=>{
-  const touchEndX = e.changedTouches[0].screenX;
-  if(touchStartX - touchEndX > 50) nextSlide();
-  if(touchEndX - touchStartX > 50) prevSlide();
 });
 </script>
 
