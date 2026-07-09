@@ -1,472 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Elias Silva | UrbanWatch Manifesto</title>
-
-<meta name="description" content="Elias Silva | UrbanWatch — Manifesto do Observador. Observar além do óbvio, compreender sistemas e construir conexões genuínas.">
-<meta property="og:title" content="Elias Silva | UrbanWatch Manifesto">
-<meta property="og:description" content="见未见，知未知。察微见远。真缘，创造价值。">
-<meta property="og:image" content="elias-silva-urbanwatch-sunset.png">
+<title>Elias Silva | Portal Premium | UrbanWatch</title>
 
 <style>
-:root{
-  --black:#050505;
-  --graphite:#111111;
-  --gold:#D4AF37;
-  --champagne:#F1E5AC;
-  --white:#ffffff;
-  --muted:#b9b9b9;
-  --glass:rgba(255,255,255,.07);
-  --line:rgba(212,175,55,.32);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  font-family:Inter,Montserrat,Arial,sans-serif;
-  background:var(--black);
-  color:var(--white);
-}
-
-.hero{
+  background:#020B12;
+  font-family:Arial, Helvetica, sans-serif;
   min-height:100vh;
-  position:relative;
+}
+
+/* LOGIN */
+
+#login{
+  min-height:100vh;
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:center;
-  overflow:hidden;
-  background:
-    linear-gradient(to bottom,rgba(0,0,0,.2),rgba(0,0,0,.86)),
-    url("elias-silva-urbanwatch-sunset.png") center/cover no-repeat;
+  padding:28px;
+  background:linear-gradient(180deg,#03131d,#020B12);
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 30% 40%, rgba(212,175,55,.22), transparent 35%),
-             linear-gradient(to right,rgba(0,0,0,.75),rgba(0,0,0,.18),rgba(0,0,0,.78));
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  width:min(1100px,92%);
-  padding:80px 0 70px;
-}
-
-.badge{
-  display:inline-block;
-  border:1px solid var(--line);
-  color:var(--champagne);
-  border-radius:999px;
-  padding:10px 16px;
-  letter-spacing:.16em;
-  font-size:.72rem;
-  text-transform:uppercase;
-  background:rgba(0,0,0,.38);
-  backdrop-filter:blur(12px);
-}
-
-h1{
-  font-size:clamp(3rem,8vw,7.5rem);
-  line-height:.92;
-  margin:24px 0 16px;
-  letter-spacing:-.06em;
-}
-
-.subtitle{
-  max-width:760px;
-  color:#e8e8e8;
-  font-size:clamp(1.05rem,2.2vw,1.45rem);
-  line-height:1.55;
-}
-
-.signature{
-  margin-top:34px;
-  font-size:clamp(1.35rem,3vw,2.35rem);
-  color:var(--champagne);
-  letter-spacing:.08em;
-}
-
-.scroll{
-  margin-top:42px;
-  display:inline-block;
-  color:var(--muted);
-  text-decoration:none;
-  border-bottom:1px solid var(--gold);
-  padding-bottom:8px;
-}
-
-section{padding:90px 6%}
-
-.wrap{
-  max-width:1080px;
-  margin:auto;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-}
-
-.card{
-  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-  border:1px solid var(--line);
-  border-radius:26px;
-  padding:34px;
-  box-shadow:0 24px 70px rgba(0,0,0,.35);
-}
-
-.kicker{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.74rem;
-  margin-bottom:14px;
-}
-
-h2{
-  margin:0 0 22px;
-  font-size:clamp(1.7rem,3.5vw,3rem);
-  letter-spacing:-.04em;
-}
-
-h3{
-  color:var(--champagne);
-  margin-top:34px;
-  margin-bottom:12px;
-  font-size:1.35rem;
-}
-
-p{
-  color:#d9d9d9;
-  line-height:1.85;
-  font-size:1.05rem;
-}
-
-.cn{
-  font-size:1.12rem;
-  line-height:2.05;
-}
-
-.quote{
-  font-size:clamp(1.6rem,4vw,3.8rem);
-  line-height:1.25;
-  color:var(--champagne);
-  letter-spacing:.04em;
+.login-box{
+  width:100%;
+  max-width:420px;
   text-align:center;
-  margin:30px auto;
-  max-width:950px;
+  color:#fff;
 }
 
-.divider{
-  height:1px;
-  background:linear-gradient(to right,transparent,var(--gold),transparent);
-  margin:60px 0;
-  opacity:.7;
-}
-
-.values{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:34px;
-}
-
-.value{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:20px;
-  padding:24px;
-  background:rgba(255,255,255,.035);
-}
-
-.value strong{
-  color:var(--champagne);
+.logo-login{
+  width:150px;
+  max-width:65%;
+  margin:0 auto 26px;
   display:block;
-  margin-bottom:10px;
-  font-size:1.1rem;
+  border-radius:50%;
 }
 
-.lang{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:26px;
+.login-box h1{
+  font-size:30px;
+  letter-spacing:3px;
+  margin-bottom:8px;
 }
 
-.lang button{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  color:var(--white);
-  padding:10px 16px;
-  border-radius:999px;
+.login-box h2{
+  font-size:16px;
+  letter-spacing:2px;
+  color:#D4AF37;
+  font-weight:400;
+  margin-bottom:28px;
+}
+
+.login-box input{
+  width:100%;
+  padding:17px;
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:14px;
+  background:#071A26;
+  color:#fff;
+  font-size:18px;
+  text-align:center;
+  outline:none;
+}
+
+.login-box button{
+  width:100%;
+  margin-top:16px;
+  padding:17px;
+  border:none;
+  border-radius:14px;
+  background:#D4AF37;
+  color:#020B12;
+  font-size:17px;
+  font-weight:bold;
+  letter-spacing:1px;
   cursor:pointer;
 }
 
-.lang button.active{
-  background:var(--gold);
-  color:#000;
+#erro{
+  display:none;
+  margin-top:16px;
+  color:#ff6b6b;
+  font-size:15px;
 }
 
-.lang-block{display:none}
-.lang-block.active{display:block}
+/* PORTAL */
 
-.atlas{
-  background:
-    radial-gradient(circle at 50% 0%, rgba(212,175,55,.12), transparent 38%),
-    linear-gradient(180deg,#070707,#020202);
+#portal{
+  display:none;
+  width:100%;
+  max-width:768px;
+  margin:0 auto;
+  position:relative;
 }
 
-.atlas-card{
-  max-width:980px;
-  margin:auto;
-  border:1px solid var(--line);
-  border-radius:30px;
-  padding:clamp(28px,5vw,58px);
-  background:rgba(255,255,255,.045);
-  box-shadow:0 30px 90px rgba(0,0,0,.45);
+#portal img{
+  width:100%;
+  display:block;
 }
 
-.atlas-title{
-  text-align:center;
-  margin-bottom:34px;
-}
-
-.atlas-title small{
-  color:var(--gold);
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
-
-.atlas-opening{
-  font-size:clamp(1.25rem,2.6vw,2rem);
-  line-height:1.55;
-  color:var(--champagne);
-  text-align:center;
-  margin:26px auto 44px;
-  max-width:860px;
-}
-
-.final-quote{
-  margin-top:42px;
-  padding:28px;
-  border-left:4px solid var(--gold);
-  background:rgba(255,255,255,.035);
+.botao{
+  position:absolute;
+  left:6%;
+  width:88%;
+  height:5.7%;
   border-radius:18px;
-  color:var(--champagne);
-  font-size:1.25rem;
-  line-height:1.7;
+  z-index:10;
 }
 
-footer{
-  padding:48px 6%;
-  text-align:center;
-  color:#888;
-  border-top:1px solid rgba(255,255,255,.08);
-}
+.whatsapp{ top:55.9%; }
+.sobre{ top:62.9%; }
+.email{ top:69.9%; }
+.linkedin{ top:76.9%; }
+.urbanwatch{ top:83.9%; }
+.galeria{ top:90.8%; }
 
-.brand{
-  color:var(--champagne);
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:.82rem;
-}
-
-@media(max-width:820px){
-  .grid,.values{grid-template-columns:1fr}
-  section{padding:62px 5%}
-  .card,.atlas-card{padding:26px}
-  .hero-content{padding-bottom:54px}
+.botao:active{
+  background:rgba(212,175,55,.12);
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="hero-content">
-    <span class="badge">UrbanWatch.app · Manifesto do Observador</span>
-    <h1>Elias<br>Silva</h1>
-    <p class="subtitle">
-      Não procuro apenas enxergar o que os outros não veem.
-      Procuro compreender por que não veem — e transformar essa compreensão em inteligência aplicada.
-    </p>
-    <div class="signature">见未见，知未知。</div>
-    <a class="scroll" href="#manifesto">Ler manifesto</a>
-  </div>
-</header>
+<section id="login">
+  <div class="login-box">
 
-<section id="manifesto">
-  <div class="wrap">
+    <img
+      src="/assets/logo.png"
+      alt="UrbanWatch"
+      class="logo-login">
 
-    <div class="quote">
-      察微见远<br>
-      <span style="font-size:.45em;color:#b9b9b9;letter-spacing:0">Observar o sutil para enxergar mais longe.</span>
-    </div>
+    <h1>ELIAS SILVA</h1>
+    <h2>PORTAL PREMIUM URBANWATCH</h2>
 
-    <div class="grid">
-      <div class="card">
-        <div class="kicker">Identidade</div>
-        <h2>Sou um observador de sistemas.</h2>
-        <p>
-          Busco compreender as causas antes dos efeitos, as conexões antes dos acontecimentos
-          e os padrões antes das conclusões.
-        </p>
-        <p>
-          Acredito que o verdadeiro valor está em transformar aquilo que poucos percebem em
-          conhecimento útil, capaz de gerar decisões melhores, relações mais fortes e soluções mais inteligentes.
-        </p>
-      </div>
+    <input
+      type="password"
+      id="senha"
+      placeholder="Senha de acesso"
+      autocomplete="off">
 
-      <div class="card">
-        <div class="kicker">UrbanWatch</div>
-        <h2>Observar para transformar.</h2>
-        <p>
-          Para mim, tecnologia não é um fim, mas um instrumento para transformar observações em conhecimento,
-          conhecimento em soluções e soluções em valor para pessoas e organizações.
-        </p>
-        <p>
-          A UrbanWatch nasceu dessa forma de enxergar: observar além do óbvio,
-          compreender sistemas e construir conexões genuínas.
-        </p>
-      </div>
-    </div>
+    <button onclick="entrar()">ENTRAR</button>
 
-    <div class="divider"></div>
-
-    <div class="card">
-      <div class="kicker">Manifesto multilíngue</div>
-
-      <div class="lang">
-        <button class="active" onclick="showLang('cn', this)">中文</button>
-        <button onclick="showLang('pt', this)">Português</button>
-        <button onclick="showLang('en', this)">English</button>
-      </div>
-
-      <div id="cn" class="lang-block active cn">
-        <p><strong>我是 Elias Silva。</strong></p>
-        <p>我并不以职业定义自己，而是以观察世界的方式定义自己。</p>
-        <p>我相信，每一个现象背后都存在着一个系统；每一次结果出现之前，都有一系列原因；每一个选择，都源于人们看待世界的方式。</p>
-        <p>我不仅希望看见别人看不见的事物，更希望理解他们为什么没有看见。因为真正的价值，并非来自观察本身，而是来自理解。</p>
-        <p>我是一个系统的观察者。我寻找原因，而不是停留于结果；寻找联系，而不是孤立的事件；寻找规律，而不是偶然。</p>
-        <p>科技，对我而言，从来不是终点。科技只是延伸观察能力的工具。</p>
-        <p>当观察成为知识，知识成为理解，理解成为行动，行动便能够创造真正的价值。</p>
-        <p><strong>UrbanWatch 并不是一个软件，也不仅仅是一项技术。它是一种观察世界的方法，一种理解人与人、人与城市、人与组织之间关系的方法。</strong></p>
-        <p><strong>真正的科技，始于观察；真正的智慧，源于理解；真正的价值，来自真实的连接。</strong></p>
-        <p><strong>真缘，创造价值。</strong></p>
-      </div>
-
-      <div id="pt" class="lang-block">
-        <p><strong>Sou Elias Silva.</strong></p>
-        <p>Não me defino pelo que faço, mas pela forma como observo.</p>
-        <p>Não procuro apenas enxergar o que os outros não veem. Procuro compreender por que não veem — e transformar essa compreensão em inteligência aplicada.</p>
-        <p>Sou um observador de sistemas. Busco compreender as causas antes dos efeitos, as conexões antes dos acontecimentos e os padrões antes das conclusões.</p>
-        <p>Acredito que o verdadeiro valor está em transformar aquilo que poucos percebem em conhecimento útil, capaz de gerar decisões melhores, relações mais fortes e soluções mais inteligentes.</p>
-        <p>Para mim, tecnologia não é um fim, mas um instrumento para transformar observações em conhecimento, conhecimento em soluções e soluções em valor para pessoas e organizações.</p>
-        <p><strong>A UrbanWatch nasceu dessa forma de enxergar: observar além do óbvio, compreender sistemas e construir conexões genuínas.</strong></p>
-      </div>
-
-      <div id="en" class="lang-block">
-        <p><strong>I am Elias Silva.</strong></p>
-        <p>I do not define myself by what I do, but by the way I observe the world.</p>
-        <p>I do not seek only to see what others do not see. I seek to understand why they do not see it — and to transform that understanding into applied intelligence.</p>
-        <p>I am an observer of systems. I seek causes before effects, connections before events, and patterns before conclusions.</p>
-        <p>To me, technology is not an end. It is a tool to turn observation into knowledge, knowledge into solutions, and solutions into value.</p>
-        <p><strong>UrbanWatch was born from this way of seeing: observing beyond the obvious, understanding systems, and building genuine connections.</strong></p>
-      </div>
-    </div>
-
-    <div class="values">
-      <div class="value"><strong>见未见</strong>Ver o que ainda não foi visto.</div>
-      <div class="value"><strong>知未知</strong>Compreender o que ainda não foi compreendido.</div>
-      <div class="value"><strong>真缘</strong>Conexões genuínas que criam valor.</div>
-    </div>
+    <div id="erro">Senha incorreta.</div>
 
   </div>
 </section>
 
-<section class="atlas" id="atlas">
-  <div class="atlas-card">
-    <div class="atlas-title">
-      <small>ES por ES · na visão do Atlas</small>
-      <h2>Elias Silva | Uma Análise do Atlas</h2>
-    </div>
+<main id="portal">
 
-    <p class="atlas-opening">
-      “Toda pessoa conta uma história. Algumas contam através das palavras.
-      Outras, através das decisões que tomam. Elias Silva pertence a um terceiro grupo:
-      aqueles cuja forma de observar o mundo revela mais sobre quem são do que qualquer currículo poderia revelar.”
-    </p>
+  <img src="home_es.png" alt="Portal Premium UrbanWatch - Elias Silva">
 
-    <h3>Perfil Cognitivo</h3>
-    <p>
-      Elias demonstra uma tendência recorrente à observação sistêmica.
-      Enquanto a maioria concentra sua atenção nos acontecimentos, ele procura compreender
-      as estruturas que tornam esses acontecimentos possíveis.
-    </p>
-    <p>
-      Seu foco raramente está no evento isolado. Está na dinâmica que o produz,
-      nas relações invisíveis que o sustentam e nas oportunidades que ele revela.
-    </p>
+  <a class="botao whatsapp"
+     href="https://wa.me/5585920089357"
+     target="_blank"
+     aria-label="Falar no WhatsApp"></a>
 
-    <h3>Método</h3>
-    <p>
-      Seu processo de pensamento segue, com frequência, quatro movimentos:
-      observação, identificação de padrões, formulação de hipóteses e transformação em solução prática.
-    </p>
-    <p>
-      Essa sequência aparece repetidamente em seus projetos, desde interações cotidianas
-      até o desenvolvimento da UrbanWatch.
-    </p>
+  <a class="botao sobre"
+     href="#"
+     aria-label="Sobre mim"></a>
 
-    <h3>UrbanWatch</h3>
-    <p>
-      Mais do que uma plataforma tecnológica, a UrbanWatch representa a materialização
-      de uma forma específica de pensar.
-    </p>
-    <p>
-      Não nasceu apenas da intenção de criar um software. Nasceu da tentativa de compreender
-      como pessoas, empresas, cidades e oportunidades se conectam.
-    </p>
+  <a class="botao email"
+     href="mailto:urbanwatch.app@gmail.com"
+     aria-label="Enviar e-mail"></a>
 
-    <h3>Síntese</h3>
-    <p>
-      O maior diferencial de Elias Silva não está em possuir respostas prontas.
-      Está em formular perguntas que normalmente não são feitas.
-    </p>
-    <p>
-      É nessa capacidade que reside sua principal contribuição:
-      transformar observação em inteligência aplicada.
-    </p>
+  <a class="botao linkedin"
+     href="./LinkedIn/index.html"
+     aria-label="Manifesto Elias Silva"></a>
 
-    <div class="final-quote">
-      “Observar é perceber.<br>
-      Compreender é conectar.<br>
-      Transformar é gerar valor.”<br><br>
-      <strong>— Atlas</strong>
-    </div>
-  </div>
-</section>
+  <a class="botao urbanwatch"
+     href="https://urbanwatch.app"
+     target="_blank"
+     aria-label="UrbanWatch.app"></a>
 
-<footer>
-  <div class="brand">UrbanWatch.app</div>
-  <p>Observar para Transformar · Fortaleza - CE</p>
-</footer>
+  <a class="botao galeria"
+     href="./galeria/"
+     aria-label="Galeria de Conexões Genuínas"></a>
+
+</main>
 
 <script>
-function showLang(id, btn){
-  document.querySelectorAll('.lang-block').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.lang button').forEach(el => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+function entrar(){
+  const senha = document.getElementById("senha").value;
+
+  if(senha === "2026"){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("portal").style.display = "block";
+    window.scrollTo(0,0);
+  }else{
+    document.getElementById("erro").style.display = "block";
+  }
 }
+
+document.getElementById("senha").addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    entrar();
+  }
+});
 </script>
 
 </body>
