@@ -2,38 +2,69 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+
+<!-- O zoom é controlado pela própria apresentação.
+     Isso evita o “zoom travado” do navegador no celular. -->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>UWO Restaurante</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-html,body{
-  background:#050505;
-  color:#fff;
-  font-family:Arial, Helvetica, sans-serif;
+html,
+body{
   width:100%;
   height:100%;
   overflow:hidden;
+  background:#050505;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+  overscroll-behavior:none;
+}
+
+button,
+img{
+  -webkit-tap-highlight-color:transparent;
 }
 
 .topo{
-  height:54px;
-  background:#000;
-  border-bottom:1px solid #d4af37;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 14px;
   position:fixed;
   top:0;
   left:0;
   right:0;
-  z-index:10;
+  z-index:20;
+
+  height:54px;
+  padding:0 14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:#000;
+  border-bottom:1px solid #d4af37;
 }
 
-.topo span{color:#d4af37}
+.topo strong{
+  font-size:16px;
+  white-space:nowrap;
+}
+
+.topo span{
+  color:#d4af37;
+}
+
+#contador{
+  margin-left:12px;
+  font-size:15px;
+  white-space:nowrap;
+}
 
 .viewer{
   position:fixed;
@@ -41,13 +72,20 @@ html,body{
   left:0;
   right:0;
   bottom:70px;
-  overflow:auto;
-  -webkit-overflow-scrolling:touch;
+
+  overflow:hidden;
   background:#050505;
+
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
 .slide{
+  position:absolute;
+  inset:0;
   display:none;
+  overflow:hidden;
 }
 
 .slide.active{
@@ -55,39 +93,81 @@ html,body{
 }
 
 .slide img{
+  position:absolute;
+  top:0;
+  left:0;
+
   display:block;
-  width:1800px;
-  max-width:none;
+  width:auto;
   height:auto;
+  max-width:none;
+  max-height:none;
+
+  transform-origin:0 0;
+  will-change:transform;
+  pointer-events:none;
+
+  -webkit-user-drag:none;
+  user-drag:none;
 }
 
 .controles{
-  height:70px;
   position:fixed;
-  bottom:0;
   left:0;
   right:0;
-  background:#000;
-  border-top:1px solid #d4af37;
+  bottom:0;
+  z-index:20;
+
+  height:70px;
+
   display:flex;
   justify-content:center;
   align-items:center;
   gap:12px;
-  z-index:10;
+
+  padding-bottom:env(safe-area-inset-bottom);
+
+  background:#000;
+  border-top:1px solid #d4af37;
 }
 
 button{
-  background:#111;
-  color:#fff;
+  min-width:72px;
+  min-height:44px;
+  padding:10px 18px;
+
   border:1px solid #d4af37;
   border-radius:30px;
-  padding:10px 18px;
+
+  background:#111;
+  color:#fff;
+
   font-size:15px;
+  cursor:pointer;
 }
 
-@media(max-width:768px){
-  .slide img{
-    width:1400px;
+button:active{
+  transform:scale(.97);
+  background:#1b1b1b;
+}
+
+button:focus-visible{
+  outline:2px solid #f1e5ac;
+  outline-offset:2px;
+}
+
+@media (max-width:420px){
+  .topo{
+    padding:0 10px;
+  }
+
+  .topo strong{
+    font-size:14px;
+  }
+
+  button{
+    min-width:66px;
+    padding:9px 15px;
   }
 }
 </style>
@@ -95,47 +175,432 @@ button{
 
 <body>
 
-<div class="topo">
+<header class="topo">
   <strong>Urban<span>Watch</span>.app Operações</strong>
-  <div id="contador">00 / 07</div>
-</div>
+  <div id="contador" aria-live="polite">00 / 07</div>
+</header>
 
-<div class="viewer" id="viewer">
-  <div class="slide active"><img src="00.png"></div>
-  <div class="slide"><img src="01.png"></div>
-  <div class="slide"><img src="02.png"></div>
-  <div class="slide"><img src="03.png"></div>
-  <div class="slide"><img src="04.png"></div>
-  <div class="slide"><img src="05.png"></div>
-  <div class="slide"><img src="06.png"></div>
-  <div class="slide"><img src="07.png"></div>
-</div>
+<main class="viewer" id="viewer" aria-label="Apresentação UWO Restaurante">
+  <section class="slide active"><img src="00.png" alt="Slide 00" draggable="false"></section>
+  <section class="slide"><img src="01.png" alt="Slide 01" draggable="false"></section>
+  <section class="slide"><img src="02.png" alt="Slide 02" draggable="false"></section>
+  <section class="slide"><img src="03.png" alt="Slide 03" draggable="false"></section>
+  <section class="slide"><img src="04.png" alt="Slide 04" draggable="false"></section>
+  <section class="slide"><img src="05.png" alt="Slide 05" draggable="false"></section>
+  <section class="slide"><img src="06.png" alt="Slide 06" draggable="false"></section>
+  <section class="slide"><img src="07.png" alt="Slide 07" draggable="false"></section>
+</main>
 
-<div class="controles">
-  <button onclick="voltar()">←</button>
-  <button onclick="inicio()">Início</button>
-  <button onclick="avancar()">→</button>
-</div>
+<nav class="controles" aria-label="Controles da apresentação">
+  <button type="button" id="btnVoltar" aria-label="Slide anterior">←</button>
+  <button type="button" id="btnInicio">Início</button>
+  <button type="button" id="btnAvancar" aria-label="Próximo slide">→</button>
+</nav>
 
 <script>
-const slides = document.querySelectorAll('.slide');
-const contador = document.getElementById('contador');
-const viewer = document.getElementById('viewer');
+(() => {
+  'use strict';
 
-let atual = 0;
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const contador = document.getElementById('contador');
+  const viewer = document.getElementById('viewer');
 
-function mostrar(n){
-  slides[atual].classList.remove('active');
-  atual = (n + slides.length) % slides.length;
-  slides[atual].classList.add('active');
-  contador.textContent = String(atual).padStart(2,'0') + ' / 07';
-  viewer.scrollTop = 0;
-  viewer.scrollLeft = 0;
-}
+  const btnVoltar = document.getElementById('btnVoltar');
+  const btnInicio = document.getElementById('btnInicio');
+  const btnAvancar = document.getElementById('btnAvancar');
 
-function avancar(){mostrar(atual + 1)}
-function voltar(){mostrar(atual - 1)}
-function inicio(){mostrar(0)}
+  let atual = 0;
+
+  // Estado individual de cada slide.
+  const estados = slides.map(() => ({
+    escala: 1,
+    escalaBase: 1,
+    escalaMaxima: 5,
+    x: 0,
+    y: 0,
+    larguraNatural: 0,
+    alturaNatural: 0
+  }));
+
+  let ponteiros = new Map();
+  let gestoInicial = null;
+  let ultimoToque = 0;
+
+  function imagemAtual() {
+    return slides[atual].querySelector('img');
+  }
+
+  function estadoAtual() {
+    return estados[atual];
+  }
+
+  function limitar(valor, minimo, maximo) {
+    return Math.min(Math.max(valor, minimo), maximo);
+  }
+
+  function aplicarTransformacao() {
+    const img = imagemAtual();
+    const estado = estadoAtual();
+
+    img.style.transform =
+      `translate3d(${estado.x}px, ${estado.y}px, 0) scale(${estado.escala})`;
+  }
+
+  function limitarPosicao() {
+    const estado = estadoAtual();
+
+    const larguraViewer = viewer.clientWidth;
+    const alturaViewer = viewer.clientHeight;
+
+    const larguraImagem = estado.larguraNatural * estado.escala;
+    const alturaImagem = estado.alturaNatural * estado.escala;
+
+    if (larguraImagem <= larguraViewer) {
+      estado.x = (larguraViewer - larguraImagem) / 2;
+    } else {
+      estado.x = limitar(estado.x, larguraViewer - larguraImagem, 0);
+    }
+
+    if (alturaImagem <= alturaViewer) {
+      estado.y = (alturaViewer - alturaImagem) / 2;
+    } else {
+      estado.y = limitar(estado.y, alturaViewer - alturaImagem, 0);
+    }
+  }
+
+  function enquadrarSlide(indice = atual) {
+    const slide = slides[indice];
+    const img = slide.querySelector('img');
+    const estado = estados[indice];
+
+    if (!img.complete || !img.naturalWidth || !img.naturalHeight) {
+      img.addEventListener('load', () => enquadrarSlide(indice), { once:true });
+      return;
+    }
+
+    estado.larguraNatural = img.naturalWidth;
+    estado.alturaNatural = img.naturalHeight;
+
+    const larguraViewer = viewer.clientWidth;
+    const alturaViewer = viewer.clientHeight;
+
+    // A imagem sempre abre inteira, centralizada e sem corte.
+    estado.escalaBase = Math.min(
+      larguraViewer / estado.larguraNatural,
+      alturaViewer / estado.alturaNatural
+    );
+
+    // Não amplia artificialmente imagens pequenas acima de 100%.
+    estado.escalaBase = Math.min(estado.escalaBase, 1);
+
+    estado.escala = estado.escalaBase;
+    estado.escalaMaxima = Math.max(estado.escalaBase * 5, 2);
+
+    estado.x =
+      (larguraViewer - estado.larguraNatural * estado.escala) / 2;
+
+    estado.y =
+      (alturaViewer - estado.alturaNatural * estado.escala) / 2;
+
+    if (indice === atual) {
+      aplicarTransformacao();
+    }
+  }
+
+  function restaurarZoom() {
+    enquadrarSlide(atual);
+  }
+
+  function mostrar(novoIndice) {
+    slides[atual].classList.remove('active');
+
+    atual = (novoIndice + slides.length) % slides.length;
+
+    slides[atual].classList.add('active');
+
+    contador.textContent =
+      String(atual).padStart(2, '0') +
+      ' / ' +
+      String(slides.length - 1).padStart(2, '0');
+
+    ponteiros.clear();
+    gestoInicial = null;
+
+    // Todo slide entra novamente enquadrado.
+    requestAnimationFrame(() => enquadrarSlide(atual));
+  }
+
+  function avancar() {
+    mostrar(atual + 1);
+  }
+
+  function voltar() {
+    mostrar(atual - 1);
+  }
+
+  function inicio() {
+    if (atual === 0) {
+      restaurarZoom();
+    } else {
+      mostrar(0);
+    }
+  }
+
+  function distanciaEntrePonteiros() {
+    const pontos = Array.from(ponteiros.values());
+    if (pontos.length < 2) return 0;
+
+    return Math.hypot(
+      pontos[1].x - pontos[0].x,
+      pontos[1].y - pontos[0].y
+    );
+  }
+
+  function centroEntrePonteiros() {
+    const pontos = Array.from(ponteiros.values());
+
+    return {
+      x: (pontos[0].x + pontos[1].x) / 2,
+      y: (pontos[0].y + pontos[1].y) / 2
+    };
+  }
+
+  viewer.addEventListener('pointerdown', evento => {
+    evento.preventDefault();
+
+    viewer.setPointerCapture(evento.pointerId);
+
+    ponteiros.set(evento.pointerId, {
+      x: evento.clientX,
+      y: evento.clientY
+    });
+
+    const agora = Date.now();
+
+    // Duplo toque restaura o enquadramento.
+    if (
+      ponteiros.size === 1 &&
+      evento.pointerType === 'touch' &&
+      agora - ultimoToque < 320
+    ) {
+      restaurarZoom();
+      ultimoToque = 0;
+      return;
+    }
+
+    ultimoToque = agora;
+
+    const estado = estadoAtual();
+
+    if (ponteiros.size === 1) {
+      gestoInicial = {
+        tipo: 'arrastar',
+        inicioX: evento.clientX,
+        inicioY: evento.clientY,
+        xOriginal: estado.x,
+        yOriginal: estado.y
+      };
+    }
+
+    if (ponteiros.size === 2) {
+      const centro = centroEntrePonteiros();
+
+      gestoInicial = {
+        tipo: 'pinça',
+        distancia: distanciaEntrePonteiros(),
+        escalaOriginal: estado.escala,
+        xOriginal: estado.x,
+        yOriginal: estado.y,
+        centroX: centro.x,
+        centroY: centro.y
+      };
+    }
+  });
+
+  viewer.addEventListener('pointermove', evento => {
+    if (!ponteiros.has(evento.pointerId)) return;
+
+    evento.preventDefault();
+
+    ponteiros.set(evento.pointerId, {
+      x: evento.clientX,
+      y: evento.clientY
+    });
+
+    const estado = estadoAtual();
+    const retangulo = viewer.getBoundingClientRect();
+
+    if (ponteiros.size === 1 && gestoInicial?.tipo === 'arrastar') {
+      // Só permite mover quando há ampliação.
+      if (estado.escala > estado.escalaBase + 0.001) {
+        const ponto = Array.from(ponteiros.values())[0];
+
+        estado.x =
+          gestoInicial.xOriginal +
+          (ponto.x - gestoInicial.inicioX);
+
+        estado.y =
+          gestoInicial.yOriginal +
+          (ponto.y - gestoInicial.inicioY);
+
+        limitarPosicao();
+        aplicarTransformacao();
+      }
+      return;
+    }
+
+    if (ponteiros.size === 2) {
+      if (gestoInicial?.tipo !== 'pinça') {
+        const centro = centroEntrePonteiros();
+
+        gestoInicial = {
+          tipo: 'pinça',
+          distancia: distanciaEntrePonteiros(),
+          escalaOriginal: estado.escala,
+          xOriginal: estado.x,
+          yOriginal: estado.y,
+          centroX: centro.x,
+          centroY: centro.y
+        };
+      }
+
+      const distanciaAtual = distanciaEntrePonteiros();
+      const centroAtual = centroEntrePonteiros();
+
+      const fator =
+        distanciaAtual / Math.max(gestoInicial.distancia, 1);
+
+      const novaEscala = limitar(
+        gestoInicial.escalaOriginal * fator,
+        estado.escalaBase,
+        estado.escalaMaxima
+      );
+
+      const centroInicialLocalX =
+        gestoInicial.centroX - retangulo.left;
+
+      const centroInicialLocalY =
+        gestoInicial.centroY - retangulo.top;
+
+      const centroAtualLocalX =
+        centroAtual.x - retangulo.left;
+
+      const centroAtualLocalY =
+        centroAtual.y - retangulo.top;
+
+      const pontoImagemX =
+        (centroInicialLocalX - gestoInicial.xOriginal) /
+        gestoInicial.escalaOriginal;
+
+      const pontoImagemY =
+        (centroInicialLocalY - gestoInicial.yOriginal) /
+        gestoInicial.escalaOriginal;
+
+      estado.escala = novaEscala;
+
+      estado.x =
+        centroAtualLocalX -
+        pontoImagemX * novaEscala;
+
+      estado.y =
+        centroAtualLocalY -
+        pontoImagemY * novaEscala;
+
+      limitarPosicao();
+      aplicarTransformacao();
+    }
+  });
+
+  function finalizarPonteiro(evento) {
+    ponteiros.delete(evento.pointerId);
+
+    if (ponteiros.size === 1) {
+      const ponto = Array.from(ponteiros.values())[0];
+      const estado = estadoAtual();
+
+      gestoInicial = {
+        tipo: 'arrastar',
+        inicioX: ponto.x,
+        inicioY: ponto.y,
+        xOriginal: estado.x,
+        yOriginal: estado.y
+      };
+    } else {
+      gestoInicial = null;
+    }
+  }
+
+  viewer.addEventListener('pointerup', finalizarPonteiro);
+  viewer.addEventListener('pointercancel', finalizarPonteiro);
+  viewer.addEventListener('lostpointercapture', finalizarPonteiro);
+
+  // Zoom pelo mouse/trackpad em computadores.
+  viewer.addEventListener('wheel', evento => {
+    evento.preventDefault();
+
+    const estado = estadoAtual();
+    const retangulo = viewer.getBoundingClientRect();
+
+    const localX = evento.clientX - retangulo.left;
+    const localY = evento.clientY - retangulo.top;
+
+    const fator = evento.deltaY < 0 ? 1.12 : 0.88;
+
+    const novaEscala = limitar(
+      estado.escala * fator,
+      estado.escalaBase,
+      estado.escalaMaxima
+    );
+
+    const pontoImagemX =
+      (localX - estado.x) / estado.escala;
+
+    const pontoImagemY =
+      (localY - estado.y) / estado.escala;
+
+    estado.x = localX - pontoImagemX * novaEscala;
+    estado.y = localY - pontoImagemY * novaEscala;
+    estado.escala = novaEscala;
+
+    limitarPosicao();
+    aplicarTransformacao();
+  }, { passive:false });
+
+  btnAvancar.addEventListener('click', avancar);
+  btnVoltar.addEventListener('click', voltar);
+  btnInicio.addEventListener('click', inicio);
+
+  document.addEventListener('keydown', evento => {
+    if (evento.key === 'ArrowRight') avancar();
+    if (evento.key === 'ArrowLeft') voltar();
+    if (evento.key === 'Home' || evento.key === 'Escape') inicio();
+  });
+
+  // Reenquadra corretamente após girar a tela ou redimensionar.
+  let temporizadorResize;
+
+  window.addEventListener('resize', () => {
+    clearTimeout(temporizadorResize);
+    temporizadorResize = setTimeout(restaurarZoom, 120);
+  });
+
+  window.addEventListener('orientationchange', () => {
+    setTimeout(restaurarZoom, 250);
+  });
+
+  // Inicialização segura.
+  slides.forEach((slide, indice) => {
+    const img = slide.querySelector('img');
+
+    if (img.complete) {
+      enquadrarSlide(indice);
+    } else {
+      img.addEventListener('load', () => enquadrarSlide(indice), { once:true });
+    }
+  });
+
+  requestAnimationFrame(() => enquadrarSlide(0));
+})();
 </script>
 
 </body>
