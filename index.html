@@ -324,5 +324,20 @@
     <strong>UrbanWatch.app</strong>
     <div class="location">Fortaleza • Brazil</div>
   </footer>
+  <script>
+fetch("https://hook.us2.make.com/cb8yyyg7swkipex2rnczq7v9jjp54ulz", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    pagina: window.location.pathname,
+    url: window.location.href,
+    origem: document.referrer,
+    navegador: navigator.userAgent,
+    horario: new Date().toISOString()
+  })
+});
+  </script>
 </body>
 </html>
