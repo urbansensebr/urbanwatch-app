@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b3b33" />
+  <meta name="description" content="Portal Profissional Digital Premium de William Kich Quiropraxia, desenvolvido pela UrbanWatch.app." />
+  <title>William Kich | Quiropraxia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde-950: #062a24;
+      --verde-900: #08362e;
+      --verde-800: #0b473c;
+      --verde-700: #126052;
+      --menta: #86d6b5;
+      --menta-clara: #d9f4e8;
+      --branco: #ffffff;
+      --cinza: #dfe9e5;
+      --dourado: #d4af37;
+      --dourado-claro: #f1e5ac;
+      --preto: #0a0a0a;
+      --sombra: 0 18px 60px rgba(0, 0, 0, .28);
+      --raio: 28px;
+      --largura: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+      color: var(--branco);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(134, 214, 181, .12), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(212, 175, 55, .08), transparent 24%),
+        linear-gradient(180deg, #031e1a 0%, #062a24 42%, #041b17 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--largura));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(3, 30, 26, .78);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .topbar-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.18);
+      background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.03));
+      box-shadow: inset 0 0 24px rgba(134,214,181,.08);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand-mini strong { display: block; letter-spacing: .03em; }
+    .brand-mini small { color: var(--menta); }
+
+    .top-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--menta), #58b990);
+      color: #05251f;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(86, 185, 144, .26);
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      padding: 64px 0 52px;
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -10vw;
+      right: -10vw;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(134,214,181,.12), rgba(134,214,181,.03));
+      z-index: -2;
+      transform: rotate(-2deg);
+    }
+
+    .hero::before { top: -110px; }
+    .hero::after { bottom: -125px; transform: rotate(2deg); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: var(--menta);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--menta);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .98;
+      margin: 0 0 18px;
+      letter-spacing: -.03em;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2.2vw, 26px);
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--menta);
+      margin: 0 0 24px;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      color: var(--cinza);
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 16px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--menta), #5cbf96);
+      color: #05251f;
+      box-shadow: 0 14px 34px rgba(92,191,150,.26);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.16);
+      background: rgba(255,255,255,.05);
+      color: var(--branco);
+    }
+
+    .visual-card {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      width: min(86vw, 460px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,.38);
+      background:
+        radial-gradient(circle at 48% 40%, rgba(134,214,181,.18), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.015));
+      box-shadow: var(--sombra), inset 0 0 100px rgba(0,0,0,.22);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .logo-wrap {
+      position: relative;
+      text-align: center;
+      width: 78%;
+      padding: 40px 20px;
+    }
+
+    .spine {
+      position: absolute;
+      inset: 4% 0 auto 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 330px;
+      opacity: .78;
+      pointer-events: none;
+    }
+
+    .spine span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--menta-clara), var(--menta));
+      box-shadow: 0 0 16px rgba(134,214,181,.28);
+    }
+
+    .spine span:nth-child(1){ width:9px;height:9px;top:0;left:48%; }
+    .spine span:nth-child(2){ width:13px;height:13px;top:28px;left:54%; }
+    .spine span:nth-child(3){ width:18px;height:18px;top:64px;left:46%; }
+    .spine span:nth-child(4){ width:23px;height:23px;top:108px;left:55%; }
+    .spine span:nth-child(5){ width:19px;height:19px;top:160px;left:45%; }
+    .spine span:nth-child(6){ width:16px;height:16px;top:205px;left:53%; }
+    .spine span:nth-child(7){ width:13px;height:13px;top:244px;left:47%; }
+    .spine span:nth-child(8){ width:10px;height:10px;top:278px;left:52%; }
+    .spine span:nth-child(9){ width:7px;height:7px;top:307px;left:48%; }
+
+    .wk-symbol {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(72px, 10vw, 122px);
+      line-height: 1;
+      letter-spacing: -.12em;
+      font-weight: 600;
+      text-shadow: 0 10px 34px rgba(0,0,0,.35);
+      margin-bottom: 16px;
+    }
+
+    .wk-symbol .w { color: var(--branco); }
+    .wk-symbol .k { color: var(--menta); }
+
+    .logo-name {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+
+    .logo-role {
+      position: relative;
+      z-index: 2;
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: .42em;
+      color: var(--menta);
+      text-transform: uppercase;
+    }
+
+    .nfc-pill {
+      position: absolute;
+      right: 0;
+      bottom: 58px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(2,24,20,.7);
+      backdrop-filter: blur(10px);
+      color: var(--menta-clara);
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 14px 40px rgba(0,0,0,.28);
+    }
+
+    .waves { font-size: 24px; letter-spacing: -4px; }
+
+    section { padding: 84px 0; }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-title span {
+      color: var(--menta);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      margin: 10px 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.08;
+    }
+
+    .section-title p {
+      color: var(--cinza);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      border-radius: var(--raio);
+      padding: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 14px 34px rgba(0,0,0,.14);
+    }
+
+    .info-card .icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(134,214,181,.10);
+      border: 1px solid rgba(134,214,181,.20);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .info-card h3 { margin: 0 0 10px; }
+    .info-card p { margin: 0; color: var(--cinza); line-height: 1.65; }
+
+    .about {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .photo-placeholder {
+      min-height: 460px;
+      border-radius: var(--raio);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, transparent, rgba(2,20,17,.86)),
+        url("william-kich.jpg") center/cover no-repeat,
+        linear-gradient(135deg, #174d42, #082d27);
+      box-shadow: var(--sombra);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .photo-placeholder p {
+      margin: 0;
+      color: var(--menta-clara);
+      font-weight: 600;
+    }
+
+    .about-copy {
+      border-radius: var(--raio);
+      padding: clamp(28px, 5vw, 52px);
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .about-copy p {
+      color: var(--cinza);
+      line-height: 1.85;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(134,214,181,.09);
+      border: 1px solid rgba(134,214,181,.18);
+      color: var(--menta-clara);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .social {
+      min-height: 140px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      transition: .25s ease;
+    }
+
+    .social:hover {
+      transform: translateY(-4px);
+      border-color: rgba(134,214,181,.36);
+      background: rgba(134,214,181,.08);
+    }
+
+    .social svg {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 10px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+    }
+
+    .social strong { display:block; margin-bottom:6px; }
+    .social small { color: var(--menta); }
+
+    .location-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      border-radius: var(--raio);
+      padding: clamp(28px, 5vw, 48px);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(212,175,55,.14), transparent 28%),
+        linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.11);
+    }
+
+    .location-box h3 { margin: 0 0 12px; font-size: clamp(26px, 4vw, 40px); }
+    .location-box p { margin: 0; color: var(--cinza); line-height: 1.7; }
+
+    .qr-card {
+      width: 196px;
+      min-width: 196px;
+      padding: 14px;
+      border-radius: 24px;
+      background: #fff;
+      color: #111;
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+      text-align: center;
+    }
+
+    .qr-card img {
+      width: 168px;
+      height: 168px;
+      object-fit: contain;
+    }
+
+    .qr-card small { display: block; margin-top: 8px; font-weight: 700; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 34px 0 100px;
+      color: rgba(255,255,255,.68);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .uw-signature strong {
+      color: var(--branco);
+      letter-spacing: .14em;
+    }
+
+    .uw-signature .watch { color: var(--dourado); }
+    .uw-signature .app { color: var(--dourado-claro); font-size: .72em; }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      box-shadow: 0 16px 42px rgba(0,0,0,.34);
+      border: 4px solid rgba(255,255,255,.14);
+    }
+
+    .floating-whatsapp svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about { grid-template-columns: 1fr; }
+      .visual-card { min-height: 440px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+      .location-box { grid-template-columns: 1fr; }
+      .qr-card { margin: 0 auto; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 22px), var(--largura)); }
+      .topbar-inner { min-height: 64px; }
+      .brand-mini small { display: none; }
+      .top-cta { padding: 10px 14px; font-size: 13px; }
+      .hero { padding-top: 34px; }
+      .visual-card { min-height: 360px; }
+      .orb { width: 92vw; }
+      .nfc-pill { right: 6px; bottom: 18px; }
+      .social-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-mini" href="#inicio" aria-label="Voltar ao início">
+        <div class="brand-mark">WK</div>
+        <div>
+          <strong>William Kich</strong>
+          <small>Quiropraxia</small>
+        </div>
+      </a>
+      <a class="top-cta js-whatsapp" href="#" target="_blank" rel="noopener">Agendar consulta</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Movimento, equilíbrio e bem-estar</div>
+          <h1>William Kich</h1>
+          <p class="subtitle">Quiropraxia</p>
+          <p class="hero-copy">
+            Atendimento profissional voltado ao cuidado da coluna, mobilidade e qualidade de vida.
+            Conheça os canais de William, acompanhe seus conteúdos e agende seu atendimento em poucos toques.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary js-whatsapp" href="#" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+            <a class="btn btn-secondary" href="#conheca">Conhecer o profissional</a>
+          </div>
+        </div>
+
+        <div class="visual-card" aria-label="Identidade visual William Kich">
+          <div class="orb">
+            <div class="logo-wrap">
+              <div class="spine" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="wk-symbol"><span class="w">W</span><span class="k">K</span></div>
+              <div class="logo-name">William Kich</div>
+              <div class="logo-role">Quiropraxia</div>
+            </div>
+          </div>
+          <div class="nfc-pill"><span>📱</span><span class="waves">)))</span> Aproxime seu celular</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="container">
+        <div class="section-title">
+          <span>Experiência de atendimento</span>
+          <h2>Cuidado profissional com acesso simples e direto.</h2>
+          <p>Informações, contato, localização e redes sociais centralizados em um único portal digital.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="info-card">
+            <div class="icon">🦴</div>
+            <h3>Cuidado da coluna</h3>
+            <p>Atendimento direcionado à mobilidade, ao equilíbrio corporal e ao bem-estar na rotina.</p>
+          </article>
+          <article class="info-card">
+            <div class="icon">📅</div>
+            <h3>Agendamento rápido</h3>
+            <p>Entre em contato diretamente pelo WhatsApp e consulte os horários disponíveis.</p>
+          </article>
+          <article class="info-card">
+            <div class="icon">▶</div>
+            <h3>Conteúdo profissional</h3>
+            <p>Acompanhe orientações, bastidores e conteúdos publicados nas principais redes sociais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conheca">
+      <div class="container about">
+        <div class="photo-placeholder">
+          <p>Substitua o arquivo <strong>william-kich.jpg</strong> por uma foto profissional.</p>
+        </div>
+
+        <div class="about-copy">
+          <div class="section-title">
+            <span>Sobre</span>
+            <h2>Atendimento personalizado e conexão genuína.</h2>
+          </div>
+          <p>
+            William Kich é quiropraxista e atua em Fortaleza, oferecendo uma experiência profissional
+            orientada à atenção individual, ao movimento e à qualidade de vida.
+          </p>
+          <p>
+            Este portal reúne seus principais canais digitais e facilita o contato de pacientes,
+            parceiros e pessoas interessadas em conhecer melhor seu trabalho.
+          </p>
+          <div class="chips">
+            <span class="chip">Quiropraxia</span>
+            <span class="chip">Mobilidade</span>
+            <span class="chip">Bem-estar</span>
+            <span class="chip">Atendimento personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="redes">
+      <div class="container">
+        <div class="section-title">
+          <span>Conecte-se</span>
+          <h2>Todos os canais em um só lugar.</h2>
+          <p>Escolha como prefere falar com William ou acompanhar seus conteúdos.</p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social js-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.7Z"/><path d="M8.6 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.5 1 1.4 1.8 2.4 2.3.3.2.5.2.7 0l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.1.4.3.4.6 0 .4-.2 1.4-.9 2-.7.6-1.6.7-2.5.4-1.4-.4-3.1-1.2-4.8-2.7-1.4-1.3-2.4-2.8-2.9-4.1-.4-1-.4-1.6 0-2.2.3-.5.6-.7.8-.8Z"/></svg>
+            <div><strong>WhatsApp</strong><small>Agende sua consulta</small></div>
+          </a>
+
+          <a class="social" id="instagramLink" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" 
