@@ -257,7 +257,20 @@
       letter-spacing:.12em;
       text-transform:uppercase;
     }
+    
+.video-container{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:24px;
+    background:#000;
+}
 
+.video-container iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
     .fact strong{
       display:block;
       margin-top:8px;
@@ -662,16 +675,18 @@
               </div>
             </div>
 
-            <div class="media">
-              <video controls preload="metadata">
-                <source src="./video-imovel.mp4" type="video/mp4">
-              </video>
-              <div class="media-overlay"></div>
-              <div class="media-caption">
-                <strong>Vídeo de observação</strong>
-                <span>video-imovel.mp4</span>
-              </div>
-            </div>
+            <div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/dFbdx1rl4i0"
+    title="Imóvel Comercial - Av. Barão de Studart × Av. Santos Dumont"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
           </div>
         </div>
       </div>
