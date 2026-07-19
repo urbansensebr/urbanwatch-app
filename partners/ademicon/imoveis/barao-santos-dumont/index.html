@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Dossiê imobiliário digital UrbanWatch para o imóvel na esquina da Avenida Barão de Studart com a Avenida Santos Dumont, em Fortaleza." />
+  <title>Barão de Studart × Santos Dumont | Dossiê UrbanWatch</title>
+
+  <style>
+    :root{
+      --black:#0A0A0A;
+      --graphite:#151515;
+      --graphite-2:#1C1C1C;
+      --gold:#D4AF37;
+      --gold-dark:#9B7616;
+      --champagne:#F1E5AC;
+      --white:#F7F7F2;
+      --muted:#B8B8B1;
+      --line:rgba(212,175,55,.22);
+      --line-soft:rgba(255,255,255,.08);
+      --success:#9ED0A7;
+      --warning:#E7C86D;
+      --danger:#D69A9A;
+      --radius:28px;
+      --shadow:0 28px 80px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--black)}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--white);
+      font-family:Montserrat,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 12% 4%,rgba(212,175,55,.13),transparent 28%),
+        radial-gradient(circle at 90% 16%,rgba(241,229,172,.07),transparent 22%),
+        linear-gradient(180deg,#090909 0%,#101010 45%,#080808 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img,video{display:block;max-width:100%}
+    .shell{width:min(1180px,calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(18px);
+      background:rgba(10,10,10,.80);
+      border-bottom:1px solid rgba(212,175,55,.12);
+    }
+
+    .topbar-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{display:flex;align-items:center;gap:13px;min-width:0}
+    .brand-mark{
+      width:44px;height:44px;flex:0 0 auto;
+      display:grid;place-items:center;
+      border-radius:15px;
+      border:1px solid rgba(212,175,55,.5);
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:.05em;
+    }
+
+    .brand-copy{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+    .brand-copy strong{font-size:14px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+    .brand-copy span{margin-top:6px;color:var(--gold);font-size:10px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+
+    .top-actions{display:flex;align-items:center;gap:10px}
+    .top-link{
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:.25s ease;
+    }
+    .top-link:hover{color:var(--white);background:rgba(255,255,255,.05)}
+    .top-link.primary{
+      color:#111;
+      background:linear-gradient(135deg,var(--champagne),var(--gold));
+      font-weight:800;
+    }
+
+    .hero{
+      min-height:82vh;
+      display:grid;
+      align-items:end;
+      position:relative;
+      overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.88)),
+        linear-gradient(135deg,#252525,#0d0d0d);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 78% 18%,rgba(212,175,55,.22),transparent 24%),
+        linear-gradient(120deg,transparent 0 58%,rgba(212,175,55,.06) 58% 59%,transparent 59% 100%);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:110px 0 64px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:20px;
+      color:var(--champagne);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .eyebrow::before{
+      content:"";
+      width:38px;height:1px;
+      background:linear-gradient(90deg,var(--gold),transparent);
+    }
+
+    .status-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.28);
+    }
+    .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--warning)}
+    .badge.high::before{background:var(--success)}
+    .badge.gold{color:var(--champagne);border-color:rgba(212,175,55,.28)}
+
+    h1{
+      margin:0;
+      max-width:920px;
+      font-size:clamp(46px,7vw,94px);
+      line-height:.93;
+      letter-spacing:-.055em;
+    }
+    .gold-text{
+      color:transparent;
+      background:linear-gradient(135deg,#F7EAAA 0%,var(--gold) 58%,var(--gold-dark) 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+
+    .lead{
+      max-width:790px;
+      margin:26px 0 0;
+      color:#D1D1CA;
+      font-size:clamp(17px,2vw,21px);
+      line-height:1.72;
+    }
+
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+    .btn{
+      min-height:54px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:0 22px;
+      border-radius:17px;
+      border:1px solid transparent;
+      font-weight:800;
+      transition:.25s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      color:#111;
+      background:linear-gradient(135deg,var(--champagne),var(--gold));
+      box-shadow:0 18px 40px rgba(212,175,55,.18);
+    }
+    .btn-secondary{
+      border-color:rgba(255,255,255,.13);
+      background:rgba(255,255,255,.045);
+    }
+
+    section{padding:58px 0}
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:28px;
+      margin-bottom:28px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:clamp(31px,4vw,52px);
+      letter-spacing:-.04em;
+    }
+    .section-head p{
+      margin:0;
+      max-width:540px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .summary-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+    }
+
+    .panel{
+      padding:30px;
+      border:1px solid rgba(255,255,255,.085);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.024);
+    }
+
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .fact{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.20);
+    }
+
+    .fact small{
+      color:var(--gold);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .fact strong{
+      display:block;
+      margin-top:8px;
+      font-size:16px;
+      line-height:1.45;
+    }
+
+    .rating{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:100%;
+      background:
+        radial-gradient(circle at 86% 5%,rgba(212,175,55,.15),transparent 28%),
+        rgba(255,255,255,.025);
+    }
+
+    .rating-score{
+      font-size:clamp(68px,9vw,112px);
+      font-weight:900;
+      letter-spacing:-.07em;
+      line-height:1;
+      color:var(--gold);
+    }
+
+    .rating-label{
+      margin-top:10px;
+      color:var(--champagne);
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .rating p{color:var(--muted);line-height:1.7;font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:16px;
+    }
+
+    .gallery-side{
+      display:grid;
+      gap:16px;
+    }
+
+    .media{
+      min-height:240px;
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.58)),
+        radial-gradient(circle at 75% 10%,rgba(212,175,55,.16),transparent 30%),
+        linear-gradient(135deg,#292929,#121212);
+      display:flex;
+      align-items:flex-end;
+      padding:22px;
+    }
+
+    .media.main{min-height:510px}
+    .media strong{position:relative;z-index:2;font-size:17px}
+    .media span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+    .media img,.media video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .media-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.82));
+      z-index:1;
+    }
+    .media-caption{position:relative;z-index:2}
+
+    .analysis-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .analysis-card{
+      padding:26px;
+      border:1px solid rgba(255,255,255,.085);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.016));
+    }
+
+    .analysis-card h3{margin:0 0 14px;color:var(--gold);font-size:22px}
+    .analysis-card ul{margin:0;padding-left:20px;color:#D0D0C9}
+    .analysis-card li{margin:8px 0}
+    .analysis-card p{margin:0;color:var(--muted);line-height:1.75}
+
+    .map-frame{
+      min-height:420px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.085);
+      overflow:hidden;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.52)),
+        radial-gradient(circle at 55% 45%,rgba(212,175,55,.13),transparent 28%),
+        #171717;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:30px;
+    }
+
+    .map-frame strong{display:block;color:var(--champagne);font-size:22px}
+    .map-frame span{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+
+    .timeline{
+      position:relative;
+      margin-top:16px;
+      padding-left:28px;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:7px;
+      top:6px;
+      bottom:6px;
+      width:1px;
+      background:linear-gradient(var(--gold),rgba(212,175,55,.08));
+    }
+
+    .timeline-item{
+      position:relative;
+      padding:0 0 28px 22px;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-25px;
+      top:6px;
+      width:11px;height:11px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(212,175,55,.09);
+    }
+
+    .timeline-item small{
+      color:var(--gold);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .timeline-item strong{display:block;margin:7px 0 5px;font-size:17px}
+    .timeline-item p{margin:0;color:var(--muted);line-height:1.65;font-size:13px}
+
+    .documents{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .document{
+      min-height:170px;
+      padding:22px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .document small{color:var(--gold);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .document strong{margin:16px 0 8px;font-size:18px}
+    .document span{color:var(--muted);font-size:13px;line-height:1.55}
+    .document a{margin-top:auto;padding-top:20px;color:var(--champagne);font-size:13px;font-weight:800}
+
+    .contact-card{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:28px;
+      padding:34px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 8% 0%,rgba(212,175,55,.10),transparent 32%),
+        rgba(255,255,255,.022);
+    }
+
+    .contact-card h2{margin:0;font-size:clamp(30px,4vw,48px);letter-spacing:-.04em}
+    .contact-list{display:grid;gap:12px}
+    .contact-row{
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(0,0,0,.20);
+    }
+    .contact-row small{display:block;color:var(--gold);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .contact-row strong{display:block;margin-top:7px}
+    .contact-row span{display:block;margin-top:3px;color:var(--muted);font-size:12px}
+
+    .disclaimer{
+      padding:24px;
+      border-radius:20px;
+      border:1px solid rgba(212,175,55,.18);
+      background:rgba(212,175,55,.04);
+      color:var(--muted);
+      line-height:1.7;
+      font-size:13px;
+    }
+    .disclaimer strong{color:var(--champagne)}
+
+    footer{
+      margin-top:20px;
+      padding:38px 0 48px;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      color:#909089;
+      font-size:12px;
+      line-height:1.65;
+    }
+    .footer-inner strong{color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+
+    @media(max-width:900px){
+      .summary-grid,.contact-card{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .media.main{min-height:360px}
+      .gallery-side{grid-template-columns:repeat(2,1fr)}
+      .documents{grid-template-columns:1fr}
+      .top-actions .top-link:not(.primary){display:none}
+    }
+
+    @media(max-width:700px){
+      .analysis-grid{grid-template-columns:1fr}
+      .facts{grid-template-columns:1fr}
+      .gallery-side{grid-template-columns:1fr}
+    }
+
+    @media(max-width:560px){
+      .shell{width:min(100% - 22px,1180px)}
+      .topbar-inner{min-height:70px}
+      .brand-copy strong{font-size:12px}
+      .brand-copy span{font-size:9px}
+      .top-link.primary{font-size:12px;padding:9px 12px}
+      .hero{min-height:auto}
+      .hero-content{padding:72px 0 46px}
+      h1{font-size:clamp(42px,14vw,68px)}
+      section{padding:42px 0}
+      .section-head{flex-direction:column;align-items:flex-start}
+      .panel,.contact-card{padding:22px;border-radius:24px}
+      .media.main{min-height:290px}
+      .media{min-height:210px}
+      .hero-actions .btn{width:100%}
+      .footer-inner{flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *{scroll-behavior:auto!important;transition:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="../" aria-label="Voltar ao portal de imóveis">
+        <div class="brand-mark">UW</div>
+        <div class="brand-copy">
+          <strong>UrbanWatch Partners</strong>
+          <span>Dossiê imobiliário digital</span>
+        </div>
+      </a>
+
+      <nav class="top-actions" aria-label="Navegação">
+        <a class="top-link" href="../">Todos os imóveis</a>
+        <a class="top-link primary" href="../../">Portal Ademicon</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-content">
+        <div class="eyebrow">Imóvel 01 · Aldeota · Fortaleza</div>
+
+        <div class="status-row">
+          <span class="badge">Investigação em andamento</span>
+          <span class="badge high">Potencial preliminar alto</span>
+          <span class="badge gold">Disponibilidade não confirmada</span>
+        </div>
+
+        <h1>
+          Barão de Studart
+          <span class="gold-text">× Santos Dumont</span>
+        </h1>
+
+        <p class="lead">
+          Dossiê digital do imóvel comercial de esquina anteriormente ocupado pela
+          Ortobom, localizado em um dos principais eixos empresariais e de serviços
+          de Fortaleza.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#galeria">Ver evidências</a>
+          <a class="btn btn-secondary" href="#investigacao">Acompanhar investigação</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resumo">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Visão executiva</div>
+            <h2>Resumo do imóvel</h2>
+          </div>
+          <p>
+            Informações organizadas para facilitar uma leitura rápida antes da análise
+            completa das evidências e dos pontos estratégicos.
+          </p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="panel">
+            <div class="facts">
+              <div class="fact">
+                <small>Localização</small>
+                <strong>Av. Barão de Studart × Av. Santos Dumont</strong>
+              </div>
+              <div class="fact">
+                <small>Bairro</small>
+                <strong>Aldeota · Fortaleza/CE</strong>
+              </div>
+              <div class="fact">
+                <small>Tipologia</small>
+                <strong>Imóvel comercial de esquina</strong>
+              </div>
+              <div class="fact">
+                <small>Última ocupação identificada</small>
+                <strong>Ortobom</strong>
+              </div>
+              <div class="fact">
+                <small>Status comercial</small>
+                <strong>Disponibilidade ainda não confirmada</strong>
+              </div>
+              <div class="fact">
+                <small>Última atualização</small>
+                <strong>Julho de 2026</strong>
+              </div>
+            </div>
+          </div>
+
+          <aside class="panel rating">
+            <div>
+              <div class="rating-score">A</div>
+              <div class="rating-label">Potencial preliminar alto</div>
+            </div>
+            <p>
+              Classificação UrbanWatch baseada, nesta etapa, em visibilidade, inserção
+              urbana, fluxo, imagem corporativa potencial e relevância do cruzamento.
+              Não representa parecer técnico definitivo.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Evidências visuais</div>
+            <h2>Galeria do imóvel</h2>
+          </div>
+          <p>
+            Substitua os arquivos abaixo pelas fotos e pelo vídeo reais mantendo
+            os mesmos nomes na pasta desta página.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <div class="media main">
+            <img src="./fachada-principal.jpg" alt="Fachada principal do imóvel" onerror="this.style.display='none'">
+            <div class="media-overlay"></div>
+            <div class="media-caption">
+              <strong>Fachada principal</strong>
+              <span>Arquivo sugerido: fachada-principal.jpg</span>
+            </div>
+          </div>
+
+          <div class="gallery-side">
+            <div class="media">
+              <img src="./vista-esquina.jpg" alt="Vista da esquina" onerror="this.style.display='none'">
+              <div class="media-overlay"></div>
+              <div class="media-caption">
+                <strong>Vista da esquina</strong>
+                <span>vista-esquina.jpg</span>
+              </div>
+            </div>
+
+            <div class="media">
+              <video controls preload="metadata">
+                <source src="./video-imovel.mp4" type="video/mp4">
+              </video>
+              <div class="media-overlay"></div>
+              <div class="media-caption">
+                <strong>Vídeo de observação</strong>
+                <span>video-imovel.mp4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analise">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Análise UrbanWatch</div>
+            <h2>Leitura estratégica preliminar</h2>
+          </div>
+          <p>
+            A avaliação combina observação em campo, conhecimento local e pesquisa
+            complementar. Alguns itens dependem de validação técnica.
+          </p>
+        </div>
+
+        <div class="analysis-grid">
+          <article class="analysis-card">
+            <h3>Pontos favoráveis</h3>
+            <ul>
+              <li>Esquina com elevada exposição visual.</li>
+              <li>Localização em corredor empresarial consolidado.</li>
+              <li>Fluxo intenso de veículos ao longo do dia.</li>
+              <li>Proximidade de serviços, escritórios e comércio.</li>
+              <li>Potencial para presença institucional marcante.</li>
+              <li>Endereço de fácil reconhecimento na cidade.</li>
+            </ul>
+          </article>
+
+          <article class="analysis-card">
+            <h3>Pontos de atenção</h3>
+            <ul>
+              <li>Disponibilidade comercial ainda não confirmada.</li>
+              <li>Necessidade de avaliar estacionamento e acessos.</li>
+              <li>Verificação das dimensões internas e capacidade operacional.</li>
+              <li>Análise de fachada, sinalização e adequação urbanística.</li>
+              <li>Confirmação da titularidade e da representação imobiliária.</li>
+              <li>Levantamento de condições comerciais e documentais.</li>
+            </ul>
+          </article>
+
+          <article class="analysis-card">
+            <h3>Perfil do entorno</h3>
+            <p>
+              O cruzamento está inserido em uma região tradicionalmente associada a
+              serviços, comércio, escritórios, saúde e atividades corporativas.
+              Essa característica pode favorecer uma operação que dependa de
+              visibilidade, confiança e fácil identificação.
+            </p>
+          </article>
+
+          <article class="analysis-card">
+            <h3>Conclusão preliminar</h3>
+            <p>
+              O imóvel merece aprofundamento. Sua principal vantagem está na combinação
+              entre esquina, exposição e relevância urbana. A continuidade da análise
+              depende da confirmação de disponibilidade, dimensões, acessibilidade,
+              estacionamento e viabilidade comercial.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="localizacao">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Localização</div>
+            <h2>Inserção urbana</h2>
+          </div>
+          <p>
+            Este bloco pode receber posteriormente um mapa interativo oficial ou
+            uma imagem cartográfica produzida a partir de fonte confiável.
+          </p>
+        </div>
+
+        <div class="map-frame">
+          <div>
+            <strong>Mapa interativo reservado</strong>
+            <span>Av. Barão de Studart × Av. Santos Dumont · Aldeota · Fortaleza/CE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="investigacao">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Acompanhamento</div>
+            <h2>Linha do tempo da investigação</h2>
+          </div>
+          <p>
+            Histórico de descobertas e próximos passos. Atualize apenas os blocos
+            necessários conforme surgirem novas informações.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="timeline">
+            <div class="timeline-item">
+              <small>Julho de 2026</small>
+              <strong>Identificação inicial do imóvel</strong>
+              <p>Reconhecimento da esquina e registro da antiga operação da Ortobom.</p>
+            </div>
+
+            <div class="timeline-item">
+              <small>Julho de 2026</small>
+              <strong>Início da investigação de responsabilidade</strong>
+              <p>Busca pelo proprietário, responsável comercial ou imobiliária vinculada ao imóvel.</p>
+            </div>
+
+            <div class="timeline-item">
+              <small>Em andamento</small>
+              <strong>Confirmação da disponibilidade</strong>
+              <p>Ainda é necessário verificar se o imóvel está disponível para locação, venda ou negociação.</p>
+            </div>
+
+            <div class="timeline-item">
+              <small>Próxima etapa</small>
+              <strong>Validação técnica e comercial</strong>
+              <p>Levantamento de área, estacionamento, acessos, condições comerciais e documentação.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="documentos">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Arquivos e evidências</div>
+            <h2>Documentos do dossiê</h2>
+          </div>
+          <p>
+            Os links já estão estruturados. Basta incluir os arquivos correspondentes
+            na mesma pasta do imóvel.
+          </p>
+        </div>
+
+        <div class="documents">
+          <article class="document">
+            <small>Documento 01</small>
+            <strong>Relatório preliminar</strong>
+            <span>Resumo da observação do imóvel e dos pontos considerados relevantes.</span>
+            <a href="./relatorio-preliminar.pdf">Abrir arquivo →</a>
+          </article>
+
+          <article class="document">
+            <small>Documento 02</small>
+            <strong>Registro fotográfico</strong>
+            <span>Conjunto de imagens organizadas para consulta e comparação.</span>
+            <a href="./registro-fotografico.pdf">Abrir arquivo →</a>
+          </article>
+
+          <article class="document">
+            <small>Documento 03</small>
+            <strong>Pesquisa de responsabilidade</strong>
+            <span>Notas e evidências relacionadas a proprietário, representante ou imobiliária.</span>
+            <a href="./pesquisa-responsavel.pdf">Abrir arquivo →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatos">
+      <div class="shell">
+        <div class="contact-card">
+          <div>
+            <div class="eyebrow">Responsabilidade pelo imóvel</div>
+            <h2>Contatos e situação da apuração</h2>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-row">
+              <small>Proprietário</small>
+              <strong>Em investigação</strong>
+              <span>Não confirmado até a última atualização.</span>
+            </div>
+
+            <div class="contact-row">
+              <small>Imobiliária ou responsável comercial</small>
+              <strong>Em investigação</strong>
+              <span>Contato profissional ainda não confirmado.</span>
+            </div>
+
+            <div class="contact-row">
+              <small>Disponibilidade</small>
+              <strong>Não confirmada</strong>
+              <span>Necessário contato direto com representante legítimo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="disclaimer">
+          <strong>Aviso importante:</strong> este dossiê possui caráter informativo,
+          preliminar e colaborativo. A classificação de potencial é uma leitura
+          UrbanWatch baseada nas informações disponíveis nesta etapa. Ela não substitui
+          avaliações técnicas, jurídicas, urbanísticas, financeiras, imobiliárias,
+          estruturais ou comerciais conduzidas pela Ademicon e por profissionais habilitados.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <strong>UrbanWatch.app</strong><br />
+        Inteligência para quem não improvisa.
+      </div>
+
+      <div>
+        Dossiê imobiliário digital<br />
+        Ademicon · Fortaleza · 2026
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
