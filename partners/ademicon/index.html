@@ -1,1 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta
+    name="description"
+    content="Portal UrbanWatch Partners dedicado à contribuição estratégica para a expansão da Ademicon em Fortaleza, Ceará."
+  />
+  <title>Ademicon | UrbanWatch Partners</title>
 
+  <style>
+    :root{
+      --black:#0A0A0A;
+      --graphite:#151515;
+      --graphite-2:#1D1D1D;
+      --gold:#D4AF37;
+      --champagne:#F1E5AC;
+      --white:#F7F7F2;
+      --muted:#BDBDB5;
+      --line:rgba(212,175,55,.22);
+      --line-soft:rgba(255,255,255,.08);
+      --success:#8ED7A8;
+      --radius:28px;
+      --shadow:0 28px 80px rgba(0,0,0,.40);
+    }
+
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      background:var(--black);
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--white);
+      font-family:Montserrat, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(212,175,55,.13), transparent 27%),
+        radial-gradient(circle at 88% 22%, rgba(241,229,172,.07), transparent 23%),
+        linear-gradient(180deg,#090909 0%,#111 42%,#080808 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    .shell{
+      width:min(1160px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid rgba(212,175,55,.12);
+      background:rgba(10,10,10,.76);
+      backdrop-filter:blur(18px);
+    }
+
+    .topbar-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:44px;
+      height:44px;
+      border-radius:15px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(212,175,55,.48);
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:.05em;
+      box-shadow:inset 0 0 20px rgba(212,175,55,.06);
+      flex:0 0 auto;
+    }
+
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      min-width:0;
+    }
+
+    .brand-copy strong{
+      font-size:14px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .brand-copy span{
+      margin-top:6px;
+      color:var(--gold);
+      font-size:10px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .back-link{
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:999px;
+      background:rgba(255,255,255,.025);
+      transition:.25s ease;
+    }
+
+    .back-link:hover{
+      color:var(--white);
+      border-color:rgba(212,175,55,.35);
+    }
+
+    .hero{
+      padding:88px 0 56px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:34px;
+      align-items:stretch;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:22px;
+      color:var(--champagne);
+      font-size:12px;
+      letter-spacing:.19em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:38px;
+      height:1px;
+      background:linear-gradient(90deg,var(--gold),transparent);
+    }
+
+    h1{
+      margin:0;
+      max-width:820px;
+      font-size:clamp(48px,7vw,92px);
+      line-height:.94;
+      letter-spacing:-.055em;
+    }
+
+    .gold{
+      color:transparent;
+      background:linear-gradient(135deg,#F7EAAA 0%,#D4AF37 60%,#9A7615 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+
+    .lead{
+      max-width:720px;
+      margin:28px 0 0;
+      color:#D4D4CD;
+      font-size:clamp(17px,2vw,21px);
+      line-height:1.7;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    .btn{
+      min-height:54px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:0 22px;
+      border-radius:17px;
+      border:1px solid transparent;
+      font-weight:800;
+      transition:.25s ease;
+    }
+
+    .btn-primary{
+      color:#111;
+      background:linear-gradient(135deg,var(--champagne),var(--gold));
+      box-shadow:0 17px 38px rgba(212,175,55,.18);
+    }
+
+    .btn-secondary{
+      color:var(--white);
+      border-color:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.035);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:34px;
+      background:
+        radial-gradient(circle at 72% 10%,rgba(212,175,55,.15),transparent 32%),
+        linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card::after{
+      content:"A";
+      position:absolute;
+      right:-10px;
+      bottom:-50px;
+      color:rgba(212,175,55,.05);
+      font-size:220px;
+      font-weight:900;
+      line-height:1;
+      pointer-events:none;
+    }
+
+    .card-label{
+      margin-bottom:26px;
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .note{
+      position:relative;
+      z-index:1;
+      padding:18px 0;
+      border-bottom:1px solid var(--line-soft);
+    }
+
+    .note:last-child{border-bottom:0}
+
+    .note strong{
+      display:block;
+      margin-bottom:7px;
+      font-size:18px;
+    }
+
+    .note span{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.58;
+    }
+
+    section{
+      padding:54px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(31px,4vw,52px);
+      letter-spacing:-.04em;
+    }
+
+    .section-head p{
+      max-width:540px;
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .intro-panel{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:28px;
+      padding:34px;
+      border:1px solid rgba(255,255,255,.085);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.024);
+    }
+
+    .intro-title{
+      margin:0;
+      font-size:clamp(28px,4vw,46px);
+      letter-spacing:-.04em;
+    }
+
+    .intro-text{
+      color:#D0D0C9;
+      line-height:1.82;
+      font-size:16px;
+    }
+
+    .intro-text p{
+      margin:0 0 18px;
+    }
+
+    .intro-text p:last-child{margin-bottom:0}
+
+    .people-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .person-card{
+      min-height:240px;
+      padding:27px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.085);
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.016));
+      position:relative;
+      overflow:hidden;
+    }
+
+    .person-card::before{
+      content:"";
+      position:absolute;
+      width:170px;
+      height:170px;
+      border-radius:50%;
+      top:-90px;
+      right:-70px;
+      background:radial-gradient(circle,rgba(212,175,55,.16),transparent 68%);
+    }
+
+    .person-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--champagne);
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .person-tag::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 5px rgba(212,175,55,.08);
+    }
+
+    .person-card h3{
+      margin:24px 0 10px;
+      font-size:28px;
+      letter-spacing:-.03em;
+    }
+
+    .person-card p{
+      margin:0;
+      max-width:92%;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .resources{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .resource-card{
+      min-height:300px;
+      padding:28px;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:var(--radius);
+      background:
+        radial-gradient(circle at 86% 6%,rgba(212,175,55,.13),transparent 30%),
+        linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018));
+      display:flex;
+      flex-direction:column;
+    }
+
+    .resource-number{
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .resource-card h3{
+      margin:30px 0 12px;
+      font-size:29px;
+      letter-spacing:-.035em;
+    }
+
+    .resource-card p{
+      margin:0 0 28px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    .resource-card .btn{
+      margin-top:auto;
+      width:max-content;
+    }
+
+    .local-view{
+      padding:32px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at 8% 0%,rgba(212,175,55,.11),transparent 34%),
+        rgba(255,255,255,.022);
+    }
+
+    .local-view strong{
+      display:block;
+      margin-bottom:12px;
+      color:var(--champagne);
+      font-size:21px;
+    }
+
+    .local-view p{
+      margin:0;
+      max-width:900px;
+      color:#CECEC7;
+      line-height:1.78;
+      font-size:15px;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .timeline-item{
+      padding:24px;
+      border-top:1px solid rgba(212,175,55,.30);
+      background:rgba(255,255,255,.018);
+      min-height:170px;
+    }
+
+    .timeline-item span{
+      color:var(--gold);
+      font-size:11px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .timeline-item strong{
+      display:block;
+      margin:14px 0 9px;
+      font-size:18px;
+    }
+
+    .timeline-item p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+      font-size:13px;
+    }
+
+    .closing{
+      padding:42px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:34px;
+      text-align:center;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(212,175,55,.13),transparent 42%),
+        rgba(255,255,255,.02);
+    }
+
+    .closing h2{
+      margin:0 auto 16px;
+      max-width:820px;
+      font-size:clamp(32px,5vw,58px);
+      letter-spacing:-.045em;
+    }
+
+    .closing p{
+      max-width:780px;
+      margin:0 auto;
+      color:#D0D0C9;
+      line-height:1.75;
+      font-size:16px;
+    }
+
+    .signature{
+      margin-top:26px;
+      color:var(--gold);
+      font-size:12px;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+    }
+
+    footer{
+      margin-top:24px;
+      padding:38px 0 48px;
+      border-top:1px solid rgba(255,255,255,.07);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      color:#92928C;
+      font-size:12px;
+      line-height:1.65;
+    }
+
+    .footer-inner strong{
+      color:var(--gold);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:900px){
+      .hero-grid,
+      .intro-panel{
+        grid-template-columns:1fr;
+      }
+
+      .timeline{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:700px){
+      .people-grid,
+      .resources{
+        grid-template-columns:1fr;
+      }
+
+      .back-link{
+        display:none;
+      }
+    }
+
+    @media(max-width:560px){
+      .shell{
+        width:min(100% - 22px,1160px);
+      }
+
+      .topbar-inner{
+        min-height:70px;
+      }
+
+      .brand-copy strong{
+        font-size:12px;
+      }
+
+      .brand-copy span{
+        font-size:9px;
+      }
+
+      .hero{
+        padding:60px 0 36px;
+      }
+
+      h1{
+        font-size:clamp(44px,15vw,70px);
+      }
+
+      .hero-card,
+      .intro-panel,
+      .local-view,
+      .closing{
+        padding:23px;
+        border-radius:25px;
+      }
+
+      section{
+        padding:42px 0;
+      }
+
+      .section-head{
+        flex-direction:column;
+        align-items:start;
+      }
+
+      .resource-card{
+        min-height:280px;
+      }
+
+      .resource-card .btn{
+        width:100%;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *{
+        scroll-behavior:auto!important;
+        transition:none!important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Ademicon no UrbanWatch Partners">
+        <div class="brand-mark">UW</div>
+        <div class="brand-copy">
+          <strong>UrbanWatch Partners</strong>
+          <span>Portal Estratégico de Parceiros</span>
+        </div>
+      </a>
+
+      <a class="back-link" href="../">← Voltar aos parceiros</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">UrbanWatch Partners × Ademicon</div>
+
+          <h1>
+            Uma contribuição para a expansão em
+            <span class="gold">Fortaleza.</span>
+          </h1>
+
+          <p class="lead">
+            Este portal foi criado para organizar e apresentar nossa contribuição
+            estratégica à Ademicon neste momento de expansão na capital cearense.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./imoveis/">Ver imóveis com potencial</a>
+            <a class="btn btn-secondary" href="./local_unidade_for/">Abrir apresentação territorial</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="card-label">Propósito deste ambiente</div>
+
+          <div class="note">
+            <strong>Organizar contribuições</strong>
+            <span>Reunir estudos, percepções locais, imóveis e materiais estratégicos.</span>
+          </div>
+
+          <div class="note">
+            <strong>Apoiar a expansão</strong>
+            <span>Contribuir com uma leitura prática de Fortaleza e das regiões em análise.</span>
+          </div>
+
+          <div class="note">
+            <strong>Evoluir com as interações</strong>
+            <span>Atualizar este portal à medida que houver novos diálogos, validações e encaminhamentos.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="intro-panel">
+          <h2 class="intro-title">Quem somos e por que este portal existe.</h2>
+
+          <div class="intro-text">
+            <p>
+              A <strong>UrbanWatch.app</strong> atua na criação de experiências digitais,
+              inteligência operacional, organização de informações e desenvolvimento
+              de conexões estratégicas entre pessoas, empresas e projetos.
+            </p>
+
+            <p>
+              Este ambiente não nasce como uma proposta comercial. Ele foi criado
+              para dar forma, continuidade e transparência a uma contribuição que
+              começou a partir de uma conexão genuína e da percepção de que poderíamos
+              ajudar a Ademicon em seu processo de expansão em Fortaleza, Ceará.
+            </p>
+
+            <p>
+              Nosso objetivo é reunir, de forma clara e acessível, informações que
+              possam ser úteis à tomada de decisão, sempre respeitando os critérios,
+              as validações e a condução institucional da própria Ademicon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">A ponte desta conexão</div>
+            <h2>Jane e Christopher</h2>
+          </div>
+
+          <p>
+            Este portal é direcionado especialmente a quem tornou possível o início
+            deste contato e abriu espaço para que nossa contribuição pudesse chegar
+            à Ademicon.
+          </p>
+        </div>
+
+        <div class="people-grid">
+          <article class="person-card">
+            <span class="person-tag">Conexão institucional</span>
+            <h3>Jane</h3>
+            <p>
+              Nosso agradecimento pela abertura, atenção e confiança ao permitir
+              que esta contribuição fosse apresentada de forma organizada e respeitosa.
+            </p>
+          </article>
+
+          <article class="person-card">
+            <span class="person-tag">Conexão institucional</span>
+            <h3>Christopher</h3>
+            <p>
+              Nosso agradecimento por fazer parte dessa ponte e por contribuir para
+              que o diálogo sobre a expansão em Fortaleza pudesse avançar.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Contribuições disponíveis</div>
+            <h2>Conteúdo estratégico</h2>
+          </div>
+
+          <p>
+            Os materiais abaixo foram organizados para facilitar a análise e poderão
+            ser atualizados conforme novos elementos forem sendo confirmados.
+          </p>
+        </div>
+
+        <div class="resources">
+          <article class="resource-card">
+            <span class="resource-number">Contribuição 01</span>
+            <h3>Imóveis com potencial para nova unidade</h3>
+            <p>
+              Uma seleção inicial de imóveis e edificações que, sob nossa percepção
+              local, apresentam características compatíveis com a busca por uma nova
+              unidade da Ademicon em Fortaleza.
+            </p>
+            <a class="btn btn-primary" href="./imoveis/">Acessar imóveis indicados →</a>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-number">Contribuição 02</span>
+            <h3>Inteligência Operacional para Expansão Territorial</h3>
+            <p>
+              Apresentação executiva com leitura territorial, critérios observados,
+              percepções estratégicas e pontos de atenção para a expansão.
+            </p>
+            <a class="btn btn-secondary" href="./local_unidade_for/">Abrir apresentação →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="local-view">
+          <strong>Uma visão de quem conhece a região por experiência cotidiana.</strong>
+          <p>
+            As indicações apresentadas partem também da visão de um nativo que vive
+            há 45 anos na região e conhece, na prática, os fluxos urbanos, as avenidas,
+            os bairros, as conexões viárias e a dinâmica de Fortaleza. Essa experiência
+            local não substitui avaliações técnicas, jurídicas ou imobiliárias, mas
+            pode contribuir com uma camada adicional de leitura territorial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Portal em evolução</div>
+            <h2>Este ambiente será atualizado.</h2>
+          </div>
+
+          <p>
+            O conteúdo acompanhará o desenvolvimento das interações relacionadas
+            a esta contribuição para a Ademicon.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>Etapa 01</span>
+            <strong>Levantamento inicial</strong>
+            <p>Organização de percepções territoriais, materiais e imóveis com potencial.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Etapa 02</span>
+            <strong>Validação
