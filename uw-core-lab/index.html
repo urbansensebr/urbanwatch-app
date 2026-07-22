@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-language="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanWatch.app Core + Labs | Simulação v1</title>
+  <meta name="description" content="Simulação funcional da arquitetura UrbanWatch.app Core + Labs.">
+  <link rel="stylesheet" href="core/core.css">
+  <link rel="stylesheet" href="labs/labs.css">
+</head>
+<body>
+  <header class="uw-header">
+    <div class="container uw-header-inner">
+      <div class="uw-brand">UrbanWatch<span>.app</span></div>
+      <div class="lang-switch" aria-label="Idioma">
+        <button class="lang-btn active" type="button" data-set-lang="pt">PT</button>
+        <button class="lang-btn" type="button" data-set-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-set-lang="zh">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">UrbanWatch.app Core 1.0</div>
+
+          <h1 data-lang="pt">Presença digital <span>com estrutura e inovação.</span></h1>
+          <h1 data-lang="en">Digital presence <span>with structure and innovation.</span></h1>
+          <h1 data-lang="zh">兼具结构与创新的<span>数字形象。</span></h1>
+
+          <p class="lead" data-lang="pt">
+            Esta simulação demonstra como o mesmo portal pode operar em uma versão estável do Core e,
+            com um clique, receber uma experiência experimental criada no UrbanWatch.app Labs.
+          </p>
+          <p class="lead" data-lang="en">
+            This simulation shows how the same portal can run on a stable Core version and,
+            with one click, receive an experimental experience created in UrbanWatch.app Labs.
+          </p>
+          <p class="lead" data-lang="zh">
+            此模拟展示同一个门户如何运行在稳定的 Core 版本上，并通过一次点击切换到 UrbanWatch.app Labs 的实验体验。
+          </p>
+
+          <div class="hero-actions">
+            <button id="modeButton" type="button" class="btn btn-primary">Ativar Labs</button>
+            <a href="#validacao" class="btn btn-secondary">Ver critérios</a>
+          </div>
+          <p id="modeStatus" style="margin-top:18px;color:#aaa">Core ativo: experiência estável</p>
+        </div>
+
+        <div class="hero-photo" aria-label="Espaço reservado para foto do profissional">
+          <div class="avatar">ES</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validacao">
+      <div class="container">
+        <div class="eyebrow">Teste de arquitetura</div>
+        <h2>O que permanece estável e o que pode inovar</h2>
+
+        <div class="cards">
+          <article class="card">
+            <strong>Core</strong>
+            <p>Idioma, botões, acessibilidade, responsividade, compartilhamento, SEO, identidade UrbanWatch.app e estrutura técnica.</p>
+          </article>
+          <article class="card">
+            <strong>Labs</strong>
+            <p>Composição visual, movimentos, hero, efeitos, storytelling, navegação e novos componentes experimentais.</p>
+          </article>
+          <article class="card">
+            <strong>Validação</strong>
+            <p>Uma inovação só entra no Core após testes de funcionamento, legibilidade, desempenho, segurança e experiência móvel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="labs-badge">UrbanWatch.app Labs</div>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>UrbanWatch.app</strong> · Core + Labs · Simulação v1
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
