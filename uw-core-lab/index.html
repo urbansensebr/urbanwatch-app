@@ -3,16 +3,485 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UrbanWatch.app Core + Labs | Simulação v1</title>
-  <meta name="description" content="Simulação funcional da arquitetura UrbanWatch.app Core + Labs.">
-  <link rel="stylesheet" href="core/core.css">
-  <link rel="stylesheet" href="labs/labs.css">
+  <title>UrbanWatch.app Core + Labs | Simulação Autônoma</title>
+  <meta name="description" content="Simulação autônoma do UrbanWatch.app Core + Labs.">
+  <style>
+    :root{
+      --uw-black:#0A0A0A;
+      --uw-graphite:#1A1A1A;
+      --uw-gold:#D4AF37;
+      --uw-champagne:#F1E5AC;
+      --uw-white:#FFFFFF;
+      --uw-muted:#B9B9B9;
+      --uw-border:rgba(212,175,55,.28);
+      --uw-radius:22px;
+      --uw-shadow:0 22px 60px rgba(0,0,0,.38);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      background:#050505;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 15% 5%,rgba(212,175,55,.13),transparent 28%),
+        linear-gradient(180deg,#050505,#0A0A0A 38%,#111);
+      color:var(--uw-white);
+      font-family:Arial,Helvetica,sans-serif;
+      overflow-x:hidden;
+      transition:background .5s ease;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    button,
+    a{
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .container{
+      width:min(1120px,calc(100% - 32px));
+      margin:auto;
+    }
+
+    .uw-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      background:rgba(5,5,5,.76);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--uw-border);
+    }
+
+    .uw-header-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .uw-brand{
+      font-size:1.12rem;
+      font-weight:900;
+      letter-spacing:.01em;
+      white-space:nowrap;
+    }
+
+    .uw-brand span{
+      color:var(--uw-gold);
+    }
+
+    .lang-switch{
+      display:flex;
+      gap:7px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .lang-btn{
+      border:1px solid var(--uw-border);
+      background:rgba(255,255,255,.025);
+      color:var(--uw-white);
+      border-radius:999px;
+      min-width:46px;
+      padding:8px 12px;
+      cursor:pointer;
+      font:inherit;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .lang-btn.active{
+      background:var(--uw-gold);
+      color:#111;
+      border-color:var(--uw-gold);
+    }
+
+    .section{
+      padding:88px 0;
+    }
+
+    .hero{
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:48px;
+      align-items:center;
+      transition:.5s ease;
+    }
+
+    .eyebrow{
+      color:var(--uw-gold);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.78rem;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p{
+      margin-top:0;
+    }
+
+    h1{
+      font-size:clamp(2.6rem,7vw,5.9rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+      margin-bottom:24px;
+      max-width:850px;
+      transition:.5s ease;
+    }
+
+    h1 span{
+      color:var(--uw-gold);
+    }
+
+    h2{
+      font-size:clamp(2rem,4.5vw,3.6rem);
+      line-height:1;
+      letter-spacing:-.04em;
+      margin-bottom:32px;
+    }
+
+    .lead{
+      color:#ddd;
+      font-size:clamp(1.02rem,2vw,1.25rem);
+      line-height:1.7;
+      max-width:780px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      text-decoration:none;
+      color:#fff;
+      border:1px solid transparent;
+      cursor:pointer;
+      font:inherit;
+      font-weight:800;
+      transition:.22s ease;
+    }
+
+    .btn:hover,
+    .btn:active{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#E2C45F,#B88918);
+      color:#111;
+      box-shadow:0 12px 28px rgba(212,175,55,.18);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.025);
+      border-color:var(--uw-border);
+      color:#fff;
+    }
+
+    .mode-status{
+      margin-top:18px;
+      color:#aaa;
+      font-size:.94rem;
+    }
+
+    .hero-photo{
+      min-height:500px;
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      border:1px solid var(--uw-border);
+      background:
+        radial-gradient(circle at 50% 25%,rgba(212,175,55,.22),transparent 34%),
+        linear-gradient(180deg,#171717,#0c0c0c);
+      box-shadow:var(--uw-shadow);
+      display:grid;
+      place-items:center;
+      transition:.6s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .hero-photo:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,transparent 52%,rgba(0,0,0,.62)),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 39px,
+          rgba(212,175,55,.035) 40px
+        );
+      pointer-events:none;
+    }
+
+    .avatar{
+      width:70%;
+      aspect-ratio:1;
+      position:relative;
+      z-index:2;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid var(--uw-border);
+      background:linear-gradient(145deg,#252525,#101010);
+      font-size:clamp(4.5rem,9vw,8rem);
+      font-weight:900;
+      letter-spacing:-.08em;
+      color:#fff;
+      transition:.6s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+      min-height:210px;
+      padding:26px;
+      border:1px solid var(--uw-border);
+      border-radius:var(--uw-radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.016));
+      transition:.45s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .card:before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      right:-45px;
+      top:-45px;
+      border-radius:50%;
+      background:rgba(212,175,55,.08);
+      filter:blur(2px);
+    }
+
+    .card strong{
+      position:relative;
+      z-index:2;
+      display:block;
+      color:var(--uw-gold);
+      font-size:1.05rem;
+      margin-bottom:14px;
+    }
+
+    .card p{
+      position:relative;
+      z-index:2;
+      color:#ccc;
+      line-height:1.65;
+      margin-bottom:0;
+    }
+
+    .footer{
+      padding:36px 0;
+      border-top:1px solid var(--uw-border);
+      color:#999;
+    }
+
+    .labs-badge{
+      display:none;
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      padding:10px 15px;
+      border-radius:999px;
+      background:var(--uw-gold);
+      color:#111;
+      font-size:.82rem;
+      font-weight:900;
+      box-shadow:0 14px 40px rgba(0,0,0,.36);
+    }
+
+    [data-lang]{
+      display:none;
+    }
+
+    html[data-language="pt"] [data-lang="pt"],
+    html[data-language="en"] [data-lang="en"],
+    html[data-language="zh"] [data-lang="zh"]{
+      display:block;
+    }
+
+    body.labs-mode{
+      background:
+        radial-gradient(circle at 90% 12%,rgba(212,175,55,.23),transparent 26%),
+        radial-gradient(circle at 12% 72%,rgba(241,229,172,.09),transparent 32%),
+        linear-gradient(135deg,#050505,#121212 48%,#060606);
+    }
+
+    body.labs-mode .hero-grid{
+      grid-template-columns:.82fr 1.18fr;
+    }
+
+    body.labs-mode h1{
+      text-transform:uppercase;
+      background:linear-gradient(90deg,#fff,#F1E5AC,#D4AF37);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      filter:drop-shadow(0 12px 34px rgba(212,175,55,.08));
+    }
+
+    body.labs-mode h1 span{
+      color:inherit;
+    }
+
+    body.labs-mode .hero-photo{
+      transform:rotate(1.3deg) scale(1.015);
+      border-radius:48px;
+      box-shadow:0 30px 90px rgba(0,0,0,.55);
+    }
+
+    body.labs-mode .avatar{
+      border-radius:35% 65% 60% 40% / 38% 42% 58% 62%;
+      animation:morph 7s ease-in-out infinite;
+      background:
+        radial-gradient(circle at 35% 25%,rgba(212,175,55,.26),transparent 28%),
+        linear-gradient(145deg,#272727,#0b0b0b);
+    }
+
+    body.labs-mode .card{
+      background:linear-gradient(145deg,rgba(212,175,55,.08),rgba(255,255,255,.016));
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    body.labs-mode .card:nth-child(1){
+      transform:translateY(-12px) rotate(-.35deg);
+    }
+
+    body.labs-mode .card:nth-child(2){
+      transform:translateY(18px) rotate(.45deg);
+    }
+
+    body.labs-mode .card:nth-child(3){
+      transform:translateY(-4px) rotate(-.25deg);
+    }
+
+    body.labs-mode .labs-badge{
+      display:block;
+    }
+
+    @keyframes morph{
+      0%,100%{
+        border-radius:35% 65% 60% 40% / 38% 42% 58% 62%;
+      }
+      50%{
+        border-radius:66% 34% 36% 64% / 56% 62% 38% 44%;
+      }
+    }
+
+    @media(max-width:820px){
+      .section{
+        padding:68px 0;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-grid,
+      body.labs-mode .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-photo{
+        min-height:390px;
+        order:-1;
+      }
+
+      body.labs-mode .hero-photo{
+        transform:rotate(.6deg);
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      body.labs-mode .card:nth-child(1),
+      body.labs-mode .card:nth-child(2),
+      body.labs-mode .card:nth-child(3){
+        transform:none;
+      }
+    }
+
+    @media(max-width:520px){
+      .uw-header-inner{
+        align-items:flex-start;
+        padding:12px 0;
+      }
+
+      .uw-brand{
+        padding-top:8px;
+      }
+
+      .lang-switch{
+        max-width:160px;
+      }
+
+      .hero-photo{
+        min-height:330px;
+      }
+
+      .avatar{
+        width:64%;
+      }
+
+      .hero-actions{
+        display:grid;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header class="uw-header">
     <div class="container uw-header-inner">
       <div class="uw-brand">UrbanWatch<span>.app</span></div>
-      <div class="lang-switch" aria-label="Idioma">
+
+      <div class="lang-switch" aria-label="Selecionar idioma">
         <button class="lang-btn active" type="button" data-set-lang="pt">PT</button>
         <button class="lang-btn" type="button" data-set-lang="en">EN</button>
         <button class="lang-btn" type="button" data-set-lang="zh">中文</button>
@@ -21,57 +490,86 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="section hero">
       <div class="container hero-grid">
+
         <div>
           <div class="eyebrow">UrbanWatch.app Core 1.0</div>
 
-          <h1 data-lang="pt">Presença digital <span>com estrutura e inovação.</span></h1>
-          <h1 data-lang="en">Digital presence <span>with structure and innovation.</span></h1>
-          <h1 data-lang="zh">兼具结构与创新的<span>数字形象。</span></h1>
+          <h1 data-lang="pt">
+            Presença digital <span>com estrutura e inovação.</span>
+          </h1>
+
+          <h1 data-lang="en">
+            Digital presence <span>with structure and innovation.</span>
+          </h1>
+
+          <h1 data-lang="zh">
+            兼具结构与创新的<span>数字形象。</span>
+          </h1>
 
           <p class="lead" data-lang="pt">
-            Esta simulação demonstra como o mesmo portal pode operar em uma versão estável do Core e,
-            com um clique, receber uma experiência experimental criada no UrbanWatch.app Labs.
+            Esta simulação demonstra como o mesmo portal pode operar em uma versão estável do Core e, com um clique, receber uma experiência experimental criada no UrbanWatch.app Labs.
           </p>
+
           <p class="lead" data-lang="en">
-            This simulation shows how the same portal can run on a stable Core version and,
-            with one click, receive an experimental experience created in UrbanWatch.app Labs.
+            This simulation shows how the same portal can run on a stable Core version and, with one click, receive an experimental experience created in UrbanWatch.app Labs.
           </p>
+
           <p class="lead" data-lang="zh">
             此模拟展示同一个门户如何运行在稳定的 Core 版本上，并通过一次点击切换到 UrbanWatch.app Labs 的实验体验。
           </p>
 
           <div class="hero-actions">
-            <button id="modeButton" type="button" class="btn btn-primary">Ativar Labs</button>
-            <a href="#validacao" class="btn btn-secondary">Ver critérios</a>
+            <button id="modeButton" type="button" class="btn btn-primary">
+              Ativar Labs
+            </button>
+
+            <a href="#validacao" class="btn btn-secondary">
+              Ver critérios
+            </a>
           </div>
-          <p id="modeStatus" style="margin-top:18px;color:#aaa">Core ativo: experiência estável</p>
+
+          <p id="modeStatus" class="mode-status">
+            Core ativo: experiência estável
+          </p>
         </div>
 
-        <div class="hero-photo" aria-label="Espaço reservado para foto do profissional">
+        <div class="hero-photo" aria-label="Área visual experimental">
           <div class="avatar">ES</div>
         </div>
+
       </div>
     </section>
 
     <section class="section" id="validacao">
       <div class="container">
         <div class="eyebrow">Teste de arquitetura</div>
-        <h2>O que permanece estável e o que pode inovar</h2>
+
+        <h2 data-lang="pt">O que permanece estável e o que pode inovar</h2>
+        <h2 data-lang="en">What remains stable and what can innovate</h2>
+        <h2 data-lang="zh">哪些保持稳定，哪些可以创新</h2>
 
         <div class="cards">
           <article class="card">
             <strong>Core</strong>
-            <p>Idioma, botões, acessibilidade, responsividade, compartilhamento, SEO, identidade UrbanWatch.app e estrutura técnica.</p>
+            <p data-lang="pt">Idioma, botões, acessibilidade, responsividade, compartilhamento, SEO, identidade UrbanWatch.app e estrutura técnica.</p>
+            <p data-lang="en">Language, buttons, accessibility, responsiveness, sharing, SEO, UrbanWatch.app identity and technical structure.</p>
+            <p data-lang="zh">语言、按钮、无障碍、响应式设计、分享、SEO、UrbanWatch.app 品牌和技术结构。</p>
           </article>
+
           <article class="card">
             <strong>Labs</strong>
-            <p>Composição visual, movimentos, hero, efeitos, storytelling, navegação e novos componentes experimentais.</p>
+            <p data-lang="pt">Composição visual, movimentos, Hero, efeitos, storytelling, navegação e novos componentes experimentais.</p>
+            <p data-lang="en">Visual composition, movement, Hero, effects, storytelling, navigation and experimental components.</p>
+            <p data-lang="zh">视觉构图、动态效果、主视觉、叙事、导航和实验组件。</p>
           </article>
+
           <article class="card">
             <strong>Validação</strong>
-            <p>Uma inovação só entra no Core após testes de funcionamento, legibilidade, desempenho, segurança e experiência móvel.</p>
+            <p data-lang="pt">Uma inovação só entra no Core após testes de funcionamento, legibilidade, desempenho, segurança e experiência móvel.</p>
+            <p data-lang="en">An innovation only enters the Core after functionality, readability, performance, security and mobile experience testing.</p>
+            <p data-lang="zh">创新只有在通过功能、可读性、性能、安全性和移动体验测试后才能进入 Core。</p>
           </article>
         </div>
       </div>
@@ -82,10 +580,77 @@
 
   <footer class="footer">
     <div class="container">
-      <strong>UrbanWatch.app</strong> · Core + Labs · Simulação v1
+      <strong>UrbanWatch.app</strong> · Core + Labs · Simulação autônoma
     </div>
   </footer>
 
-  <script src="assets/app.js"></script>
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const langButtons = document.querySelectorAll('[data-set-lang]');
+      const modeButton = document.getElementById('modeButton');
+      const statusText = document.getElementById('modeStatus');
+
+      const labels = {
+        pt:{
+          activate:'Ativar Labs',
+          deactivate:'Voltar ao Core',
+          core:'Core ativo: experiência estável',
+          labs:'Labs ativo: experiência experimental'
+        },
+        en:{
+          activate:'Activate Labs',
+          deactivate:'Return to Core',
+          core:'Core active: stable experience',
+          labs:'Labs active: experimental experience'
+        },
+        zh:{
+          activate:'启用 Labs',
+          deactivate:'返回 Core',
+          core:'Core 已启用：稳定体验',
+          labs:'Labs 已启用：实验体验'
+        }
+      };
+
+      let currentLanguage = 'pt';
+
+      function updateModeLabels(){
+        const isLabs = document.body.classList.contains('labs-mode');
+        modeButton.textContent = isLabs
+          ? labels[currentLanguage].deactivate
+          : labels[currentLanguage].activate;
+
+        statusText.textContent = isLabs
+          ? labels[currentLanguage].labs
+          : labels[currentLanguage].core;
+      }
+
+      function setLanguage(lang){
+        currentLanguage = lang;
+        root.dataset.language = lang;
+        root.lang = lang === 'pt' ? 'pt-BR' : lang === 'en' ? 'en' : 'zh-CN';
+
+        langButtons.forEach(function(btn){
+          btn.classList.toggle('active', btn.dataset.setLang === lang);
+        });
+
+        updateModeLabels();
+      }
+
+      langButtons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          setLanguage(btn.dataset.setLang);
+        });
+      });
+
+      modeButton.addEventListener('click', function(){
+        document.body.classList.toggle('labs-mode');
+        updateModeLabels();
+      });
+
+      setLanguage('pt');
+    })();
+  </script>
+
 </body>
 </html>
