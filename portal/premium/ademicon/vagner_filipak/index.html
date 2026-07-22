@@ -5,6 +5,8 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html data-language="pt" lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
@@ -17,208 +19,578 @@
 <meta content="Conexões estratégicas, consórcios e planejamento patrimonial no Brasil e no exterior." property="og:description"/>
 <meta content="perfil.jpg" property="og:image"/>
 <style>
-    :root{--black:#050505;--black2:#0d0d0f;--graphite:#171719;--gold:#d4af37;--gold2:#f1e5ac;--white:#f7f7f7;--muted:#b8b8bd;--line:rgba(212,175,55,.24);--shadow:0 18px 55px rgba(0,0,0,.42)}
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{min-height:100vh;background:radial-gradient(circle at 85% 8%,rgba(212,175,55,.13),transparent 31%),radial-gradient(circle at 8% 45%,rgba(212,175,55,.07),transparent 27%),linear-gradient(180deg,#030303,#0b0b0c 55%,#050505);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.5;overflow-x:hidden} a{color:inherit;text-decoration:none} button{font:inherit}
-    .shell{width:min(1120px,calc(100% - 28px));margin:auto;padding:18px 0 46px}.topbar{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border:1px solid var(--line);border-radius:20px;background:rgba(10,10,11,.84);backdrop-filter:blur(16px);position:sticky;top:10px;z-index:20;box-shadow:0 10px 36px rgba(0,0,0,.24)}
-    .brand{display:flex;align-items:center;gap:11px}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.42);border-radius:14px;background:linear-gradient(145deg,rgba(212,175,55,.16),rgba(255,255,255,.02));color:var(--gold)}.brand-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8}.brand-text strong{display:block;font-size:.98rem;letter-spacing:.1em}.brand-text strong span{color:var(--gold)}.brand-text small{display:block;color:var(--muted);font-size:.59rem;letter-spacing:.08em;text-transform:uppercase}
-    .lang-switch{display:flex;padding:4px;border:1px solid var(--line);border-radius:999px;background:#090909}.lang-btn{border:0;color:var(--muted);background:transparent;border-radius:999px;padding:8px 11px;cursor:pointer;font-weight:800;font-size:.76rem}.lang-btn.active{color:#080808;background:linear-gradient(135deg,var(--gold2),var(--gold))}
-    .hero{margin-top:18px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);min-height:580px;border:1px solid var(--line);border-radius:30px;overflow:hidden;background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(22,19,11,.88));box-shadow:var(--shadow)}.hero-copy{padding:58px 46px 48px;display:flex;flex-direction:column;justify-content:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;width:max-content;color:var(--gold2);border:1px solid rgba(212,175,55,.33);background:rgba(212,175,55,.07);padding:8px 12px;border-radius:999px;font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.eyebrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
-    h1{margin-top:22px;font-size:clamp(2.6rem,6.2vw,5.4rem);line-height:.92;letter-spacing:-.06em}h1 span{display:block;color:var(--gold)}.role{margin-top:20px;color:var(--gold2);font-size:clamp(1rem,2vw,1.26rem);font-weight:700}.intro{margin-top:14px;max-width:680px;color:#d7d7da}.highlights{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.highlight{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:12px;border:1px solid rgba(255,255,255,.075);background:rgba(255,255,255,.025);color:#dfdfe2;font-size:.83rem}.highlight svg{width:16px;height:16px;color:var(--gold);fill:none;stroke:currentColor;stroke-width:1.9}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{min-height:52px;display:inline-flex;justify-content:center;align-items:center;gap:10px;border-radius:15px;padding:12px 18px;font-weight:900;font-size:.86rem;transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-primary{color:#080808;background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 12px 30px rgba(212,175,55,.18)}.btn-secondary{border:1px solid rgba(212,175,55,.33);background:rgba(255,255,255,.025)}.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
-    .hero-photo{position:relative;min-height:520px;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),radial-gradient(circle at 50% 39%,rgba(212,175,55,.31),transparent 38%);overflow:hidden}.hero-photo img{width:100%;height:100%;min-height:580px;object-fit:cover;object-position:center top}.photo-label{position:absolute;left:22px;right:22px;bottom:22px;padding:15px 16px;border:1px solid rgba(212,175,55,.34);border-radius:17px;background:rgba(5,5,5,.78);backdrop-filter:blur(10px)}.photo-label strong{display:block;color:var(--gold2);font-size:.94rem}.photo-label span{display:block;color:var(--muted);font-size:.76rem;margin-top:3px}
-    .section{margin-top:18px;padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));box-shadow:0 14px 46px rgba(0,0,0,.22)}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}.kicker{color:var(--gold);text-transform:uppercase;font-size:.7rem;font-weight:900;letter-spacing:.14em;margin-bottom:5px}.section h2{font-size:clamp(1.45rem,4vw,2.15rem);letter-spacing:-.035em}.section-description{color:var(--muted);max-width:530px;font-size:.9rem}
-    .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.tile{min-height:145px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:17px;border:1px solid rgba(212,175,55,.18);border-radius:18px;background:radial-gradient(circle at 100% 0,rgba(212,175,55,.09),transparent 44%),rgba(255,255,255,.018);transition:.22s}.tile:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.52)}.tile-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.3);border-radius:13px;background:rgba(212,175,55,.075);color:var(--gold)}.tile svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}.tile strong{display:block;font-size:.96rem;margin-bottom:4px}.tile small{color:var(--muted);font-size:.78rem}
-    .international-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.international-card{min-height:260px;padding:26px;border-radius:20px;border:1px solid rgba(212,175,55,.22);background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(11,11,12,.35)),#0b0b0c}.international-card svg{width:38px;height:38px;color:var(--gold);fill:none;stroke:currentColor;stroke-width:1.5;margin-bottom:17px}.international-card h3{color:var(--gold2);font-size:1.22rem;margin-bottom:9px}.international-card p{color:#d1d1d4;font-size:.91rem}.cities{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap}.city{border:1px solid rgba(212,175,55,.25);background:rgba(0,0,0,.25);border-radius:999px;padding:7px 10px;color:var(--gold2);font-size:.76rem;font-weight:800}
-    .contact-band{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;padding:31px;border:1px solid rgba(212,175,55,.3);border-radius:24px;background:radial-gradient(circle at 85% 30%,rgba(212,175,55,.16),transparent 32%),linear-gradient(135deg,#101012,#080809)}.contact-band h2{font-size:clamp(1.65rem,4.5vw,2.65rem);line-height:1.04;letter-spacing:-.045em}.contact-band h2 span{color:var(--gold)}.contact-band p{color:var(--muted);margin-top:11px}.contact-actions{display:flex;flex-direction:column;gap:10px}.footer{padding:28px 10px 8px;display:flex;justify-content:space-between;gap:18px;color:#85858a;font-size:.72rem}.footer strong{color:#d2d2d5}.footer a{color:var(--gold2)}
-    html[data-language="pt"] [data-lang="en"],
-html[data-language="pt"] [data-lang="zh"],
-html[data-language="en"] [data-lang="pt"],
-html[data-language="en"] [data-lang="zh"],
-html[data-language="zh"] [data-lang="pt"],
-html[data-language="zh"] [data-lang="en"]{display:none!important}
-    @media(max-width:850px){.hero{grid-template-columns:1fr}.hero-copy{padding:44px 25px 34px}.hero-photo,.hero-photo img{min-height:470px}.tiles{grid-template-columns:repeat(2,1fr)}.international-grid,.contact-band{grid-template-columns:1fr}.contact-actions{flex-direction:row;flex-wrap:wrap}.contact-actions .btn{flex:1}}
-    @media(max-width:560px){.shell{width:calc(100% - 18px);padding-top:9px}.topbar{top:6px;min-height:59px;padding:9px 10px;border-radius:17px}.brand-text small{display:none}.brand-mark{width:37px;height:37px}.hero{border-radius:23px}.hero-copy{padding:36px 20px 28px}h1{font-size:clamp(2.45rem,15vw,4.25rem)}.actions{flex-direction:column}.btn{width:100%}.hero-photo,.hero-photo img{min-height:420px}.section{padding:23px 16px;border-radius:21px}.section-head{display:block}.section-description{margin-top:8px}.tiles{grid-template-columns:1fr 1fr;gap:10px}.tile{min-height:138px;padding:16px}.international-grid{grid-template-columns:1fr}.contact-band{padding:24px 18px}.contact-actions{flex-direction:column}.footer{flex-direction:column;text-align:center}}
-    @media(max-width:390px){.brand-text strong{font-size:.84rem}.tiles{grid-template-columns:1fr}.tile{min-height:120px}}
-  
-.role,.intro,.section-description,.international-card p,.contact-band p{display:block}
-.role{margin-top:20px;line-height:1.45}
-.intro{margin-top:14px;line-height:1.7}
-.kicker{display:block;margin-bottom:8px}
-.section h2,.international-card h3,.contact-band h2{display:block}
-.section-description{margin-top:10px;line-height:1.65}
-.tile strong,.tile small{display:block}
-.tile strong{margin-bottom:5px;line-height:1.35}
-.tile small{line-height:1.5}
-.international-card h3{margin-bottom:10px;line-height:1.35}
-.international-card p{line-height:1.65}
-.contact-band h2{line-height:1.08}
-.contact-band p{margin-top:14px;line-height:1.65}
-.photo-label strong,.photo-label span{display:block}
-.photo-label strong{margin-bottom:4px;line-height:1.4}
+:root{
+  --black:#050505;
+  --black2:#0d0d0f;
+  --graphite:#171719;
+  --gold:#d4af37;
+  --gold2:#f1e5ac;
+  --white:#f7f7f7;
+  --muted:#b8b8bd;
+  --line:rgba(212,175,55,.24);
+  --shadow:0 18px 55px rgba(0,0,0,.42);
+}
 
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    .extra-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:12px;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .share-modal{
-      position:fixed;
-      inset:0;
-      z-index:999;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-      background:rgba(0,0,0,.78);
-      backdrop-filter:blur(10px);
-    }
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 85% 8%,rgba(212,175,55,.13),transparent 31%),
+    radial-gradient(circle at 8% 45%,rgba(212,175,55,.07),transparent 27%),
+    linear-gradient(180deg,#030303,#0b0b0c 55%,#050505);
+  color:var(--white);
+  font-family:Arial,"Microsoft YaHei","PingFang SC","Noto Sans SC",Helvetica,sans-serif;
+  line-height:1.5;
+  overflow-x:hidden;
+}
 
-    .share-modal.open{
-      display:flex;
-    }
+body.modal-open{
+  overflow:hidden;
+}
 
-    .share-dialog{
-      width:min(440px,100%);
-      border:1px solid rgba(212,175,55,.36);
-      border-radius:24px;
-      background:linear-gradient(145deg,#161618,#080809);
-      box-shadow:0 28px 80px rgba(0,0,0,.58);
-      padding:24px;
-      position:relative;
-    }
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-    .share-close{
-      position:absolute;
-      top:12px;
-      right:12px;
-      width:38px;
-      height:38px;
-      border:1px solid rgba(212,175,55,.25);
-      border-radius:12px;
-      background:rgba(255,255,255,.03);
-      color:var(--white);
-      cursor:pointer;
-      display:grid;
-      place-items:center;
-      font-size:1.15rem;
-    }
+button{
+  font:inherit;
+}
 
-    .share-dialog h2{
-      margin-right:42px;
-      font-size:1.45rem;
-      line-height:1.2;
-      color:var(--gold-light);
-    }
+.shell{
+  width:min(1120px,calc(100% - 28px));
+  margin:auto;
+  padding:18px 0 46px;
+}
 
-    .share-dialog p{
-      margin-top:10px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:.9rem;
-    }
+.topbar{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 16px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(10,10,11,.84);
+  backdrop-filter:blur(16px);
+  position:sticky;
+  top:10px;
+  z-index:20;
+  box-shadow:0 10px 36px rgba(0,0,0,.24);
+}
 
-    .qr-wrap{
-      width:230px;
-      max-width:100%;
-      aspect-ratio:1;
-      margin:22px auto 18px;
-      padding:14px;
-      border-radius:20px;
-      background:#fff;
-      display:grid;
-      place-items:center;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
 
-    .qr-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-    }
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(212,175,55,.42);
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(212,175,55,.16),rgba(255,255,255,.02));
+  color:var(--gold);
+}
 
-    .share-link-box{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-top:14px;
-      padding:12px;
-      border:1px solid rgba(212,175,55,.22);
-      border-radius:14px;
-      background:#090909;
-    }
+.brand-mark svg{
+  width:25px;
+  height:25px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
 
-    .share-link{
-      flex:1;
-      min-width:0;
-      color:#d8d8dc;
-      font-size:.78rem;
-      line-height:1.4;
-      overflow-wrap:anywhere;
-    }
+.brand-text strong{
+  display:block;
+  font-size:.98rem;
+  letter-spacing:.1em;
+}
 
-    .copy-link-btn{
-      flex:0 0 auto;
-      border:1px solid rgba(212,175,55,.3);
-      border-radius:10px;
-      background:rgba(212,175,55,.08);
-      color:var(--gold-light);
-      padding:9px 10px;
-      cursor:pointer;
-      font-weight:800;
-      font-size:.72rem;
-    }
+.brand-text strong span{
+  color:var(--gold);
+}
 
-    .share-dialog-actions{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-      margin-top:16px;
-    }
+.brand-text small{
+  display:block;
+  color:var(--muted);
+  font-size:.59rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 
-    body.modal-open{
-      overflow:hidden;
-    }
+.lang-switch{
+  display:flex;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#090909;
+}
 
-    @media (max-width:560px){
-      .extra-actions{
-        flex-direction:column;
-      }
+.lang-btn{
+  border:0;
+  color:var(--muted);
+  background:transparent;
+  border-radius:999px;
+  padding:8px 11px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:.76rem;
+}
 
-      .extra-actions .btn{
-        width:100%;
-      }
+.lang-btn.active{
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+}
 
-      .share-dialog{
-        padding:22px 16px 18px;
-      }
+.hero{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+  min-height:580px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  overflow:hidden;
+  background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(22,19,11,.88));
+  box-shadow:var(--shadow);
+}
 
-      .qr-wrap{
-        width:210px;
-      }
+.hero-copy{
+  padding:58px 46px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
 
-      .share-link-box{
-        align-items:flex-start;
-        flex-direction:column;
-      }
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  color:var(--gold2);
+  border:1px solid rgba(212,175,55,.33);
+  background:rgba(212,175,55,.07);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:.73rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+}
 
-      .copy-link-btn{
-        width:100%;
-      }
-    }
+.eyebrow svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
 
+h1{
+  margin-top:22px;
+  font-size:clamp(2.6rem,6.2vw,5.4rem);
+  line-height:.92;
+  letter-spacing:-.06em;
+}
 
+h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.role,
+.intro,
+.section-description,
+.international-card p,
+.contact-band p{
+  display:block;
+}
+
+.role{
+  margin-top:20px;
+  color:var(--gold2);
+  font-size:clamp(1rem,2vw,1.26rem);
+  font-weight:700;
+  line-height:1.45;
+}
+
+.intro{
+  margin-top:14px;
+  max-width:680px;
+  color:#d7d7da;
+  line-height:1.7;
+}
+
+.highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.highlight{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 11px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.075);
+  background:rgba(255,255,255,.025);
+  color:#dfdfe2;
+  font-size:.83rem;
+}
+
+.highlight svg{
+  width:16px;
+  height:16px;
+  color:var(--gold);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+}
+
+.actions,
 .extra-actions{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
+}
+
+.actions{
+  margin-top:30px;
+}
+
+.extra-actions{
   margin-top:12px;
 }
 
 .extra-actions .btn{
   flex:1 1 220px;
+}
+
+/* UrbanWatch.app Design System — botões */
+.btn{
+  min-height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-radius:15px;
+  padding:12px 18px;
+  font-weight:900;
+  font-size:.86rem;
+  color:#ffffff;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn span{
+  color:inherit;
+}
+
+.btn svg{
+  width:20px;
+  height:20px;
+  flex:0 0 auto;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+.btn-primary{
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  box-shadow:0 12px 30px rgba(212,175,55,.18);
+  border:1px solid transparent;
+}
+
+.btn-secondary{
+  color:#ffffff;
+  border:1px solid rgba(212,175,55,.33);
+  background:rgba(255,255,255,.025);
+}
+
+.hero-photo{
+  position:relative;
+  min-height:520px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  background:
+    linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),
+    radial-gradient(circle at 50% 39%,rgba(212,175,55,.31),transparent 38%);
+  overflow:hidden;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  min-height:580px;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.photo-label{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  padding:15px 16px;
+  border:1px solid rgba(212,175,55,.34);
+  border-radius:17px;
+  background:rgba(5,5,5,.78);
+  backdrop-filter:blur(10px);
+}
+
+.photo-label strong,
+.photo-label span{
+  display:block;
+}
+
+.photo-label strong{
+  color:var(--gold2);
+  font-size:.94rem;
+  margin-bottom:4px;
+  line-height:1.4;
+}
+
+.photo-label span{
+  color:var(--muted);
+  font-size:.76rem;
+  margin-top:3px;
+}
+
+.section{
+  margin-top:18px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));
+  box-shadow:0 14px 46px rgba(0,0,0,.22);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-end;
+  margin-bottom:22px;
+}
+
+.kicker{
+  display:block;
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.14em;
+  margin-bottom:8px;
+}
+
+.section h2,
+.international-card h3,
+.contact-band h2{
+  display:block;
+}
+
+.section h2{
+  font-size:clamp(1.45rem,4vw,2.15rem);
+  letter-spacing:-.035em;
+}
+
+.section-description{
+  color:var(--muted);
+  max-width:530px;
+  font-size:.9rem;
+  margin-top:10px;
+  line-height:1.65;
+}
+
+.tiles{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+.tile{
+  min-height:145px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:17px;
+  border:1px solid rgba(212,175,55,.18);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(212,175,55,.09),transparent 44%),
+    rgba(255,255,255,.018);
+  transition:transform .22s ease,border-color .22s ease;
+}
+
+.tile:hover{
+  transform:translateY(-4px);
+  border-color:rgba(212,175,55,.52);
+}
+
+.tile-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:13px;
+  background:rgba(212,175,55,.075);
+  color:var(--gold);
+}
+
+.tile svg{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+.tile strong,
+.tile small{
+  display:block;
+}
+
+.tile strong{
+  font-size:.96rem;
+  margin-bottom:5px;
+  line-height:1.35;
+}
+
+.tile small{
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.5;
+}
+
+.international-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.international-card{
+  min-height:260px;
+  padding:26px;
+  border-radius:20px;
+  border:1px solid rgba(212,175,55,.22);
+  background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(11,11,12,.35)),#0b0b0c;
+}
+
+.international-card svg{
+  width:38px;
+  height:38px;
+  color:var(--gold);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+  margin-bottom:17px;
+}
+
+.international-card h3{
+  color:var(--gold2);
+  font-size:1.22rem;
+  margin-bottom:10px;
+  line-height:1.35;
+}
+
+.international-card p{
+  color:#d1d1d4;
+  font-size:.91rem;
+  line-height:1.65;
+}
+
+.cities{
+  margin-top:18px;
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.city{
+  border:1px solid rgba(212,175,55,.25);
+  background:rgba(0,0,0,.25);
+  border-radius:999px;
+  padding:7px 10px;
+  color:var(--gold2);
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.contact-band{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:16px;
+  align-items:center;
+  padding:31px;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 85% 30%,rgba(212,175,55,.16),transparent 32%),
+    linear-gradient(135deg,#101012,#080809);
+}
+
+.contact-band h2{
+  font-size:clamp(1.65rem,4.5vw,2.65rem);
+  line-height:1.08;
+  letter-spacing:-.045em;
+}
+
+.contact-band h2 span{
+  color:var(--gold);
+}
+
+.contact-band p{
+  color:var(--muted);
+  margin-top:14px;
+  line-height:1.65;
+}
+
+.contact-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.footer{
+  padding:28px 10px 8px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:18px;
+  color:#85858a;
+  font-size:.72rem;
+}
+
+.footer strong{
+  color:#d2d2d5;
+}
+
+.footer a{
+  color:var(--gold2);
 }
 
 .trust-center-link{
@@ -230,7 +602,7 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
   justify-content:center;
   align-items:center;
   gap:8px;
-  color:var(--gold-light);
+  color:var(--gold2);
   font-weight:800;
   text-align:center;
   line-height:1.45;
@@ -245,7 +617,164 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
   stroke-width:1.8;
 }
 
-@media (max-width:620px){
+/* Share Center UrbanWatch.app */
+.share-modal{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+}
+
+.share-modal.open{
+  display:flex;
+}
+
+.share-dialog{
+  width:min(440px,100%);
+  border:1px solid rgba(212,175,55,.36);
+  border-radius:24px;
+  background:linear-gradient(145deg,#161618,#080809);
+  box-shadow:0 28px 80px rgba(0,0,0,.58);
+  padding:24px;
+  position:relative;
+}
+
+.share-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:12px;
+  background:rgba(255,255,255,.03);
+  color:var(--white);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:1.15rem;
+}
+
+.share-dialog h2{
+  margin-right:42px;
+  font-size:1.45rem;
+  line-height:1.2;
+  color:var(--gold2);
+}
+
+.share-dialog p{
+  margin-top:10px;
+  color:var(--muted);
+  line-height:1.65;
+  font-size:.9rem;
+}
+
+.qr-wrap{
+  width:230px;
+  max-width:100%;
+  aspect-ratio:1;
+  margin:22px auto 18px;
+  padding:14px;
+  border-radius:20px;
+  background:#fff;
+  display:grid;
+  place-items:center;
+}
+
+.qr-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.share-link-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  padding:12px;
+  border:1px solid rgba(212,175,55,.22);
+  border-radius:14px;
+  background:#090909;
+}
+
+.share-link{
+  flex:1;
+  min-width:0;
+  color:#d8d8dc;
+  font-size:.78rem;
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+
+.copy-link-btn{
+  flex:0 0 auto;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:10px;
+  background:rgba(212,175,55,.08);
+  color:var(--gold2);
+  padding:9px 10px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:.72rem;
+}
+
+.share-dialog-actions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin-top:16px;
+}
+
+html[data-language="pt"] [data-lang="en"],
+html[data-language="pt"] [data-lang="zh"],
+html[data-language="en"] [data-lang="pt"],
+html[data-language="en"] [data-lang="zh"],
+html[data-language="zh"] [data-lang="pt"],
+html[data-language="zh"] [data-lang="en"]{
+  display:none!important;
+}
+
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-copy{
+    padding:44px 25px 34px;
+  }
+
+  .hero-photo,
+  .hero-photo img{
+    min-height:470px;
+  }
+
+  .tiles{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .international-grid,
+  .contact-band{
+    grid-template-columns:1fr;
+  }
+
+  .contact-actions{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .contact-actions .btn{
+    flex:1;
+  }
+}
+
+@media(max-width:620px){
   .extra-actions{
     flex-direction:column;
   }
@@ -259,6 +788,125 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
     align-items:flex-start;
   }
 }
+
+@media(max-width:560px){
+  .shell{
+    width:calc(100% - 18px);
+    padding-top:9px;
+  }
+
+  .topbar{
+    top:6px;
+    min-height:59px;
+    padding:9px 10px;
+    border-radius:17px;
+  }
+
+  .brand-text small{
+    display:none;
+  }
+
+  .brand-mark{
+    width:37px;
+    height:37px;
+  }
+
+  .hero{
+    border-radius:23px;
+  }
+
+  .hero-copy{
+    padding:36px 20px 28px;
+  }
+
+  h1{
+    font-size:clamp(2.45rem,15vw,4.25rem);
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-photo,
+  .hero-photo img{
+    min-height:420px;
+  }
+
+  .section{
+    padding:23px 16px;
+    border-radius:21px;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-description{
+    margin-top:8px;
+  }
+
+  .tiles{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .tile{
+    min-height:138px;
+    padding:16px;
+  }
+
+  .international-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-band{
+    padding:24px 18px;
+  }
+
+  .contact-actions{
+    flex-direction:column;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .share-dialog{
+    padding:22px 16px 18px;
+  }
+
+  .qr-wrap{
+    width:210px;
+  }
+
+  .share-link-box{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .copy-link-btn{
+    width:100%;
+  }
+}
+
+@media(max-width:390px){
+  .brand-text strong{
+    font-size:.84rem;
+  }
+
+  .tiles{
+    grid-template-columns:1fr;
+  }
+
+  .tile{
+    min-height:120px;
+  }
+}
 </style>
 </head>
 <body>
@@ -268,7 +916,7 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
 <span class="brand-mark"><svg viewbox="0 0 24 24"><path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg></span>
 <span class="brand-text"><strong>URBAN<span>WATCH</span>.app</strong><small data-lang="pt">Inteligência para quem não improvisa.</small><small data-lang="zh">为不依赖临时应对的人提供智慧。</small><small data-lang="en">Intelligence for those who do not improvise.</small></span>
 </a>
-<div aria-label="Selecionar idioma / Select language / 选择语言" class="lang-switch"><button class="lang-btn active" data-set-language="pt">PT</button><button class="lang-btn" data-set-language="en">EN</button><button aria-pressed="false" class="lang-btn" data-set-language="zh" type="button">中文</button></div>
+<div aria-label="Selecionar idioma / Select language / 选择语言" class="lang-switch"><button aria-pressed="true" class="lang-btn active" data-set-language="pt" type="button">PT</button><button aria-pressed="false" class="lang-btn" data-set-language="en" type="button">EN</button><button aria-pressed="false" class="lang-btn" data-set-language="zh" type="button">中文</button></div>
 </header>
 <main>
 <section class="hero">
@@ -310,7 +958,6 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
 <span data-lang="zh">分享门户</span>
 </button>
 </div>
-
 </div>
 <div class="hero-photo"><img alt="Vagner Filipak" src="perfil.jpg"/><div class="photo-label"><strong data-lang="pt">Conexões que transformam planejamento em resultados.</strong><strong data-lang="zh">将规划转化为成果的连接。</strong><strong data-lang="en">Connections that turn planning into results.</strong><span>Ademicon • UrbanWatch.app Premium International</span></div></div>
 </section>
@@ -346,226 +993,7 @@ html[data-language="zh"] [data-lang="en"]{display:none!important}
 </a>
 </footer>
 </div>
-<script>
-(function(){
-  const root = document.documentElement;
-  const buttons = document.querySelectorAll("[data-set-language]");
-  const allowedLanguages = ["pt","en","zh"];
 
-  const htmlLanguages = {
-    pt: "pt-BR",
-    en: "en",
-    zh: "zh-CN"
-  };
-
-  const titles = {
-    pt: "Vagner Filipak | Premium International | UrbanWatch.app",
-    en: "Vagner Filipak | Premium International | UrbanWatch.app",
-    zh: "Vagner Filipak | 国际尊享门户 | UrbanWatch.app"
-  };
-
-  function setLanguage(language){
-    const lang = allowedLanguages.includes(language) ? language : "pt";
-
-    root.setAttribute("data-language", lang);
-    root.setAttribute("lang", htmlLanguages[lang]);
-    document.title = titles[lang];
-
-    buttons.forEach(function(button){
-      const active = button.dataset.setLanguage === lang;
-      button.classList.toggle("active", active);
-      button.setAttribute("aria-pressed", String(active));
-    });
-
-    try{
-      localStorage.setItem("urbanwatch-language", lang);
-    }catch(error){}
-  }
-
-  buttons.forEach(function(button){
-    button.addEventListener("click", function(){
-      setLanguage(button.dataset.setLanguage);
-    });
-  });
-
-  let savedLanguage = "pt";
-
-  try{
-    savedLanguage = localStorage.getItem("urbanwatch-language") || "pt";
-  }catch(error){}
-
-  setLanguage(savedLanguage);
-})();
-
-
-document.addEventListener("DOMContentLoaded", function(){
-  const portalUrl = "https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/";
-  const modal = document.getElementById("sharePortalModal");
-  const openButton = document.getElementById("openSharePortal");
-  const closeButton = document.getElementById("closeSharePortal");
-  const copyButton = document.getElementById("copyPortalLink");
-  const shareButton = document.getElementById("nativeSharePortal");
-
-  function openModal(){
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden","false");
-    document.body.classList.add("modal-open");
-  }
-
-  function closeModal(){
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden","true");
-    document.body.classList.remove("modal-open");
-  }
-
-  openButton.addEventListener("click", openModal);
-  closeButton.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", function(event){
-    if(event.target === modal) closeModal();
-  });
-
-  document.addEventListener("keydown", function(event){
-    if(event.key === "Escape" && modal.classList.contains("open")) closeModal();
-  });
-
-  copyButton.addEventListener("click", async function(){
-    try{
-      await navigator.clipboard.writeText(portalUrl);
-      const lang = document.documentElement.getAttribute("data-language");
-      copyButton.textContent = lang === "en" ? "Copied" : lang === "zh" ? "已复制" : "Copiado";
-      setTimeout(function(){
-        copyButton.innerHTML = `
-          <span data-lang="pt">Copiar link</span>
-          <span data-lang="en">Copy link</span>
-          <span data-lang="zh">复制链接</span>`;
-      },1600);
-    }catch(error){
-      window.prompt("Copie o link:", portalUrl);
-    }
-  });
-
-  shareButton.addEventListener("click", async function(){
-    const lang = document.documentElement.getAttribute("data-language");
-    const title = "Vagner Filipak | Premium International | UrbanWatch.app";
-    const text = lang === "en"
-      ? "Access Vagner Filipak's Premium International Portal."
-      : lang === "zh"
-      ? "访问 Vagner Filipak 的国际尊享门户。"
-      : "Acesse o Portal Premium International de Vagner Filipak.";
-
-    if(navigator.share){
-      try{
-        await navigator.share({title:title,text:text,url:portalUrl});
-      }catch(error){}
-    }else{
-      try{
-        await navigator.clipboard.writeText(portalUrl);
-        alert(lang === "en" ? "Link copied." : lang === "zh" ? "链接已复制。" : "Link copiado.");
-      }catch(error){
-        window.prompt("Copie o link:", portalUrl);
-      }
-    }
-  });
-});
-
-
-/* UrbanWatch.app Share Center v3 */
-document.addEventListener("DOMContentLoaded", function(){
-  const portalUrl = "https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/";
-  const modal = document.getElementById("sharePortalModal");
-  const openButton = document.getElementById("openSharePortal");
-  const closeButton = document.getElementById("closeSharePortal");
-  const copyButton = document.getElementById("copyPortalLink");
-  const shareButton = document.getElementById("nativeSharePortal");
-
-  if(!modal || !openButton) return;
-
-  function currentLanguage(){
-    return document.documentElement.getAttribute("data-language") || "pt";
-  }
-
-  function openModal(){
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden","false");
-    document.body.classList.add("modal-open");
-  }
-
-  function closeModal(){
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden","true");
-    document.body.classList.remove("modal-open");
-  }
-
-  openButton.addEventListener("click", openModal);
-
-  if(closeButton){
-    closeButton.addEventListener("click", closeModal);
-  }
-
-  modal.addEventListener("click", function(event){
-    if(event.target === modal) closeModal();
-  });
-
-  document.addEventListener("keydown", function(event){
-    if(event.key === "Escape" && modal.classList.contains("open")){
-      closeModal();
-    }
-  });
-
-  if(copyButton){
-    copyButton.addEventListener("click", async function(){
-      const lang = currentLanguage();
-
-      try{
-        await navigator.clipboard.writeText(portalUrl);
-        copyButton.textContent = lang === "en" ? "Copied" : lang === "zh" ? "已复制" : "Copiado";
-
-        setTimeout(function(){
-          copyButton.innerHTML =
-            '<span data-lang="pt">Copiar link</span>' +
-            '<span data-lang="en">Copy link</span>' +
-            '<span data-lang="zh">复制链接</span>';
-        },1500);
-      }catch(error){
-        window.prompt(
-          lang === "en" ? "Copy the link:" : lang === "zh" ? "复制链接：" : "Copie o link:",
-          portalUrl
-        );
-      }
-    });
-  }
-
-  if(shareButton){
-    shareButton.addEventListener("click", async function(){
-      const lang = currentLanguage();
-      const title = "Vagner Filipak | Premium International | UrbanWatch.app";
-      const text =
-        lang === "en"
-          ? "Access Vagner Filipak's Premium International Portal."
-          : lang === "zh"
-          ? "访问 Vagner Filipak 的国际尊享门户。"
-          : "Acesse o Portal Premium International de Vagner Filipak.";
-
-      if(navigator.share){
-        try{
-          await navigator.share({title:title,text:text,url:portalUrl});
-        }catch(error){}
-      }else{
-        try{
-          await navigator.clipboard.writeText(portalUrl);
-          alert(lang === "en" ? "Link copied." : lang === "zh" ? "链接已复制。" : "Link copiado.");
-        }catch(error){
-          window.prompt(
-            lang === "en" ? "Copy the link:" : lang === "zh" ? "复制链接：" : "Copie o link:",
-            portalUrl
-          );
-        }
-      }
-    });
-  }
-});
-</script>
 <div aria-hidden="true" class="share-modal" id="sharePortalModal">
 <div aria-labelledby="sharePortalTitle" aria-modal="true" class="share-dialog" role="dialog">
 <button aria-label="Fechar" class="share-close" id="closeSharePortal" type="button">×</button>
@@ -601,5 +1029,167 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 </div>
 </div>
-</body>
+<script>
+(function(){
+  const root = document.documentElement;
+  const languageButtons = document.querySelectorAll("[data-set-language]");
+  const allowedLanguages = ["pt","en","zh"];
+
+  const htmlLanguages = {
+    pt:"pt-BR",
+    en:"en",
+    zh:"zh-CN"
+  };
+
+  const titles = {
+    pt:"Vagner Filipak | Premium International | UrbanWatch.app",
+    en:"Vagner Filipak | Premium International | UrbanWatch.app",
+    zh:"Vagner Filipak | 国际尊享门户 | UrbanWatch.app"
+  };
+
+  function setLanguage(language){
+    const lang = allowedLanguages.includes(language) ? language : "pt";
+
+    root.setAttribute("data-language",lang);
+    root.setAttribute("lang",htmlLanguages[lang]);
+    document.title = titles[lang];
+
+    languageButtons.forEach(function(button){
+      const active = button.dataset.setLanguage === lang;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+
+    try{
+      localStorage.setItem("urbanwatch-language",lang);
+    }catch(error){}
+  }
+
+  languageButtons.forEach(function(button){
+    button.addEventListener("click",function(){
+      setLanguage(button.dataset.setLanguage);
+    });
+  });
+
+  let savedLanguage = "pt";
+
+  try{
+    savedLanguage = localStorage.getItem("urbanwatch-language") || "pt";
+  }catch(error){}
+
+  setLanguage(savedLanguage);
+})();
+
+document.addEventListener("DOMContentLoaded",function(){
+  const portalUrl = "https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/";
+  const modal = document.getElementById("sharePortalModal");
+  const openButton = document.getElementById("openSharePortal");
+  const closeButton = document.getElementById("closeSharePortal");
+  const copyButton = document.getElementById("copyPortalLink");
+  const shareButton = document.getElementById("nativeSharePortal");
+
+  if(!modal || !openButton) return;
+
+  function currentLanguage(){
+    return document.documentElement.getAttribute("data-language") || "pt";
+  }
+
+  function openModal(){
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-open");
+  }
+
+  openButton.addEventListener("click",openModal);
+
+  if(closeButton){
+    closeButton.addEventListener("click",closeModal);
+  }
+
+  modal.addEventListener("click",function(event){
+    if(event.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown",function(event){
+    if(event.key === "Escape" && modal.classList.contains("open")){
+      closeModal();
+    }
+  });
+
+  if(copyButton){
+    copyButton.addEventListener("click",async function(){
+      const lang = currentLanguage();
+
+      try{
+        await navigator.clipboard.writeText(portalUrl);
+        copyButton.textContent =
+          lang === "en" ? "Copied" :
+          lang === "zh" ? "已复制" :
+          "Copiado";
+
+        setTimeout(function(){
+          copyButton.innerHTML =
+            '<span data-lang="pt">Copiar link</span>' +
+            '<span data-lang="en">Copy link</span>' +
+            '<span data-lang="zh">复制链接</span>';
+        },1500);
+      }catch(error){
+        window.prompt(
+          lang === "en" ? "Copy the link:" :
+          lang === "zh" ? "复制链接：" :
+          "Copie o link:",
+          portalUrl
+        );
+      }
+    });
+  }
+
+  if(shareButton){
+    shareButton.addEventListener("click",async function(){
+      const lang = currentLanguage();
+      const title = "Vagner Filipak | Premium International | UrbanWatch.app";
+      const text =
+        lang === "en"
+          ? "Access Vagner Filipak's Premium International Portal."
+          : lang === "zh"
+          ? "访问 Vagner Filipak 的国际尊享门户。"
+          : "Acesse o Portal Premium International de Vagner Filipak.";
+
+      if(navigator.share){
+        try{
+          await navigator.share({
+            title:title,
+            text:text,
+            url:portalUrl
+          });
+        }catch(error){}
+      }else{
+        try{
+          await navigator.clipboard.writeText(portalUrl);
+          alert(
+            lang === "en" ? "Link copied." :
+            lang === "zh" ? "链接已复制。" :
+            "Link copiado."
+          );
+        }catch(error){
+          window.prompt(
+            lang === "en" ? "Copy the link:" :
+            lang === "zh" ? "复制链接：" :
+            "Copie o link:",
+            portalUrl
+          );
+        }
+      }
+    });
+  }
+});
+</script></body>
 </html>
