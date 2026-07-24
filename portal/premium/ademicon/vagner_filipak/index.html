@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html data-language="pt" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#050505" name="theme-color"/>
+<title>Vagner Filipak | Premium International | UrbanWatch.app</title>
+<meta content="Portal Premium International de Vagner Filipak — Gestor Licenciado Ademicon, negócios, consórcios e planejamento patrimonial." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="Vagner Filipak | Premium International | UrbanWatch.app" property="og:title"/>
+<meta content="Conexões estratégicas, consórcios e planejamento patrimonial no Brasil e no exterior." property="og:description"/>
+<meta content="perfil.jpg" property="og:image"/>
+<style>
+:root{
+  --black:#050505;
+  --black2:#0d0d0f;
+  --graphite:#171719;
+  --gold:#d4af37;
+  --gold2:#f1e5ac;
+  --white:#f7f7f7;
+  --muted:#b8b8bd;
+  --line:rgba(212,175,55,.24);
+  --shadow:0 18px 55px rgba(0,0,0,.42);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 85% 8%,rgba(212,175,55,.13),transparent 31%),
+    radial-gradient(circle at 8% 45%,rgba(212,175,55,.07),transparent 27%),
+    linear-gradient(180deg,#030303,#0b0b0c 55%,#050505);
+  color:var(--white);
+  font-family:Arial,"Microsoft YaHei","PingFang SC","Noto Sans SC",Helvetica,sans-serif;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+
+body.modal-open{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+.shell{
+  width:min(1120px,calc(100% - 28px));
+  margin:auto;
+  padding:18px 0 46px;
+}
+
+.topbar{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 16px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(10,10,11,.84);
+  backdrop-filter:blur(16px);
+  position:sticky;
+  top:10px;
+  z-index:20;
+  box-shadow:0 10px 36px rgba(0,0,0,.24);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+}
+
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(212,175,55,.42);
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(212,175,55,.16),rgba(255,255,255,.02));
+  color:var(--gold);
+}
+
+.brand-mark svg{
+  width:25px;
+  height:25px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+.brand-text strong{
+  display:block;
+  font-size:.98rem;
+  letter-spacing:.1em;
+}
+
+.brand-text strong span{
+  color:var(--gold);
+}
+
+.brand-text small{
+  display:block;
+  color:var(--muted);
+  font-size:.59rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.lang-switch{
+  display:flex;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#090909;
+}
+
+.lang-btn{
+  border:0;
+  color:var(--muted);
+  background:transparent;
+  border-radius:999px;
+  padding:8px 11px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:.76rem;
+}
+
+.lang-btn.active{
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+}
+
+.hero{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+  min-height:580px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  overflow:hidden;
+  background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(22,19,11,.88));
+  box-shadow:var(--shadow);
+}
+
+.hero-copy{
+  padding:58px 46px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  color:var(--gold2);
+  border:1px solid rgba(212,175,55,.33);
+  background:rgba(212,175,55,.07);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:.73rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+}
+
+.eyebrow svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+h1{
+  margin-top:22px;
+  font-size:clamp(2.6rem,6.2vw,5.4rem);
+  line-height:.92;
+  letter-spacing:-.06em;
+}
+
+h1 span{
+  display:block;
+  color:var(--gold);
+}
+
+.role,
+.intro,
+.section-description,
+.international-card p,
+.contact-band p{
+  display:block;
+}
+
+.role{
+  margin-top:20px;
+  color:var(--gold2);
+  font-size:clamp(1rem,2vw,1.26rem);
+  font-weight:700;
+  line-height:1.45;
+}
+
+.intro{
+  margin-top:14px;
+  max-width:680px;
+  color:#d7d7da;
+  line-height:1.7;
+}
+
+.highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.highlight{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 11px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.075);
+  background:rgba(255,255,255,.025);
+  color:#dfdfe2;
+  font-size:.83rem;
+}
+
+.highlight svg{
+  width:16px;
+  height:16px;
+  color:var(--gold);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+}
+
+.actions,
+.extra-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.actions{
+  margin-top:30px;
+}
+
+.extra-actions{
+  margin-top:12px;
+}
+
+.extra-actions .btn{
+  flex:1 1 220px;
+}
+
+/* UrbanWatch.app Design System — botões */
+.btn{
+  min-height:52px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-radius:15px;
+  padding:12px 18px;
+  font-weight:900;
+  font-size:.86rem;
+  color:#ffffff;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn span{
+  color:inherit;
+}
+
+.btn svg{
+  width:20px;
+  height:20px;
+  flex:0 0 auto;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+.btn-primary{
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  box-shadow:0 12px 30px rgba(212,175,55,.18);
+  border:1px solid transparent;
+}
+
+.btn-secondary{
+  color:#ffffff;
+  border:1px solid rgba(212,175,55,.33);
+  background:rgba(255,255,255,.025);
+}
+
+.hero-photo{
+  position:relative;
+  min-height:520px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  background:
+    linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),
+    radial-gradient(circle at 50% 39%,rgba(212,175,55,.31),transparent 38%);
+  overflow:hidden;
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  min-height:580px;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.photo-label{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  padding:15px 16px;
+  border:1px solid rgba(212,175,55,.34);
+  border-radius:17px;
+  background:rgba(5,5,5,.78);
+  backdrop-filter:blur(10px);
+}
+
+.photo-label strong,
+.photo-label span{
+  display:block;
+}
+
+.photo-label strong{
+  color:var(--gold2);
+  font-size:.94rem;
+  margin-bottom:4px;
+  line-height:1.4;
+}
+
+.photo-label span{
+  color:var(--muted);
+  font-size:.76rem;
+  margin-top:3px;
+}
+
+.section{
+  margin-top:18px;
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));
+  box-shadow:0 14px 46px rgba(0,0,0,.22);
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-end;
+  margin-bottom:22px;
+}
+
+.kicker{
+  display:block;
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.14em;
+  margin-bottom:8px;
+}
+
+.section h2,
+.international-card h3,
+.contact-band h2{
+  display:block;
+}
+
+.section h2{
+  font-size:clamp(1.45rem,4vw,2.15rem);
+  letter-spacing:-.035em;
+}
+
+.section-description{
+  color:var(--muted);
+  max-width:530px;
+  font-size:.9rem;
+  margin-top:10px;
+  line-height:1.65;
+}
+
+.tiles{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+.tile{
+  min-height:145px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:17px;
+  border:1px solid rgba(212,175,55,.18);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(212,175,55,.09),transparent 44%),
+    rgba(255,255,255,.018);
+  transition:transform .22s ease,border-color .22s ease;
+}
+
+.tile:hover{
+  transform:translateY(-4px);
+  border-color:rgba(212,175,55,.52);
+}
+
+.tile-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:13px;
+  background:rgba(212,175,55,.075);
+  color:var(--gold);
+}
+
+.tile svg{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+.tile strong,
+.tile small{
+  display:block;
+}
+
+.tile strong{
+  font-size:.96rem;
+  margin-bottom:5px;
+  line-height:1.35;
+}
+
+.tile small{
+  color:var(--muted);
+  font-size:.78rem;
+  line-height:1.5;
+}
+
+.international-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.international-card{
+  min-height:260px;
+  padding:26px;
+  border-radius:20px;
+  border:1px solid rgba(212,175,55,.22);
+  background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(11,11,12,.35)),#0b0b0c;
+}
+
+.international-card svg{
+  width:38px;
+  height:38px;
+  color:var(--gold);
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+  margin-bottom:17px;
+}
+
+.international-card h3{
+  color:var(--gold2);
+  font-size:1.22rem;
+  margin-bottom:10px;
+  line-height:1.35;
+}
+
+.international-card p{
+  color:#d1d1d4;
+  font-size:.91rem;
+  line-height:1.65;
+}
+
+.cities{
+  margin-top:18px;
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.city{
+  border:1px solid rgba(212,175,55,.25);
+  background:rgba(0,0,0,.25);
+  border-radius:999px;
+  padding:7px 10px;
+  color:var(--gold2);
+  font-size:.76rem;
+  font-weight:800;
+}
+
+.contact-band{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:16px;
+  align-items:center;
+  padding:31px;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 85% 30%,rgba(212,175,55,.16),transparent 32%),
+    linear-gradient(135deg,#101012,#080809);
+}
+
+.contact-band h2{
+  font-size:clamp(1.65rem,4.5vw,2.65rem);
+  line-height:1.08;
+  letter-spacing:-.045em;
+}
+
+.contact-band h2 span{
+  color:var(--gold);
+}
+
+.contact-band p{
+  color:var(--muted);
+  margin-top:14px;
+  line-height:1.65;
+}
+
+.contact-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.footer{
+  padding:28px 10px 8px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:18px;
+  color:#85858a;
+  font-size:.72rem;
+}
+
+.footer strong{
+  color:#d2d2d5;
+}
+
+.footer a{
+  color:var(--gold2);
+}
+
+.trust-center-link{
+  width:100%;
+  margin-top:10px;
+  padding-top:14px;
+  border-top:1px solid rgba(212,175,55,.18);
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  color:var(--gold2);
+  font-weight:800;
+  text-align:center;
+  line-height:1.45;
+}
+
+.trust-center-link svg{
+  width:18px;
+  height:18px;
+  flex:0 0 auto;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+}
+
+/* Share Center UrbanWatch.app */
+.share-modal{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+}
+
+.share-modal.open{
+  display:flex;
+}
+
+.share-dialog{
+  width:min(440px,100%);
+  border:1px solid rgba(212,175,55,.36);
+  border-radius:24px;
+  background:linear-gradient(145deg,#161618,#080809);
+  box-shadow:0 28px 80px rgba(0,0,0,.58);
+  padding:24px;
+  position:relative;
+}
+
+.share-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(212,175,55,.25);
+  border-radius:12px;
+  background:rgba(255,255,255,.03);
+  color:var(--white);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:1.15rem;
+}
+
+.share-dialog h2{
+  margin-right:42px;
+  font-size:1.45rem;
+  line-height:1.2;
+  color:var(--gold2);
+}
+
+.share-dialog p{
+  margin-top:10px;
+  color:var(--muted);
+  line-height:1.65;
+  font-size:.9rem;
+}
+
+.qr-wrap{
+  width:230px;
+  max-width:100%;
+  aspect-ratio:1;
+  margin:22px auto 18px;
+  padding:14px;
+  border-radius:20px;
+  background:#fff;
+  display:grid;
+  place-items:center;
+}
+
+.qr-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.share-link-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:14px;
+  padding:12px;
+  border:1px solid rgba(212,175,55,.22);
+  border-radius:14px;
+  background:#090909;
+}
+
+.share-link{
+  flex:1;
+  min-width:0;
+  color:#d8d8dc;
+  font-size:.78rem;
+  line-height:1.4;
+  overflow-wrap:anywhere;
+}
+
+.copy-link-btn{
+  flex:0 0 auto;
+  border:1px solid rgba(212,175,55,.3);
+  border-radius:10px;
+  background:rgba(212,175,55,.08);
+  color:var(--gold2);
+  padding:9px 10px;
+  cursor:pointer;
+  font-weight:800;
+  font-size:.72rem;
+}
+
+.share-dialog-actions{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin-top:16px;
+}
+
+html[data-language="pt"] [data-lang="en"],
+html[data-language="pt"] [data-lang="zh"],
+html[data-language="en"] [data-lang="pt"],
+html[data-language="en"] [data-lang="zh"],
+html[data-language="zh"] [data-lang="pt"],
+html[data-language="zh"] [data-lang="en"]{
+  display:none!important;
+}
+
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-copy{
+    padding:44px 25px 34px;
+  }
+
+  .hero-photo,
+  .hero-photo img{
+    min-height:470px;
+  }
+
+  .tiles{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .international-grid,
+  .contact-band{
+    grid-template-columns:1fr;
+  }
+
+  .contact-actions{
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+
+  .contact-actions .btn{
+    flex:1;
+  }
+}
+
+@media(max-width:620px){
+  .extra-actions{
+    flex-direction:column;
+  }
+
+  .extra-actions .btn{
+    width:100%;
+    flex-basis:auto;
+  }
+
+  .trust-center-link{
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:560px){
+  .shell{
+    width:calc(100% - 18px);
+    padding-top:9px;
+  }
+
+  .topbar{
+    top:6px;
+    min-height:59px;
+    padding:9px 10px;
+    border-radius:17px;
+  }
+
+  .brand-text small{
+    display:none;
+  }
+
+  .brand-mark{
+    width:37px;
+    height:37px;
+  }
+
+  .hero{
+    border-radius:23px;
+  }
+
+  .hero-copy{
+    padding:36px 20px 28px;
+  }
+
+  h1{
+    font-size:clamp(2.45rem,15vw,4.25rem);
+  }
+
+  .actions{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-photo,
+  .hero-photo img{
+    min-height:420px;
+  }
+
+  .section{
+    padding:23px 16px;
+    border-radius:21px;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-description{
+    margin-top:8px;
+  }
+
+  .tiles{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .tile{
+    min-height:138px;
+    padding:16px;
+  }
+
+  .international-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-band{
+    padding:24px 18px;
+  }
+
+  .contact-actions{
+    flex-direction:column;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .share-dialog{
+    padding:22px 16px 18px;
+  }
+
+  .qr-wrap{
+    width:210px;
+  }
+
+  .share-link-box{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .copy-link-btn{
+    width:100%;
+  }
+}
+
+@media(max-width:390px){
+  .brand-text strong{
+    font-size:.84rem;
+  }
+
+  .tiles{
+    grid-template-columns:1fr;
+  }
+
+  .tile{
+    min-height:120px;
+  }
+}
+
+.instagram-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.78);backdrop-filter:blur(11px)}
+.instagram-modal.open{display:flex}
+.instagram-dialog{width:min(520px,100%);max-height:calc(100vh - 40px);overflow:auto;position:relative;padding:24px;border:1px solid rgba(212,175,55,.36);border-radius:25px;background:linear-gradient(145deg,#171719,#080809);box-shadow:0 30px 90px rgba(0,0,0,.62)}
+.instagram-close{position:absolute;top:12px;right:12px;width:39px;height:39px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.27);border-radius:12px;background:rgba(255,255,255,.03);color:#fff;cursor:pointer;font-size:1.18rem}
+.instagram-dialog-head{display:flex;align-items:flex-start;gap:14px;padding-right:44px}
+.instagram-dialog-icon{flex:0 0 auto;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.34);border-radius:15px;color:var(--gold);background:rgba(212,175,55,.075);font-size:1.4rem}
+.instagram-dialog h2{font-size:1.42rem;line-height:1.22;color:var(--gold2)}
+.instagram-dialog-head p{margin-top:7px;color:var(--muted);font-size:.88rem;line-height:1.55}
+.instagram-options{display:grid;gap:10px;margin-top:22px}
+.instagram-option{display:grid;grid-template-columns:46px minmax(0,1fr) auto;align-items:center;gap:13px;min-height:70px;padding:11px 13px;border:1px solid rgba(255,255,255,.075);border-radius:16px;background:rgba(255,255,255,.025);transition:.2s ease}
+.instagram-option:hover{transform:translateY(-2px);border-color:rgba(212,175,55,.48);background:rgba(212,175,55,.055)}
+.instagram-option.featured{border-color:rgba(212,175,55,.38);background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(255,255,255,.02))}
+.instagram-option-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#090909;font-size:.75rem;font-weight:900}
+.instagram-option strong,.instagram-option small{display:block}
+.instagram-option strong{color:#f3f3f4;font-size:.91rem;line-height:1.35}
+.instagram-option small{margin-top:3px;color:var(--muted);font-size:.75rem;overflow-wrap:anywhere}
+.instagram-arrow{color:var(--gold);font-size:1.1rem}
+button.tile{appearance:none;-webkit-appearance:none}
+@media(max-width:560px){.instagram-dialog{padding:20px 14px 15px}.instagram-dialog-head{padding-right:39px}.instagram-option{grid-template-columns:42px minmax(0,1fr) auto;gap:10px;padding:10px}.instagram-option-mark{width:39px;height:39px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+<a aria-label="UrbanWatch.app" class="brand" href="https://urbanwatch.app/">
+<span class="brand-mark"><svg viewbox="0 0 24 24"><path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path><circle cx="12" cy="10" r="2.2"></circle></svg></span>
+<span class="brand-text"><strong>URBAN<span>WATCH</span>.app</strong><small data-lang="pt">Inteligência para quem não improvisa.</small><small data-lang="zh">为不依赖临时应对的人提供智慧。</small><small data-lang="en">Intelligence for those who do not improvise.</small></span>
+</a>
+<div aria-label="Selecionar idioma / Select language / 选择语言" class="lang-switch"><button aria-pressed="true" class="lang-btn active" data-set-language="pt" type="button">PT</button><button aria-pressed="false" class="lang-btn" data-set-language="en" type="button">EN</button><button aria-pressed="false" class="lang-btn" data-set-language="zh" type="button">中文</button></div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span data-lang="pt">Portal Premium International</span><span data-lang="zh">国际尊享门户</span><span data-lang="en">Premium International Portal</span></div>
+<h1>Vagner <span>Filipak</span></h1>
+<p class="role" data-lang="pt">Gestor Licenciado Ademicon • Negócios e Planejamento Patrimonial</p><p class="role" data-lang="zh">Ademicon 授权经理 • 商务与财富规划</p>
+<p class="role" data-lang="en">Ademicon Licensed Manager • Business &amp; Wealth Planning</p>
+<p class="intro" data-lang="pt">Estratégias para transformar planejamento em patrimônio, conectar oportunidades e construir decisões financeiras de longo prazo no Brasil e no exterior.</p><p class="intro" data-lang="zh">通过战略将规划转化为资产，连接机遇，并支持巴西及海外的长期财务决策。</p>
+<p class="intro" data-lang="en">Strategies designed to turn planning into assets, connect opportunities and support long-term financial decisions in Brazil and abroad.</p>
+<div class="highlights">
+<div class="highlight"><svg viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg><span data-lang="pt">Estratégia patrimonial</span><span data-lang="zh">财富战略</span><span data-lang="en">Wealth strategy</span></div>
+<div class="highlight"><svg viewbox="0 0 24 24"><path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg><span data-lang="pt">Atuação nacional e internacional</span><span data-lang="zh">国内与国际服务</span><span data-lang="en">National and international reach</span></div>
+<div class="highlight"><svg viewbox="0 0 24 24"><path d="M4 19h16M6 16V8l6-4 6 4v8M9 16v-5h6v5"></path></svg><span data-lang="pt">Imóveis, veículos e serviços</span><span data-lang="zh">房地产、车辆与服务</span><span data-lang="en">Real estate, vehicles and services</span></div>
+</div>
+<div class="actions">
+<a class="btn btn-primary" href="https://wa.me/5547992198040?text=Ol%C3%A1%2C%20Vagner.%20Acessei%20seu%20Portal%20Premium%20UrbanWatch.app%20e%20gostaria%20de%20conversar." rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg><span data-lang="pt">Falar com Vagner</span><span data-lang="zh">联系 Vagner</span><span data-lang="en">Talk to Vagner</span></a>
+<a class="btn btn-secondary" href="https://licenciado.ademicon.com.br/vagner-filipak" rel="noopener" target="_blank"><svg viewbox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M2 19h20"></path></svg><span data-lang="pt">Simular agora</span><span data-lang="zh">立即测算</span><span data-lang="en">Start a simulation</span></a>
+</div>
+<div class="extra-actions">
+<a class="btn btn-secondary" href="https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/informacoes">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="M12 10v6M12 7h.01"></path>
+</svg>
+<span data-lang="pt">Mais Informações</span>
+<span data-lang="en">More Information</span>
+<span data-lang="zh">更多信息</span>
+</a>
+<button class="btn btn-secondary" id="openSharePortal" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="2.5"></circle>
+<circle cx="6" cy="12" r="2.5"></circle>
+<circle cx="18" cy="19" r="2.5"></circle>
+<path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"></path>
+</svg>
+<span data-lang="pt">Compartilhar Portal</span>
+<span data-lang="en">Share Portal</span>
+<span data-lang="zh">分享门户</span>
+</button>
+</div>
+</div>
+<div class="hero-photo"><img alt="Vagner Filipak" src="perfil.jpg"/><div class="photo-label"><strong data-lang="pt">Conexões que transformam planejamento em resultados.</strong><strong data-lang="zh">将规划转化为成果的连接。</strong><strong data-lang="en">Connections that turn planning into results.</strong><span>Ademicon • UrbanWatch.app Premium International</span></div></div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="kicker" data-lang="pt">Conecte-se</div><div class="kicker" data-lang="zh">建立联系</div><div class="kicker" data-lang="en">Connect</div><h2 data-lang="pt">Tudo em um só lugar</h2><h2 data-lang="zh">一站式连接</h2><h2 data-lang="en">Everything in one place</h2></div><p class="section-description" data-lang="pt">Acesse os canais profissionais, solicite uma simulação ou inicie uma conversa direta.</p><p class="section-description" data-lang="zh">访问专业渠道、申请测算或直接开始沟通。</p><p class="section-description" data-lang="en">Access professional channels, request a simulation or start a direct conversation.</p></div>
+<div class="tiles">
+<a class="tile" href="https://wa.me/5547992198040?text=Ol%C3%A1%2C%20Vagner.%20Acessei%20seu%20Portal%20Premium%20UrbanWatch.app%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><span class="tile-icon"><svg viewbox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg></span><span><strong>WhatsApp</strong><small data-lang="pt">Atendimento direto</small><small data-lang="zh">直接服务</small><small data-lang="en">Direct assistance</small></span></a>
+<a class="tile" href="https://licenciado.ademicon.com.br/vagner-filipak" rel="noopener" target="_blank"><span class="tile-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"></path></svg></span><span><strong data-lang="pt">Simulação</strong><strong data-lang="zh">方案测算</strong><strong data-lang="en">Simulation</strong><small data-lang="pt">Planeje sua próxima conquista</small><small data-lang="zh">规划您的下一个目标</small><small data-lang="en">Plan your next achievement</small></span></a>
+<button aria-controls="instagramMenuModal" aria-haspopup="dialog" class="tile" id="openInstagramMenu" style="width:100%;color:inherit;text-align:left;cursor:pointer;font:inherit;" type="button"><span class="tile-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7"></circle></svg></span><span><strong>Instagram</strong><small>@vagnerfilipak_ademicon</small></span></button>
+<a class="tile" href="https://br.linkedin.com/in/vagner-filipak-94a8bb207" rel="noopener" target="_blank"><span class="tile-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="3"></rect><path d="M8 10v7M8 7v.01M12 17v-4a3 3 0 0 1 6 0v4M12 10v7"></path></svg></span><span><strong>LinkedIn</strong><small data-lang="pt">Perfil profissional</small><small data-lang="zh">专业资料</small><small data-lang="en">Professional profile</small></span></a>
+<a class="tile" href="mailto:vagner.filipak@licenciadoademicon.com.br"><span class="tile-icon"><svg viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span><strong>E-mail</strong><small data-lang="pt">Contato profissional</small><small data-lang="zh">专业联系</small><small data-lang="en">Professional contact</small></span></a>
+<a class="tile" href="https://www.google.com/maps/search/?api=1&amp;query=Ademicon+Navegantes+SC" rel="noopener" target="_blank"><span class="tile-icon"><svg viewbox="0 0 24 24"><path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg></span><span><strong data-lang="pt">Localização</strong><strong data-lang="zh">地点</strong><strong data-lang="en">Location</strong><small>Ademicon Navegantes • SC</small></span></a>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="kicker">International</div><h2 data-lang="pt">Conexão entre mercados</h2><h2 data-lang="zh">连接不同市场</h2><h2 data-lang="en">Connecting markets</h2></div><p class="section-description" data-lang="pt">Uma experiência multilíngue preparada para apresentar oportunidades e facilitar conexões com clientes no Brasil e no exterior.</p><p class="section-description" data-lang="zh">一个面向国际的多语言体验，用于展示机会并促进与巴西及海外客户的联系。</p><p class="section-description" data-lang="en">A multilingual experience designed to present opportunities and facilitate connections with clients in Brazil and abroad.</p></div>
+<div class="international-grid">
+<article class="international-card"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><h3 data-lang="pt">Atendimento internacional</h3><h3 data-lang="zh">国际服务</h3><h3 data-lang="en">International assistance</h3><p data-lang="pt">Comunicação em português e inglês para apoiar conexões, apresentação de soluções e relacionamento com brasileiros ou investidores interessados em oportunidades entre mercados.</p><p data-lang="zh">以葡萄牙语、英语和中文沟通，支持跨市场连接、方案展示以及与巴西客户和投资者的关系。</p><p data-lang="en">Communication in Portuguese and English to support connections, solution presentations and relationships with Brazilians or investors interested in cross-market opportunities.</p><div class="cities"><span class="city">Brasil</span><span class="city">United States</span><span class="city">Florida</span></div></article>
+<article class="international-card"><svg viewbox="0 0 24 24"><path d="M3 20h18M5 17V9l7-5 7 5v8M9 17v-5h6v5"></path></svg><h3 data-lang="pt">Patrimônio e imóveis</h3><h3 data-lang="zh">财富与房地产</h3><h3 data-lang="en">Wealth and real estate</h3><p data-lang="pt">Planejamento voltado à aquisição de patrimônio, organização financeira e análise de caminhos para imóveis, veículos e serviços, conforme cada objetivo.</p><p data-lang="zh">围绕资产获取、财务组织，以及根据不同目标对房地产、车辆和服务方案进行分析。</p><p data-lang="en">Planning focused on asset acquisition, financial organization and the evaluation of paths for real estate, vehicles and services according to each objective.</p><div class="cities"><span class="city">Miami</span><span class="city">Orlando</span><span class="city">Navegantes</span></div></article>
+</div>
+</section>
+<section class="section"><div class="contact-band"><div><div class="kicker" data-lang="pt">Próximo passo</div><div class="kicker" data-lang="zh">下一步</div><div class="kicker" data-lang="en">Next step</div><h2 data-lang="pt">Vamos transformar seu objetivo em um <span>plano possível.</span></h2><h2 data-lang="zh">让我们把您的目标转化为<span>可行方案。</span></h2><h2 data-lang="en">Let us turn your objective into a <span>possible plan.</span></h2><p data-lang="pt">Entre em contato e compartilhe o que você pretende conquistar. O primeiro passo é compreender o momento, o objetivo e o horizonte da decisão.</p><p data-lang="zh">联系我们并分享您希望实现的目标。第一步是了解您当前的情况、目标和决策周期。</p><p data-lang="en">Get in touch and share what you intend to achieve. The first step is understanding your current moment, objective and decision horizon.</p></div><div class="contact-actions"><a class="btn btn-primary" href="https://wa.me/5547992198040?text=Ol%C3%A1%2C%20Vagner.%20Gostaria%20de%20agendar%20uma%20conversa." rel="noopener" target="_blank"><span data-lang="pt">Iniciar conversa</span><span data-lang="zh">开始沟通</span><span data-lang="en">Start a conversation</span></a><a class="btn btn-secondary" href="tel:+5547992198040"><span data-lang="pt">Ligar</span><span data-lang="zh">致电</span><span data-lang="en">Call</span></a></div></div></section>
+</main>
+<footer class="footer"><span><strong>Vagner Filipak</strong> • Ademicon</span><span><span data-lang="pt">Portal desenvolvido por</span><span data-lang="zh">门户由以下团队开发</span><span data-lang="en">Portal developed by</span> <a href="https://urbanwatch.app/" rel="noopener" target="_blank">UrbanWatch.app</a></span>
+<a class="trust-center-link" href="https://urbanwatch.app/ccu/" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 3 4 6v5c0 5 3.5 8.2 8 10 4.5-1.8 8-5 8-10V6l-8-3Z"></path>
+<path d="m9 12 2 2 4-5"></path>
+</svg>
+<span data-lang="pt">Centro de Confiança UrbanWatch.app</span>
+<span data-lang="en">UrbanWatch.app Trust Center</span>
+<span data-lang="zh">UrbanWatch.app 信任中心</span>
+</a>
+</footer>
+</div>
+<div aria-hidden="true" class="share-modal" id="sharePortalModal">
+<div aria-labelledby="sharePortalTitle" aria-modal="true" class="share-dialog" role="dialog">
+<button aria-label="Fechar" class="share-close" id="closeSharePortal" type="button">×</button>
+<h2 data-lang="pt" id="sharePortalTitle">Compartilhar Portal</h2>
+<h2 data-lang="en">Share Portal</h2>
+<h2 data-lang="zh">分享门户</h2>
+<p data-lang="pt">Use o QR Code, copie o link ou compartilhe diretamente o Portal Premium International de Vagner Filipak.</p>
+<p data-lang="en">Use the QR Code, copy the link or directly share Vagner Filipak's Premium International Portal.</p>
+<p data-lang="zh">使用二维码、复制链接，或直接分享 Vagner Filipak 的国际尊享门户。</p>
+<div class="qr-wrap">
+<img alt="QR Code do Portal Premium International de Vagner Filipak" src="https://quickchart.io/qr?text=https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/&amp;size=420&amp;margin=1"/>
+</div>
+<div class="share-link-box">
+<span class="share-link" id="portalShareLink">https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/</span>
+<button class="copy-link-btn" id="copyPortalLink" type="button">
+<span data-lang="pt">Copiar link</span>
+<span data-lang="en">Copy link</span>
+<span data-lang="zh">复制链接</span>
+</button>
+</div>
+<div class="share-dialog-actions">
+<button class="btn btn-primary" id="nativeSharePortal" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="2.5"></circle>
+<circle cx="6" cy="12" r="2.5"></circle>
+<circle cx="18" cy="19" r="2.5"></circle>
+<path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"></path>
+</svg>
+<span data-lang="pt">Compartilhar agora</span>
+<span data-lang="en">Share now</span>
+<span data-lang="zh">立即分享</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+(function(){
+  const root = document.documentElement;
+  const languageButtons = document.querySelectorAll("[data-set-language]");
+  const allowedLanguages = ["pt","en","zh"];
+
+  const htmlLanguages = {
+    pt:"pt-BR",
+    en:"en",
+    zh:"zh-CN"
+  };
+
+  const titles = {
+    pt:"Vagner Filipak | Premium International | UrbanWatch.app",
+    en:"Vagner Filipak | Premium International | UrbanWatch.app",
+    zh:"Vagner Filipak | 国际尊享门户 | UrbanWatch.app"
+  };
+
+  function setLanguage(language){
+    const lang = allowedLanguages.includes(language) ? language : "pt";
+
+    root.setAttribute("data-language",lang);
+    root.setAttribute("lang",htmlLanguages[lang]);
+    document.title = titles[lang];
+
+    languageButtons.forEach(function(button){
+      const active = button.dataset.setLanguage === lang;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+
+    try{
+      localStorage.setItem("urbanwatch-language",lang);
+    }catch(error){}
+  }
+
+  languageButtons.forEach(function(button){
+    button.addEventListener("click",function(){
+      setLanguage(button.dataset.setLanguage);
+    });
+  });
+
+  let savedLanguage = "pt";
+
+  try{
+    savedLanguage = localStorage.getItem("urbanwatch-language") || "pt";
+  }catch(error){}
+
+  setLanguage(savedLanguage);
+})();
+
+document.addEventListener("DOMContentLoaded",function(){
+  const portalUrl = "https://urbanwatch.app/portal/premium/ademicon/vagner_filipak/";
+  const modal = document.getElementById("sharePortalModal");
+  const openButton = document.getElementById("openSharePortal");
+  const closeButton = document.getElementById("closeSharePortal");
+  const copyButton = document.getElementById("copyPortalLink");
+  const shareButton = document.getElementById("nativeSharePortal");
+
+  if(!modal || !openButton) return;
+
+  function currentLanguage(){
+    return document.documentElement.getAttribute("data-language") || "pt";
+  }
+
+  function openModal(){
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-open");
+  }
+
+  openButton.addEventListener("click",openModal);
+
+  if(closeButton){
+    closeButton.addEventListener("click",closeModal);
+  }
+
+  modal.addEventListener("click",function(event){
+    if(event.target === modal){
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown",function(event){
+    if(event.key === "Escape" && modal.classList.contains("open")){
+      closeModal();
+    }
+  });
+
+  if(copyButton){
+    copyButton.addEventListener("click",async function(){
+      const lang = currentLanguage();
+
+      try{
+        await navigator.clipboard.writeText(portalUrl);
+        copyButton.textContent =
+          lang === "en" ? "Copied" :
+          lang === "zh" ? "已复制" :
+          "Copiado";
+
+        setTimeout(function(){
+          copyButton.innerHTML =
+            '<span data-lang="pt">Copiar link</span>' +
+            '<span data-lang="en">Copy link</span>' +
+            '<span data-lang="zh">复制链接</span>';
+        },1500);
+      }catch(error){
+        window.prompt(
+          lang === "en" ? "Copy the link:" :
+          lang === "zh" ? "复制链接：" :
+          "Copie o link:",
+          portalUrl
+        );
+      }
+    });
+  }
+
+  if(shareButton){
+    shareButton.addEventListener("click",async function(){
+      const lang = currentLanguage();
+      const title = "Vagner Filipak | Premium International | UrbanWatch.app";
+      const text =
+        lang === "en"
+          ? "Access Vagner Filipak's Premium International Portal."
+          : lang === "zh"
+          ? "访问 Vagner Filipak 的国际尊享门户。"
+          : "Acesse o Portal Premium International de Vagner Filipak.";
+
+      if(navigator.share){
+        try{
+          await navigator.share({
+            title:title,
+            text:text,
+            url:portalUrl
+          });
+        }catch(error){}
+      }else{
+        try{
+          await navigator.clipboard.writeText(portalUrl);
+          alert(
+            lang === "en" ? "Link copied." :
+            lang === "zh" ? "链接已复制。" :
+            "Link copiado."
+          );
+        }catch(error){
+          window.prompt(
+            lang === "en" ? "Copy the link:" :
+            lang === "zh" ? "复制链接：" :
+            "Copie o link:",
+            portalUrl
+          );
+        }
+      }
+    });
+  }
+});
+</script>
+<div aria-hidden="true" class="instagram-modal" id="instagramMenuModal">
+<div aria-labelledby="instagramMenuTitle" aria-modal="true" class="instagram-dialog" role="dialog">
+<button aria-label="Fechar" class="instagram-close" id="closeInstagramMenu" type="button">×</button>
+<div class="instagram-dialog-head">
+<div class="instagram-dialog-icon">◎</div>
+<div>
+<h2 data-lang="pt" id="instagramMenuTitle">Escolha um Instagram</h2>
+<h2 data-lang="en">Choose an Instagram profile</h2>
+<h2 data-lang="zh">选择一个 Instagram 账号</h2>
+<p data-lang="pt">Selecione o perfil que deseja abrir.</p>
+<p data-lang="en">Select the profile you want to open.</p>
+<p data-lang="zh">请选择您要打开的账号。</p>
+</div>
+</div>
+<div class="instagram-options">
+<a class="instagram-option featured" href="https://www.instagram.com/vagnerfilipak_ademicon/" rel="noopener" target="_blank"><span class="instagram-option-mark">@</span><span><strong>Vagner Filipak</strong><small>@vagnerfilipak_ademicon</small></span><span class="instagram-arrow">↗</span></a>
+<a class="instagram-option" href="https://www.instagram.com/ademiconnavegantes/" rel="noopener" target="_blank"><span class="instagram-option-mark">N</span><span><strong>Ademicon Navegantes</strong><small>@ademiconnavegantes</small></span><span class="instagram-arrow">↗</span></a>
+<a class="instagram-option" href="https://www.instagram.com/ademiconbalneariopicarras/" rel="noopener" target="_blank"><span class="instagram-option-mark">BP</span><span><strong>Ademicon Balneário Piçarras</strong><small>@ademiconbalneariopicarras</small></span><span class="instagram-arrow">↗</span></a>
+<a class="instagram-option" href="https://www.instagram.com/ademicon.novacampinas/?igsh=dTQzeWR2cmZtcXl6" rel="noopener" target="_blank"><span class="instagram-option-mark">SP</span><span><strong>Ademicon São Paulo | Campinas</strong><small>@ademicon.novacampinas</small></span><span class="instagram-arrow">↗</span></a>
+<a class="instagram-option" href="https://www.instagram.com/ademicon.fortaleza?igsh=d2hrZGFlOGphdXpl" rel="noopener" target="_blank"><span class="instagram-option-mark">FOR</span><span><strong>Ademicon Fortaleza</strong><small>@ademicon.fortaleza</small></span><span class="instagram-arrow">↗</span></a>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  const modal=document.getElementById("instagramMenuModal");
+  const openButton=document.getElementById("openInstagramMenu");
+  const closeButton=document.getElementById("closeInstagramMenu");
+  if(!modal||!openButton)return;
+  function openMenu(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.classList.add("modal-open")}
+  function closeMenu(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open")}
+  openButton.addEventListener("click",openMenu);
+  if(closeButton)closeButton.addEventListener("click",closeMenu);
+  modal.addEventListener("click",function(e){if(e.target===modal)closeMenu()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("open"))closeMenu()});
+});
+</script></body>
+</html>
