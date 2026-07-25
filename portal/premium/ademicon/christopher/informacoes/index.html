@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-language="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+
+  <title>Christopher Galvão | Mais Informações | UrbanWatch.app</title>
+  <meta name="description" content="Mais informações sobre Christopher Galvão, Especialista em Negócios e Investimentos pela Ademicon.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Christopher Galvão | Mais Informações | UrbanWatch.app">
+  <meta property="og:description" content="Consórcio, alavancagem financeira, construção patrimonial e realização de projetos.">
+  <meta property="og:image" content="perfil.jpg">
+  <meta property="og:url" content="https://urbanwatch.app/portal/premium/ademicon/christopher/informacoes/">
+
+  <style>
+    :root{
+      --black:#050505;
+      --black2:#0d0d0f;
+      --graphite:#171719;
+      --gold:#d4af37;
+      --gold2:#f1e5ac;
+      --white:#f7f7f7;
+      --muted:#b8b8bd;
+      --line:rgba(212,175,55,.24);
+      --shadow:0 18px 55px rgba(0,0,0,.42);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      padding-bottom:100px;
+      background:
+        radial-gradient(circle at 85% 8%,rgba(212,175,55,.13),transparent 31%),
+        radial-gradient(circle at 8% 45%,rgba(212,175,55,.07),transparent 27%),
+        linear-gradient(180deg,#030303,#0b0b0c 55%,#050505);
+      color:var(--white);
+      font-family:Arial,"Microsoft YaHei","PingFang SC","Noto Sans SC",Helvetica,sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .shell{
+      width:min(1120px,calc(100% - 28px));
+      margin:auto;
+      padding:18px 0 46px;
+    }
+
+    /* Menu superior replicado do portal do Vagner */
+    .topbar{
+      min-height:66px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 16px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(10,10,11,.90);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      position:sticky;
+      top:10px;
+      z-index:50;
+      box-shadow:0 10px 36px rgba(0,0,0,.24);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:42px;
+      height:42px;
+      flex:0 0 auto;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(212,175,55,.42);
+      border-radius:14px;
+      background:linear-gradient(145deg,rgba(212,175,55,.16),rgba(255,255,255,.02));
+      color:var(--gold);
+    }
+
+    .brand-mark svg{
+      width:25px;
+      height:25px;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.8;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:.98rem;
+      letter-spacing:.1em;
+      white-space:nowrap;
+    }
+
+    .brand-text strong span{
+      color:var(--gold);
+    }
+
+    .brand-text small{
+      display:block;
+      color:var(--muted);
+      font-size:.59rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .lang-switch{
+      display:flex;
+      gap:2px;
+      padding:4px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#090909;
+    }
+
+    .lang-btn{
+      border:0;
+      color:var(--muted);
+      background:transparent;
+      border-radius:999px;
+      min-width:46px;
+      min-height:42px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:.74rem;
+    }
+
+    .lang-btn.active{
+      color:#080808;
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      box-shadow:0 8px 22px rgba(212,175,55,.18);
+    }
+
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);
+      min-height:590px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(22,19,11,.88));
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      padding:58px 46px 48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      width:max-content;
+      color:var(--gold2);
+      border:1px solid rgba(212,175,55,.33);
+      background:rgba(212,175,55,.07);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.73rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+    }
+
+    .eyebrow svg{
+      width:16px;
+      height:16px;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.8;
+    }
+
+    h1{
+      margin-top:22px;
+      font-size:clamp(2.6rem,6.2vw,5.4rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+    }
+
+    h1 span{
+      display:block;
+      color:var(--gold);
+    }
+
+    .role{
+      margin-top:20px;
+      color:var(--gold2);
+      font-size:clamp(1rem,2vw,1.26rem);
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    .intro{
+      margin-top:14px;
+      max-width:680px;
+      color:#d7d7da;
+      line-height:1.7;
+    }
+
+    .highlights{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:25px;
+    }
+
+    .highlight{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 11px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.075);
+      background:rgba(255,255,255,.025);
+      color:#dfdfe2;
+      font-size:.83rem;
+    }
+
+    .highlight svg{
+      width:16px;
+      height:16px;
+      color:var(--gold);
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.9;
+    }
+
+    /* Borda Premium animada */
+    .hero-photo{
+      position:relative;
+      min-height:590px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:4px;
+      overflow:hidden;
+      isolation:isolate;
+      background:#070707;
+    }
+
+    .hero-photo::before{
+      content:"";
+      position:absolute;
+      inset:-50%;
+      z-index:-2;
+      background:conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(212,175,55,.08) 34deg,
+        var(--gold2) 62deg,
+        var(--gold) 94deg,
+        transparent 132deg,
+        transparent 230deg,
+        rgba(212,175,55,.12) 272deg,
+        var(--gold) 312deg,
+        transparent 360deg
+      );
+      animation:premiumBorder 6.5s linear infinite;
+    }
+
+    .hero-photo::after{
+      content:"";
+      position:absolute;
+      inset:4px;
+      z-index:-1;
+      background:
+        linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),
+        radial-gradient(circle at 50% 39%,rgba(212,175,55,.31),transparent 38%),
+        #080808;
+    }
+
+    @keyframes premiumBorder{
+      to{transform:rotate(360deg)}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .hero-photo::before{animation:none}
+    }
+
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      min-height:582px;
+      object-fit:cover;
+      object-position:center top;
+      position:relative;
+      z-index:1;
+    }
+
+    .photo-label{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      z-index:2;
+      padding:15px 16px;
+      border:1px solid rgba(212,175,55,.34);
+      border-radius:17px;
+      background:rgba(5,5,5,.78);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .photo-label strong,
+    .photo-label span{
+      display:block;
+    }
+
+    .photo-label strong{
+      color:var(--gold2);
+      font-size:.94rem;
+      margin-bottom:4px;
+      line-height:1.4;
+    }
+
+    .photo-label span{
+      color:var(--muted);
+      font-size:.76rem;
+      margin-top:3px;
+    }
+
+    .section{
+      margin-top:18px;
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));
+      box-shadow:0 14px 46px rgba(0,0,0,.22);
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-end;
+      margin-bottom:22px;
+    }
+
+    .kicker{
+      display:block;
+      color:var(--gold);
+      text-transform:uppercase;
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      margin-bottom:8px;
+    }
+
+    .section h2{
+      font-size:clamp(1.45rem,4vw,2.15rem);
+      letter-spacing:-.035em;
+    }
+
+    .section-description{
+      color:var(--muted);
+      max-width:560px;
+      font-size:.9rem;
+      margin-top:10px;
+      line-height:1.65;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .card{
+      min-height:220px;
+      padding:22px;
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 100% 0,rgba(212,175,55,.09),transparent 44%),
+        rgba(255,255,255,.018);
+    }
+
+    .card-icon{
+      width:46px;
+      height:46px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(212,175,55,.3);
+      border-radius:14px;
+      background:rgba(212,175,55,.075);
+      color:var(--gold);
+      margin-bottom:18px;
+    }
+
+    .card-icon svg{
+      width:24px;
+      height:24px;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.8;
+    }
+
+    .card h3{
+      color:var(--gold2);
+      font-size:1.05rem;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#d0d0d3;
+      font-size:.89rem;
+      line-height:1.68;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .step{
+      padding:22px;
+      border-top:1px solid var(--gold);
+      background:rgba(255,255,255,.018);
+      min-height:190px;
+    }
+
+    .step small{
+      display:block;
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:.1em;
+      margin-bottom:14px;
+    }
+
+    .step h3{
+      font-size:1rem;
+      margin-bottom:10px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:.86rem;
+      line-height:1.6;
+    }
+
+    .contact-band{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+      padding:31px;
+      border:1px solid rgba(212,175,55,.3);
+      border-radius:24px;
+      background:
+        radial-gradient(circle at 85% 30%,rgba(212,175,55,.16),transparent 32%),
+        linear-gradient(135deg,#101012,#080809);
+    }
+
+    .contact-band h2{
+      font-size:clamp(1.65rem,4.5vw,2.65rem);
+      line-height:1.08;
+      letter-spacing:-.045em;
+    }
+
+    .contact-band h2 span{
+      color:var(--gold);
+    }
+
+    .contact-band p{
+      color:var(--muted);
+      margin-top:14px;
+      line-height:1.65;
+    }
+
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:15px;
+      padding:12px 18px;
+      font-weight:900;
+      font-size:.86rem;
+      color:#fff;
+      text-decoration:none;
+      cursor:pointer;
+    }
+
+    .btn span{color:inherit}
+
+    .btn svg{
+      width:20px;
+      height:20px;
+      flex:0 0 auto;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.8;
+    }
+
+    .btn-primary{
+      color:#080808;
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      box-shadow:0 12px 30px rgba(212,175,55,.18);
+      border:1px solid transparent;
+    }
+
+    .btn-secondary{
+      color:#fff;
+      border:1px solid rgba(212,175,55,.33);
+      background:rgba(255,255,255,.025);
+    }
+
+    .footer{
+      padding:28px 10px 8px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:18px;
+      color:#85858a;
+      font-size:.72rem;
+    }
+
+    .footer strong{color:#d2d2d5}
+    .footer a{color:var(--gold2)}
+
+    .trust-center-link{
+      width:100%;
+      margin-top:10px;
+      padding-top:14px;
+      border-top:1px solid rgba(212,175,55,.18);
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      color:var(--gold2);
+      font-weight:800;
+      text-align:center;
+      line-height:1.45;
+    }
+
+    /* Menu inferior */
+    .bottom-menu{
+      position:fixed;
+      left:50%;
+      bottom:12px;
+      z-index:60;
+      transform:translateX(-50%);
+      width:min(620px,calc(100% - 20px));
+      display:grid;
+      grid-template-columns:1.2fr .8fr 1fr;
+      gap:6px;
+      padding:7px;
+      border:1px solid rgba(212,175,55,.30);
+      border-radius:22px;
+      background:rgba(7,7,7,.95);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      box-shadow:0 16px 48px rgba(0,0,0,.55);
+    }
+
+    .bottom-action{
+      min-height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:16px;
+      color:#f2f2f2;
+      background:rgba(255,255,255,.025);
+      font-size:.75rem;
+      font-weight:900;
+      text-align:center;
+    }
+
+    .bottom-action.primary{
+      color:#080808;
+      background:linear-gradient(135deg,var(--gold2),var(--gold));
+      border-color:var(--gold);
+    }
+
+    .bottom-action svg{
+      width:20px;
+      height:20px;
+      flex:0 0 auto;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.9;
+    }
+
+    /* Idiomas: implementação simples e idêntica ao Vagner */
+    html[data-language="pt"] [data-lang]:not([data-lang="pt"]),
+    html[data-language="en"] [data-lang]:not([data-lang="en"]),
+    html[data-language="es"] [data-lang]:not([data-lang="es"]),
+    html[data-language="zh"] [data-lang]:not([data-lang="zh"]){
+      display:none!important;
+    }
+
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr}
+      .hero-copy{padding:44px 25px 34px}
+      .hero-photo,.hero-photo img{min-height:470px}
+      .cards{grid-template-columns:1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .contact-band{grid-template-columns:1fr}
+    }
+
+    @media(max-width:560px){
+      .shell{
+        width:calc(100% - 18px);
+        padding-top:9px;
+      }
+
+      .topbar{
+        top:6px;
+        min-height:59px;
+        padding:9px 10px;
+        border-radius:17px;
+      }
+
+      .brand-text small{display:none}
+      .brand-mark{width:37px;height:37px}
+      .brand-text strong{font-size:.84rem}
+
+      .lang-switch{gap:1px;padding:3px}
+      .lang-btn{
+        min-width:41px;
+        min-height:40px;
+        padding:7px 7px;
+        font-size:.68rem;
+      }
+
+      .hero{border-radius:23px}
+      .hero-copy{padding:36px 20px 28px}
+      h1{font-size:clamp(2.45rem,15vw,4.25rem)}
+      .hero-photo,.hero-photo img{min-height:420px}
+
+      .section{
+        padding:23px 16px;
+        border-radius:21px;
+      }
+
+      .section-head{display:block}
+      .steps{grid-template-columns:1fr}
+
+      .contact-band{padding:24px 18px}
+
+      .footer{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .bottom-menu{
+        grid-template-columns:1.2fr .75fr .95fr;
+      }
+
+      .bottom-action{
+        min-height:51px;
+        gap:6px;
+        padding:7px 6px;
+        font-size:.67rem;
+      }
+    }
+
+    @media(max-width:390px){
+      .brand-mark{display:none}
+      .brand-text strong{font-size:.76rem}
+      .lang-btn{min-width:38px;padding:6px 5px;font-size:.64rem}
+      .bottom-action{font-size:.61rem}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+
+    <header class="topbar">
+      <a class="brand" href="https://urbanwatch.app/" target="_blank" rel="noopener" aria-label="UrbanWatch.app">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path>
+            <circle cx="12" cy="10" r="2.2"></circle>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <strong>URBAN<span>WATCH</span>.app</strong>
+          <small data-lang="pt">Inteligência para quem não improvisa.</small>
+          <small data-lang="en">Intelligence for those who do not improvise.</small>
+          <small data-lang="es">Inteligencia para quienes no improvisan.</small>
+          <small data-lang="zh">为不依赖临时应对的人提供智慧。</small>
+        </span>
+      </a>
+
+      <div class="lang-switch">
+        <button class="lang-btn active" type="button" data-set-language="pt" aria-pressed="true">PT</button>
+        <button class="lang-btn" type="button" data-set-language="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" type="button" data-set-language="es" aria-pressed="false">ES</button>
+        <button class="lang-btn" type="button" data-set-language="zh" aria-pressed="false">中文</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path>
+            </svg>
+
+            <span data-lang="pt">Mais informações</span>
+            <span data-lang="en">More information</span>
+            <span data-lang="es">Más información</span>
+            <span data-lang="zh">更多信息</span>
+          </div>
+
+          <h1>Christopher <span>Galvão</span></h1>
+
+          <p class="role" data-lang="pt">Especialista em Negócios e Investimentos | Ademicon</p>
+          <p class="role" data-lang="en">Business and Investment Specialist | Ademicon</p>
+          <p class="role" data-lang="es">Especialista en Negocios e Inversiones | Ademicon</p>
+          <p class="role" data-lang="zh">商业与投资专家 | Ademicon</p>
+
+          <p class="intro" data-lang="pt">
+            Estratégias de consórcio para alavancagem financeira, construção patrimonial, proteção de ativos e realização de projetos.
+          </p>
+
+          <p class="intro" data-lang="en">
+            Consortium strategies for financial leverage, wealth building, asset protection and project achievement.
+          </p>
+
+          <p class="intro" data-lang="es">
+            Estrategias de consorcio para apalancamiento financiero, construcción patrimonial, protección de activos y realización de proyectos.
+          </p>
+
+          <p class="intro" data-lang="zh">
+            面向财务杠杆、财富建设、资产保护和项目实现的财团战略。
+          </p>
+
+          <div class="highlights">
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+              <span data-lang="pt">Mais de R$ 25 milhões em créditos comercializados</span>
+              <span data-lang="en">More than R$ 25 million in credits sold</span>
+              <span data-lang="es">Más de R$ 25 millones en créditos comercializados</span>
+              <span data-lang="zh">已销售超过 2,500 万雷亚尔的信贷额度</span>
+            </div>
+
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"></path><circle cx="12" cy="12" r="9"></circle></svg>
+              <span data-lang="pt">Atendimento consultivo</span>
+              <span data-lang="en">Consultative service</span>
+              <span data-lang="es">Atención consultiva</span>
+              <span data-lang="zh">顾问式服务</span>
+            </div>
+
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+              <span data-lang="pt">Foco em resultados e relacionamento</span>
+              <span data-lang="en">Focused on results and relationships</span>
+              <span data-lang="es">Enfoque en resultados y relaciones</span>
+              <span data-lang="zh">注重成果与客户关系</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="perfil.jpg" alt="Christopher Galvão">
+
+          <div class="photo-label">
+            <strong data-lang="pt">Experiência, estratégia e relacionamento para decisões patrimoniais.</strong>
+            <strong data-lang="en">Experience, strategy and relationships for wealth decisions.</strong>
+            <strong data-lang="es">Experiencia, estrategia y relaciones para decisiones patrimoniales.</strong>
+            <strong data-lang="zh">以经验、战略和关系支持财富决策。</strong>
+
+            <span>Ademicon • UrbanWatch.app Premium</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Diferenciais</div>
+            <div class="kicker" data-lang="en">Distinctions</div>
+            <div class="kicker" data-lang="es">Diferenciales</div>
+            <div class="kicker" data-lang="zh">专业优势</div>
+
+            <h2 data-lang="pt">Atuação orientada por estratégia e resultado</h2>
+            <h2 data-lang="en">Work guided by strategy and results</h2>
+            <h2 data-lang="es">Actuación guiada por estrategia y resultados</h2>
+            <h2 data-lang="zh">以战略与成果为导向的专业服务</h2>
+          </div>
+
+          <p class="section-description" data-lang="pt">Cada atendimento começa pela compreensão do objetivo, do momento financeiro e do horizonte de decisão.</p>
+          <p class="section-description" data-lang="en">Each service begins by understanding the goal, financial moment and decision horizon.</p>
+          <p class="section-description" data-lang="es">Cada atención comienza con la comprensión del objetivo, del momento financiero y del horizonte de decisión.</p>
+          <p class="section-description" data-lang="zh">每次服务都从了解目标、财务状况和决策周期开始。</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"></path><circle cx="12" cy="12" r="9"></circle></svg>
+            </div>
+
+            <h3 data-lang="pt">Atendimento consultivo</h3>
+            <h3 data-lang="en">Consultative service</h3>
+            <h3 data-lang="es">Atención consultiva</h3>
+            <h3 data-lang="zh">顾问式服务</h3>
+
+            <p data-lang="pt">Análise individual antes da apresentação de qualquer estratégia, respeitando objetivos, prazos e capacidade financeira.</p>
+            <p data-lang="en">Individual analysis before presenting any strategy, respecting goals, deadlines and financial capacity.</p>
+            <p data-lang="es">Análisis individual antes de presentar cualquier estrategia, respetando objetivos, plazos y capacidad financiera.</p>
+            <p data-lang="zh">在提出任何战略之前进行个性化分析，充分考虑目标、期限和财务能力。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+            </div>
+
+            <h3 data-lang="pt">Experiência comprovada</h3>
+            <h3 data-lang="en">Proven experience</h3>
+            <h3 data-lang="es">Experiencia comprobada</h3>
+            <h3 data-lang="zh">经过验证的经验</h3>
+
+            <p data-lang="pt">Mais de R$ 25 milhões em créditos comercializados em negociações de diferentes perfis e objetivos.</p>
+            <p data-lang="en">More than R$ 25 million in credits sold through negotiations involving different profiles and goals.</p>
+            <p data-lang="es">Más de R$ 25 millones en créditos comercializados en negociaciones de diferentes perfiles y objetivos.</p>
+            <p data-lang="zh">在不同客户和目标的交易中，已销售超过 2,500 万雷亚尔的信贷额度。</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"></path></svg>
+            </div>
+
+            <h3 data-lang="pt">Atuação diversificada</h3>
+            <h3 data-lang="en">Diversified expertise</h3>
+            <h3 data-lang="es">Actuación diversificada</h3>
+            <h3 data-lang="zh">多元化专业领域</h3>
+
+            <p data-lang="pt">Imóveis, veículos, agronegócio, blindagem patrimonial, aposentadoria, previdência e projetos empresariais.</p>
+            <p data-lang="en">Real estate, vehicles, agribusiness, asset protection, retirement, pension planning and business projects.</p>
+            <p data-lang="es">Inmuebles, vehículos, agronegocio, protección patrimonial, jubilación, previsión y proyectos empresariales.</p>
+            <p data-lang="zh">房地产、车辆、农业业务、资产保护、退休、养老规划和企业项目。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Como funciona</div>
+            <div class="kicker" data-lang="en">How it works</div>
+            <div class="kicker" data-lang="es">Cómo funciona</div>
+            <div class="kicker" data-lang="zh">流程</div>
+
+            <h2 data-lang="pt">Uma jornada clara e orientada à decisão</h2>
+            <h2 data-lang="en">A clear journey focused on decisions</h2>
+            <h2 data-lang="es">Un proceso claro y orientado a la decisión</h2>
+            <h2 data-lang="zh">清晰且以决策为导向的流程</h2>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <small>01</small>
+            <h3 data-lang="pt">Diagnóstico</h3>
+            <h3 data-lang="en">Diagnosis</h3>
+            <h3 data-lang="es">Diagnóstico</h3>
+            <h3 data-lang="zh">诊断</h3>
+
+            <p data-lang="pt">Compreensão do objetivo, prazo, cenário financeiro e capacidade de investimento.</p>
+            <p data-lang="en">Understanding the goal, timeframe, financial scenario and investment capacity.</p>
+            <p data-lang="es">Comprensión del objetivo, plazo, escenario financiero y capacidad de inversión.</p>
+            <p data-lang="zh">了解目标、期限、财务状况和投资能力。</p>
+          </article>
+
+          <article class="step">
+            <small>02</small>
+            <h3 data-lang="pt">Estratégia</h3>
+            <h3 data-lang="en">Strategy</h3>
+            <h3 data-lang="es">Estrategia</h3>
+            <h3 data-lang="zh">战略</h3>
+
+            <p data-lang="pt">Construção de caminhos compatíveis com o perfil e o projeto apresentado.</p>
+            <p data-lang="en">Building paths compatible with the profile and project presented.</p>
+            <p data-lang="es">Construcción de caminos compatibles con el perfil y el proyecto presentado.</p>
+            <p data-lang="zh">根据客户情况和项目制定合适路径。</p>
+          </article>
+
+          <article class="step">
+            <small>03</small>
+            <h3 data-lang="pt">Apresentação</h3>
+            <h3 data-lang="en">Presentation</h3>
+            <h3 data-lang="es">Presentación</h3>
+            <h3 data-lang="zh">方案呈现</h3>
+
+            <p data-lang="pt">Explicação objetiva de condições, responsabilidades, prazos e possibilidades.</p>
+            <p data-lang="en">Objective explanation of conditions, responsibilities, deadlines and possibilities.</p>
+            <p data-lang="es">Explicación objetiva de condiciones, responsabilidades, plazos y posibilidades.</p>
+            <p data-lang="zh">清晰说明条件、责任、期限和可行方案。</p>
+          </article>
+
+          <article class="step">
+            <small>04</small>
+            <h3 data-lang="pt">Acompanhamento</h3>
+            <h3 data-lang="en">Follow-up</h3>
+            <h3 data-lang="es">Acompañamiento</h3>
+            <h3 data-lang="zh">持续跟进</h3>
+
+            <p data-lang="pt">Relacionamento próximo durante a evolução do planejamento e das decisões futuras.</p>
+            <p data-lang="en">Close relationship throughout the evolution of the plan and future decisions.</p>
+            <p data-lang="es">Relación cercana durante la evolución de la planificación y de las decisiones futuras.</p>
+            <p data-lang="zh">在规划推进和未来决策过程中保持紧密沟通。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-band">
+          <div>
+            <div class="kicker" data-lang="pt">Próximo passo</div>
+            <div class="kicker" data-lang="en">Next step</div>
+            <div class="kicker" data-lang="es">Próximo paso</div>
+            <div class="kicker" data-lang="zh">下一步</div>
+
+            <h2 data-lang="pt">Transforme seu objetivo em um <span>plano possível.</span></h2>
+            <h2 data-lang="en">Turn your goal into a <span>possible plan.</span></h2>
+            <h2 data-lang="es">Transforme su objetivo en un <span>plan posible.</span></h2>
+            <h2 data-lang="zh">将您的目标转化为<span>可行方案。</span></h2>
+
+            <p data-lang="pt">Entre em contato e compartilhe o que deseja realizar. A conversa inicial permite compreender o cenário e identificar caminhos possíveis.</p>
+            <p data-lang="en">Get in touch and share what you want to achieve. The initial conversation helps understand the scenario and identify possible paths.</p>
+            <p data-lang="es">Póngase en contacto y comparta lo que desea realizar. La conversación inicial permite comprender el escenario e identificar caminos posibles.</p>
+            <p data-lang="zh">联系我们并说明您希望实现的目标。初次沟通有助于了解情况并确定可行路径。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span><strong>Christopher Galvão</strong> • Ademicon</span>
+
+      <span>
+        <span data-lang="pt">Portal desenvolvido por</span>
+        <span data-lang="en">Portal developed by</span>
+        <span data-lang="es">Portal desarrollado por</span>
+        <span data-lang="zh">门户由以下团队开发</span>
+        <a href="https://urbanwatch.app/" target="_blank" rel="noopener">UrbanWatch.app</a>
+      </span>
+
+      <a class="trust-center-link" href="https://urbanwatch.app/ccu/" target="_blank" rel="noopener">
+        <span data-lang="pt">Centro de Confiança UrbanWatch.app</span>
+        <span data-lang="en">UrbanWatch.app Trust Center</span>
+        <span data-lang="es">Centro de Confianza UrbanWatch.app</span>
+        <span data-lang="zh">UrbanWatch.app 信任中心</span>
+      </a>
+    </footer>
+  </div>
+
+  <nav class="bottom-menu" aria-label="Ações rápidas">
+    <a class="bottom-action primary" href="https://urbanwatch.app/portal/premium/ademicon/christopher/">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 11.5 12 4l9 7.5"></path>
+        <path d="M5.5 10.5V20h13v-9.5M9 20v-6h6v6"></path>
+      </svg>
+
+      <span data-lang="pt">Portal principal</span>
+      <span data-lang="en">Main portal</span>
+      <span data-lang="es">Portal principal</span>
+      <span data-lang="zh">主门户</span>
+    </a>
+
+    <a class="bottom-action" href="tel:+559591408900">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 3h3l1.4 4-2 1.5a15 15 0 0 0 6.1 6.1l1.5-2L21 14v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7c0-2.2 1.8-4 4-4Z"></path>
+      </svg>
+
+      <span data-lang="pt">Ligar</span>
+      <span data-lang="en">Call</span>
+      <span data-lang="es">Llamar</span>
+      <span data-lang="zh">致电</span>
+    </a>
+
+    <a class="bottom-action"
+       href="https://wa.me/559591408900?text=Ol%C3%A1%2C%20Christopher%21%20Acessei%20sua%20p%C3%A1gina%20Mais%20Informa%C3%A7%C3%B5es%20no%20Portal%20Premium%20UrbanWatch.app%20e%20gostaria%20de%20conversar."
+       target="_blank"
+       rel="noopener">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const buttons = document.querySelectorAll("[data-set-language]");
+      const allowed = ["pt","en","es","zh"];
+
+      const htmlLanguages = {
+        pt:"pt-BR",
+        en:"en",
+        es:"es",
+        zh:"zh-CN"
+      };
+
+      const titles = {
+        pt:"Christopher Galvão | Mais Informações | UrbanWatch.app",
+        en:"Christopher Galvão | More Information | UrbanWatch.app",
+        es:"Christopher Galvão | Más información | UrbanWatch.app",
+        zh:"Christopher Galvão | 更多信息 | UrbanWatch.app"
+      };
+
+      function setLanguage(language){
+        const lang = allowed.includes(language) ? language : "pt";
+
+        root.setAttribute("data-language",lang);
+        root.setAttribute("lang",htmlLanguages[lang]);
+        document.title = titles[lang];
+
+        buttons.forEach(function(button){
+          const active = button.dataset.setLanguage === lang;
+          button.classList.toggle("active",active);
+          button.setAttribute("aria-pressed",String(active));
+        });
+
+        try{
+          localStorage.setItem("urbanwatch-language",lang);
+        }catch(error){}
+      }
+
+      buttons.forEach(function(button){
+        button.addEventListener("click",function(){
+          setLanguage(button.dataset.setLanguage);
+        });
+      });
+
+      let savedLanguage = "pt";
+
+      try{
+        savedLanguage = localStorage.getItem("urbanwatch-language") || "pt";
+      }catch(error){}
+
+      setLanguage(savedLanguage);
+    })();
+  </script>
+</body>
+</html>
