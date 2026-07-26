@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-language="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+
+  <title>Elias Silva | Portal Premium | UrbanWatch.app</title>
+  <meta name="description" content="Portal Premium de Elias Silva — fundador da UrbanWatch.app e Consultor de Inovação Estratégica.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elias Silva | Portal Premium | UrbanWatch.app">
+  <meta property="og:description" content="Inovação estratégica, inteligência aplicada, conexões genuínas e soluções que transformam observação em valor.">
+  <meta property="og:image" content="perfil.jpg">
+
+  <style>
+    :root{
+      --black:#020B12;
+      --black2:#041521;
+      --graphite:#082334;
+      --gold:#d4af37;
+      --gold2:#f1e5ac;
+      --white:#f7f7f7;
+      --muted:#b8b8bd;
+      --line:rgba(212,175,55,.24);
+      --shadow:0 18px 55px rgba(0,0,0,.42);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 85% 8%,rgba(212,175,55,.13),transparent 31%),
+        radial-gradient(circle at 8% 45%,rgba(212,175,55,.07),transparent 27%),
+        linear-gradient(180deg,#01070c,#03131d 55%,#020B12);
+      color:var(--white);
+      font-family:Arial,"Microsoft YaHei","PingFang SC","Noto Sans SC",Helvetica,sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    body.modal-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;max-width:100%}
+
+    .shell{
+      width:min(1120px,calc(100% - 28px));
+      margin:auto;
+      padding:18px 0 46px;
+    }
+
+    .topbar{
+      min-height:66px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 16px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(2,11,18,.84);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      position:sticky;
+      top:10px;
+      z-index:20;
+      box-shadow:0 10px 36px rgba(0,0,0,.24);
+    }
+
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand-mark{
+      width:42px;height:42px;display:grid;place-items:center;
+      border:1px solid rgba(212,175,55,.42);border-radius:14px;
+      background:linear-gradient(145deg,rgba(212,175,55,.16),rgba(255,255,255,.02));
+      color:var(--gold)
+    }
+
+    .brand-mark svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8}
+    .brand-text strong{display:block;font-size:.98rem;letter-spacing:.1em}
+    .brand-text strong span{color:var(--gold)}
+    .brand-text small{
+      display:block;color:var(--muted);font-size:.59rem;
+      letter-spacing:.08em;text-transform:uppercase
+    }
+
+    .lang-switch{
+      display:flex;padding:4px;border:1px solid var(--line);
+      border-radius:999px;background:#031019;gap:2px
+    }
+
+    .lang-btn{
+      border:0;color:var(--muted);background:transparent;border-radius:999px;
+      padding:8px 10px;cursor:pointer;font-weight:800;font-size:.72rem
+    }
+
+    .lang-btn.active{
+      color:#031019;background:linear-gradient(135deg,var(--gold2),var(--gold))
+    }
+
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);
+      min-height:580px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(22,19,11,.88));
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      padding:58px 46px 48px;
+      display:flex;flex-direction:column;justify-content:center
+    }
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;width:max-content;
+      color:var(--gold2);border:1px solid rgba(212,175,55,.33);
+      background:rgba(212,175,55,.07);padding:8px 12px;border-radius:999px;
+      font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800
+    }
+
+    .eyebrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+    h1{
+      margin-top:22px;font-size:clamp(2.6rem,6.2vw,5.4rem);
+      line-height:.92;letter-spacing:-.06em
+    }
+    h1 span{display:block;color:var(--gold)}
+
+    .role{margin-top:20px;color:var(--gold2);font-size:clamp(1rem,2vw,1.26rem);font-weight:700;line-height:1.45}
+    .intro{margin-top:14px;max-width:680px;color:#d7d7da;line-height:1.7}
+
+    .highlights{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+    .highlight{
+      display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.075);background:rgba(255,255,255,.025);
+      color:#dfdfe2;font-size:.83rem
+    }
+    .highlight svg{width:16px;height:16px;color:var(--gold);fill:none;stroke:currentColor;stroke-width:1.9}
+
+    .actions,.extra-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .actions{margin-top:30px}
+    .extra-actions{margin-top:12px}
+    .extra-actions .btn{flex:1 1 220px}
+
+    .btn{
+      min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:15px;padding:12px 18px;font-weight:900;font-size:.86rem;
+      color:#fff;text-decoration:none;cursor:pointer;
+      transition:transform .2s ease,border-color .2s ease,background .2s ease
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn span{color:inherit}
+    .btn svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8}
+    .btn-primary{
+      color:#031019;background:linear-gradient(135deg,var(--gold2),var(--gold));
+      box-shadow:0 12px 30px rgba(212,175,55,.18);border:1px solid transparent
+    }
+    .btn-secondary{color:#fff;border:1px solid rgba(212,175,55,.33);background:rgba(255,255,255,.025)}
+
+    /* Premium animated photo border */
+    .hero-photo{
+      position:relative;
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:5px;
+      background:#031019;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-photo::before{
+      content:"";
+      position:absolute;
+      inset:-42%;
+      z-index:-2;
+      background:conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(212,175,55,.12) 38deg,
+        var(--gold2) 72deg,
+        var(--gold) 104deg,
+        transparent 145deg,
+        transparent 230deg,
+        rgba(212,175,55,.15) 268deg,
+        var(--gold) 312deg,
+        transparent 360deg
+      );
+      animation:premiumOrbit 7s linear infinite;
+    }
+
+    .hero-photo::after{
+      content:"";
+      position:absolute;
+      inset:5px;
+      z-index:-1;
+      background:
+        linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),
+        radial-gradient(circle at 50% 39%,rgba(212,175,55,.31),transparent 38%),
+        #031019;
+    }
+
+    @keyframes premiumOrbit{to{transform:rotate(360deg)}}
+
+    .scan-line{
+      position:absolute;z-index:3;left:5px;right:5px;height:2px;top:-10%;
+      background:linear-gradient(90deg,transparent,#70d9ff,var(--gold2),transparent);
+      box-shadow:0 0 18px #70d9ff,0 0 24px rgba(212,175,55,.55);
+      opacity:.76;animation:scanPhoto 4.6s ease-in-out infinite;pointer-events:none
+    }
+    .photo-corners{
+      position:absolute;inset:18px;z-index:4;pointer-events:none;
+      background:
+        linear-gradient(var(--gold),var(--gold)) left top/34px 2px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) left top/2px 34px no-repeat,
+        linear-gradient(#65d5ff,#65d5ff) right top/34px 2px no-repeat,
+        linear-gradient(#65d5ff,#65d5ff) right top/2px 34px no-repeat,
+        linear-gradient(#65d5ff,#65d5ff) left bottom/34px 2px no-repeat,
+        linear-gradient(#65d5ff,#65d5ff) left bottom/2px 34px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) right bottom/34px 2px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) right bottom/2px 34px no-repeat;
+      opacity:.74;animation:cornerPulse 2.7s ease-in-out infinite
+    }
+    @keyframes scanPhoto{
+      0%{top:-8%;opacity:0}14%{opacity:.85}52%{opacity:.7}
+      86%{opacity:.85}100%{top:106%;opacity:0}
+    }
+    @keyframes cornerPulse{
+      0%,100%{opacity:.48;filter:drop-shadow(0 0 2px rgba(101,213,255,.3))}
+      50%{opacity:1;filter:drop-shadow(0 0 8px rgba(212,175,55,.55))}
+    }
+
+
+    @media(prefers-reduced-motion:reduce){
+      .hero-photo::before{animation:none}
+    }
+
+    .hero-photo img{
+      width:100%;height:100%;min-height:570px;
+      object-fit:cover;object-position:center top;
+      position:relative;z-index:1
+    }
+
+    .photo-label{
+      position:absolute;left:22px;right:22px;bottom:22px;z-index:2;
+      padding:15px 16px;border:1px solid rgba(212,175,55,.34);
+      border-radius:17px;background:rgba(5,5,5,.78);backdrop-filter:blur(10px)
+    }
+    .photo-label strong,.photo-label span{display:block}
+    .photo-label strong{color:var(--gold2);font-size:.94rem;margin-bottom:4px;line-height:1.4}
+    .photo-label span{color:var(--muted);font-size:.76rem;margin-top:3px}
+
+    .section{
+      margin-top:18px;padding:30px;border:1px solid var(--line);
+      border-radius:24px;background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));
+      box-shadow:0 14px 46px rgba(0,0,0,.22)
+    }
+
+    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}
+    .kicker{display:block;color:var(--gold);text-transform:uppercase;font-size:.7rem;font-weight:900;letter-spacing:.14em;margin-bottom:8px}
+    .section h2{font-size:clamp(1.45rem,4vw,2.15rem);letter-spacing:-.035em}
+    .section-description{color:var(--muted);max-width:530px;font-size:.9rem;margin-top:10px;line-height:1.65}
+
+    .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .tile{
+      min-height:145px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:17px;
+      border:1px solid rgba(212,175,55,.18);border-radius:18px;
+      background:radial-gradient(circle at 100% 0,rgba(212,175,55,.09),transparent 44%),rgba(255,255,255,.018);
+      transition:transform .22s ease,border-color .22s ease
+    }
+    .tile:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.52)}
+    .tile-icon{
+      width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.3);
+      border-radius:13px;background:rgba(212,175,55,.075);color:var(--gold)
+    }
+    .tile svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+    .tile strong,.tile small{display:block}
+    .tile strong{font-size:.96rem;margin-bottom:5px;line-height:1.35}
+    .tile small{color:var(--muted);font-size:.78rem;line-height:1.5}
+
+    .international-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .international-card{
+      min-height:260px;padding:26px;border-radius:20px;border:1px solid rgba(212,175,55,.22);
+      background:linear-gradient(145deg,rgba(212,175,55,.12),rgba(11,11,12,.35)),#061723
+    }
+    .international-card svg{width:38px;height:38px;color:var(--gold);fill:none;stroke:currentColor;stroke-width:1.5;margin-bottom:17px}
+    .international-card h3{color:var(--gold2);font-size:1.22rem;margin-bottom:10px;line-height:1.35}
+    .international-card p{color:#d1d1d4;font-size:.91rem;line-height:1.65}
+    .cities{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap}
+    .city{
+      border:1px solid rgba(212,175,55,.25);background:rgba(0,0,0,.25);
+      border-radius:999px;padding:7px 10px;color:var(--gold2);font-size:.76rem;font-weight:800
+    }
+
+    .contact-band{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;padding:31px;
+      border:1px solid rgba(212,175,55,.3);border-radius:24px;
+      background:radial-gradient(circle at 85% 30%,rgba(212,175,55,.16),transparent 32%),linear-gradient(135deg,#081d2b,#031019)
+    }
+    .contact-band h2{font-size:clamp(1.65rem,4.5vw,2.65rem);line-height:1.08;letter-spacing:-.045em}
+    .contact-band h2 span{color:var(--gold)}
+    .contact-band p{color:var(--muted);margin-top:14px;line-height:1.65}
+    .contact-actions{display:flex;flex-direction:column;gap:10px}
+
+    .footer{
+      padding:28px 10px 8px;display:flex;justify-content:space-between;flex-wrap:wrap;
+      gap:18px;color:#85858a;font-size:.72rem
+    }
+    .footer strong{color:#d2d2d5}
+    .footer a{color:var(--gold2)}
+    .trust-center-link{
+      width:100%;margin-top:10px;padding-top:14px;border-top:1px solid rgba(212,175,55,.18);
+      display:inline-flex;justify-content:center;align-items:center;gap:8px;
+      color:var(--gold2);font-weight:800;text-align:center;line-height:1.45
+    }
+
+    .share-modal{
+      position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;
+      padding:20px;background:rgba(0,0,0,.78);backdrop-filter:blur(10px)
+    }
+    .share-modal.open{display:flex}
+    .share-dialog{
+      width:min(440px,100%);border:1px solid rgba(212,175,55,.36);border-radius:24px;
+      background:linear-gradient(145deg,#0b2535,#031019);box-shadow:0 28px 80px rgba(0,0,0,.58);
+      padding:24px;position:relative
+    }
+    .share-close{
+      position:absolute;top:12px;right:12px;width:38px;height:38px;border:1px solid rgba(212,175,55,.25);
+      border-radius:12px;background:rgba(255,255,255,.03);color:var(--white);cursor:pointer;
+      display:grid;place-items:center;font-size:1.15rem
+    }
+    .share-dialog h2{margin-right:42px;font-size:1.45rem;line-height:1.2;color:var(--gold2)}
+    .share-dialog p{margin-top:10px;color:var(--muted);line-height:1.65;font-size:.9rem}
+    .qr-wrap{
+      width:230px;max-width:100%;aspect-ratio:1;margin:22px auto 18px;padding:14px;
+      border-radius:20px;background:#fff;display:grid;place-items:center
+    }
+    .qr-wrap img{width:100%;height:100%;object-fit:contain}
+    .share-link-box{
+      display:flex;align-items:center;gap:10px;margin-top:14px;padding:12px;
+      border:1px solid rgba(212,175,55,.22);border-radius:14px;background:#031019
+    }
+    .share-link{flex:1;min-width:0;color:#d8d8dc;font-size:.78rem;line-height:1.4;overflow-wrap:anywhere}
+    .copy-link-btn{
+      flex:0 0 auto;border:1px solid rgba(212,175,55,.3);border-radius:10px;
+      background:rgba(212,175,55,.08);color:var(--gold2);padding:9px 10px;
+      cursor:pointer;font-weight:800;font-size:.72rem
+    }
+    .share-dialog-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px}
+
+    html[data-language="pt"] [data-lang]:not([data-lang="pt"]),
+    html[data-language="en"] [data-lang]:not([data-lang="en"]),
+    html[data-language="es"] [data-lang]:not([data-lang="es"]),
+    html[data-language="zh"] [data-lang]:not([data-lang="zh"]){
+      display:none!important
+    }
+
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr}
+      .hero-copy{padding:44px 25px 34px}
+      .hero-photo,.hero-photo img{min-height:470px}
+      .tiles{grid-template-columns:repeat(2,1fr)}
+      .international-grid,.contact-band{grid-template-columns:1fr}
+      .contact-actions{flex-direction:row;flex-wrap:wrap}
+      .contact-actions .btn{flex:1}
+    }
+
+    @media(max-width:620px){
+      .extra-actions{flex-direction:column}
+      .extra-actions .btn{width:100%;flex-basis:auto}
+    }
+
+    @media(max-width:560px){
+      .shell{width:calc(100% - 18px);padding-top:9px}
+      .topbar{top:6px;min-height:59px;padding:9px 10px;border-radius:17px}
+      .brand-text small{display:none}
+      .brand-mark{width:37px;height:37px}
+      .lang-btn{padding:7px 8px;font-size:.67rem}
+      .hero{border-radius:23px}
+      .hero-copy{padding:36px 20px 28px}
+      h1{font-size:clamp(2.45rem,15vw,4.25rem)}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .hero-photo,.hero-photo img{min-height:420px}
+      .section{padding:23px 16px;border-radius:21px}
+      .section-head{display:block}
+      .tiles{grid-template-columns:1fr 1fr;gap:10px}
+      .tile{min-height:138px;padding:16px}
+      .international-grid{grid-template-columns:1fr}
+      .contact-band{padding:24px 18px}
+      .contact-actions{flex-direction:column}
+      .footer{flex-direction:column;text-align:center}
+      .share-dialog{padding:22px 16px 18px}
+      .qr-wrap{width:210px}
+      .share-link-box{align-items:flex-start;flex-direction:column}
+      .copy-link-btn{width:100%}
+    }
+
+    @media(max-width:390px){
+      .brand-text strong{font-size:.84rem}
+      .tiles{grid-template-columns:1fr}
+      .tile{min-height:120px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+
+    <header class="topbar">
+      <a class="brand" href="https://urbanwatch.app/" aria-label="UrbanWatch.app">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path>
+            <circle cx="12" cy="10" r="2.2"></circle>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <strong>URBAN<span>WATCH</span>.app</strong>
+          <small data-lang="pt">Inteligência para quem não improvisa.</small>
+          <small data-lang="en">Intelligence for those who do not improvise.</small>
+          <small data-lang="es">Inteligencia para quienes no improvisan.</small>
+          <small data-lang="zh">为不依赖临时应对的人提供智慧。</small>
+        </span>
+      </a>
+
+      <div class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn active" type="button" data-set-language="pt">PT</button>
+        <button class="lang-btn" type="button" data-set-language="en">EN</button>
+        <button class="lang-btn" type="button" data-set-language="es">ES</button>
+        <button class="lang-btn" type="button" data-set-language="zh">中文</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path>
+            </svg>
+            <span data-lang="pt">Portal Premium UrbanWatch.app</span>
+            <span data-lang="en">UrbanWatch.app Premium Portal</span>
+            <span data-lang="es">Portal Premium UrbanWatch.app</span>
+            <span data-lang="zh">UrbanWatch.app 尊享门户</span>
+          </div>
+
+          <h1>Elias <span>Silva</span></h1>
+
+          <p class="role" data-lang="pt">Fundador da UrbanWatch.app | Consultor de Inovação Estratégica</p>
+          <p class="role" data-lang="en">Founder of UrbanWatch.app | Strategic Innovation Consultant</p>
+          <p class="role" data-lang="es">Fundador de UrbanWatch.app | Consultor de Innovación Estratégica</p>
+          <p class="role" data-lang="zh">UrbanWatch.app 创始人 | 战略创新顾问</p>
+
+          <p class="intro" data-lang="pt">
+            Observo sistemas, identifico padrões e transformo aquilo que normalmente passa despercebido em inteligência aplicada, conexões genuínas e soluções de valor.
+          </p>
+          <p class="intro" data-lang="en">
+            I observe systems, identify patterns and turn what normally goes unnoticed into applied intelligence, genuine connections and valuable solutions.
+          </p>
+          <p class="intro" data-lang="es">
+            Observo sistemas, identifico patrones y transformo lo que normalmente pasa desapercibido en inteligencia aplicada, conexiones genuinas y soluciones de valor.
+          </p>
+          <p class="intro" data-lang="zh">
+            我观察系统、识别规律，并把通常被忽视的事物转化为应用型智慧、真实连接和有价值的解决方案。
+          </p>
+
+          <div class="highlights">
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+              <span data-lang="pt">Inovação estratégica e inteligência aplicada</span>
+              <span data-lang="en">Strategic innovation and applied intelligence</span>
+              <span data-lang="es">Innovación estratégica e inteligencia aplicada</span>
+              <span data-lang="zh">战略创新与应用型智慧</span>
+            </div>
+
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M12 21s6-5.25 6-11A6 6 0 0 0 6 10c0 5.75 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle></svg>
+              <span data-lang="pt">Cidades, negócios e conexões</span>
+              <span data-lang="en">Cities, business and connections</span>
+              <span data-lang="es">Ciudades, negocios y conexiones</span>
+              <span data-lang="zh">城市、商业与连接</span>
+            </div>
+
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle></svg>
+              <span data-lang="pt">Foco em soluções inteligentes</span>
+              <span data-lang="en">Focused on intelligent solutions</span>
+              <span data-lang="es">Enfoque en soluciones inteligentes</span>
+              <span data-lang="zh">专注智能解决方案</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary"
+               href="https://wa.me/5585920089357?text=Ol%C3%A1%2C%20Elias!%20Conheci%20seu%20Portal%20Premium%20UrbanWatch.app%20e%20gostaria%20de%20conversar."
+               target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg>
+              <span data-lang="pt">Falar com Elias</span>
+              <span data-lang="en">Talk to Elias</span>
+              <span data-lang="es">Hablar con Elias</span>
+              <span data-lang="zh">联系 Elias</span>
+            </a>
+
+            <a class="btn btn-secondary"
+               href="./LinkedIn/"
+               target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect height="18" rx="2" width="16" x="4" y="3"></rect><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"></path></svg>
+              <span data-lang="pt">Manifesto do Observador</span>
+              <span data-lang="en">Observer's Manifesto</span>
+              <span data-lang="es">Manifiesto del Observador</span>
+              <span data-lang="zh">观察者宣言</span>
+            </a>
+          </div>
+
+          <div class="extra-actions">
+            <a class="btn btn-secondary" href="#sobre">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 10v6M12 7h.01"></path></svg>
+              <span data-lang="pt">Mais Informações</span>
+              <span data-lang="en">More Information</span>
+              <span data-lang="es">Más información</span>
+              <span data-lang="zh">更多信息</span>
+            </a>
+
+            <button class="btn btn-secondary" id="openSharePortal" type="button">
+              <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"></circle><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="19" r="2.5"></circle><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"></path></svg>
+              <span data-lang="pt">Compartilhar Portal</span>
+              <span data-lang="en">Share Portal</span>
+              <span data-lang="es">Compartir portal</span>
+              <span data-lang="zh">分享门户</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="perfil.jpg" alt="Elias Silva">
+          <span class="scan-line"></span>
+          <span class="photo-corners"></span>
+          <div class="photo-label">
+            <strong data-lang="pt">Perceber o que passa despercebido. Compreender o sistema. Transformar em valor.</strong>
+            <strong data-lang="en">See what goes unnoticed. Understand the system. Transform it into value.</strong>
+            <strong data-lang="es">Percibir lo que pasa desapercibido. Comprender el sistema. Transformarlo en valor.</strong>
+            <strong data-lang="zh">看见被忽视的事物，理解系统，并将其转化为价值。</strong>
+            <span>UrbanWatch.app • Observar para Transformar</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Conecte-se</div>
+            <div class="kicker" data-lang="en">Connect</div>
+            <div class="kicker" data-lang="es">Conéctese</div>
+            <div class="kicker" data-lang="zh">建立联系</div>
+
+            <h2 data-lang="pt">Todos os caminhos em um só portal</h2>
+            <h2 data-lang="en">Every path in one portal</h2>
+            <h2 data-lang="es">Todos los caminos en un solo portal</h2>
+            <h2 data-lang="zh">一站式连接所有渠道</h2>
+          </div>
+
+          <p class="section-description" data-lang="pt">Acesse os canais de contato, redes profissionais, localização, manifesto e serviços de Elias Silva e da UrbanWatch.app.</p>
+          <p class="section-description" data-lang="en">Access contact channels, professional networks, location, manifesto and the services of Elias Silva and UrbanWatch.app.</p>
+          <p class="section-description" data-lang="es">Acceda a los canales de contacto, redes profesionales, ubicación, manifiesto y servicios de Elias Silva y UrbanWatch.app.</p>
+          <p class="section-description" data-lang="zh">访问 Elias Silva 与 UrbanWatch.app 的联系渠道、专业网络、地点、宣言和服务。</p>
+        </div>
+
+        <div class="tiles">
+          <a class="tile" href="https://wa.me/5585920089357?text=Ol%C3%A1%2C%20Elias!%20Gostaria%20de%20conversar." target="_blank" rel="noopener">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg>
+            </span>
+            <span>
+              <strong>WhatsApp</strong>
+              <small data-lang="pt">Atendimento direto</small>
+              <small data-lang="en">Direct contact</small>
+              <small data-lang="es">Contacto directo</small>
+              <small data-lang="zh">直接联系</small>
+            </span>
+          </a>
+
+          <a class="tile" href="mailto:urbanwatch.app@gmail.com">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>
+            </span>
+            <span>
+              <strong>E-mail</strong>
+              <small>urbanwatch.app@gmail.com</small>
+            </span>
+          </a>
+
+          <a class="tile" href="https://urbanwatch.app/es/LinkedIn/">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"></path></svg>
+            </span>
+            <span>
+              <strong data-lang="pt">Manifesto</strong>
+              <strong data-lang="en">Manifesto</strong>
+              <strong data-lang="es">Manifiesto</strong>
+              <strong data-lang="zh">宣言</strong>
+              <small data-lang="pt">ES por ES na visão do Atlas</small>
+              <small data-lang="en">ES by ES through Atlas's perspective</small>
+              <small data-lang="es">ES por ES desde la perspectiva de Atlas</small>
+              <small data-lang="zh">Atlas 视角下的 Elias 自述</small>
+            </span>
+          </a>
+
+          <a class="tile" href="https://www.instagram.com/urbanwatch.app/" target="_blank" rel="noopener">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7"></circle></svg>
+            </span>
+            <span>
+              <strong>Instagram</strong>
+              <small>@urbanwatch.app</small>
+            </span>
+          </a>
+
+          <a class="tile" href="https://urbanwatch.app/es/LinkedIn/">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M5 9v10M5 5v.01M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"></path></svg>
+            </span>
+            <span>
+              <strong>LinkedIn</strong>
+              <small data-lang="pt">Perfil e visão profissional</small>
+              <small data-lang="en">Profile and professional vision</small>
+              <small data-lang="es">Perfil y visión profesional</small>
+              <small data-lang="zh">个人资料与职业愿景</small>
+            </span>
+          </a>
+
+          <a class="tile" href="https://maps.app.goo.gl/DdBuXQwPLH91UQJZ6" target="_blank" rel="noopener">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            </span>
+            <span>
+              <strong data-lang="pt">Localização</strong>
+              <strong data-lang="en">Location</strong>
+              <strong data-lang="es">Ubicación</strong>
+              <strong data-lang="zh">地点</strong>
+              <small>Google Maps</small>
+            </span>
+          </a>
+
+          <a class="tile" href="https://www.facebook.com/share/1CtSuVFnR5/" target="_blank" rel="noopener">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z"></path></svg>
+            </span>
+            <span>
+              <strong>Facebook</strong>
+              <small data-lang="pt">Perfil e conexões</small>
+              <small data-lang="en">Profile and connections</small>
+              <small data-lang="es">Perfil y conexiones</small>
+              <small data-lang="zh">个人资料与连接</small>
+            </span>
+          </a>
+
+          <a class="tile" href="#servicos">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+            </span>
+            <span>
+              <strong data-lang="pt">Serviços e especialidades</strong>
+              <strong data-lang="en">Services and specialties</strong>
+              <strong data-lang="es">Servicios y especialidades</strong>
+              <strong data-lang="zh">服务与专长</strong>
+              <small data-lang="pt">Conheça as soluções UrbanWatch.app</small>
+              <small data-lang="en">Explore UrbanWatch.app solutions</small>
+              <small data-lang="es">Conozca las soluciones de UrbanWatch.app</small>
+              <small data-lang="zh">了解 UrbanWatch.app 解决方案</small>
+            </span>
+          </a>
+
+          <a class="tile" href="./galeria/">
+            <span class="tile-icon">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="16.5" cy="8.5" r="2.5"></circle><path d="M2.5 20a5.5 5.5 0 0 1 11 0M12 20a4.5 4.5 0 0 1 9 0"></path></svg>
+            </span>
+            <span>
+              <strong data-lang="pt">Galeria</strong>
+              <strong data-lang="en">Gallery</strong>
+              <strong data-lang="es">Galería</strong>
+              <strong data-lang="zh">图库</strong>
+              <small data-lang="pt">Conexões genuínas</small>
+              <small data-lang="en">Genuine connections</small>
+              <small data-lang="es">Conexiones genuinas</small>
+              <small data-lang="zh">真实连接</small>
+            </span>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="section" id="servicos">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Serviços e especialidades</div>
+            <div class="kicker" data-lang="en">Services and specialties</div>
+            <div class="kicker" data-lang="es">Servicios y especialidades</div>
+            <div class="kicker" data-lang="zh">服务与专长</div>
+
+            <h2 data-lang="pt">Soluções que conectam pessoas, estratégia e operação</h2>
+            <h2 data-lang="en">Solutions connecting people, strategy and operations</h2>
+            <h2 data-lang="es">Soluciones que conectan personas, estrategia y operación</h2>
+            <h2 data-lang="zh">连接人员、战略与运营的解决方案</h2>
+          </div>
+        </div>
+
+        <div class="tiles">
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="16.5" cy="8.5" r="2.5"></circle><path d="M2.5 20a5.5 5.5 0 0 1 11 0M12 20a4.5 4.5 0 0 1 9 0"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Conexões Genuínas</strong><strong data-lang="en">Genuine Connections</strong><strong data-lang="es">Conexiones Genuinas</strong><strong data-lang="zh">真实连接</strong>
+              <small data-lang="pt">Desenvolvimento de parcerias estratégicas entre pessoas, empresas e projetos.</small>
+              <small data-lang="en">Development of strategic partnerships among people, companies and projects.</small>
+              <small data-lang="es">Desarrollo de alianzas estratégicas entre personas, empresas y proyectos.</small>
+              <small data-lang="zh">在人、企业与项目之间建立战略合作关系。</small>
+            </span>
+          </article>
+
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 17h16M6 17l2-8h8l2 8M9 20h.01M15 20h.01"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Clube Travessia</strong><strong data-lang="en">Travessia Club</strong><strong data-lang="es">Club Travessia</strong><strong data-lang="zh">Travessia 私享俱乐部</strong>
+              <small data-lang="pt">Rede privada de mobilidade com atendimento personalizado.</small>
+              <small data-lang="en">Private mobility network with personalized service.</small>
+              <small data-lang="es">Red privada de movilidad con atención personalizada.</small>
+              <small data-lang="zh">提供个性化服务的私人出行网络。</small>
+            </span>
+          </article>
+
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"></rect><path d="M8 9h5M8 13h8M17 8v2"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Cartões NFC Inteligentes</strong><strong data-lang="en">Smart NFC Cards</strong><strong data-lang="es">Tarjetas NFC Inteligentes</strong><strong data-lang="zh">智能 NFC 卡</strong>
+              <small data-lang="pt">Compartilhamento rápido de contatos, serviços e conteúdo digital.</small>
+              <small data-lang="en">Fast sharing of contacts, services and digital content.</small>
+              <small data-lang="es">Intercambio rápido de contactos, servicios y contenido digital.</small>
+              <small data-lang="zh">快速分享联系人、服务和数字内容。</small>
+            </span>
+          </article>
+
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 14h3M8 17h7"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Portais Profissionais</strong><strong data-lang="en">Professional Portals</strong><strong data-lang="es">Portales Profesionales</strong><strong data-lang="zh">专业门户</strong>
+              <small data-lang="pt">Presença digital inteligente para profissionais e empresas.</small>
+              <small data-lang="en">Intelligent digital presence for professionals and companies.</small>
+              <small data-lang="es">Presencia digital inteligente para profesionales y empresas.</small>
+              <small data-lang="zh">面向专业人士与企业的智能数字形象。</small>
+            </span>
+          </article>
+
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h7M17 15l4 4M21 15l-4 4"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Diagnóstico Operacional</strong><strong data-lang="en">Operational Diagnosis</strong><strong data-lang="es">Diagnóstico Operacional</strong><strong data-lang="zh">运营诊断</strong>
+              <small data-lang="pt">Identificação de gargalos, riscos e oportunidades de melhoria.</small>
+              <small data-lang="en">Identification of bottlenecks, risks and improvement opportunities.</small>
+              <small data-lang="es">Identificación de cuellos de botella, riesgos y oportunidades de mejora.</small>
+              <small data-lang="zh">识别瓶颈、风险与改进机会。</small>
+            </span>
+          </article>
+
+          <article class="tile">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span>
+            <span>
+              <strong data-lang="pt">Inteligência Operacional</strong><strong data-lang="en">Operational Intelligence</strong><strong data-lang="es">Inteligencia Operacional</strong><strong data-lang="zh">运营智慧</strong>
+              <small data-lang="pt">Otimização de processos, operações, mobilidade e experiência do cliente.</small>
+              <small data-lang="en">Optimization of processes, operations, mobility and customer experience.</small>
+              <small data-lang="es">Optimización de procesos, operaciones, movilidad y experiencia del cliente.</small>
+              <small data-lang="zh">优化流程、运营、出行与客户体验。</small>
+            </span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="atuacao">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Atuação profissional</div>
+            <div class="kicker" data-lang="en">Professional expertise</div>
+            <div class="kicker" data-lang="es">Actuación profesional</div>
+            <div class="kicker" data-lang="zh">专业领域</div>
+
+            <h2 data-lang="pt">Observação, estratégia e transformação</h2>
+            <h2 data-lang="en">Observation, strategy and transformation</h2>
+            <h2 data-lang="es">Observación, estrategia y transformación</h2>
+            <h2 data-lang="zh">观察、战略与转化</h2>
+          </div>
+        </div>
+
+        <div class="international-grid">
+          <article class="international-card">
+            <svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10M8 19v-6h8v6M2 19h20"></path></svg>
+            <h3 data-lang="pt">Consultoria de Inovação Estratégica</h3>
+            <h3 data-lang="en">Strategic Innovation Consulting</h3>
+            <h3 data-lang="es">Consultoría de Innovación Estratégica</h3>
+            <h3 data-lang="zh">战略创新咨询</h3>
+
+            <p data-lang="pt">Estratégias de consórcio para aquisição de imóveis, veículos, construção patrimonial, aposentadoria e previdência.</p>
+            <p data-lang="en">Consortium strategies for real estate, vehicles, wealth building, retirement and pension planning.</p>
+            <p data-lang="es">Estrategias de consorcio para inmuebles, vehículos, construcción patrimonial, jubilación y previsión.</p>
+            <p data-lang="zh">面向房地产、车辆、财富建设、退休和养老规划的财团战略。</p>
+
+            <div class="cities"><span class="city">Estratégia</span><span class="city">IA aplicada</span><span class="city">Decisão</span></div>
+          </article>
+
+          <article class="international-card">
+            <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+            <h3 data-lang="pt">Portais, operações e experiências digitais</h3>
+            <h3 data-lang="en">Portals, operations and digital experiences</h3>
+            <h3 data-lang="es">Portales, operaciones y experiencias digitales</h3>
+            <h3 data-lang="zh">门户、运营与数字体验</h3>
+
+            <p data-lang="pt">Soluções voltadas à alavancagem financeira e patrimonial, agronegócio, blindagem patrimonial e realização de projetos.</p>
+            <p data-lang="en">Solutions focused on financial and wealth leverage, agribusiness, asset protection and project achievement.</p>
+            <p data-lang="es">Soluciones orientadas al apalancamiento financiero y patrimonial, agronegocio, protección patrimonial y realización de proyectos.</p>
+            <p data-lang="zh">专注于财务与财富杠杆、农业业务、资产保护和项目实现的解决方案。</p>
+
+            <div class="cities"><span class="city">Portais</span><span class="city">NFC</span><span class="city">Operações</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="contact-band">
+          <div>
+            <div class="kicker" data-lang="pt">Sobre Elias Silva</div>
+            <div class="kicker" data-lang="en">About Elias</div>
+            <div class="kicker" data-lang="es">Sobre Elias Silva</div>
+            <div class="kicker" data-lang="zh">关于 Elias</div>
+
+            <h2 data-lang="pt">Conexões genuínas, visão sistêmica e <span>inteligência aplicada.</span></h2>
+            <h2 data-lang="en">Genuine connections, systemic vision and <span>applied intelligence.</span></h2>
+            <h2 data-lang="es">Conexiones genuinas, visión sistémica e <span>inteligencia aplicada.</span></h2>
+            <h2 data-lang="zh">真实连接、系统视角与<span>应用型智慧。</span></h2>
+
+            <p data-lang="pt">Elias Silva é fundador da UrbanWatch.app e atua como Consultor de Inovação Estratégica. Sua visão combina observação do cotidiano, leitura de sistemas, construção de relações e transformação de oportunidades em soluções práticas. O uso diário de diferentes inteligências artificiais amplia sua capacidade de pesquisar, comparar, organizar ideias, criar protótipos e revisar decisões. Essa integração entre experiência humana e IA reduz tempo, melhora a clareza e aumenta a qualidade das entregas. Para Elias, tecnologia só faz sentido quando fortalece conexões genuínas, otimiza resultados e gera valor real para pessoas e organizações.</p>
+            <p data-lang="en">Elias Silva is the founder of UrbanWatch.app and works as a Strategic Innovation Consultant. His vision combines everyday observation, systems thinking, relationship building and the transformation of opportunities into practical solutions. The daily use of different artificial intelligence tools expands his ability to research, compare, organize ideas, create prototypes and review decisions. This integration between human experience and AI reduces time, improves clarity and raises the quality of delivery. For Elias, technology only makes sense when it strengthens genuine connections, optimizes results and creates real value for people and organizations.</p>
+            <p data-lang="es">Elias Silva es fundador de UrbanWatch.app y actúa como Consultor de Innovación Estratégica. Su visión combina observación cotidiana, lectura de sistemas, construcción de relaciones y transformación de oportunidades en soluciones prácticas. El uso diario de distintas inteligencias artificiales amplía su capacidad para investigar, comparar, organizar ideas, crear prototipos y revisar decisiones. Esta integración entre experiencia humana e IA reduce tiempos, mejora la claridad y eleva la calidad de las entregas. Para Elias, la tecnología solo tiene sentido cuando fortalece conexiones genuinas, optimiza resultados y genera valor real para personas y organizaciones.</p>
+            <p data-lang="zh">Elias Silva 是 UrbanWatch.app 创始人和战略创新顾问。他的视角结合日常观察、系统思维、关系建设，以及把机会转化为实际解决方案的能力。每天使用多种人工智能工具，扩大了他在研究、比较、整理想法、创建原型和复核决策方面的能力。人的经验与人工智能的结合可以节省时间、提高表达清晰度并提升交付质量。对 Elias 而言，只有当技术能够强化真实连接、优化成果并为个人和组织创造实际价值时，它才真正有意义。</p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/5585920089357?text=Ol%C3%A1%2C%20Elias!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener">
+              <span data-lang="pt">Iniciar conversa</span>
+              <span data-lang="en">Start a conversation</span>
+              <span data-lang="es">Iniciar conversación</span>
+              <span data-lang="zh">开始沟通</span>
+            </a>
+
+            <a class="btn btn-secondary" href="tel:+55859920089357">
+              <span data-lang="pt">Ligar</span>
+              <span data-lang="en">Call</span>
+              <span data-lang="es">Llamar</span>
+              <span data-lang="zh">致电</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span><strong>Elias Silva</strong> • UrbanWatch.app</span>
+      <span>
+        <span data-lang="pt">Portal desenvolvido por</span>
+        <span data-lang="en">Portal developed by</span>
+        <span data-lang="es">Portal desarrollado por</span>
+        <span data-lang="zh">门户由以下团队开发</span>
+        <a href="https://urbanwatch.app/" target="_blank" rel="noopener">UrbanWatch.app</a>
+      </span>
+
+      <a class="trust-center-link" href="https://urbanwatch.app/ccu/" target="_blank" rel="noopener">
+        <span data-lang="pt">Centro de Confiança UrbanWatch.app</span>
+        <span data-lang="en">UrbanWatch.app Trust Center</span>
+        <span data-lang="es">Centro de Confianza UrbanWatch.app</span>
+        <span data-lang="zh">UrbanWatch.app 信任中心</span>
+      </a>
+    </footer>
+  </div>
+
+  <div class="share-modal" id="sharePortalModal" aria-hidden="true">
+    <div class="share-dialog" role="dialog" aria-modal="true">
+      <button class="share-close" id="closeSharePortal" type="button" aria-label="Fechar">×</button>
+
+      <h2 data-lang="pt">Compartilhar Portal</h2>
+      <h2 data-lang="en">Share Portal</h2>
+      <h2 data-lang="es">Compartir portal</h2>
+      <h2 data-lang="zh">分享门户</h2>
+
+      <p data-lang="pt">Use o QR Code, copie o link ou compartilhe diretamente o Portal Premium de Elias Silva.</p>
+      <p data-lang="en">Use the QR Code, copy the link or directly share Elias Silva's Premium Portal.</p>
+      <p data-lang="es">Use el código QR, copie el enlace o comparta directamente el Portal Premium de Elias Silva.</p>
+      <p data-lang="zh">使用二维码、复制链接或直接分享 Elias Silva 的尊享门户。</p>
+
+      <div class="qr-wrap">
+        <img src="https://quickchart.io/qr?text=https://urbanwatch.app/es/&size=420&margin=1" alt="QR Code do Portal Premium de Elias Silva">
+      </div>
+
+      <div class="share-link-box">
+        <span class="share-link" id="portalShareLink">https://urbanwatch.app/es/</span>
+        <button class="copy-link-btn" id="copyPortalLink" type="button">
+          <span data-lang="pt">Copiar link</span>
+          <span data-lang="en">Copy link</span>
+          <span data-lang="es">Copiar enlace</span>
+          <span data-lang="zh">复制链接</span>
+        </button>
+      </div>
+
+      <div class="share-dialog-actions">
+        <button class="btn btn-primary" id="nativeSharePortal" type="button">
+          <span data-lang="pt">Compartilhar agora</span>
+          <span data-lang="en">Share now</span>
+          <span data-lang="es">Compartir ahora</span>
+          <span data-lang="zh">立即分享</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const root=document.documentElement;
+      const buttons=document.querySelectorAll("[data-set-language]");
+      const allowed=["pt","en","es","zh"];
+
+      const htmlLanguages={
+        pt:"pt-BR",
+        en:"en",
+        es:"es",
+        zh:"zh-CN"
+      };
+
+      const titles={
+        pt:"Elias Silva | Portal Premium | UrbanWatch.app",
+        en:"Elias Silva | Portal Premium | UrbanWatch.app",
+        es:"Elias Silva | Portal Premium UrbanWatch.app | UrbanWatch.app",
+        zh:"Elias Silva | UrbanWatch.app 尊享门户 | UrbanWatch.app"
+      };
+
+      function setLanguage(language){
+        const lang=allowed.includes(language)?language:"pt";
+        root.dataset.language=lang;
+        root.lang=htmlLanguages[lang];
+        document.title=titles[lang];
+
+        buttons.forEach(function(button){
+          const active=button.dataset.setLanguage===lang;
+          button.classList.toggle("active",active);
+          button.setAttribute("aria-pressed",String(active));
+        });
+
+        try{localStorage.setItem("urbanwatch-language",lang)}catch(error){}
+      }
+
+      buttons.forEach(function(button){
+        button.addEventListener("click",function(){
+          setLanguage(button.dataset.setLanguage);
+        });
+      });
+
+      let saved="pt";
+      try{saved=localStorage.getItem("urbanwatch-language")||"pt"}catch(error){}
+      setLanguage(saved);
+    })();
+
+    document.addEventListener("DOMContentLoaded",function(){
+      const portalUrl="https://urbanwatch.app/es/";
+      const modal=document.getElementById("sharePortalModal");
+      const openButton=document.getElementById("openSharePortal");
+      const closeButton=document.getElementById("closeSharePortal");
+      const copyButton=document.getElementById("copyPortalLink");
+      const shareButton=document.getElementById("nativeSharePortal");
+
+      function currentLanguage(){
+        return document.documentElement.dataset.language||"pt";
+      }
+
+      function openModal(){
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden","false");
+        document.body.classList.add("modal-open");
+      }
+
+      function closeModal(){
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden","true");
+        document.body.classList.remove("modal-open");
+      }
+
+      openButton.addEventListener("click",openModal);
+      closeButton.addEventListener("click",closeModal);
+
+      modal.addEventListener("click",function(event){
+        if(event.target===modal) closeModal();
+      });
+
+      document.addEventListener("keydown",function(event){
+        if(event.key==="Escape"&&modal.classList.contains("open")) closeModal();
+      });
+
+      copyButton.addEventListener("click",async function(){
+        const lang=currentLanguage();
+        try{
+          await navigator.clipboard.writeText(portalUrl);
+          copyButton.textContent=
+            lang==="en"?"Copied":
+            lang==="es"?"Copiado":
+            lang==="zh"?"已复制":
+            "Copiado";
+        }catch(error){
+          window.prompt(
+            lang==="en"?"Copy the link:":
+            lang==="es"?"Copie el enlace:":
+            lang==="zh"?"复制链接：":
+            "Copie o link:",
+            portalUrl
+          );
+        }
+      });
+
+      shareButton.addEventListener("click",async function(){
+        const lang=currentLanguage();
+        const text=
+          lang==="en"?"Access Elias Silva's Premium Portal.":
+          lang==="es"?"Acceda al Portal Premium de Elias Silva.":
+          lang==="zh"?"访问 Elias Silva 的尊享门户。":
+          "Acesse o Portal Premium de Elias Silva.";
+
+        if(navigator.share){
+          try{
+            await navigator.share({
+              title:"Elias Silva | UrbanWatch.app",
+              text:text,
+              url:portalUrl
+            });
+          }catch(error){}
+        }else{
+          try{
+            await navigator.clipboard.writeText(portalUrl);
+            alert(
+              lang==="en"?"Link copied.":
+              lang==="es"?"Enlace copiado.":
+              lang==="zh"?"链接已复制。":
+              "Link copiado."
+            );
+          }catch(error){
+            window.prompt("Copie o link:",portalUrl);
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
