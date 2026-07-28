@@ -1,0 +1,56 @@
+URBANWATCH.APP + ADEMICON — LANDING IMÓVEIS V1.0
+
+ESTRUTURA
+imoveis/
+├── index.html
+├── LEIA-ME.txt
+└── assets/
+    ├── css/style.css
+    ├── js/script.js
+    └── img/
+        ├── hero-imoveis.png
+        ├── sessao-02-objetivo.png
+        ├── sessao-03-especialistas.png
+        ├── sessao-04-carta.png
+        ├── sessao-05-prazo.png
+        ├── sessao-06-resumo.png
+        ├── sessao-07-sucesso.png
+        ├── og-imoveis.png
+        └── favicon.png
+
+O QUE ESTA VERSÃO FAZ
+- Exibe apenas uma arte por vez, como um aplicativo.
+- Permite escolher objetivo, especialista, carta de crédito e prazo.
+- Mostra um resumo dinâmico na Arte 06.
+- Gera automaticamente o código UW-ADS-JAN-0001 ou UW-ADS-CHR-0001.
+- Inclui o código e todas as escolhas na mensagem do WhatsApp.
+- Abre o WhatsApp do especialista escolhido.
+- Exibe a Arte 07 após o encaminhamento.
+- Não possui banco de dados, painel de leads, consentimento ou envio de cópia para David.
+
+CONFIGURAÇÃO OBRIGATÓRIA
+Abra:
+assets/js/script.js
+
+Localize:
+const WHATSAPP = {
+  jane: '55SEUNUMEROJANE',
+  christopher: '5585984048975'
+};
+
+Substitua o número de Jane usando somente dígitos:
+55 + DDD + número.
+
+PUBLICAÇÃO
+Envie a pasta imoveis completa para o diretório desejado no servidor.
+Não altere os nomes nem a estrutura das pastas.
+
+OBSERVAÇÃO SOBRE OS CÓDIGOS
+A sequência fica armazenada no navegador do visitante por meio de localStorage.
+Ela serve como identificação simples da mensagem, mas não é um controle central de leads.
+Dois navegadores diferentes podem gerar o mesmo número sequencial.
+Isso é compatível com a fase atual, em que a landing funciona apenas como encaminhador.
+
+MANUTENÇÃO
+As áreas clicáveis são posicionadas sobre as artes em percentuais no style.css.
+Se uma imagem for trocada por outra composição, os hotspots correspondentes deverão ser recalibrados.
