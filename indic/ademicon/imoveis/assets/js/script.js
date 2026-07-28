@@ -6,8 +6,8 @@
   Exemplo fictício: 5585999999999
 */
 const WHATSAPP = Object.freeze({
-  jane: '55SEUNUMEROJANE',
-  christopher: '55SEUNUMEROCHRISTOPHER'
+  jane: '5511959103665',
+  christopher: '559591408900'
 });
 
 const CONSULTANTS = Object.freeze({
