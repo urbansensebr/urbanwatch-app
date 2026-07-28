@@ -2,7 +2,7 @@
 'use strict';
 
 const WHATSAPP = Object.freeze({
-  jane:'5511959103665',
+  jane:'55959103665',
   christopher:'559591408900'
 });
 
