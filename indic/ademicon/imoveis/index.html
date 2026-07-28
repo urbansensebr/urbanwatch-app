@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Pré-atendimento para consórcio de imóveis com especialistas Ademicon, apresentado pela UrbanWatch.app.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Planejando conquistar seu imóvel?">
+  <meta property="og:description" content="Escolha seu objetivo e converse com um especialista em consórcios.">
+  <meta property="og:image" content="assets/img/og-imoveis.png">
+  <title>Consórcio de Imóveis | UrbanWatch.app + Ademicon</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preload" as="image" href="assets/img/hero-imoveis.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript">Ative o JavaScript para utilizar este pré-atendimento.</div>
+  </noscript>
+
+  <main class="app" id="app">
+    <section class="screen is-active" data-screen="0" aria-hidden="false">
+      <div class="art-stage" data-ratio="1024/1536">
+        <img src="assets/img/hero-imoveis.png" alt="Planejando conquistar seu imóvel?" width="1024" height="1536">
+        <button class="hotspot hero-start" type="button" data-action="next" aria-label="Iniciar pré-atendimento"></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="1" aria-hidden="true">
+      <button class="nav-back" type="button" data-action="back" aria-label="Voltar para a tela anterior">‹</button>
+      <div class="art-stage" data-ratio="941/1672">
+        <img src="assets/img/sessao-02-objetivo.png" alt="Escolha o objetivo do seu planejamento" width="941" height="1672">
+        <button class="hotspot objective o1" type="button" data-objective="Comprar apartamento" aria-label="Comprar apartamento"></button>
+        <button class="hotspot objective o2" type="button" data-objective="Comprar casa" aria-label="Comprar casa"></button>
+        <button class="hotspot objective o3" type="button" data-objective="Construir" aria-label="Construir"></button>
+        <button class="hotspot objective o4" type="button" data-objective="Reformar" aria-label="Reformar"></button>
+        <button class="hotspot objective o5" type="button" data-objective="Comprar terreno" aria-label="Comprar terreno"></button>
+        <button class="hotspot objective o6" type="button" data-objective="Investir" aria-label="Investir"></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="2" aria-hidden="true">
+      <button class="nav-back" type="button" data-action="back" aria-label="Voltar para a tela anterior">‹</button>
+      <div class="art-stage" data-ratio="1536/1024">
+        <img src="assets/img/sessao-03-especialistas.png" alt="Escolha Jane Lima ou Christopher Galvão" width="1536" height="1024">
+        <button class="hotspot consultant jane" type="button" data-consultant="jane" aria-label="Escolher Jane Lima"></button>
+        <button class="hotspot consultant christopher" type="button" data-consultant="christopher" aria-label="Escolher Christopher Galvão"></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="3" aria-hidden="true">
+      <button class="nav-back" type="button" data-action="back" aria-label="Voltar para a tela anterior">‹</button>
+      <div class="art-stage" data-ratio="1536/1024">
+        <img src="assets/img/sessao-04-carta.png" alt="Escolha a faixa aproximada da carta de crédito" width="1536" height="1024">
+        <button class="hotspot credit c1" type="button" data-credit="Até R$ 250 mil" aria-label="Até R$ 250 mil"></button>
+        <button class="hotspot credit c2" type="button" data-credit="De R$ 250 mil a R$ 500 mil" aria-label="De R$ 250 mil a R$ 500 mil"></button>
+        <button class="hotspot credit c3" type="button" data-credit="De R$ 500 mil a R$ 1 milhão" aria-label="De R$ 500 mil a R$ 1 milhão"></button>
+        <button class="hotspot credit c4" type="button" data-credit="Acima de R$ 1 milhão" aria-label="Acima de R$ 1 milhão"></button>
+        <button class="hotspot credit c5" type="button" data-credit="Ainda não sei" aria-label="Ainda não sei"></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="4" aria-hidden="true">
+      <button class="nav-back" type="button" data-action="back" aria-label="Voltar para a tela anterior">‹</button>
+      <div class="art-stage" data-ratio="1536/1024">
+        <img src="assets/img/sessao-05-prazo.png" alt="Escolha o prazo pretendido" width="1536" height="1024">
+        <button class="hotspot timeframe p1" type="button" data-timeframe="Assim que for possível" aria-label="Assim que for possível"></button>
+        <button class="hotspot timeframe p2" type="button" data-timeframe="Entre 6 e 12 meses" aria-label="Entre 6 e 12 meses"></button>
+        <button class="hotspot timeframe p3" type="button" data-timeframe="Entre 1 e 3 anos" aria-label="Entre 1 e 3 anos"></button>
+        <button class="hotspot timeframe p4" type="button" data-timeframe="Ainda estou planejando" aria-label="Ainda estou planejando"></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="5" aria-hidden="true">
+      <button class="nav-back" type="button" data-action="back" aria-label="Voltar para a tela anterior">‹</button>
+      <div class="art-stage summary-stage" data-ratio="864/1821">
+        <img src="assets/img/sessao-06-resumo.png" alt="Resumo do pré-atendimento" width="864" height="1821">
+        <div class="summary-live" aria-label="Resumo das escolhas">
+          <div class="summary-grid">
+            <article><small>Especialista</small><strong id="summary-consultant">—</strong></article>
+            <article><small>Objetivo</small><strong id="summary-objective">—</strong></article>
+            <article><small>Carta de crédito</small><strong id="summary-credit">—</strong></article>
+            <article><small>Prazo pretendido</small><strong id="summary-timeframe">—</strong></article>
+            <article class="code-card"><small>Código do pré-atendimento</small><strong id="summary-code">Será gerado ao continuar</strong></article>
+            <article><small>Canal de origem</small><strong>UrbanWatch Ads | David Elias</strong></article>
+          </div>
+          <button class="btn send-button" type="button" data-action="send">Conversar com o especialista</button>
+          <p class="summary-note">O código será incluído automaticamente na mensagem.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="6" aria-hidden="true">
+      <div class="art-stage" data-ratio="1024/1536">
+        <img src="assets/img/sessao-07-sucesso.png" alt="Pré-atendimento concluído" width="1024" height="1536">
+        <button class="hotspot restart" type="button" data-action="restart" aria-label="Reiniciar pré-atendimento"></button>
+      </div>
+    </section>
+
+    <div class="loading" id="loading" aria-hidden="true"><span></span></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
