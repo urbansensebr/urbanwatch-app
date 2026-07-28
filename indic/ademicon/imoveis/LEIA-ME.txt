@@ -1,0 +1,22 @@
+URBANWATCH.APP — CALIBRAGEM V2
+
+Substituir:
+- index.html
+- assets/css/style.css
+- assets/js/script.js
+- assets/img/sessao-02-objetivo.png
+
+Correções realizadas:
+- hotspots ampliados e recalibrados;
+- ajuste do aspect-ratio da nova Arte 02 para 941 × 1672;
+- cada card mostra borda dourada, brilho e ✓ ao ser tocado;
+- avanço ocorre somente após 520 ms, permitindo visualizar a seleção;
+- proteção contra toques duplos;
+- melhor resposta em telas mobile;
+- áreas dos especialistas, carta e prazo ampliadas;
+- resumo continua dinâmico.
+
+Configuração pendente:
+Em assets/js/script.js, substituir:
+jane: '55SEUNUMEROJANE'
+pelo número real, usando somente dígitos.
