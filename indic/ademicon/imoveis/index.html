@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Consórcio para imóveis em Fortaleza e Região Metropolitana. Escolha seu objetivo, informe a carta de crédito desejada e converse com um especialista." />
+  <title>Consórcio para Imóveis | UrbanWatch.app + Ademicon</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0d0d0d;
+      --panel-2: #151515;
+      --gold: #d4af37;
+      --gold-2: #e7bd54;
+      --gold-soft: #f1e5ac;
+      --white: #ffffff;
+      --muted: #c9c9c9;
+      --line: rgba(212,175,55,.28);
+      --shadow: 0 0 0 2px rgba(212,175,55,.85), 0 0 28px rgba(212,175,55,.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(212,175,55,.07), transparent 38%),
+        var(--bg);
+      font-family: Montserrat, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button, a { font: inherit; }
+    button { -webkit-tap-highlight-color: transparent; }
+
+    .page { position: relative; width: 100%; }
+
+    .visual-section {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #000;
+      border-bottom: 1px solid rgba(212,175,55,.18);
+    }
+
+    .art-wrap {
+      position: relative;
+      width: min(100vw, calc(100svh * var(--ratio)));
+      max-width: 100%;
+      aspect-ratio: var(--ratio);
+      margin: auto;
+    }
+
+    .art-wrap.portrait {
+      width: min(100vw, calc(100svh * var(--ratio)));
+      max-height: 100svh;
+    }
+
+    .art {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .hotspot {
+      position: absolute;
+      display: block;
+      appearance: none;
+      border: 0;
+      border-radius: 18px;
+      background: transparent;
+      cursor: pointer;
+      color: transparent;
+      z-index: 3;
+      touch-action: manipulation;
+      transition: box-shadow .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    .hotspot:hover,
+    .hotspot:focus-visible {
+      outline: none;
+      background: rgba(212,175,55,.06);
+      box-shadow: var(--shadow);
+      transform: translateY(-1px);
+    }
+
+    .hotspot.selected {
+      background: rgba(212,175,55,.10);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-cta { left: 5.2%; top: 77.3%; width: 31.4%; height: 11.8%; }
+
+    /* Linhas clicáveis da Sessão 2 */
+    .objective-hotspot { left: 6.0%; width: 48.5%; height: 6.2%; }
+    .objective-1 { top: 32.0%; }
+    .objective-2 { top: 38.5%; }
+    .objective-3 { top: 45.0%; }
+    .objective-4 { top: 51.5%; }
+    .objective-5 { top: 58.0%; }
+    .objective-6 { top: 64.5%; }
+
+    .jane-btn { left: 4.8%; top: 75.2%; width: 33.2%; height: 10.9%; }
+    .christopher-btn { left: 42.9%; top: 75.2%; width: 34.5%; height: 10.9%; }
+
+    .form-section {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: clamp(52px, 7vw, 96px) 20px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(212,175,55,.18);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(212,175,55,.12), transparent 28%),
+        radial-gradient(circle at 15% 90%, rgba(212,175,55,.07), transparent 30%),
+        linear-gradient(145deg, #020202 0%, #0b0b0b 55%, #050505 100%);
+    }
+
+    .form-section::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(212,175,55,.35);
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .form-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 1080px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--gold-2);
+      font-size: clamp(.78rem, 1.2vw, .96rem);
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before { content: ""; width: 42px; height: 2px; background: var(--gold); }
+
+    .form-title {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.15rem, 5vw, 4.6rem);
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+
+    .form-title strong { color: var(--gold-2); }
+
+    .form-copy {
+      margin: 24px 0 34px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .option-btn {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      color: var(--white);
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .option-btn:hover,
+    .option-btn:focus-visible,
+    .option-btn[aria-pressed="true"] {
+      outline: none;
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      background: rgba(212,175,55,.09);
+      box-shadow: 0 12px 34px rgba(0,0,0,.30), 0 0 24px rgba(212,175,55,.12);
+    }
+
+    .option-icon {
+      flex: 0 0 50px;
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(212,175,55,.60);
+      border-radius: 50%;
+      color: var(--gold-2);
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .option-text strong { display: block; margin-bottom: 4px; font-size: 1.06rem; }
+    .option-text span { color: #aaa; font-size: .91rem; }
+
+    .summary-card {
+      margin-top: 28px;
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid rgba(212,175,55,.45);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(212,175,55,.08), rgba(255,255,255,.02));
+      box-shadow: 0 18px 55px rgba(0,0,0,.34);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 24px 0 28px;
+    }
+
+    .summary-item {
+      padding: 15px 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      background: rgba(0,0,0,.28);
+    }
+
+    .summary-item small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-2);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .summary-item strong { font-size: 1rem; }
+
+    .btn {
+      width: 100%;
+      min-height: 66px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 22px;
+      border: 1px solid #f4d475;
+      border-radius: 16px;
+      background: linear-gradient(100deg, #b57b0b, #f1d276 52%, #bf8615);
+      color: #111;
+      font-weight: 900;
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 14px 36px rgba(212,175,55,.20);
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      outline: none;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(212,175,55,.30);
+      filter: brightness(1.04);
+    }
+
+    .btn:disabled { opacity: .55; cursor: not-allowed; transform: none; filter: grayscale(.25); }
+    .btn svg { width: 28px; height: 28px; stroke: currentColor; }
+
+    .back-link {
+      margin-top: 16px;
+      display: inline-flex;
+      color: var(--gold-soft);
+      text-decoration: none;
+      font-size: .93rem;
+    }
+
+    .nav-dots {
+      position: fixed;
+      right: max(12px, env(safe-area-inset-right));
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      display: grid;
+      gap: 10px;
+      padding: 10px 8px;
+      border: 1px solid rgba(212,175,55,.28);
+      border-radius: 999px;
+      background: rgba(5,5,5,.64);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-dots a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: transparent;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .nav-dots a:hover,
+    .nav-dots a:focus-visible { background: var(--gold); transform: scale(1.2); outline: none; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: max(22px, env(safe-area-inset-bottom));
+      transform: translate(-50%, 18px);
+      z-index: 50;
+      max-width: min(92vw, 620px);
+      padding: 14px 18px;
+      border: 1px solid rgba(212,175,55,.55);
+      border-radius: 14px;
+      background: rgba(10,10,10,.96);
+      color: var(--white);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+      text-align: center;
+      font-size: .95rem;
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 700px) {
+      .visual-section { min-height: auto; }
+      .art-wrap, .art-wrap.portrait { width: 100vw; max-height: none; }
+      .nav-dots { top: auto; right: 50%; bottom: max(10px, env(safe-area-inset-bottom)); transform: translateX(50%); grid-auto-flow: column; background: rgba(5,5,5,.78); }
+      .hotspot { border-radius: 12px; }
+      .form-section { min-height: auto; padding: 72px 20px 96px; }
+      .form-section::after { inset: 10px; border-radius: 20px; }
+      .option-grid, .summary-grid { grid-template-columns: 1fr; }
+      .option-btn { min-height: 78px; padding: 16px; }
+      .form-title { line-height: 1.05; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hotspot, .toast, .nav-dots a, .option-btn, .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section id="inicio" class="visual-section" aria-label="Apresentação da campanha de consórcio para imóveis">
+      <div class="art-wrap" style="--ratio: 3 / 2;">
+        <img class="art" src="assets/01-hero.png" alt="Planejando conquistar seu imóvel? Consórcio para apartamento, casa, terreno, sala comercial, construção ou reforma em Fortaleza e Região Metropolitana." />
+        <button class="hotspot hero-cta" type="button" data-scroll="#objetivo">
+          <span class="sr-only">Quero conversar com um especialista</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="objetivo" class="visual-section" aria-label="Escolha seu objetivo imobiliário">
+      <div class="art-wrap portrait" style="--ratio: 1229 / 1536;">
+        <img class="art" src="assets/02-sessao-2.png" alt="O que você pretende? Comprar apartamento, comprar casa, construir, reformar, comprar terreno ou investir." />
+        <button class="hotspot objective-hotspot objective-1" type="button" data-objective="Comprar apartamento"><span class="sr-only">Comprar apartamento</span></button>
+        <button class="hotspot objective-hotspot objective-2" type="button" data-objective="Comprar casa"><span class="sr-only">Comprar casa</span></button>
+        <button class="hotspot objective-hotspot objective-3" type="button" data-objective="Construir"><span class="sr-only">Construir</span></button>
+        <button class="hotspot objective-hotspot objective-4" type="button" data-objective="Reformar"><span class="sr-only">Reformar</span></button>
+        <button class="hotspot objective-hotspot objective-5" type="button" data-objective="Comprar terreno"><span class="sr-only">Comprar terreno</span></button>
+        <button class="hotspot objective-hotspot objective-6" type="button" data-objective="Investir"><span class="sr-only">Investir</span></button>
+      </div>
+    </section>
+
+    <section id="especialistas" class="visual-section" aria-label="Escolha entre Jane Lima e Christopher Galvão">
+      <div class="art-wrap" style="--ratio: 3 / 2;">
+        <img class="art" src="assets/03-sessao-3.png" alt="Dois especialistas: Jane Lima e Christopher Galvão, com botões para conversar pelo WhatsApp." />
+        <button class="hotspot jane-btn" type="button" data-consultant="jane"><span class="sr-only">Selecionar Jane Lima</span></button>
+        <button class="hotspot christopher-btn" type="button" data-consultant="christopher"><span class="sr-only">Selecionar Christopher Galvão</span></button>
+      </div>
+    </section>
+
+    <section id="carta" class="form-section" aria-label="Escolha o valor aproximado da carta de crédito">
+      <div class="form-inner">
+        <div class="eyebrow">Sessão 4 · Pré-atendimento inteligente</div>
+        <h2 class="form-title">Qual o valor aproximado da <strong>carta de crédito</strong> que você procura?</h2>
+        <p class="form-copy">Informe o valor do crédito que pretende utilizar na compra, construção, reforma ou estratégia patrimonial. Esse valor é diferente da parcela mensal.</p>
+
+        <div class="option-grid" data-group="credit">
+          <button class="option-btn" type="button" data-credit="Até R$ 250 mil" aria-pressed="false">
+            <span class="option-icon">1</span><span class="option-text"><strong>Até R$ 250 mil</strong><span>Objetivos de menor porte ou composição de patrimônio.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-credit="De R$ 250 mil a R$ 500 mil" aria-pressed="false">
+            <span class="option-icon">2</span><span class="option-text"><strong>De R$ 250 mil a R$ 500 mil</strong><span>Imóveis residenciais e projetos intermediários.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-credit="De R$ 500 mil a R$ 1 milhão" aria-pressed="false">
+            <span class="option-icon">3</span><span class="option-text"><strong>De R$ 500 mil a R$ 1 milhão</strong><span>Projetos patrimoniais e imóveis de maior valor.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-credit="Acima de R$ 1 milhão" aria-pressed="false">
+            <span class="option-icon">4</span><span class="option-text"><strong>Acima de R$ 1 milhão</strong><span>Grandes objetivos, expansão e patrimônio.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-credit="Ainda não sei" aria-pressed="false">
+            <span class="option-icon">?</span><span class="option-text"><strong>Ainda não sei</strong><span>O especialista ajudará a estimar a faixa adequada.</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="prazo" class="form-section" aria-label="Informe quando pretende realizar o objetivo">
+      <div class="form-inner">
+        <div class="eyebrow">Sessão 5 · Momento do objetivo</div>
+        <h2 class="form-title">Em quanto tempo você pretende <strong>realizar esse objetivo?</strong></h2>
+        <p class="form-copy">Essa informação ajuda o especialista a compreender seu planejamento. Ela não representa promessa de contemplação nem garantia de prazo.</p>
+
+        <div class="option-grid" data-group="timeframe">
+          <button class="option-btn" type="button" data-timeframe="Assim que for possível" aria-pressed="false">
+            <span class="option-icon">A</span><span class="option-text"><strong>Assim que for possível</strong><span>Quero avaliar as alternativas disponíveis.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-timeframe="Entre 6 e 12 meses" aria-pressed="false">
+            <span class="option-icon">12</span><span class="option-text"><strong>Entre 6 e 12 meses</strong><span>Tenho um horizonte mais próximo.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-timeframe="Entre 1 e 3 anos" aria-pressed="false">
+            <span class="option-icon">3</span><span class="option-text"><strong>Entre 1 e 3 anos</strong><span>Estou construindo um planejamento de médio prazo.</span></span>
+          </button>
+          <button class="option-btn" type="button" data-timeframe="Estou apenas pesquisando" aria-pressed="false">
+            <span class="option-icon">P</span><span class="option-text"><strong>Estou apenas pesquisando</strong><span>Quero entender antes de tomar uma decisão.</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="confirmacao" class="form-section" aria-label="Confirme seus dados e inicie a conversa pelo WhatsApp">
+      <div class="form-inner">
+        <div class="eyebrow">Sessão 6 · Encaminhamento personalizado</div>
+        <h2 class="form-title">Seu pré-atendimento está <strong>pronto.</strong></h2>
+        <p class="form-copy">As informações abaixo serão incluídas automaticamente na mensagem enviada ao especialista selecionado.</p>
+
+        <div class="summary-card">
+          <div class="summary-grid">
+            <div class="summary-item"><small>Especialista</small><strong id="summary-consultant">Não selecionado</strong></div>
+            <div class="summary-item"><small>Objetivo</small><strong id="summary-objective">Não selecionado</strong></div>
+            <div class="summary-item"><small>Carta de crédito</small><strong id="summary-credit">Não selecionada</strong></div>
+            <div class="summary-item"><small>Prazo pretendido</small><strong id="summary-timeframe">Não selecionado</strong></div>
+          </div>
+
+          <button id="final-whatsapp" class="btn" type="button" disabled>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7A8.5 8.5 0 1 1 20.5 11.8Z" stroke-width="1.8"/><path d="M8.2 7.7c.2-.5.4-.5.8-.5h.5c.2 0 .4 0 .6.5l.8 1.9c.1.3.1.5-.1.7l-.6.8c-.2.2-.3.4-.1.7.8 1.6 2 2.7 3.6 3.5.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.3.8-.2l1.8.9c.3.2.5.3.5.5 0 .4-.2 1.7-1.1 2.3-.7.5-1.7.8-2.7.5-1.4-.4-3.1-1.1-5.2-3-1.7-1.6-2.9-3.5-3.2-4.8-.3-1.2 0-2.1.4-2.6Z" stroke-width="1.4"/></svg>
+            Conversar com o especialista pelo WhatsApp
+          </button>
+
+          <a class="back-link" href="#especialistas">← Alterar especialista</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav-dots" aria-label="Navegação entre as seções">
+    <a href="#inicio" aria-label="Ir para a primeira seção"></a>
+    <a href="#objetivo" aria-label="Ir para a segunda seção"></a>
+    <a href="#especialistas" aria-label="Ir para a terceira seção"></a>
+    <a href="#carta" aria-label="Ir para a quarta seção"></a>
+    <a href="#prazo" aria-label="Ir para a quinta seção"></a>
+    <a href="#confirmacao" aria-label="Ir para a sexta seção"></a>
+  </nav>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    'use strict';
+
+    /*
+      CONFIGURAÇÃO NECESSÁRIA:
+      Substitua os valores abaixo pelos números reais, somente com dígitos,
+      incluindo 55 + DDD. Exemplo fictício: 5585999999999
+    */
+    const WHATSAPP = Object.freeze({
+      jane: '55SEUNUMEROJANE',
+      christopher: '55SEUNUMEROCHRISTOPHER'
+    });
+
+    const CONSULTANTS = Object.freeze({
+      jane: { name: 'Jane Lima', greeting: 'Jane', code: 'UW-ADS-JAN-0001' },
+      christopher: { name: 'Christopher Galvão', greeting: 'Christopher', code: 'UW-ADS-CHR-0001' }
+    });
+
+    const state = {
+      objective: '',
+      consultant: '',
+      credit: '',
+      timeframe: ''
+    };
+
+    const toast = document.getElementById('toast');
+    const finalButton = document.getElementById('final-whatsapp');
+    let toastTimer;
+
+    function showToast(message) {
+      clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 4200);
+    }
+
+    function isConfigured(number) {
+      return /^55\d{10,11}$/.test(number);
+    }
+
+    function scrollToSection(selector) {
+      document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function setPressed(groupSelector, selectedButton) {
+      document.querySelectorAll(groupSelector).forEach((button) => {
+        button.setAttribute('aria-pressed', String(button === selectedButton));
+      });
+    }
+
+    function updateSummary() {
+      const consultant = CONSULTANTS[state.consultant];
+      document.getElementById('summary-consultant').textContent = consultant?.name || 'Não selecionado';
+      document.getElementById('summary-objective').textContent = state.objective || 'Não selecionado';
+      document.getElementById('summary-credit').textContent = state.credit || 'Não selecionada';
+      document.getElementById('summary-timeframe').textContent = state.timeframe || 'Não selecionado';
+
+      const complete = Boolean(state.objective && state.consultant && state.credit && state.timeframe);
+      finalButton.disabled = !complete;
+
+      if (consultant) {
+        finalButton.lastChild.textContent = ` Conversar com ${consultant.greeting} pelo WhatsApp`;
+      }
+    }
+
+    function buildMessage() {
+      const consultant = CONSULTANTS[state.consultant];
+      return `Olá, ${consultant.greeting}!\n\nEncontrei sua consultoria através de uma campanha da UrbanWatch.\n\nOrigem: UrbanWatch Ads | David Elias\n\nCódigo de atendimento:\n${consultant.code}\n\nTenho interesse em conhecer as opções de consórcio para imóvel e gostaria de uma orientação personalizada.\n\nObjetivo: ${state.objective}\nCarta de crédito desejada: ${state.credit}\nPrazo pretendido: ${state.timeframe}\n\nPodemos conversar?`;
+    }
+
+    function openWhatsApp() {
+      if (!(state.objective && state.consultant && state.credit && state.timeframe)) {
+        showToast('Conclua todas as etapas antes de abrir o WhatsApp.');
+        return;
+      }
+
+      const number = WHATSAPP[state.consultant];
+      if (!isConfigured(number)) {
+        showToast('Antes de publicar, insira no index.html o número real de WhatsApp deste especialista.');
+        return;
+      }
+
+      const url = `https://wa.me/${number}?text=${encodeURIComponent(buildMessage())}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    document.addEventListener('click', (event) => {
+      const scrollButton = event.target.closest('[data-scroll]');
+      if (scrollButton) {
+        scrollToSection(scrollButton.dataset.scroll);
+        return;
+      }
+
+      const objectiveButton = event.target.closest('[data-objective]');
+      if (objectiveButton) {
+        state.objective = objectiveButton.dataset.objective;
+        document.querySelectorAll('[data-objective]').forEach((button) => button.classList.toggle('selected', button === objectiveButton));
+        updateSummary();
+        showToast(`Objetivo selecionado: ${state.objective}`);
+        setTimeout(() => scrollToSection('#especialistas'), 280);
+        return;
+      }
+
+      const consultantButton = event.target.closest('[data-consultant]');
+      if (consultantButton) {
+        state.consultant = consultantButton.dataset.consultant;
+        document.querySelectorAll('[data-consultant]').forEach((button) => button.classList.toggle('selected', button === consultantButton));
+        updateSummary();
+        showToast(`${CONSULTANTS[state.consultant].name} foi selecionado(a).`);
+        setTimeout(() => scrollToSection('#carta'), 280);
+        return;
+      }
+
+      const creditButton = event.target.closest('[data-credit]');
+      if (creditButton) {
+        state.credit = creditButton.dataset.credit;
+        setPressed('[data-credit]', creditButton);
+        updateSummary();
+        setTimeout(() => scrollToSection('#prazo'), 280);
+        return;
+      }
+
+      const timeframeButton = event.target.closest('[data-timeframe]');
+      if (timeframeButton) {
+        state.timeframe = timeframeButton.dataset.timeframe;
+        setPressed('[data-timeframe]', timeframeButton);
+        updateSummary();
+        setTimeout(() => scrollToSection('#confirmacao'), 280);
+        return;
+      }
+
+      if (event.target.closest('#final-whatsapp')) {
+        openWhatsApp();
+      }
+    });
+
+    updateSummary();
+  </script>
+</body>
+</html>
