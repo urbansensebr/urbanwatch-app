@@ -1,0 +1,20 @@
+.art-stage { animation: uw-enter .55s ease both; }
+.hotspot { transition: border-color .18s ease, box-shadow .18s ease, background .18s ease, transform .18s ease; }
+.hotspot::after { transition: opacity .18s ease, transform .18s ease; }
+.toast { transition: opacity .22s ease, translate .22s ease; }
+.language-switcher button { transition: background .18s ease, color .18s ease, transform .18s ease; }
+.language-switcher button:active { transform: scale(.94); }
+
+@keyframes uw-enter {
+  from { opacity: 0; transform: scale(.992); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

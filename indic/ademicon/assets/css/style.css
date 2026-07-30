@@ -1,0 +1,178 @@
+:root {
+  color-scheme: dark;
+  --black: #050505;
+  --graphite: #1a1a1a;
+  --gold: #d4af37;
+  --champagne: #f1e5ac;
+  --white: #ffffff;
+  --safe-bottom: max(14px, env(safe-area-inset-bottom));
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--black); }
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: hidden;
+  background: var(--black);
+  color: var(--white);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+button, a { font: inherit; }
+
+.skip-link {
+  position: fixed;
+  z-index: 999;
+  left: 12px;
+  top: 12px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--champagne);
+  color: #050505;
+  translate: 0 -160%;
+}
+.skip-link:focus { translate: 0; }
+
+.app, .screen {
+  width: 100%;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background: var(--black);
+}
+
+.art-stage {
+  position: relative;
+  width: min(100vw, calc(100svh * 2 / 3));
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: var(--black);
+  isolation: isolate;
+}
+
+.art-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hotspot-layer { position: absolute; inset: 0; z-index: 2; }
+.hotspot {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 6%;
+  background: transparent;
+  color: transparent;
+  text-decoration: none;
+  outline: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.hotspot span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.hotspot:hover,
+.hotspot:focus-visible,
+.hotspot.is-selected {
+  border-color: rgba(241,229,172,.96);
+  background: rgba(212,175,55,.09);
+  box-shadow: 0 0 0 2px rgba(212,175,55,.17), 0 0 34px rgba(212,175,55,.6), inset 0 0 26px rgba(212,175,55,.12);
+  transform: translateY(-2px);
+}
+.hotspot::after {
+  content: "✓";
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: clamp(24px, 7%, 42px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--champagne);
+  border-radius: 50%;
+  background: rgba(5,5,5,.88);
+  color: var(--champagne);
+  font-size: clamp(14px, 2.2vw, 22px);
+  font-weight: 800;
+  opacity: 0;
+  transform: scale(.75);
+}
+.hotspot.is-selected::after { opacity: 1; transform: scale(1); }
+
+/* Coordenadas calibradas para a arte 1024 × 1536 */
+.imoveis { left: 4.9%; top: 52.1%; width: 38.2%; height: 16.4%; }
+.veiculos { left: 45.5%; top: 52.1%; width: 37.1%; height: 16.4%; }
+.investimentos { left: 4.9%; top: 69.8%; width: 38.2%; height: 16.1%; }
+.descobrir { left: 45.5%; top: 69.8%; width: 37.1%; height: 16.1%; }
+
+.uw-toolbar {
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  bottom: var(--safe-bottom);
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 9px 7px 12px;
+  border: 1px solid rgba(212,175,55,.42);
+  border-radius: 999px;
+  background: rgba(5,5,5,.82);
+  box-shadow: 0 10px 34px rgba(0,0,0,.45);
+  backdrop-filter: blur(14px);
+}
+.uw-brand {
+  color: var(--champagne);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.language-switcher { display: flex; gap: 3px; }
+.language-switcher button {
+  min-width: 34px;
+  min-height: 30px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255,255,255,.72);
+  cursor: pointer;
+}
+.language-switcher button[aria-pressed="true"] {
+  background: var(--gold);
+  color: #090909;
+  font-weight: 800;
+}
+
+.toast {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  bottom: calc(var(--safe-bottom) + 56px);
+  translate: -50% 18px;
+  max-width: min(90vw, 520px);
+  padding: 12px 18px;
+  border: 1px solid rgba(212,175,55,.55);
+  border-radius: 999px;
+  background: rgba(10,10,10,.94);
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+}
+.toast.is-visible { opacity: 1; translate: -50% 0; }
+.noscript { position: fixed; inset: auto 12px 80px; text-align: center; }

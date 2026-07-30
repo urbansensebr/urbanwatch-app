@@ -1,0 +1,14 @@
+@media (orientation: landscape) and (max-height: 760px) {
+  .art-stage { width: auto; height: 100svh; }
+  .uw-toolbar { left: auto; right: 10px; translate: 0; }
+}
+
+@media (max-width: 380px) {
+  .uw-toolbar { gap: 6px; padding-left: 10px; }
+  .uw-brand { font-size: 10px; }
+  .language-switcher button { min-width: 31px; min-height: 29px; font-size: 11px; }
+}
+
+@media (min-width: 900px) {
+  .art-stage { box-shadow: 0 0 80px rgba(212,175,55,.08); }
+}
