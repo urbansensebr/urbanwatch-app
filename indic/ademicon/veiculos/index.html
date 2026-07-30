@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#060606">
+  <meta name="description" content="Pré-atendimento para consórcio veicular com especialistas Ademicon, apresentado pela UrbanWatch.app.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Consórcio Veicular | Oportunidade Exclusiva">
+  <meta property="og:description" content="Conheça a oportunidade e converse com um especialista.">
+  <meta property="og:image" content="assets/img/campanha-veicular.jpg">
+  <title>Consórcio Veicular | UrbanWatch.app + Ademicon</title>
+  <link rel="preload" as="image" href="assets/img/campanha-veicular.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <noscript><div class="noscript">Ative o JavaScript para utilizar este pré-atendimento.</div></noscript>
+
+  <main class="app" id="app">
+    <!-- TELA 1 — ENCARTE -->
+    <section class="screen is-active" data-screen="0" aria-hidden="false">
+      <div class="campaign-shell">
+        <img class="campaign-art" id="campaign-image" src="assets/img/campanha-veicular.jpg"
+             alt="Oportunidade de consórcio veicular">
+        <div class="campaign-actions">
+          <button class="btn btn-primary" type="button" data-action="next" data-i18n="campaignCta">
+            Quero conhecer esta oportunidade
+          </button>
+          <a class="btn btn-secondary" href="../" data-i18n="backCentral">Voltar à Central</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 2 — ESPECIALISTA -->
+    <section class="screen" data-screen="1" aria-hidden="true">
+      <div class="panel">
+        <button class="back" type="button" data-action="back" data-i18n-aria="back" aria-label="Voltar">‹</button>
+        <div class="brand-line">UrbanWatch.app <span>×</span> Ademicon</div>
+        <p class="eyebrow" data-i18n="personalized">ATENDIMENTO PERSONALIZADO</p>
+        <h1 data-i18n="chooseSpecialist">Quem deseja que conduza seu atendimento?</h1>
+        <p class="lead" data-i18n="chooseSpecialistLead">Escolha um dos especialistas para receber uma orientação personalizada.</p>
+
+        <div class="specialists">
+          <button class="specialist-card" type="button" data-consultant="jane">
+            <span class="avatar">JL</span>
+            <span class="specialist-info">
+              <strong>Jane Lima</strong>
+              <small data-i18n="specialistRole">Especialista em Consórcios</small>
+            </span>
+            <span class="select-label" data-i18n="select">Selecionar</span>
+          </button>
+
+          <button class="specialist-card" type="button" data-consultant="christopher">
+            <span class="avatar">CG</span>
+            <span class="specialist-info">
+              <strong>Christopher Galvão</strong>
+              <small data-i18n="specialistRole">Especialista em Consórcios</small>
+            </span>
+            <span class="select-label" data-i18n="select">Selecionar</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 3 — TIPO DE VEÍCULO -->
+    <section class="screen" data-screen="2" aria-hidden="true">
+      <div class="panel">
+        <button class="back" type="button" data-action="back" data-i18n-aria="back" aria-label="Voltar">‹</button>
+        <div class="brand-line">UrbanWatch.app <span>×</span> Ademicon</div>
+        <p class="eyebrow" data-i18n="objective">SEU OBJETIVO</p>
+        <h1 data-i18n="vehicleQuestion">Qual tipo de veículo você procura?</h1>
+        <p class="lead" data-i18n="vehicleLead">Essa informação será enviada ao especialista escolhido.</p>
+
+        <div class="vehicle-grid">
+          <button class="choice" type="button" data-vehicle="car"><span>🚗</span><strong data-i18n="car">Carro</strong></button>
+          <button class="choice" type="button" data-vehicle="motorcycle"><span>🏍️</span><strong data-i18n="motorcycle">Moto</strong></button>
+          <button class="choice" type="button" data-vehicle="suv"><span>🚙</span><strong data-i18n="suv">SUV / Pickup</strong></button>
+          <button class="choice" type="button" data-vehicle="utility"><span>🚚</span><strong data-i18n="utility">Utilitário</strong></button>
+          <button class="choice choice-wide" type="button" data-vehicle="researching"><span>🔎</span><strong data-i18n="researching">Ainda estou pesquisando</strong></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 4 — RESUMO -->
+    <section class="screen" data-screen="3" aria-hidden="true">
+      <div class="panel">
+        <button class="back" type="button" data-action="back" data-i18n-aria="back" aria-label="Voltar">‹</button>
+        <div class="brand-line">UrbanWatch.app <span>×</span> Ademicon</div>
+        <p class="eyebrow" data-i18n="confirmation">CONFIRMAÇÃO</p>
+        <h1 data-i18n="ready">Seu pré-atendimento está pronto.</h1>
+        <p class="lead" data-i18n="review">Confira os dados antes de seguir para o WhatsApp.</p>
+
+        <div class="summary">
+          <article><small data-i18n="specialist">Especialista</small><strong id="summary-consultant">—</strong></article>
+          <article><small data-i18n="interest">Interesse</small><strong id="summary-vehicle">—</strong></article>
+          <article><small data-i18n="serviceCode">Código de atendimento</small><strong id="summary-code">—</strong></article>
+          <article><small data-i18n="origin">Origem</small><strong>UrbanWatch Ads | David Elias</strong></article>
+        </div>
+
+        <button class="btn btn-primary" type="button" data-action="send" data-i18n="talk">
+          Conversar com o especialista
+        </button>
+        <button class="text-button" type="button" data-action="restart" data-i18n="restart">Recomeçar</button>
+      </div>
+    </section>
+
+    <nav class="uw-language-bar" aria-label="Language selector">
+      <button type="button" class="lang-btn is-active" data-lang="pt-BR" aria-pressed="true">PT</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-btn" data-lang="zh-CN" aria-pressed="false">中文</button>
+      <a class="uw-home-link" href="../" data-i18n-aria="backCentral" aria-label="Voltar à Central">⌂</a>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
