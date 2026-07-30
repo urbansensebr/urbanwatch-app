@@ -14,13 +14,13 @@ window.UW_VEICULOS_CONFIG = {
       fullName: "Jane Lima",
       code: "JAN",
       // Substitua pelo WhatsApp completo, somente números, com DDI 55.
-      whatsapp: "55SEUNUMEROJANE"
+      whatsapp: "5511959103665"
     },
     christopher: {
       name: "Christopher",
       fullName: "Christopher Galvão",
       code: "CHR",
-      whatsapp: "5585984048975"
+      whatsapp: "559591408900"
     }
   }
 };
