@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Central Inteligente de Pré-Atendimento UW para consórcios.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Central Inteligente de Pré-Atendimento UW">
+  <meta property="og:description" content="Escolha uma categoria e inicie seu pré-atendimento inteligente.">
+  <meta property="og:image" content="assets/img/og-central-uw.png">
+  <title>Central Inteligente de Pré-Atendimento UW</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preload" as="image" href="assets/img/central-uw.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/animations.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=1.0.0">
+</head>
+<body>
+  <a class="skip-link" href="#central">Ir para as opções</a>
+
+  <main class="app" id="app">
+    <section class="screen" id="central" aria-label="Central Inteligente de Pré-Atendimento UW">
+      <div class="art-stage" data-art-width="1024" data-art-height="1536">
+        <img
+          class="art-image"
+          src="assets/img/central-uw.png"
+          alt="Central Inteligente de Pré-Atendimento UW com opções de imóveis, veículos, investimentos e orientação"
+          width="1024"
+          height="1536"
+          fetchpriority="high"
+        >
+
+        <nav class="hotspot-layer" aria-label="Categorias de pré-atendimento">
+          <a class="hotspot card imoveis" href="imoveis/" data-route="imoveis" data-i18n-label="route.imoveis" aria-label="Abrir pré-atendimento de imóveis">
+            <span>Imóveis</span>
+          </a>
+          <a class="hotspot card veiculos" href="veiculos/" data-route="veiculos" data-i18n-label="route.veiculos" aria-label="Abrir pré-atendimento de veículos">
+            <span>Veículos</span>
+          </a>
+          <a class="hotspot card investimentos" href="investimentos/" data-route="investimentos" data-i18n-label="route.investimentos" aria-label="Abrir pré-atendimento de investimentos">
+            <span>Investimentos</span>
+          </a>
+          <a class="hotspot card descobrir" href="descobrir/" data-route="descobrir" data-i18n-label="route.descobrir" aria-label="Receber ajuda para descobrir a melhor opção">
+            <span>Ainda não sei</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="uw-toolbar" aria-label="Ferramentas UrbanWatch.app">
+      <a class="uw-brand" href="https://urbanwatch.app" aria-label="Abrir UrbanWatch.app">UrbanWatch.app</a>
+      <div class="language-switcher" role="group" aria-label="Idioma">
+        <button type="button" data-lang="pt-BR" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="zh-CN" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript><p class="noscript">Ative o JavaScript para usar a navegação inteligente.</p></noscript>
+  </main>
+
+  <script src="assets/js/config.js?v=1.0.0" defer></script>
+  <script src="assets/js/hotspots.js?v=1.0.0" defer></script>
+  <script src="assets/js/navigation.js?v=1.0.0" defer></script>
+  <script src="assets/js/app.js?v=1.0.0" defer></script>
+</body>
+</html>
