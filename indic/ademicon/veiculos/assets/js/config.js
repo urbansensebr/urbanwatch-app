@@ -10,14 +10,14 @@ window.UW_VEICULOS_CONFIG = {
             name: "Jane",
             fullName: "Jane Lima",
             code: "JAN",
-            whatsapp: "55SEUNUMEROJANE"
+            whatsapp: "5511959103665"
         },
 
         christopher: {
             name: "Christopher",
             fullName: "Christopher Galvão",
             code: "CHR",
-            whatsapp: "5585984048975"
+            whatsapp: "559591408900"
         }
     }
 };
