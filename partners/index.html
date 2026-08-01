@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="UrbanWatch Partners — ecossistema estratégico que conecta empresas, cria oportunidades e transforma relações em projetos, negócios e experiências digitais." />
+  <meta property="og:title" content="UrbanWatch Partners" />
+  <meta property="og:description" content="Conectando empresas. Criando oportunidades. Fortalecendo ecossistemas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://urbanwatch.app/partners/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>UrbanWatch Partners | Ecossistema Estratégico</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-soft: #111111;
+      --panel: #151515;
+      --panel-2: #1a1a1a;
+      --gold: #d4af37;
+      --champagne: #f1e5ac;
+      --text: #f7f4ea;
+      --muted: #b7b2a5;
+      --line: rgba(212,175,55,.22);
+      --line-strong: rgba(212,175,55,.58);
+      --shadow: 0 24px 80px rgba(0,0,0,.42);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(212,175,55,.10), transparent 26%),
+        radial-gradient(circle at 88% 16%, rgba(241,229,172,.06), transparent 24%),
+        linear-gradient(180deg, #090909 0%, #0c0c0c 42%, #080808 100%);
+      color: var(--text);
+      font-family: Montserrat, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea, select { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -100px;
+      z-index: 9999;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #111;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .container { width: min(var(--max), calc(100% - 32px)); margin-inline: auto; }
+    .section { padding: 92px 0; position: relative; }
+    .section.compact { padding: 66px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--champagne);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(212,175,55,.65);
+    }
+
+    .section-head { max-width: 820px; margin-bottom: 34px; }
+    .section-title {
+      margin: 12px 0 14px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -.04em;
+    }
+    .section-subtitle { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.18rem); max-width: 760px; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(10,10,10,.74);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: .83rem;
+      box-shadow: inset 0 0 18px rgba(212,175,55,.08), 0 0 22px rgba(212,175,55,.08);
+    }
+    .brand small { display: block; color: var(--muted); font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
+
+    .nav-links { display: flex; align-items: center; gap: 18px; color: #d6d1c5; font-size: .88rem; font-weight: 700; }
+    .nav-links a { position: relative; padding: 8px 0; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 3px;
+      height: 1px;
+      background: var(--gold);
+      transition: .25s ease;
+    }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { right: 0; }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #141414;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(135deg, rgba(212,175,55,.18), rgba(212,175,55,.06));
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .btn svg { width: 18px; height: 18px; stroke: currentColor; }
+    .btn span { color: inherit; }
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 14px 34px rgba(212,175,55,.14);
+    }
+    .btn.primary { background: linear-gradient(135deg, #d4af37, #a98624); color: #101010; border-color: transparent; }
+    .btn.ghost { background: rgba(255,255,255,.025); border-color: rgba(255,255,255,.14); }
+    .btn.small { min-height: 40px; padding: 9px 14px; font-size: .86rem; }
+
+    .hero {
+      min-height: 100svh;
+      padding: 138px 0 74px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 72px 0 0;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(212,175,55,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,175,55,.035) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 92%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 620px;
+      aspect-ratio: 1;
+      right: -220px;
+      top: 70px;
+      z-index: -1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,175,55,.18), rgba(212,175,55,.03) 42%, transparent 68%);
+      filter: blur(4px);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+    .hero h1 {
+      margin: 14px 0 20px;
+      max-width: 800px;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: .93;
+      letter-spacing: -.065em;
+    }
+    .hero h1 .gold { color: var(--gold); text-shadow: 0 0 35px rgba(212,175,55,.16); }
+    .hero-copy { max-width: 710px; color: #c7c1b5; font-size: clamp(1.05rem, 1.7vw, 1.28rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-note { margin-top: 20px; color: #8f8a80; font-size: .82rem; }
+
+    .ecosystem-visual {
+      min-height: 500px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(212,175,55,.18);
+      border-radius: 50%;
+      animation: pulse 5s ease-in-out infinite;
+    }
+    .orbit.o1 { width: 230px; height: 230px; }
+    .orbit.o2 { width: 390px; height: 390px; animation-delay: .8s; }
+    .orbit.o3 { width: 520px; height: 520px; animation-delay: 1.6s; }
+    @keyframes pulse { 0%,100%{opacity:.42; transform:scale(.99)} 50%{opacity:.9; transform:scale(1.015)} }
+
+    .center-node {
+      width: 154px;
+      height: 154px;
+      border-radius: 38px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(145deg, #1d1b14, #0f0f0f);
+      border: 1px solid var(--gold);
+      box-shadow: 0 28px 70px rgba(0,0,0,.5), inset 0 0 40px rgba(212,175,55,.11), 0 0 45px rgba(212,175,55,.12);
+      z-index: 3;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .center-node span { display: block; color: var(--gold); font-size: .74rem; letter-spacing: .12em; margin-top: 7px; }
+
+    .partner-node {
+      position: absolute;
+      min-width: 104px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      text-align: center;
+      background: rgba(19,19,19,.92);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #eee9dc;
+      font-size: .78rem;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(0,0,0,.34);
+      backdrop-filter: blur(10px);
+    }
+    .partner-node.n1 { top: 38px; left: 50%; transform: translateX(-50%); }
+    .partner-node.n2 { right: 8px; top: 175px; }
+    .partner-node.n3 { right: 48px; bottom: 72px; }
+    .partner-node.n4 { left: 48px; bottom: 72px; }
+    .partner-node.n5 { left: 8px; top: 175px; }
+
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 34px; }
+    .stat { padding: 18px; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; background: rgba(255,255,255,.025); }
+    .stat strong { display: block; color: var(--champagne); font-size: 1.1rem; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: .82rem; }
+
+    .cards { display: grid; gap: 18px; }
+    .cards.four { grid-template-columns: repeat(4,1fr); }
+    .cards.three { grid-template-columns: repeat(3,1fr); }
+    .card {
+      position: relative;
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.085);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, rgba(255,255,255,.038), rgba(255,255,255,.015));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,175,55,.7), transparent);
+      opacity: .45;
+    }
+    .card:hover { transform: translateY(-5px); border-color: rgba(212,175,55,.36); }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      background: rgba(212,175,55,.08);
+      border: 1px solid rgba(212,175,55,.18);
+      margin-bottom: 19px;
+    }
+    .icon-box svg { width: 24px; height: 24px; stroke: currentColor; }
+    .card h3 { margin: 0 0 8px; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .partner-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .partner-card {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.09);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(212,175,55,.12), transparent 38%),
+        linear-gradient(145deg, #171717, #101010);
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+    }
+    .partner-card:hover { transform: translateY(-5px); border-color: rgba(212,175,55,.42); }
+    .partner-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .partner-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #0d0d0d;
+      border: 1px solid var(--line-strong);
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.22rem;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.1);
+      color: #d7d2c6;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #7bd88f; box-shadow: 0 0 12px rgba(123,216,143,.8); }
+    .status.planning::before { background: var(--gold); box-shadow: 0 0 12px rgba(212,175,55,.75); }
+    .partner-card h3 { margin: 22px 0 8px; font-size: 1.55rem; }
+    .partner-meta { color: var(--champagne); font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .partner-card p { color: var(--muted); margin: 0 0 22px; }
+    .partner-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); color: #bdb7aa; font-size: .7rem; }
+
+    .projects-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .project {
+      padding: 30px;
+      min-height: 300px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: #121212;
+      position: relative;
+      overflow: hidden;
+    }
+    .project::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      bottom: -80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,175,55,.18), transparent 65%);
+    }
+    .project h3 { margin: 10px 0 8px; font-size: 1.55rem; }
+    .project p { color: var(--muted); max-width: 560px; }
+    .project .partners-line { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .eventos {
+      border: 1px solid rgba(212,175,55,.26);
+      border-radius: 32px;
+      padding: 42px;
+      background:
+        radial-gradient(circle at 14% 25%, rgba(212,175,55,.13), transparent 32%),
+        linear-gradient(145deg, #151515, #0e0e0e);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .eventos-brand { font-size: clamp(2.3rem, 5vw, 5rem); letter-spacing: -.06em; line-height: .92; margin: 10px 0 18px; }
+    .eventos-brand span { color: var(--gold); }
+    .eventos-flow { display: grid; gap: 11px; }
+    .flow-item { display: grid; grid-template-columns: 42px 1fr; gap: 12px; align-items: center; padding: 13px; border: 1px solid rgba(255,255,255,.08); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .flow-num { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; color: #111; background: var(--gold); font-weight: 900; }
+    .flow-item strong { display: block; font-size: .94rem; }
+    .flow-item small { color: var(--muted); }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .benefit { padding: 20px; border-left: 2px solid rgba(212,175,55,.7); background: rgba(255,255,255,.025); border-radius: 0 16px 16px 0; }
+    .benefit strong { display: block; margin-bottom: 5px; }
+    .benefit span { color: var(--muted); font-size: .88rem; }
+
+    .levels { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .level { padding: 28px; border-radius: 22px; background: #131313; border: 1px solid rgba(255,255,255,.08); }
+    .level .level-label { color: var(--gold); font-size: .74rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    .level h3 { margin: 10px 0 8px; }
+    .level p { color: var(--muted); margin: 0; }
+
+    .cta {
+      text-align: center;
+      border: 1px solid rgba(212,175,55,.26);
+      border-radius: 34px;
+      padding: 62px 28px;
+      background:
+        linear-gradient(180deg, rgba(212,175,55,.08), rgba(212,175,55,.015)),
+        #101010;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin: 10px auto 14px; font-size: clamp(2.2rem, 5vw, 4.6rem); max-width: 900px; line-height: 1; letter-spacing: -.055em; }
+    .cta p { max-width: 720px; margin: 0 auto 26px; color: var(--muted); }
+    .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+    footer { padding: 34px 0 110px; color: #999286; border-top: 1px solid rgba(255,255,255,.06); }
+    .footer-grid { display: flex; justify-content: space-between; gap: 22px; align-items: flex-end; flex-wrap: wrap; }
+    .footer-phrase { color: #d8d1c3; max-width: 510px; font-weight: 700; }
+    .footer-meta { text-align: right; font-size: .82rem; }
+
+    .uw-float {
+      position: fixed;
+      right: max(14px, env(safe-area-inset-right));
+      bottom: max(14px, env(safe-area-inset-bottom));
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px;
+      border-radius: 999px;
+      background: rgba(12,12,12,.88);
+      border: 1px solid rgba(212,175,55,.32);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.45);
+    }
+    .uw-float .uw-label { padding: 0 8px; color: var(--champagne); font-size: .71rem; font-weight: 900; }
+    .lang-btn {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.03);
+      color: #fff;
+      font-weight: 900;
+      font-size: .72rem;
+      cursor: pointer;
+    }
+    .lang-btn.active { background: var(--gold); color: #111; border-color: transparent; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; position: fixed; top: 72px; left: 16px; right: 16px; flex-direction: column; align-items: stretch; padding: 18px; border-radius: 20px; background: rgba(15,15,15,.98); border: 1px solid var(--line); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 4px; }
+      .menu-btn { display: grid; place-items: center; }
+      .hero-grid, .eventos { grid-template-columns: 1fr; }
+      .ecosystem-visual { min-height: 460px; order: -1; }
+      .cards.four { grid-template-columns: repeat(2,1fr); }
+      .cards.three, .benefits-grid, .levels { grid-template-columns: repeat(2,1fr); }
+      .partner-grid, .projects-wrap { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 22px, var(--max)); }
+      .section { padding: 72px 0; }
+      .hero { min-height: auto; padding-top: 118px; }
+      .hero h1 { font-size: clamp(2.7rem, 15vw, 4.8rem); }
+      .hero-actions .btn { width: 100%; }
+      .stats, .cards.four, .cards.three, .benefits-grid, .levels { grid-template-columns: 1fr; }
+      .orbit.o3 { width: 380px; height: 380px; }
+      .orbit.o2 { width: 295px; height: 295px; }
+      .orbit.o1 { width: 190px; height: 190px; }
+      .ecosystem-visual { min-height: 400px; transform: scale(.92); }
+      .partner-node.n2 { right: -3px; }
+      .partner-node.n5 { left: -3px; }
+      .partner-node.n3 { right: 14px; bottom: 45px; }
+      .partner-node.n4 { left: 14px; bottom: 45px; }
+      .eventos { padding: 28px 20px; }
+      .partner-card, .card, .project { padding: 22px; }
+      .uw-float { left: 50%; right: auto; transform: translateX(-50%); }
+      .uw-float .uw-label { display: none; }
+      .footer-meta { text-align: left; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topbar" aria-label="Navegação principal">
+    <div class="container nav">
+      <a class="brand" href="https://urbanwatch.app/" aria-label="Voltar para UrbanWatch.app">
+        <span class="brand-mark">UW</span>
+        <span>UrbanWatch.app<small>Partners</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#ecossistema" data-i18n="nav_ecosystem">Ecossistema</a>
+        <a href="#parceiros" data-i18n="nav_partners">Parceiros</a>
+        <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+        <a href="#eventos" data-i18n="nav_eventos">EventOS</a>
+        <a href="#participar" data-i18n="nav_join">Participar</a>
+        <a class="btn small ghost" href="https://urbanwatch.app/" data-i18n="home">Página inicial</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="hero_kicker">Ecossistema estratégico UrbanWatch.app</span>
+          <h1><span data-i18n="hero_title_1">Conectando empresas.</span><br><span class="gold" data-i18n="hero_title_2">Criando oportunidades.</span></h1>
+          <p class="hero-copy" data-i18n="hero_text">O UrbanWatch Partners aproxima organizações, profissionais e projetos complementares para transformar boas conexões em negócios, experiências, inovação e crescimento conjunto.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#parceiros">
+              <span data-i18n="cta_partners">Conhecer os parceiros</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn ghost" href="#participar">
+              <span data-i18n="cta_join">Tornar-se parceiro</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </a>
+          </div>
+          <p class="hero-note" data-i18n="hero_note">Inteligência para quem não improvisa.</p>
+          <div class="stats">
+            <div class="stat"><strong data-i18n="stat1_title">Conexões qualificadas</strong><span data-i18n="stat1_text">Relações construídas com propósito.</span></div>
+            <div class="stat"><strong data-i18n="stat2_title">Projetos conjuntos</strong><span data-i18n="stat2_text">Oportunidades que saem do diálogo.</span></div>
+            <div class="stat"><strong data-i18n="stat3_title">Infraestrutura digital</strong><span data-i18n="stat3_text">Portais, NFC e operações inteligentes.</span></div>
+          </div>
+        </div>
+
+        <div class="ecosystem-visual reveal" aria-label="Mapa visual do ecossistema de parceiros">
+          <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+          <div class="center-node">UrbanWatch.app<span>ECOSSISTEMA</span></div>
+          <div class="partner-node n1">Ademicon</div>
+          <div class="partner-node n2">ACR</div>
+          <div class="partner-node n3">GWM</div>
+          <div class="partner-node n4">Rapidin</div>
+          <div class="partner-node n5">Novos parceiros</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="ecossistema">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="ecosystem_kicker">Como transformamos relações em estrutura</span>
+          <h2 class="section-title" data-i18n="ecosystem_title">Um ecossistema que cresce sem perder clareza.</h2>
+          <p class="section-subtitle" data-i18n="ecosystem_text">A UrbanWatch.app atua como articuladora estratégica e infraestrutura digital para aproximar empresas que atendem públicos complementares e podem gerar valor umas para as outras.</p>
+        </div>
+        <div class="cards four">
+          <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg></div><h3 data-i18n="step_connect">Conectar</h3><p data-i18n="step_connect_text">Identificamos empresas, profissionais e projetos com públicos, valores ou objetivos complementares.</p></article>
+          <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 7h8M5 12h14M8 17h8"/></svg></div><h3 data-i18n="step_integrate">Integrar</h3><p data-i18n="step_integrate_text">Criamos pontes, organizamos informações e estruturamos ambientes digitais para dar continuidade às relações.</p></article>
+          <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19h16M6 16l4-5 3 3 5-7"/></svg></div><h3 data-i18n="step_develop">Desenvolver</h3><p data-i18n="step_develop_text">Transformamos conversas em portais, eventos, campanhas, indicações, experiências e operações conjuntas.</p></article>
+          <article class="card reveal"><div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M5 10l7-7 7 7M5 14l7 7 7-7"/></svg></div><h3 data-i18n="step_grow">Crescer</h3><p data-i18n="step_grow_text">Mensuramos aprendizados, fortalecemos a confiança e ampliamos oportunidades para todo o ecossistema.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="parceiros">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="partners_kicker">Ambientes estratégicos</span>
+          <h2 class="section-title" data-i18n="partners_title">Parceiros e conexões em movimento.</h2>
+          <p class="section-subtitle" data-i18n="partners_text">Cada relação pode ter seu próprio portal, materiais, projetos, acessos e experiências. O status indica o estágio atual de cada conexão — sem antecipar compromissos ainda não formalizados.</p>
+        </div>
+
+        <div class="partner-grid">
+          <article class="partner-card reveal">
+            <div>
+              <div class="partner-top"><div class="partner-logo">A</div><span class="status" data-i18n="status_active">Portal ativo</span></div>
+              <div class="partner-meta">Fortaleza · CE</div>
+              <h3>Ademicon</h3>
+              <p data-i18n="ademicon_text">Expansão territorial, imóveis com potencial, portais profissionais, conexões comerciais e oportunidades para eventos conjuntos.</p>
+            </div>
+            <div class="partner-footer"><div class="tags"><span class="tag">Consórcio</span><span class="tag">Patrimônio</span><span class="tag">Expansão</span></div><a class="btn small" href="./ademicon/" data-i18n="access_portal">Acessar portal</a></div>
+          </article>
+
+          <article class="partner-card reveal">
+            <div>
+              <div class="partner-top"><div class="partner-logo">ACR</div><span class="status planning" data-i18n="status_development">Conexão em desenvolvimento</span></div>
+              <div class="partner-meta" data-i18n="legal_services">Serviços jurídicos</div>
+              <h3>ACR</h3>
+              <p data-i18n="acr_text">Atendimento jurídico, apoio a motoristas de aplicativo, orientação especializada e construção de ações conjuntas para públicos estratégicos.</p>
+            </div>
+            <div class="partner-footer"><div class="tags"><span class="tag">Advocacia</span><span class="tag">Motoristas</span><span class="tag">Proteção</span></div><a class="btn small ghost" href="#participar" data-i18n="portal_soon">Portal em preparação</a></div>
+          </article>
+
+          <article class="partner-card reveal">
+            <div>
+              <div class="partner-top"><div class="partner-logo">GWM</div><span class="status planning" data-i18n="status_dialogue">Diálogo estratégico</span></div>
+              <div class="partner-meta" data-i18n="automotive_mobility">Mobilidade e setor automotivo</div>
+              <h3>GWM</h3>
+              <p data-i18n="gwm_text">Conexões comerciais, experiências presenciais e possibilidades de ações para médicos, profissionais e outros públicos de interesse comum.</p>
+            </div>
+            <div class="partner-footer"><div class="tags"><span class="tag">Veículos</span><span class="tag">Experiência</span><span class="tag">Mobilidade</span></div><a class="btn small ghost" href="#projetos" data-i18n="view_opportunities">Ver oportunidades</a></div>
+          </article>
+
+          <article class="partner-card reveal">
+            <div>
+              <div class="partner-top"><div class="partner-logo">R</div><span class="status planning" data-i18n="status_reconnect">Reconexão em andamento</span></div>
+              <div class="partner-meta" data-i18n="electric_mobility">Mobilidade elétrica</div>
+              <h3>Rapidin</h3>
+              <p data-i18n="rapidin_text">Experiência com motoristas de aplicativo, recarga elétrica, eventos e conexões corporativas. Participação sujeita à retomada e confirmação dos próximos passos.</p>
+            </div>
+            <div class="partner-footer"><div class="tags"><span class="tag">Recarga</span><span class="tag">Eventos</span><span class="tag">Aplicativos</span></div><span class="status planning" data-i18n="awaiting_alignment">Aguardando alinhamento</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="projects_kicker">Projetos estratégicos</span>
+          <h2 class="section-title" data-i18n="projects_title">Públicos em comum. Soluções complementares.</h2>
+          <p class="section-subtitle" data-i18n="projects_text">Os projetos abaixo representam possibilidades em desenvolvimento. Cada iniciativa só avança após alinhamento entre os parceiros envolvidos.</p>
+        </div>
+        <div class="projects-wrap">
+          <article class="project reveal">
+            <span class="status planning" data-i18n="pilot_planning">Piloto em planejamento</span>
+            <h3 data-i18n="drivers_title">Motoristas de aplicativo</h3>
+            <p data-i18n="drivers_text">Serviços jurídicos, planejamento patrimonial, mobilidade, cartões e portais profissionais reunidos em uma experiência organizada para um público que já faz parte da origem da UrbanWatch.app.</p>
+            <div class="partners-line"><span class="tag">UrbanWatch.app</span><span class="tag">ACR</span><span class="tag">Ademicon</span><span class="tag">Convidados</span></div>
+          </article>
+          <article class="project reveal">
+            <span class="status planning" data-i18n="concept_development">Conceito em desenvolvimento</span>
+            <h3 data-i18n="doctors_title">Médicos e profissionais de saúde</h3>
+            <p data-i18n="doctors_text">Uma frente potencial para unir mobilidade, construção patrimonial, serviços especializados e experiências digitais em ações presenciais de alto valor.</p>
+            <div class="partners-line"><span class="tag">GWM</span><span class="tag">Ademicon</span><span class="tag">UrbanWatch.app</span><span class="tag">ACR</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="eventos">
+      <div class="container">
+        <div class="eventos reveal">
+          <div>
+            <span class="eyebrow" data-i18n="eventos_kicker">Infraestrutura para experiências conjuntas</span>
+            <h2 class="eventos-brand">UrbanWatch <span>EventOS</span></h2>
+            <p class="section-subtitle" data-i18n="eventos_text">Conceito de sistema operacional inteligente para eventos: portal, inscrições, credenciais digitais, QR Code individual, check-in, segmentação de interesses e acompanhamento operacional — com implementação gradual e atenção à LGPD.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#participar" data-i18n="build_pilot">Construir o piloto</a>
+              <a class="btn ghost" href="#beneficios" data-i18n="see_benefits">Ver benefícios</a>
+            </div>
+          </div>
+          <div class="eventos-flow">
+            <div class="flow-item"><div class="flow-num">01</div><div><strong data-i18n="flow1">Portal do evento</strong><small data-i18n="flow1_text">Informações, parceiros e programação.</small></div></div>
+            <div class="flow-item"><div class="flow-num">02</div><div><strong data-i18n="flow2">Cadastro inteligente</strong><small data-i18n="flow2_text">Perguntas alinhadas às finalidades do evento.</small></div></div>
+            <div class="flow-item"><div class="flow-num">03</div><div><strong data-i18n="flow3">Credencial digital</strong><small data-i18n="flow3_text">QR Code individual e rastreável.</small></div></div>
+            <div class="flow-item"><div class="flow-num">04</div><div><strong data-i18n="flow4">Check-in organizado</strong><small data-i18n="flow4_text">Leitura e confirmação de presença.</small></div></div>
+            <div class="flow-item"><div class="flow-num">05</div><div><strong data-i18n="flow5">Inteligência pós-evento</strong><small data-i18n="flow5_text">Dados úteis, respeitando finalidade e consentimento.</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="beneficios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="benefits_kicker">Benefícios do ecossistema</span>
+          <h2 class="section-title" data-i18n="benefits_title">Cada parceiro mantém sua identidade. Todos ampliam suas possibilidades.</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit reveal"><strong data-i18n="benefit1">Indicações qualificadas</strong><span data-i18n="benefit1_text">Oportunidades originadas de relações reais e públicos complementares.</span></div>
+          <div class="benefit reveal"><strong data-i18n="benefit2">Projetos compartilhados</strong><span data-i18n="benefit2_text">Eventos, campanhas e experiências construídas de forma conjunta.</span></div>
+          <div class="benefit reveal"><strong data-i18n="benefit3">Presença digital</strong><span data-i18n="benefit3_text">Portais, cartões NFC, QR Codes e ambientes personalizados.</span></div>
+          <div class="benefit reveal"><strong data-i18n="benefit4">Inteligência operacional</strong><span data-i18n="benefit4_text">Organização de processos, cadastros e fluxos de relacionamento.</span></div>
+          <div class="benefit reveal"><strong data-i18n="benefit5">Visibilidade cruzada</strong><span data-i18n="benefit5_text">Cada ação pode fortalecer a marca e o alcance dos envolvidos.</span></div>
+          <div class="benefit reveal"><strong data-i18n="benefit6">Crescimento com governança</strong><span data-i18n="benefit6_text">Papéis, responsabilidades e condições definidos em cada projeto.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="levels_kicker">Formas de participação</span>
+          <h2 class="section-title" data-i18n="levels_title">Relações diferentes, níveis diferentes de integração.</h2>
+        </div>
+        <div class="levels">
+          <article class="level reveal"><span class="level-label" data-i18n="level1_label">Nível 01</span><h3 data-i18n="level1_title">Conexão em desenvolvimento</h3><p data-i18n="level1_text">Diálogo inicial, identificação de sinergias e avaliação de possibilidades.</p></article>
+          <article class="level reveal"><span class="level-label" data-i18n="level2_label">Nível 02</span><h3 data-i18n="level2_title">Parceiro oficial</h3><p data-i18n="level2_text">Parceria validada, relação ativa e oportunidades construídas em conjunto.</p></article>
+          <article class="level reveal"><span class="level-label" data-i18n="level3_label">Nível 03</span><h3 data-i18n="level3_title">Parceiro estratégico</h3><p data-i18n="level3_text">Participação recorrente em projetos, eventos, tecnologia, operações ou expansão.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="participar">
+      <div class="container">
+        <div class="cta reveal">
+          <span class="eyebrow" data-i18n="join_kicker">UrbanWatch Partners</span>
+          <h2 data-i18n="join_title">Grandes oportunidades começam com uma boa conexão.</h2>
+          <p data-i18n="join_text">Buscamos parceiros éticos, acessíveis ao diálogo e dispostos a construir valor de forma conjunta. Cada parceria é avaliada com atenção ao público, à complementaridade e à capacidade real de execução.</p>
+          <div class="cta-actions">
+            <a class="btn primary" href="https://wa.me/5585999999999?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20UrbanWatch%20Partners." target="_blank" rel="noopener" data-i18n="talk_urbanwatch">Conversar com a UrbanWatch.app</a>
+            <a class="btn ghost" href="https://urbanwatch.app/" data-i18n="back_home">Voltar à página inicial</a>
+          </div>
+          <p class="hero-note" data-i18n="contact_note">Ajuste o número do WhatsApp no código antes de publicar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="https://urbanwatch.app/"><span class="brand-mark">UW</span><span>UrbanWatch.app<small>Partners</small></span></a>
+        <p class="footer-phrase" data-i18n="footer_phrase">Conexões que viram estrutura. Estruturas que geram oportunidades.</p>
+      </div>
+      <div class="footer-meta">
+        <a class="btn small ghost" href="https://urbanwatch.app/" data-i18n="home">Página inicial</a>
+        <p>UrbanWatch Partners · 2026<br><span data-i18n="footer_tagline">Inteligência para quem não improvisa.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="uw-float" aria-label="Barra flutuante UrbanWatch.app">
+    <span class="uw-label">UrbanWatch.app</span>
+    <button class="lang-btn active" data-lang="pt" aria-label="Português">PT</button>
+    <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+    <button class="lang-btn" data-lang="zh" aria-label="简体中文">中</button>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const translations = {
+      pt: {},
+      en: {
+        nav_ecosystem:'Ecosystem', nav_partners:'Partners', nav_projects:'Projects', nav_eventos:'EventOS', nav_join:'Join', home:'Home',
+        hero_kicker:'UrbanWatch.app strategic ecosystem', hero_title_1:'Connecting companies.', hero_title_2:'Creating opportunities.', hero_text:'UrbanWatch Partners brings together complementary organizations, professionals and projects to turn strong connections into business, experiences, innovation and shared growth.', cta_partners:'Meet the partners', cta_join:'Become a partner', hero_note:'Intelligence for those who do not improvise.',
+        stat1_title:'Qualified connections', stat1_text:'Relationships built with purpose.', stat2_title:'Joint projects', stat2_text:'Opportunities born from dialogue.', stat3_title:'Digital infrastructure', stat3_text:'Portals, NFC and smart operations.',
+        ecosystem_kicker:'How we turn relationships into structure', ecosystem_title:'An ecosystem that grows without losing clarity.', ecosystem_text:'UrbanWatch.app acts as a strategic articulator and digital infrastructure connecting companies that serve complementary audiences and can create value for one another.',
+        step_connect:'Connect', step_connect_text:'We identify companies, professionals and projects with complementary audiences, values or goals.', step_integrate:'Integrate', step_integrate_text:'We build bridges, organize information and structure digital environments that sustain relationships.', step_develop:'Develop', step_develop_text:'We turn conversations into portals, events, campaigns, referrals, experiences and joint operations.', step_grow:'Grow', step_grow_text:'We measure learnings, strengthen trust and expand opportunities throughout the ecosystem.',
+        partners_kicker:'Strategic environments', partners_title:'Partners and connections in motion.', partners_text:'Each relationship may have its own portal, materials, projects, access and experiences. Status indicates the current stage without anticipating commitments not yet formalized.', status_active:'Active portal', status_development:'Connection in development', status_dialogue:'Strategic dialogue', status_reconnect:'Reconnection in progress', status_await:'Awaiting alignment', legal_services:'Legal services', automotive_mobility:'Mobility and automotive sector', electric_mobility:'Electric mobility', ademicon_text:'Territorial expansion, potential properties, professional portals, commercial connections and opportunities for joint events.', acr_text:'Legal support, assistance for app drivers, specialized guidance and joint actions for strategic audiences.', gwm_text:'Commercial connections, in-person experiences and possible actions for doctors, professionals and other shared audiences.', rapidin_text:'Experience with app drivers, electric charging, events and corporate connections. Participation subject to reconnection and confirmation.', access_portal:'Access portal', portal_soon:'Portal in preparation', view_opportunities:'View opportunities', awaiting_alignment:'Awaiting alignment',
+        projects_kicker:'Strategic projects', projects_title:'Shared audiences. Complementary solutions.', projects_text:'The projects below represent possibilities under development. Each initiative moves forward only after alignment among the partners involved.', pilot_planning:'Pilot in planning', drivers_title:'App drivers', drivers_text:'Legal services, asset planning, mobility, cards and professional portals brought together in an organized experience for an audience tied to UrbanWatch.app’s origins.', concept_development:'Concept in development', doctors_title:'Doctors and health professionals', doctors_text:'A potential front combining mobility, asset building, specialized services and digital experiences in high-value in-person actions.',
+        eventos_kicker:'Infrastructure for joint experiences', eventos_text:'Concept of an intelligent event operating system: portal, registrations, digital credentials, individual QR Code, check-in, interest segmentation and operational follow-up — with gradual implementation and LGPD attention.', build_pilot:'Build the pilot', see_benefits:'See benefits', flow1:'Event portal', flow1_text:'Information, partners and schedule.', flow2:'Smart registration', flow2_text:'Questions aligned with event purposes.', flow3:'Digital credential', flow3_text:'Individual and trackable QR Code.', flow4:'Organized check-in', flow4_text:'Reading and attendance confirmation.', flow5:'Post-event intelligence', flow5_text:'Useful data respecting purpose and consent.',
+        benefits_kicker:'Ecosystem benefits', benefits_title:'Each partner keeps its identity. Everyone expands possibilities.', benefit1:'Qualified referrals', benefit1_text:'Opportunities from real relationships and complementary audiences.', benefit2:'Shared projects', benefit2_text:'Events, campaigns and experiences built together.', benefit3:'Digital presence', benefit3_text:'Portals, NFC cards, QR Codes and personalized environments.', benefit4:'Operational intelligence', benefit4_text:'Organization of processes, registrations and relationship flows.', benefit5:'Cross-visibility', benefit5_text:'Each action can strengthen every brand involved.', benefit6:'Growth with governance', benefit6_text:'Roles, responsibilities and conditions defined for each project.',
+        levels_kicker:'Ways to participate', levels_title:'Different relationships, different levels of integration.', level1_label:'Level 01', level1_title:'Connection in development', level1_text:'Initial dialogue, synergy identification and opportunity assessment.', level2_label:'Level 02', level2_title:'Official partner', level2_text:'Validated partnership, active relationship and opportunities built together.', level3_label:'Level 03', level3_title:'Strategic partner', level3_text:'Recurring participation in projects, events, technology, operations or expansion.',
+        join_kicker:'UrbanWatch Partners', join_title:'Great opportunities begin with a strong connection.', join_text:'We seek ethical partners, open to dialogue and willing to build value together. Each partnership is evaluated according to audience, complementarity and real execution capacity.', talk_urbanwatch:'Talk to UrbanWatch.app', back_home:'Back to home', contact_note:'Update the WhatsApp number in the code before publishing.', footer_phrase:'Connections that become structure. Structures that generate opportunities.', footer_tagline:'Intelligence for those who do not improvise.'
+      },
+      zh: {
+        nav_ecosystem:'生态系统', nav_partners:'合作伙伴', nav_projects:'项目', nav_eventos:'EventOS', nav_join:'加入我们', home:'首页',
+        hero_kicker:'UrbanWatch.app 战略生态系统', hero_title_1:'连接企业。', hero_title_2:'创造机会。', hero_text:'UrbanWatch Partners 连接具有互补优势的企业、专业人士与项目，将优质关系转化为商业、体验、创新与共同增长。', cta_partners:'认识合作伙伴', cta_join:'成为合作伙伴', hero_note:'为不靠即兴决策的人提供智能。',
+        stat1_title:'优质连接', stat1_text:'以目标为导向建立关系。', stat2_title:'联合项目', stat2_text:'让机会从对话中产生。', stat3_title:'数字基础设施', stat3_text:'门户、NFC 与智能运营。',
+        ecosystem_kicker:'我们如何把关系变成结构', ecosystem_title:'一个在清晰中持续成长的生态系统。', ecosystem_text:'UrbanWatch.app 作为战略连接者与数字基础设施，连接服务互补受众、能够彼此创造价值的企业。',
+        step_connect:'连接', step_connect_text:'识别受众、价值观或目标互补的企业、专业人士与项目。', step_integrate:'整合', step_integrate_text:'搭建桥梁、组织信息并创建持续发展的数字环境。', step_develop:'发展', step_develop_text:'把对话转化为门户、活动、推广、推荐、体验与联合运营。', step_grow:'成长', step_grow_text:'总结经验、增强信任并扩大整个生态系统的机会。',
+        partners_kicker:'战略空间', partners_title:'合作伙伴与连接持续发展。', partners_text:'每段合作关系都可以拥有独立门户、资料、项目、权限与体验。状态仅表示当前阶段，不代表尚未正式确认的承诺。', status_active:'门户已上线', status_development:'合作发展中', status_dialogue:'战略对话中', status_reconnect:'重新联系中', legal_services:'法律服务', automotive_mobility:'出行与汽车行业', electric_mobility:'电动出行', ademicon_text:'区域拓展、潜力物业、职业门户、商业连接与联合活动机会。', acr_text:'法律服务、网约车司机支持、专业指导及面向战略受众的联合行动。', gwm_text:'商业连接、线下体验以及面向医生、专业人士与共同受众的潜在行动。', rapidin_text:'拥有网约车司机、电动充电、活动与企业连接经验。参与取决于后续沟通与确认。', access_portal:'进入门户', portal_soon:'门户筹备中', view_opportunities:'查看机会', awaiting_alignment:'等待进一步沟通',
+        projects_kicker:'战略项目', projects_title:'共同受众，互补解决方案。', projects_text:'以下项目为正在发展的可能性。每项计划仅在相关合作伙伴达成共识后推进。', pilot_planning:'试点规划中', drivers_title:'网约车司机', drivers_text:'将法律服务、资产规划、出行、NFC 卡片与职业门户整合为有组织的体验，服务与 UrbanWatch.app 起源密切相关的受众。', concept_development:'概念发展中', doctors_title:'医生与医疗专业人士', doctors_text:'将出行、资产建设、专业服务与数字体验结合，打造高价值线下活动。',
+        eventos_kicker:'联合体验基础设施', eventos_text:'智能活动操作系统概念：活动门户、报名、数字凭证、个人二维码、签到、兴趣分类与运营跟进，并逐步实施且关注 LGPD。', build_pilot:'共同建设试点', see_benefits:'查看优势', flow1:'活动门户', flow1_text:'信息、合作伙伴与日程。', flow2:'智能报名', flow2_text:'围绕活动目的设计问题。', flow3:'数字凭证', flow3_text:'个人可追踪二维码。', flow4:'有序签到', flow4_text:'扫描并确认到场。', flow5:'活动后智能', flow5_text:'在尊重目的与同意的前提下使用数据。',
+        benefits_kicker:'生态优势', benefits_title:'每个伙伴保持自身身份，所有人扩大共同可能。', benefit1:'优质推荐', benefit1_text:'来自真实关系与互补受众的机会。', benefit2:'联合项目', benefit2_text:'共同打造活动、推广与体验。', benefit3:'数字形象', benefit3_text:'门户、NFC 卡、二维码与定制空间。', benefit4:'运营智能', benefit4_text:'组织流程、报名与关系管理。', benefit5:'交叉曝光', benefit5_text:'每次行动都能强化各方品牌。', benefit6:'有治理的增长', benefit6_text:'为每个项目明确角色、责任与条件。',
+        levels_kicker:'参与方式', levels_title:'不同关系，不同整合程度。', level1_label:'第 01 级', level1_title:'合作发展中', level1_text:'初步对话、识别协同并评估可能性。', level2_label:'第 02 级', level2_title:'正式合作伙伴', level2_text:'已验证合作，保持活跃关系并共同创造机会。', level3_label:'第 03 级', level3_title:'战略合作伙伴', level3_text:'持续参与项目、活动、技术、运营或扩张。',
+        join_kicker:'UrbanWatch Partners', join_title:'重大机会始于一次优质连接。', join_text:'我们寻找诚信、愿意沟通并共同创造价值的伙伴。每项合作都会根据受众、互补性与真实执行能力进行评估。', talk_urbanwatch:'联系 UrbanWatch.app', back_home:'返回首页', contact_note:'发布前请在代码中更新 WhatsApp 号码。', footer_phrase:'让连接成为结构，让结构创造机会。', footer_tagline:'为不靠即兴决策的人提供智能。'
+      }
+    };
+
+    const original = {};
+    document.querySelectorAll('[data-i18n]').forEach(el => original[el.dataset.i18n] = el.textContent);
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang === 'zh' ? 'zh-CN' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        el.textContent = lang === 'pt' ? original[key] : (translations[lang][key] || original[key]);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+      localStorage.setItem('uw-partners-lang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+    setLanguage(localStorage.getItem('uw-partners-lang') || 'pt');
+  </script>
+</body>
+</html>
