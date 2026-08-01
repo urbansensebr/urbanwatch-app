@@ -1,0 +1,16 @@
+{
+  "name": "Central Inteligente de Veículos | UrbanWatch.app",
+  "short_name": "UW Veículos",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#060606",
+  "icons": [
+    {
+      "src": "assets/img/jane-lima.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
