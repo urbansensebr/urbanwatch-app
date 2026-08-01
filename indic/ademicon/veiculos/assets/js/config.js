@@ -1,0 +1,1 @@
+window.UW_VEICULOS_CONFIG={campaignsUrl:"campanhas.json",origin:"UrbanWatch Ads | David Elias",codePrefix:"UW-ADS",consultants:{jane:{name:"Jane",fullName:"Jane Lima",code:"JAN",whatsapp:"55SEUNUMEROJANE"},christopher:{name:"Christopher",fullName:"Christopher Galvão",code:"CHR",whatsapp:"5585984048975"}}};
