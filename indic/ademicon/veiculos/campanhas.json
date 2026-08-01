@@ -1,0 +1,38 @@
+[
+    {
+        "id": "001",
+        "title": "Oportunidade Exclusiva",
+        "credit": "R$ 60.000",
+        "group": "Condição promocional",
+        "status": "Vagas limitadas",
+        "image": "campanhas/001.jpg",
+        "active": true
+    },
+    {
+        "id": "002",
+        "title": "Grupo em andamento",
+        "credit": "R$ 78.907,44",
+        "group": "001631",
+        "status": "Prazo restante: 59 meses",
+        "image": "campanhas/002.jpg",
+        "active": true
+    },
+    {
+        "id": "003",
+        "title": "Conquiste seu próximo carro",
+        "credit": "R$ 90.000",
+        "group": "Oportunidade Ademicon",
+        "status": "Parcela divulgada: R$ 1.161,99",
+        "image": "campanhas/003.jpg",
+        "active": true
+    },
+    {
+        "id": "004",
+        "title": "Oportunidade de investimento",
+        "credit": "R$ 40.232",
+        "group": "001674",
+        "status": "Somente 2 vagas disponíveis",
+        "image": "campanhas/004.jpg",
+        "active": true
+    }
+]

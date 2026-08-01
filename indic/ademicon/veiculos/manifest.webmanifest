@@ -1,0 +1,18 @@
+{
+    "name": "Central Inteligente de Veículos | UrbanWatch.app",
+    "short_name": "UW Veículos",
+    "description": "Catálogo inteligente de oportunidades de consórcio veicular.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#060606",
+    "icons": [
+        {
+            "src": "assets/img/jane-lima.jpg",
+            "sizes": "425x425",
+            "type": "image/jpeg",
+            "purpose": "any"
+        }
+    ]
+}

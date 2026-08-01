@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#060606"
+    >
+
+    <meta
+        name="description"
+        content="Catálogo inteligente de oportunidades de consórcio veicular com pré-atendimento UrbanWatch.app."
+    >
+
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:locale"
+        content="pt_BR"
+    >
+
+    <meta
+        property="og:title"
+        content="Oportunidades de Consórcio Veicular"
+    >
+
+    <meta
+        property="og:description"
+        content="Escolha uma campanha e converse com um especialista Ademicon."
+    >
+
+    <meta
+        property="og:image"
+        content="campanhas/001.jpg"
+    >
+
+    <title>
+        Oportunidades de Veículos | UrbanWatch.app + Ademicon
+    </title>
+
+    <link
+        rel="manifest"
+        href="manifest.webmanifest"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+</head>
+
+<body>
+    <noscript>
+        <div class="noscript">
+            Ative o JavaScript para utilizar este pré-atendimento.
+        </div>
+    </noscript>
+
+    <main
+        id="app"
+        class="app"
+    >
+        <!-- ==================================================
+             TELA 1 — CATÁLOGO
+        =================================================== -->
+
+        <section
+            class="screen is-active"
+            data-screen="0"
+            aria-hidden="false"
+        >
+            <div class="panel catalog-panel">
+                <div class="brand-line">
+                    UrbanWatch.app
+                    <span>×</span>
+                    Ademicon
+                </div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="catalogEyebrow"
+                >
+                    OPORTUNIDADES DISPONÍVEIS
+                </p>
+
+                <h1 data-i18n="catalogTitle">
+                    Escolha uma oportunidade de consórcio veicular
+                </h1>
+
+                <p
+                    class="lead"
+                    data-i18n="catalogLead"
+                >
+                    Toque em um encarte para conhecer os detalhes e iniciar seu pré-atendimento.
+                </p>
+
+                <div
+                    id="campaign-grid"
+                    class="campaign-grid"
+                    aria-live="polite"
+                ></div>
+
+                <a
+                    class="btn btn-secondary"
+                    href="../"
+                    data-i18n="backCentral"
+                >
+                    Voltar à Central
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             TELA 2 — ENCARTE ESCOLHIDO
+        =================================================== -->
+
+        <section
+            class="screen"
+            data-screen="1"
+            aria-hidden="true"
+        >
+            <div class="campaign-view">
+                <button
+                    class="back floating-back"
+                    type="button"
+                    data-action="back"
+                    data-i18n-aria="back"
+                    aria-label="Voltar"
+                >
+                    ‹
+                </button>
+
+                <img
+                    id="selected-campaign-image"
+                    class="campaign-art"
+                    src=""
+                    alt=""
+                >
+
+                <div class="campaign-meta">
+                    <p
+                        class="eyebrow"
+                        data-i18n="selectedOpportunity"
+                    >
+                        OPORTUNIDADE SELECIONADA
+                    </p>
+
+                    <h2 id="selected-campaign-title">
+                        —
+                    </h2>
+
+                    <p id="selected-campaign-credit">
+                        —
+                    </p>
+
+                    <p
+                        id="selected-campaign-group"
+                        class="campaign-group"
+                    >
+                        —
+                    </p>
+                </div>
+
+                <div class="campaign-actions">
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-action="next"
+                        data-i18n="continueService"
+                    >
+                        Continuar para o atendimento
+                    </button>
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-action="back"
+                        data-i18n="chooseAnother"
+                    >
+                        Escolher outra oportunidade
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             TELA 3 — ESPECIALISTA
+        =================================================== -->
+
+        <section
+            class="screen"
+            data-screen="2"
+            aria-hidden="true"
+        >
+            <div class="panel specialists-panel">
+                <button
+                    class="back"
+                    type="button"
+                    data-action="back"
+                    data-i18n-aria="back"
+                    aria-label="Voltar"
+                >
+                    ‹
+                </button>
+
+                <div class="brand-line">
+                    UrbanWatch.app
+                    <span>×</span>
+                    Ademicon
+                </div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="personalized"
+                >
+                    ATENDIMENTO PERSONALIZADO
+                </p>
+
+                <h1 data-i18n="chooseSpecialist">
+                    Quem deseja que conduza seu atendimento?
+                </h1>
+
+                <p
+                    class="lead"
+                    data-i18n="chooseSpecialistLead"
+                >
+                    Escolha um dos especialistas para receber uma orientação personalizada.
+                </p>
+
+                <div class="specialists-premium">
+                    <article
+                        class="premium-profile-card"
+                        data-profile="jane"
+                    >
+                        <img
+                            class="specialist-photo"
+                            src="assets/img/jane-lima.jpg"
+                            alt="Jane Lima"
+                        >
+
+                        <div class="specialist-content">
+                            <header class="specialist-heading">
+                                <h2>
+                                    Jane Lima
+                                </h2>
+
+                                <p data-i18n="janeRole">
+                                    Consultoria Ademicon
+                                </p>
+                            </header>
+
+                            <p
+                                class="specialist-description"
+                                data-i18n="janeDescription"
+                            >
+                                Especialista em investimentos e estratégia patrimonial, conectando pessoas a projetos alinhados aos seus objetivos.
+                            </p>
+
+                            <ul class="specialist-highlights">
+                                <li data-i18n="janePoint1">
+                                    Estratégias construídas de acordo com cada perfil
+                                </li>
+
+                                <li data-i18n="janePoint2">
+                                    Mais de R$ 37 milhões em vendas
+                                </li>
+
+                                <li data-i18n="janePoint3">
+                                    Experiência, relacionamento e foco em resultados
+                                </li>
+
+                                <li data-i18n="janePoint4">
+                                    Estratégia patrimonial
+                                </li>
+
+                                <li data-i18n="janePoint5">
+                                    Soluções para transformar planejamento em realização
+                                </li>
+                            </ul>
+
+                            <p
+                                class="commitment"
+                                data-i18n="janeCommitment"
+                            >
+                                Quero ser atendido por Jane Lima.
+                            </p>
+
+                            <button
+                                class="btn btn-primary specialist-select-button"
+                                type="button"
+                                data-consultant="jane"
+                                data-i18n="chooseJane"
+                            >
+                                Escolher Jane
+                            </button>
+                        </div>
+                    </article>
+
+
+                    <article
+                        class="premium-profile-card"
+                        data-profile="christopher"
+                    >
+                        <img
+                            class="specialist-photo"
+                            src="assets/img/christopher-galvao.jpg"
+                            alt="Christopher Galvão"
+                        >
+
+                        <div class="specialist-content">
+                            <header class="specialist-heading">
+                                <h2>
+                                    Christopher Galvão
+                                </h2>
+
+                                <p data-i18n="christopherRole">
+                                    Especialista em Negócios e Investimentos | Ademicon
+                                </p>
+                            </header>
+
+                            <p
+                                class="specialist-description"
+                                data-i18n="christopherDescription"
+                            >
+                                Estratégias de consórcio voltadas para alavancagem financeira, construção patrimonial e realização de projetos.
+                            </p>
+
+                            <ul class="specialist-highlights">
+                                <li data-i18n="christopherPoint1">
+                                    Mais de R$ 25 milhões em créditos comercializados
+                                </li>
+
+                                <li data-i18n="christopherPoint2">
+                                    Atuação em diversas frentes do consórcio
+                                </li>
+
+                                <li data-i18n="christopherPoint3">
+                                    Foco em resultados e relacionamento
+                                </li>
+                            </ul>
+
+                            <p
+                                class="commitment"
+                                data-i18n="christopherCommitment"
+                            >
+                                Quero ser atendido por Christopher Galvão.
+                            </p>
+
+                            <button
+                                class="btn btn-primary specialist-select-button"
+                                type="button"
+                                data-consultant="christopher"
+                                data-i18n="chooseChristopher"
+                            >
+                                Escolher Christopher
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             TELA 4 — TIPO DE VEÍCULO
+        =================================================== -->
+
+        <section
+            class="screen"
+            data-screen="3"
+            aria-hidden="true"
+        >
+            <div class="panel">
+                <button
+                    class="back"
+                    type="button"
+                    data-action="back"
+                    data-i18n-aria="back"
+                    aria-label="Voltar"
+                >
+                    ‹
+                </button>
+
+                <div class="brand-line">
+                    UrbanWatch.app
+                    <span>×</span>
+                    Ademicon
+                </div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="objective"
+                >
+                    SEU OBJETIVO
+                </p>
+
+                <h1 data-i18n="vehicleQuestion">
+                    Qual tipo de veículo você procura?
+                </h1>
+
+                <p
+                    class="lead"
+                    data-i18n="vehicleLead"
+                >
+                    Essa informação será enviada ao especialista escolhido.
+                </p>
+
+                <div class="vehicle-grid">
+                    <button
+                        class="choice"
+                        type="button"
+                        data-vehicle="car"
+                    >
+                        <span aria-hidden="true">
+                            🚗
+                        </span>
+
+                        <strong data-i18n="car">
+                            Carro
+                        </strong>
+                    </button>
+
+                    <button
+                        class="choice"
+                        type="button"
+                        data-vehicle="motorcycle"
+                    >
+                        <span aria-hidden="true">
+                            🏍️
+                        </span>
+
+                        <strong data-i18n="motorcycle">
+                            Moto
+                        </strong>
+                    </button>
+
+                    <button
+                        class="choice"
+                        type="button"
+                        data-vehicle="suv"
+                    >
+                        <span aria-hidden="true">
+                            🚙
+                        </span>
+
+                        <strong data-i18n="suv">
+                            SUV / Pickup
+                        </strong>
+                    </button>
+
+                    <button
+                        class="choice"
+                        type="button"
+                        data-vehicle="utility"
+                    >
+                        <span aria-hidden="true">
+                            🚚
+                        </span>
+
+                        <strong data-i18n="utility">
+                            Utilitário
+                        </strong>
+                    </button>
+
+                    <button
+                        class="choice choice-wide"
+                        type="button"
+                        data-vehicle="researching"
+                    >
+                        <span aria-hidden="true">
+                            🔎
+                        </span>
+
+                        <strong data-i18n="researching">
+                            Ainda estou pesquisando
+                        </strong>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             TELA 5 — RESUMO
+        =================================================== -->
+
+        <section
+            class="screen"
+            data-screen="4"
+            aria-hidden="true"
+        >
+            <div class="panel">
+                <button
+                    class="back"
+                    type="button"
+                    data-action="back"
+                    data-i18n-aria="back"
+                    aria-label="Voltar"
+                >
+                    ‹
+                </button>
+
+                <div class="brand-line">
+                    UrbanWatch.app
+                    <span>×</span>
+                    Ademicon
+                </div>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="confirmation"
+                >
+                    CONFIRMAÇÃO
+                </p>
+
+                <h1 data-i18n="ready">
+                    Seu pré-atendimento está pronto.
+                </h1>
+
+                <p
+                    class="lead"
+                    data-i18n="review"
+                >
+                    Confira os dados antes de seguir para o WhatsApp.
+                </p>
+
+                <div class="summary">
+                    <article>
+                        <small data-i18n="campaign">
+                            Campanha
+                        </small>
+
+                        <strong id="summary-campaign">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="credit">
+                            Crédito
+                        </small>
+
+                        <strong id="summary-credit">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="group">
+                            Grupo
+                        </small>
+
+                        <strong id="summary-group">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="specialist">
+                            Especialista
+                        </small>
+
+                        <strong id="summary-consultant">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="interest">
+                            Interesse
+                        </small>
+
+                        <strong id="summary-vehicle">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="serviceCode">
+                            Código de atendimento
+                        </small>
+
+                        <strong id="summary-code">
+                            —
+                        </strong>
+                    </article>
+
+                    <article>
+                        <small data-i18n="origin">
+                            Origem
+                        </small>
+
+                        <strong>
+                            UrbanWatch Ads | David Elias
+                        </strong>
+                    </article>
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-action="send"
+                    data-i18n="talk"
+                >
+                    Conversar com o especialista
+                </button>
+
+                <button
+                    class="text-button"
+                    type="button"
+                    data-action="restart"
+                    data-i18n="restart"
+                >
+                    Recomeçar
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             BOTÃO DE COMPARTILHAMENTO
+        =================================================== -->
+
+        <button
+            id="open-share-modal"
+            class="uw-share-fab"
+            type="button"
+            aria-label="Compartilhar Portal"
+        >
+            <span aria-hidden="true">
+                ↗
+            </span>
+
+            <span
+                class="share-fab-label"
+                data-i18n="sharePortal"
+            >
+                Compartilhar
+            </span>
+        </button>
+
+
+        <!-- ==================================================
+             BARRA MULTILÍNGUE URBANWATCH.APP
+        =================================================== -->
+
+        <nav
+            class="uw-language-bar"
+            aria-label="Language selector"
+        >
+            <button
+                class="lang-btn is-active"
+                type="button"
+                data-lang="pt-BR"
+                aria-pressed="true"
+            >
+                PT
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="en"
+                aria-pressed="false"
+            >
+                EN
+            </button>
+
+            <button
+                class="lang-btn"
+                type="button"
+                data-lang="zh-CN"
+                aria-pressed="false"
+            >
+                中文
+            </button>
+
+            <a
+                class="uw-home-link"
+                href="../"
+                data-i18n-aria="backCentral"
+                aria-label="Voltar à Central"
+            >
+                ⌂
+            </a>
+        </nav>
+
+
+        <!-- ==================================================
+             MODAL DE COMPARTILHAMENTO
+        =================================================== -->
+
+        <div
+            id="share-modal"
+            class="share-modal"
+            aria-hidden="true"
+        >
+            <div
+                class="share-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="share-title"
+            >
+                <button
+                    id="close-share-modal"
+                    class="share-close"
+                    type="button"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+                <p
+                    class="eyebrow"
+                    data-i18n="shareEyebrow"
+                >
+                    COMPARTILHAMENTO INTELIGENTE
+                </p>
+
+                <h2
+                    id="share-title"
+                    data-i18n="shareTitle"
+                >
+                    Compartilhe este Portal
+                </h2>
+
+                <p
+                    class="share-copy"
+                    data-i18n="shareLead"
+                >
+                    Envie o link, apresente o QR Code ou compartilhe diretamente pelo seu celular.
+                </p>
+
+                <div class="qr-card">
+                    <img
+                        id="share-qr"
+                        alt="QR Code do Portal"
+                    >
+
+                    <div
+                        id="share-url"
+                        class="share-url"
+                    ></div>
+                </div>
+
+                <div class="share-actions-grid">
+                    <button
+                        id="copy-share-link"
+                        class="share-action-btn"
+                        type="button"
+                    >
+                        <span class="share-action-icon">
+                            🔗
+                        </span>
+
+                        <strong data-i18n="copyLink">
+                            Copiar link
+                        </strong>
+                    </button>
+
+                    <button
+                        id="native-share"
+                        class="share-action-btn"
+                        type="button"
+                    >
+                        <span class="share-action-icon">
+                            📤
+                        </span>
+
+                        <strong data-i18n="nativeShare">
+                            Compartilhar
+                        </strong>
+                    </button>
+
+                    <button
+                        id="open-qr"
+                        class="share-action-btn"
+                        type="button"
+                    >
+                        <span class="share-action-icon">
+                            ▦
+                        </span>
+
+                        <strong data-i18n="openQr">
+                            Abrir QR Code
+                        </strong>
+                    </button>
+
+                    <button
+                        id="install-app"
+                        class="share-action-btn"
+                        type="button"
+                        hidden
+                    >
+                        <span class="share-action-icon">
+                            ⭐
+                        </span>
+
+                        <strong data-i18n="installPortal">
+                            Adicionar à tela inicial
+                        </strong>
+                    </button>
+                </div>
+
+                <p
+                    class="share-note"
+                    data-i18n="shareNote"
+                >
+                    O compartilhamento envia o endereço desta Central de Veículos.
+                </p>
+            </div>
+        </div>
+
+
+        <div
+            id="toast"
+            class="toast"
+            role="status"
+            aria-live="polite"
+        ></div>
+    </main>
+
+    <script src="assets/js/config.js"></script>
+
+    <script
+        src="assets/js/app.js"
+        defer
+    ></script>
+</body>
+</html>
