@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="description" content="Portal oficial do Ecossistema de Desenvolvimento de Negócios UrbanWatch (UEDN) e do Núcleo Fundador UrbanWatch (NFU).">
+  <title>UEDN | UrbanWatch.app</title>
+
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --graphite: #1A1A1A;
+      --graphite-2: #232323;
+      --gold: #D4AF37;
+      --champagne: #F1E5AC;
+      --white: #FFFFFF;
+      --muted: #BDBDBD;
+      --line: rgba(212, 175, 55, 0.25);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.13), transparent 32%),
+        linear-gradient(180deg, var(--black) 0%, #111111 52%, var(--black) 100%);
+      color: var(--white);
+      line-height: 1.6;
+      padding-bottom: 84px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 28px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    .top-link {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 9px 13px;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      min-height: 82svh;
+      display: grid;
+      place-items: center;
+      padding: 76px 0 54px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--champagne);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--champagne);
+      font-size: clamp(2.2rem, 9vw, 5.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: #DEDEDE;
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-height: 46px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      padding: 12px 17px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #FFFFFF;
+      background: var(--graphite-2);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--gold);
+    }
+
+    .btn-primary {
+      color: #0A0A0A;
+      background: linear-gradient(135deg, #AF861D, var(--gold));
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: var(--line);
+    }
+
+    section {
+      padding: 62px 0;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 11px;
+      color: var(--champagne);
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .nfu-card {
+      border-color: var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 44%),
+        var(--graphite);
+    }
+
+    .nfu-code {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 13px;
+    }
+
+    .doc-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 285px;
+    }
+
+    .doc-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .doc-version {
+      color: var(--champagne);
+      font-size: 0.83rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .doc-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      counter-reset: step;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .timeline-item::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--gold);
+      color: #0A0A0A;
+      font-weight: 900;
+    }
+
+    .form-card {
+      padding: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 47px;
+      padding: 12px 13px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #111111;
+      color: #FFFFFF;
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.09);
+    }
+
+    .checks {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: #D8D8D8;
+      font-size: 0.92rem;
+    }
+
+    .check input {
+      margin-top: 4px;
+      width: 17px;
+      height: 17px;
+      accent-color: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .notice {
+      padding: 15px 16px;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 13px 13px 0;
+      background: rgba(212, 175, 55, 0.07);
+      color: #E8E1C2;
+    }
+
+    .value {
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 5px 0 10px;
+    }
+
+    details {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 0 16px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 17px 0;
+    }
+
+    details p {
+      margin: 0 0 17px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 42px 0 28px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .floating-bar {
+      position: fixed;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      z-index: 80;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px;
+      border-radius: 16px;
+      background: rgba(18, 18, 18, 0.94);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .floating-bar a,
+    .floating-bar button {
+      min-width: 40px;
+      min-height: 40px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: #FFFFFF;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .floating-bar .active {
+      background: var(--gold);
+      color: #0A0A0A;
+    }
+
+    .toast {
+      position: fixed;
+      right: 16px;
+      top: 82px;
+      z-index: 100;
+      max-width: 350px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      background: #171717;
+      border: 1px solid var(--line);
+      display: none;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: auto;
+        padding: 72px 0 50px;
+      }
+
+      .top-link {
+        font-size: 0.82rem;
+        padding: 8px 10px;
+      }
+
+      .brand small {
+        display: none;
+      }
+
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .form-grid,
+      .doc-actions {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+
+      .floating-bar {
+        width: min(calc(100% - 22px), 410px);
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio">
+        UrbanWatch.app | UEDN
+        <small>Ecossistema de Desenvolvimento de Negócios</small>
+      </a>
+
+      <a class="top-link" href="#adesao">Solicitar adesão</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Portal institucional</div>
+
+        <h1>Ecossistema de Desenvolvimento de Negócios UrbanWatch</h1>
+
+        <p>
+          Conectando empresas. Desenvolvendo oportunidades.
+          Construindo futuros.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#uedn">Conhecer o Ecossistema</a>
+          <a class="btn btn-outline" href="#adesao">Quero fazer parte do NFU</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="uedn">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">UEDN</div>
+          <h2>Um ambiente estruturado para empresas crescerem juntas.</h2>
+          <p>
+            O UEDN foi criado pela UrbanWatch.app para aproximar empresas,
+            fortalecer relacionamentos de confiança e desenvolver oportunidades
+            de forma ética, organizada e sustentável.
+          </p>
+        </div>
+
+        <div class="grid grid-4">
+          <article class="card">
+            <h3>Inteligência Estratégica</h3>
+            <p>Leitura de oportunidades e caminhos para crescimento sustentável.</p>
+          </article>
+
+          <article class="card">
+            <h3>Desenvolvimento de Negócios</h3>
+            <p>Conexões e canais capazes de gerar novas oportunidades.</p>
+          </article>
+
+          <article class="card">
+            <h3>Networking Qualificado</h3>
+            <p>Relacionamentos empresariais com propósito e acompanhamento.</p>
+          </article>
+
+          <article class="card">
+            <h3>Projetos Colaborativos</h3>
+            <p>Iniciativas conjuntas construídas conforme a aderência entre parceiros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="nfu">
+      <div class="container">
+        <article class="card nfu-card">
+          <div class="nfu-code">NFU</div>
+          <h2>Núcleo Fundador UrbanWatch</h2>
+          <p>
+            Primeiro programa oficial do Ecossistema de Desenvolvimento de
+            Negócios UrbanWatch. As empresas participantes ajudam a construir
+            o Ecossistema desde sua origem.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="documentos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Documentação oficial</div>
+          <h2>Conheça os documentos antes da adesão.</h2>
+          <p>
+            Os três documentos abaixo estão disponíveis para consulta e download.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card doc-card">
+            <div class="doc-icon">📘</div>
+            <h3>Documento Fundador</h3>
+            <div class="doc-version">Documento Institucional Oficial</div>
+            <p>Apresenta a visão, o propósito e os fundamentos do NFU.</p>
+
+            <div class="doc-actions">
+              <a
+                class="btn btn-outline"
+                href="Documento_Fundador_NFU-1.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Visualizar
+              </a>
+
+              <a
+                class="btn btn-primary"
+                href="Documento_Fundador_NFU-1.pdf"
+                download
+              >
+                Baixar PDF
+              </a>
+            </div>
+          </article>
+
+          <article class="card doc-card">
+            <div class="doc-icon">📑</div>
+            <h3>Regulamento Geral NFU</h3>
+            <div class="doc-version">Versão 2.1</div>
+            <p>Define princípios, regras, governança, confidencialidade e desligamento.</p>
+
+            <div class="doc-actions">
+              <a
+                class="btn btn-outline"
+                href="Regulamento_Geral_NFU_v2.1-1.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Visualizar
+              </a>
+
+              <a
+                class="btn btn-primary"
+                href="Regulamento_Geral_NFU_v2.1-1.pdf"
+                download
+              >
+                Baixar PDF
+              </a>
+            </div>
+          </article>
+
+          <article class="card doc-card">
+            <div class="doc-icon">✍️</div>
+            <h3>Termo de Adesão NFU</h3>
+            <div class="doc-version">Versão 3.0</div>
+            <p>Formaliza a entrada da empresa, a integração, o reembolso e a CDE.</p>
+
+            <div class="doc-actions">
+              <a
+                class="btn btn-outline"
+                href="Termo_de_Adesao_NFU_v3.0-1(1).pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Visualizar
+              </a>
+
+              <a
+                class="btn btn-primary"
+                href="Termo_de_Adesao_NFU_v3.0-1(1).pdf"
+                download
+              >
+                Baixar PDF
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Como funciona</div>
+          <h2>Um processo simples e transparente.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">Conheça o UEDN e o NFU.</div>
+          <div class="timeline-item">Leia os três documentos oficiais.</div>
+          <div class="timeline-item">Preencha a solicitação de adesão.</div>
+          <div class="timeline-item">A UrbanWatch.app confere os dados e prepara o Termo.</div>
+          <div class="timeline-item">O documento é enviado para assinatura digital pela ZapSign.</div>
+          <div class="timeline-item">Após a assinatura, são enviadas as instruções de pagamento.</div>
+          <div class="timeline-item">Começa o período oficial de integração de 30 dias.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="adesao">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Solicitação de adesão</div>
+          <h2>Envie os dados da empresa.</h2>
+          <p>
+            Neste MVP, o portal recebe a solicitação. A UrbanWatch.app prepara
+            manualmente o Termo oficial e o envia pela ZapSign.
+          </p>
+        </div>
+
+        <form class="card form-card" id="adhesionForm">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="company">Razão Social *</label>
+              <input id="company" name="company" required>
+            </div>
+
+            <div class="field">
+              <label for="tradeName">Nome Fantasia</label>
+              <input id="tradeName" name="tradeName">
+            </div>
+
+            <div class="field">
+              <label for="cnpj">CNPJ *</label>
+              <input id="cnpj" name="cnpj" required inputmode="numeric">
+            </div>
+
+            <div class="field">
+              <label for="representative">Representante Legal *</label>
+              <input id="representative" name="representative" required>
+            </div>
+
+            <div class="field">
+              <label for="cpf">CPF *</label>
+              <input id="cpf" name="cpf" required inputmode="numeric">
+            </div>
+
+            <div class="field">
+              <label for="role">Cargo *</label>
+              <input id="role" name="role" required>
+            </div>
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp *</label>
+              <input id="whatsapp" name="whatsapp" required inputmode="tel">
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail *</label>
+              <input id="email" name="email" required type="email">
+            </div>
+
+            <div class="field">
+              <label for="city">Cidade *</label>
+              <input id="city" name="city" required>
+            </div>
+
+            <div class="field">
+              <label for="state">Estado *</label>
+              <select id="state" name="state" required>
+                <option value="">Selecione</option>
+                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                <option>SP</option><option>SE</option><option>TO</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="notes">Observações</label>
+              <textarea id="notes" name="notes"></textarea>
+            </div>
+          </div>
+
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" required>
+              <span>Declaro que li o Documento Fundador.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" required>
+              <span>Declaro que li o Regulamento Geral NFU v2.1.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" required>
+              <span>Declaro que li o Termo de Adesão NFU v3.0.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" required>
+              <span>
+                Autorizo o tratamento dos dados informados para fins de
+                adesão, comunicação e assinatura eletrônica.
+              </span>
+            </label>
+          </div>
+
+          <div class="notice">
+            O envio desta solicitação não gera cobrança e não formaliza a adesão.
+            A adesão será formalizada somente após a assinatura do Termo oficial.
+          </div>
+
+          <div class="actions" style="justify-content: flex-start;">
+            <button class="btn btn-primary" type="submit">
+              Enviar solicitação de adesão
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="assinatura">
+      <div class="container grid grid-2">
+        <article class="card">
+          <div class="eyebrow">Assinatura digital</div>
+          <h2>ZapSign</h2>
+          <p>
+            Após a conferência dos dados, a UrbanWatch.app prepara o Termo de
+            Adesão e envia o link de assinatura eletrônica ao representante legal.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Contribuição de adesão</div>
+          <h2>Pagamento após a assinatura</h2>
+          <div class="value">R$ 1.000,00</div>
+          <p>
+            Pagamento único, reembolsável conforme as condições do Termo de Adesão.
+            As instruções de pagamento serão enviadas após a assinatura.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Perguntas frequentes</div>
+          <h2>Dúvidas principais</h2>
+        </div>
+
+        <details>
+          <summary>O envio do formulário já formaliza a adesão?</summary>
+          <p>
+            Não. O formulário é apenas uma solicitação. A adesão é formalizada
+            pela assinatura do Termo de Adesão oficial.
+          </p>
+        </details>
+
+        <details>
+          <summary>A contribuição de adesão é reembolsável?</summary>
+          <p>
+            Sim, conforme as condições e os prazos estabelecidos no Termo de
+            Adesão NFU v3.0.
+          </p>
+        </details>
+
+        <details>
+          <summary>Quando começa a CDE?</summary>
+          <p>
+            Após os 30 dias de integração e a confirmação definitiva da empresa
+            como Empresa Fundadora Ativa.
+          </p>
+        </details>
+
+        <details>
+          <summary>Os serviços da UrbanWatch.app estão incluídos?</summary>
+          <p>
+            Não. Consultorias, portais, projetos e demais serviços são
+            independentes e dependem de contratação própria.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>UrbanWatch.app</strong><br>
+      Ecossistema de Desenvolvimento de Negócios UrbanWatch<br><br>
+      Inteligência para quem não improvisa.
+    </div>
+  </footer>
+
+  <div class="floating-bar" aria-label="Barra flutuante UrbanWatch.app">
+    <a href="#inicio" aria-label="Início">🏠</a>
+    <button class="active" type="button">PT</button>
+    <button type="button" title="Versão em inglês em preparação">EN</button>
+    <button type="button" title="Versão em chinês em preparação">中文</button>
+    <button id="shareButton" type="button" aria-label="Compartilhar">↗</button>
+    <a href="#inicio" aria-label="Voltar ao topo">↑</a>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const CONTACT_EMAIL = "urbanwatch.app@gmail.com";
+
+    const form = document.getElementById("adhesionForm");
+    const toast = document.getElementById("toast");
+    const shareButton = document.getElementById("shareButton");
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      window.clearTimeout(showToast.timer);
+
+      showToast.timer = window.setTimeout(function () {
+        toast.classList.remove("show");
+      }, 4000);
+    }
+
+    function encodeField(value) {
+      return String(value || "").trim();
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+
+      const subject = "Solicitação de Adesão ao NFU";
+
+      const body = [
+        "SOLICITAÇÃO DE ADESÃO AO NFU",
+        "",
+        "Razão Social: " + encodeField(data.get("company")),
+        "Nome Fantasia: " + encodeField(data.get("tradeName")),
+        "CNPJ: " + encodeField(data.get("cnpj")),
+        "Representante Legal: " + encodeField(data.get("representative")),
+        "CPF: " + encodeField(data.get("cpf")),
+        "Cargo: " + encodeField(data.get("role")),
+        "WhatsApp: " + encodeField(data.get("whatsapp")),
+        "E-mail: " + encodeField(data.get("email")),
+        "Cidade: " + encodeField(data.get("city")),
+        "Estado: " + encodeField(data.get("state")),
+        "Observações: " + encodeField(data.get("notes")),
+        "",
+        "Declaro que li os três documentos oficiais e autorizo o tratamento dos dados informados."
+      ].join("\\n");
+
+      const mailto =
+        "mailto:" +
+        CONTACT_EMAIL +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+
+      window.location.href = mailto;
+
+      showToast(
+        "A solicitação foi preparada no aplicativo de e-mail do aparelho."
+      );
+    });
+
+    shareButton.addEventListener("click", async function () {
+      const shareData = {
+        title: document.title,
+        text: "Conheça o UEDN e o Núcleo Fundador UrbanWatch.",
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+          return;
+        }
+
+        await navigator.clipboard.writeText(window.location.href);
+        showToast("Link copiado.");
+      } catch (error) {
+        showToast("Não foi possível compartilhar agora.");
+      }
+    });
+  </script>
+</body>
+</html>
