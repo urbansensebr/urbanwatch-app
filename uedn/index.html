@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Portal oficial do Ecossistema de Desenvolvimento de Negócios UrbanWatch (UEDN) e do Núcleo Fundador UrbanWatch (NFU)." />
+  <title>UEDN | Ecossistema de Desenvolvimento de Negócios | UrbanWatch.app</title>
+
+  <style>
+    :root{
+      --black:#0A0A0A;
+      --graphite:#1A1A1A;
+      --graphite-2:#242424;
+      --gold:#D4AF37;
+      --champagne:#F1E5AC;
+      --white:#FFFFFF;
+      --muted:#B9B9B9;
+      --line:rgba(212,175,55,.26);
+      --success:#22C55E;
+      --danger:#EF4444;
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Montserrat,Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.10), transparent 28%),
+        linear-gradient(180deg,#0A0A0A 0%,#111 48%,#0A0A0A 100%);
+      color:var(--white);
+      min-height:100vh;
+      padding-bottom:88px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(calc(100% - 28px),var(--max));
+      margin-inline:auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(16px);
+      background:rgba(10,10,10,.82);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--gold);
+      background:linear-gradient(145deg,#171717,#0d0d0d);
+      box-shadow:inset 0 0 22px rgba(212,175,55,.08);
+      font-weight:800;
+      color:var(--gold);
+    }
+
+    .brand-text{
+      line-height:1.05;
+      min-width:0;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:1rem;
+      white-space:nowrap;
+    }
+
+    .brand-text span{
+      display:block;
+      color:var(--muted);
+      font-size:.73rem;
+      margin-top:4px;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      border:1px solid transparent;
+      border-radius:14px;
+      padding:12px 16px;
+      color:#fff;
+      background:var(--graphite-2);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-weight:700;
+      transition:.22s ease;
+      min-height:46px;
+    }
+
+    .btn svg{width:18px;height:18px;stroke:currentColor}
+    .btn span{color:inherit}
+    .btn:hover{transform:translateY(-1px);border-color:var(--gold)}
+    .btn-primary{
+      background:linear-gradient(135deg,#A77F16,#D4AF37);
+      color:#0A0A0A;
+      box-shadow:0 12px 28px rgba(212,175,55,.18);
+    }
+    .btn-secondary{
+      border-color:var(--line);
+      background:rgba(255,255,255,.035);
+    }
+    .btn-danger{
+      background:#2b1515;
+      border-color:rgba(239,68,68,.35);
+    }
+    .btn-small{padding:9px 12px;min-height:40px;font-size:.88rem}
+    .btn-block{width:100%}
+
+    .hero{
+      min-height:78vh;
+      display:grid;
+      align-items:center;
+      padding:70px 0 54px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:460px;
+      height:460px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(212,175,55,.15),transparent 64%);
+      top:-120px;
+      right:-90px;
+      pointer-events:none;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .eyebrow{
+      color:var(--champagne);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      font-size:.78rem;
+      font-weight:800;
+      margin-bottom:14px;
+    }
+
+    h1{
+      font-size:clamp(2.25rem,6vw,5.5rem);
+      line-height:.96;
+      margin:0 0 22px;
+      letter-spacing:-.055em;
+    }
+
+    .hero-copy{
+      color:#D3D3D3;
+      font-size:clamp(1rem,2vw,1.25rem);
+      line-height:1.7;
+      max-width:720px;
+      margin:0;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .hero-card{
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card .code{
+      color:var(--gold);
+      font-weight:800;
+      font-size:2.9rem;
+      letter-spacing:-.05em;
+    }
+
+    .hero-card h2{
+      margin:8px 0 10px;
+      font-size:1.45rem;
+    }
+
+    .hero-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .hero-card .mini-flow{
+      display:grid;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .mini-step{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px;
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.06);
+      font-size:.9rem;
+    }
+
+    .mini-step b{
+      width:28px;
+      height:28px;
+      display:grid;
+      place-items:center;
+      background:var(--gold);
+      color:#0A0A0A;
+      border-radius:9px;
+      flex:0 0 auto;
+    }
+
+    section{padding:72px 0}
+    .section-head{
+      max-width:790px;
+      margin-bottom:30px;
+    }
+    .section-head h2{
+      font-size:clamp(1.9rem,4vw,3.2rem);
+      margin:0 0 12px;
+      letter-spacing:-.035em;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .grid-4,.grid-3,.grid-2{
+      display:grid;
+      gap:18px;
+    }
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 14px 36px rgba(0,0,0,.17);
+    }
+
+    .card h3{
+      margin:12px 0 10px;
+      font-size:1.12rem;
+    }
+    .card p{
+      color:var(--muted);
+      line-height:1.6;
+      margin:0;
+    }
+
+    .icon-box{
+      width:46px;
+      height:46px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      border:1px solid var(--line);
+      color:var(--gold);
+      background:rgba(212,175,55,.06);
+      font-size:1.25rem;
+    }
+
+    .doc-card{
+      min-height:310px;
+      display:flex;
+      flex-direction:column;
+    }
+    .doc-card .version{
+      color:var(--champagne);
+      font-size:.82rem;
+      font-weight:700;
+      margin-top:5px;
+    }
+    .doc-actions{
+      margin-top:auto;
+      padding-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .timeline{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      counter-reset:step;
+    }
+
+    .timeline-step{
+      position:relative;
+      padding:22px;
+      min-height:170px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .timeline-step::before{
+      counter-increment:step;
+      content:counter(step);
+      display:grid;
+      place-items:center;
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:var(--gold);
+      color:#0A0A0A;
+      font-weight:900;
+      margin-bottom:16px;
+    }
+
+    .timeline-step h3{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+    .timeline-step p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:.9rem;
+    }
+
+    .form-shell{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .info-panel{
+      position:sticky;
+      top:92px;
+    }
+
+    .status-list{
+      display:grid;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .status-item{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .status-dot{
+      width:11px;
+      height:11px;
+      margin-top:5px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 5px rgba(212,175,55,.08);
+      flex:0 0 auto;
+    }
+
+    .form-card{padding:24px}
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+    .field.full{grid-column:1/-1}
+    .field label{
+      font-size:.86rem;
+      color:#EAEAEA;
+      font-weight:700;
+    }
+    .field input,.field select,.field textarea{
+      width:100%;
+      color:#fff;
+      background:#111;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:13px;
+      padding:13px 14px;
+      outline:none;
+      min-height:48px;
+    }
+    .field textarea{min-height:108px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{
+      border-color:var(--gold);
+      box-shadow:0 0 0 3px rgba(212,175,55,.10);
+    }
+
+    .checks{
+      display:grid;
+      gap:11px;
+      margin:18px 0;
+    }
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#D7D7D7;
+      line-height:1.45;
+      font-size:.91rem;
+    }
+    .check input{
+      margin-top:3px;
+      accent-color:var(--gold);
+      width:18px;
+      height:18px;
+      flex:0 0 auto;
+    }
+
+    .notice{
+      border-left:4px solid var(--gold);
+      background:rgba(212,175,55,.07);
+      padding:15px 16px;
+      border-radius:0 14px 14px 0;
+      color:#E8E1C2;
+      line-height:1.6;
+      font-size:.92rem;
+    }
+
+    .finance-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:20px;
+    }
+    .price{
+      font-size:2rem;
+      font-weight:900;
+      color:var(--gold);
+      margin:7px 0;
+    }
+    .status-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 12px;
+      color:var(--champagne);
+      font-size:.82rem;
+      font-weight:700;
+      background:rgba(212,175,55,.06);
+    }
+
+    .faq{
+      display:grid;
+      gap:10px;
+    }
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+      padding:0 17px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      padding:18px 0;
+    }
+    details p{
+      color:var(--muted);
+      line-height:1.65;
+      margin:0 0 18px;
+    }
+
+    footer{
+      padding:48px 0 28px;
+      border-top:1px solid var(--line);
+      background:#080808;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr .8fr .8fr;
+      gap:24px;
+    }
+
+    .footer-grid h3{margin-top:0}
+    .footer-grid p,.footer-grid a{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.92rem;
+    }
+    .footer-links{display:grid;gap:8px}
+
+    .floating-bar{
+      position:fixed;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:14px;
+      z-index:80;
+      width:min(calc(100% - 24px),720px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding:9px;
+      border-radius:18px;
+      background:rgba(13,13,13,.92);
+      border:1px solid rgba(212,175,55,.28);
+      backdrop-filter:blur(18px);
+      box-shadow:0 14px 35px rgba(0,0,0,.45);
+    }
+
+    .floating-brand{
+      color:var(--gold);
+      font-weight:800;
+      font-size:.86rem;
+      padding:0 9px;
+      white-space:nowrap;
+    }
+
+    .lang-group{
+      display:flex;
+      gap:5px;
+    }
+
+    .lang-btn{
+      border:1px solid rgba(255,255,255,.1);
+      color:#fff;
+      background:#1A1A1A;
+      border-radius:10px;
+      padding:8px 10px;
+      font-size:.78rem;
+      font-weight:800;
+    }
+    .lang-btn.active{
+      background:var(--gold);
+      color:#0A0A0A;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:none;
+      place-items:center;
+      padding:18px;
+      background:rgba(0,0,0,.78);
+      backdrop-filter:blur(9px);
+    }
+    .modal.open{display:grid}
+    .modal-panel{
+      width:min(100%,900px);
+      max-height:90vh;
+      overflow:auto;
+      border-radius:24px;
+      background:#111;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .modal-head{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      margin-bottom:16px;
+    }
+    .modal-head h2{margin:0}
+    .close-btn{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;
+      background:#1a1a1a;
+      font-size:1.25rem;
+    }
+
+    .term-preview{
+      background:#fff;
+      color:#111;
+      border-radius:14px;
+      padding:28px;
+      line-height:1.6;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .term-preview h1,.term-preview h2{
+      text-align:center;
+      letter-spacing:0;
+      color:#111;
+    }
+    .term-preview h1{font-size:1.35rem}
+    .term-preview h2{font-size:1rem;margin-top:28px}
+    .term-preview p{color:#111}
+
+    .toast{
+      position:fixed;
+      right:18px;
+      top:90px;
+      z-index:150;
+      max-width:360px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:#121212;
+      border:1px solid var(--line);
+      color:#fff;
+      box-shadow:var(--shadow);
+      display:none;
+    }
+    .toast.show{display:block}
+
+    .hidden{display:none !important}
+
+    @media (max-width:960px){
+      .hero-grid,.form-shell,.footer-grid{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr}
+      .timeline{grid-template-columns:repeat(2,1fr)}
+      .info-panel{position:static}
+    }
+
+    @media (max-width:640px){
+      .topbar-inner{min-height:64px}
+      .brand-text span{display:none}
+      .nav-actions .btn-secondary{display:none}
+      .hero{padding-top:46px;min-height:auto}
+      .grid-4,.grid-2,.form-grid,.timeline{grid-template-columns:1fr}
+      .doc-actions{grid-template-columns:1fr}
+      .finance-card{grid-template-columns:1fr}
+      .floating-brand{font-size:.76rem}
+      .floating-bar{bottom:8px}
+      .lang-btn{padding:8px}
+      section{padding:54px 0}
+    }
+
+    @media print{
+      body *{visibility:hidden}
+      #termPreview,#termPreview *{visibility:visible}
+      #termPreview{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:#fff;
+        padding:20mm;
+      }
+      .floating-bar,.topbar,.modal-head{display:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <div class="brand-mark">UW</div>
+        <div class="brand-text">
+          <strong>UrbanWatch.app</strong>
+          <span>Ecossistema de Desenvolvimento de Negócios</span>
+        </div>
+      </a>
+
+      <nav class="nav-actions" aria-label="Navegação principal">
+        <a class="btn btn-secondary btn-small" href="#documentos" data-i18n="navDocs">Documentos</a>
+        <a class="btn btn-primary btn-small" href="#adesao" data-i18n="navJoin">Quero integrar o NFU</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="heroEyebrow">Portal oficial dos parceiros</div>
+          <h1>UEDN</h1>
+          <p class="hero-copy" data-i18n="heroCopy">
+            O Ecossistema de Desenvolvimento de Negócios UrbanWatch conecta empresas, desenvolve oportunidades e cria um ambiente permanente de cooperação estratégica.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#adesao" data-i18n="heroJoin">Iniciar adesão ao NFU</a>
+            <a class="btn btn-secondary" href="#documentos" data-i18n="heroDocs">Consultar documentos</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="code">NFU</div>
+          <h2 data-i18n="nfuTitle">Núcleo Fundador UrbanWatch</h2>
+          <p data-i18n="nfuDesc">Programa inaugural do UEDN para empresas que desejam participar da construção do Ecossistema desde sua origem.</p>
+
+          <div class="mini-flow">
+            <div class="mini-step"><b>1</b><span data-i18n="mini1">Leitura dos documentos</span></div>
+            <div class="mini-step"><b>2</b><span data-i18n="mini2">Cadastro e geração do Termo</span></div>
+            <div class="mini-step"><b>3</b><span data-i18n="mini3">Assinatura digital</span></div>
+            <div class="mini-step"><b>4</b><span data-i18n="mini4">Adesão e integração por 30 dias</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="aboutEyebrow">O que é o UEDN</div>
+          <h2 data-i18n="aboutTitle">Um ambiente estruturado para empresas crescerem juntas.</h2>
+          <p data-i18n="aboutText">O UEDN organiza conexões estratégicas, inteligência empresarial, networking qualificado e projetos colaborativos, sem substituir contratos comerciais específicos entre as partes.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon-box">◎</div>
+            <h3 data-i18n="pillar1Title">Inteligência Estratégica</h3>
+            <p data-i18n="pillar1Text">Leitura de oportunidades, contexto e caminhos para crescimento sustentável.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">↗</div>
+            <h3 data-i18n="pillar2Title">Desenvolvimento de Negócios</h3>
+            <p data-i18n="pillar2Text">Criação de conexões e canais capazes de gerar novas oportunidades.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">◇</div>
+            <h3 data-i18n="pillar3Title">Networking Qualificado</h3>
+            <p data-i18n="pillar3Text">Relacionamentos empresariais com propósito, contexto e acompanhamento.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">+</div>
+            <h3 data-i18n="pillar4Title">Projetos Colaborativos</h3>
+            <p data-i18n="pillar4Text">Iniciativas conjuntas construídas de acordo com a aderência entre parceiros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="documentos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="docsEyebrow">Documentação institucional</div>
+          <h2 data-i18n="docsTitle">Três documentos. Uma jornada clara.</h2>
+          <p data-i18n="docsText">Consulte os documentos oficiais do NFU antes de iniciar o cadastro.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card doc-card">
+            <div class="icon-box">📘</div>
+            <h3 data-i18n="doc1Title">Documento Fundador</h3>
+            <div class="version" data-i18n="doc1Version">Documento Institucional Oficial</div>
+            <p data-i18n="doc1Text">Apresenta propósito, visão e princípios que orientam o NFU.</p>
+            <div class="doc-actions">
+              <a class="btn btn-secondary btn-small" id="viewDocFounder" href="#" target="_blank" rel="noopener" data-i18n="read">Ler</a>
+              <a class="btn btn-primary btn-small" id="downloadDocFounder" href="#" download data-i18n="download">Baixar</a>
+            </div>
+          </article>
+
+          <article class="card doc-card">
+            <div class="icon-box">📑</div>
+            <h3 data-i18n="doc2Title">Regulamento Geral NFU</h3>
+            <div class="version">Versão 2.1</div>
+            <p data-i18n="doc2Text">Define regras, governança, confidencialidade, ética e desligamento.</p>
+            <div class="doc-actions">
+              <a class="btn btn-secondary btn-small" id="viewDocRules" href="#" target="_blank" rel="noopener" data-i18n="read">Ler</a>
+              <a class="btn btn-primary btn-small" id="downloadDocRules" href="#" download data-i18n="download">Baixar</a>
+            </div>
+          </article>
+
+          <article class="card doc-card">
+            <div class="icon-box">✍️</div>
+            <h3 data-i18n="doc3Title">Termo de Adesão NFU</h3>
+            <div class="version">Versão 3.0</div>
+            <p data-i18n="doc3Text">Formaliza adesão, reembolso, integração, vigência e CDE.</p>
+            <div class="doc-actions">
+              <a class="btn btn-secondary btn-small" id="viewDocTerm" href="#" target="_blank" rel="noopener" data-i18n="read">Ler</a>
+              <a class="btn btn-primary btn-small" id="downloadDocTerm" href="#" download data-i18n="download">Baixar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="flowEyebrow">Jornada de adesão</div>
+          <h2 data-i18n="flowTitle">Do primeiro acesso à Empresa Fundadora Ativa.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-step"><h3 data-i18n="flow1Title">Conheça o UEDN</h3><p data-i18n="flow1Text">Entenda o propósito e consulte os documentos institucionais.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow2Title">Preencha o cadastro</h3><p data-i18n="flow2Text">Informe dados da empresa e do representante legal.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow3Title">Assine digitalmente</h3><p data-i18n="flow3Text">O Termo preenchido será encaminhado pela ZapSign.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow4Title">Pague a adesão</h3><p data-i18n="flow4Text">Cobrança única de R$ 1.000, reembolsável conforme o Termo.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow5Title">Integração</h3><p data-i18n="flow5Text">Período oficial de 30 dias corridos para onboarding e alinhamento.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow6Title">Confirmação</h3><p data-i18n="flow6Text">Sem desistência, a empresa torna-se Empresa Fundadora Ativa.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow7Title">CDE recorrente</h3><p data-i18n="flow7Text">Ativação da assinatura mensal de 12 meses pela InfinityPay.</p></article>
+          <article class="timeline-step"><h3 data-i18n="flow8Title">Acompanhamento</h3><p data-i18n="flow8Text">Documentos, status, financeiro e suporte no Portal do Parceiro.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="adesao">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="joinEyebrow">Cadastro institucional</div>
+          <h2 data-i18n="joinTitle">Inicie sua adesão ao Núcleo Fundador UrbanWatch.</h2>
+          <p data-i18n="joinText">Após o envio, o portal gera uma prévia do Termo de Adesão preenchido. A assinatura oficial ocorrerá pela ZapSign.</p>
+        </div>
+
+        <div class="form-shell">
+          <aside class="card info-panel">
+            <span class="status-pill" data-i18n="statusStart">Status inicial: cadastro</span>
+            <h3 data-i18n="whatNext">O que acontece depois?</h3>
+
+            <div class="status-list">
+              <div class="status-item"><span class="status-dot"></span><div><strong data-i18n="status1">Cadastro recebido</strong><br><small data-i18n="status1b">Dados enviados para validação.</small></div></div>
+              <div class="status-item"><span class="status-dot"></span><div><strong data-i18n="status2">Termo gerado</strong><br><small data-i18n="status2b">Documento preenchido automaticamente.</small></div></div>
+              <div class="status-item"><span class="status-dot"></span><div><strong data-i18n="status3">Assinatura ZapSign</strong><br><small data-i18n="status3b">Link enviado ao representante legal.</small></div></div>
+              <div class="status-item"><span class="status-dot"></span><div><strong data-i18n="status4">Adesão InfinityPay</strong><br><small data-i18n="status4b">Cobrança única de R$ 1.000.</small></div></div>
+              <div class="status-item"><span class="status-dot"></span><div><strong data-i18n="status5">Integração de 30 dias</strong><br><small data-i18n="status5b">Onboarding e acompanhamento institucional.</small></div></div>
+            </div>
+
+            <div class="notice" style="margin-top:18px" data-i18n="integrationNotice">
+              O cadastro não ativa automaticamente a CDE mensal. A assinatura recorrente será liberada somente após a confirmação definitiva da adesão.
+            </div>
+          </aside>
+
+          <form class="card form-card" id="adhesionForm" novalidate>
+            <div class="form-grid">
+              <div class="field full">
+                <label for="companyName" data-i18n="companyName">Razão social *</label>
+                <input id="companyName" name="companyName" required autocomplete="organization" />
+              </div>
+
+              <div class="field">
+                <label for="tradeName" data-i18n="tradeName">Nome fantasia</label>
+                <input id="tradeName" name="tradeName" />
+              </div>
+
+              <div class="field">
+                <label for="cnpj">CNPJ *</label>
+                <input id="cnpj" name="cnpj" required inputmode="numeric" placeholder="00.000.000/0000-00" />
+              </div>
+
+              <div class="field full">
+                <label for="address" data-i18n="address">Endereço completo *</label>
+                <input id="address" name="address" required autocomplete="street-address" />
+              </div>
+
+              <div class="field">
+                <label for="city" data-i18n="city">Cidade *</label>
+                <input id="city" name="city" required autocomplete="address-level2" />
+              </div>
+
+              <div class="field">
+                <label for="state" data-i18n="state">Estado *</label>
+                <select id="state" name="state" required>
+                  <option value="">Selecione</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                  <option>SP</option><option>SE</option><option>TO</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="zip" data-i18n="zip">CEP *</label>
+                <input id="zip" name="zip" required inputmode="numeric" placeholder="00000-000" />
+              </div>
+
+              <div class="field">
+                <label for="representative" data-i18n="representative">Representante legal *</label>
+                <input id="representative" name="representative" required autocomplete="name" />
+              </div>
+
+              <div class="field">
+                <label for="cpf">CPF *</label>
+                <input id="cpf" name="cpf" required inputmode="numeric" placeholder="000.000.000-00" />
+              </div>
+
+              <div class="field">
+                <label for="role" data-i18n="role">Cargo *</label>
+                <input id="role" name="role" required />
+              </div>
+
+              <div class="field">
+                <label for="email">E-mail *</label>
+                <input id="email" name="email" required type="email" autocomplete="email" />
+              </div>
+
+              <div class="field">
+                <label for="whatsapp">WhatsApp *</label>
+                <input id="whatsapp" name="whatsapp" required inputmode="tel" autocomplete="tel" />
+              </div>
+
+              <div class="field">
+                <label for="dueDay" data-i18n="dueDay">Dia preferencial da CDE *</label>
+                <select id="dueDay" name="dueDay" required>
+                  <option value="">Selecione</option>
+                  <option value="5">Dia 5</option>
+                  <option value="10">Dia 10</option>
+                  <option value="15">Dia 15</option>
+                  <option value="20">Dia 20</option>
+                  <option value="25">Dia 25</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="notes" data-i18n="notes">Observações</label>
+                <textarea id="notes" name="notes"></textarea>
+              </div>
+            </div>
+
+            <div class="checks">
+              <label class="check"><input type="checkbox" required name="readFounder" /><span data-i18n="check1">Declaro que li o Documento Fundador.</span></label>
+              <label class="check"><input type="checkbox" required name="readRules" /><span data-i18n="check2">Declaro que li o Regulamento Geral NFU v2.1.</span></label>
+              <label class="check"><input type="checkbox" required name="readTerm" /><span data-i18n="check3">Declaro que li e concordo com o Termo de Adesão NFU v3.0.</span></label>
+              <label class="check"><input type="checkbox" required name="lgpd" /><span data-i18n="check4">Autorizo o tratamento dos dados para adesão, comunicação, assinatura eletrônica e gestão institucional.</span></label>
+            </div>
+
+            <div class="notice" data-i18n="formNotice">
+              Ao gerar o Termo, nenhuma cobrança recorrente será criada. O pagamento inicial será exclusivamente da Contribuição de Adesão.
+            </div>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" type="submit" data-i18n="generateTerm">Gerar Termo preenchido</button>
+              <button class="btn btn-secondary" type="button" id="saveDraftBtn" data-i18n="saveDraft">Salvar rascunho neste aparelho</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="assinatura">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="signatureEyebrow">Assinatura digital</div>
+          <h2 data-i18n="signatureTitle">Segurança e rastreabilidade com ZapSign.</h2>
+          <p data-i18n="signatureText">Após a validação do cadastro, o Termo preenchido será encaminhado ao representante legal para assinatura digital.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <span class="status-pill">ZapSign</span>
+            <h3 data-i18n="signatureCardTitle">Fluxo de assinatura</h3>
+            <p data-i18n="signatureCardText">A UrbanWatch.app cria o documento, define os signatários e acompanha o status até a conclusão.</p>
+            <div class="hero-actions">
+              <button class="btn btn-secondary" type="button" id="trackSignatureBtn" data-i18n="trackSignature">Acompanhar assinatura</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="status-pill" data-i18n="configStatus">Integração externa</span>
+            <h3 data-i18n="configTitle">Configuração necessária</h3>
+            <p data-i18n="configText">Inclua no CONFIG do arquivo o link ou endpoint utilizado pela conta institucional da UrbanWatch.app na ZapSign.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="financeiro">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" data-i18n="financeEyebrow">Portal financeiro</div>
+          <h2 data-i18n="financeTitle">Pagamento por etapa, sem confusão.</h2>
+        </div>
+
+        <div class="grid-2">
+          <article class="card finance-card">
+            <div>
+              <span class="status-pill" data-i18n="phase1">Fase 1 — adesão</span>
+              <h3 data-i18n="adhesionPayment">Contribuição de Adesão</h3>
+              <div class="price">R$ 1.000,00</div>
+              <p data-i18n="adhesionPaymentText">Cobrança única. Reembolsável dentro das condições previstas no Termo.</p>
+            </div>
+            <a class="btn btn-primary" id="payAdhesionBtn" href="#" target="_blank" rel="noopener" data-i18n="payAdhesion">Pagar adesão</a>
+          </article>
+
+          <article class="card finance-card">
+            <div>
+              <span class="status-pill" data-i18n="phase2">Fase 2 — após 30 dias</span>
+              <h3 data-i18n="cdePayment">CDE mensal</h3>
+              <div class="price">R$ 1.000,00/mês</div>
+              <p data-i18n="cdePaymentText">Assinatura recorrente de 12 meses, liberada somente após a confirmação definitiva.</p>
+            </div>
+            <a class="btn btn-secondary" id="activateCdeBtn" href="#" target="_blank" rel="noopener" data-i18n="activateCde">Ativar CDE</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2 data-i18n="faqTitle">Perguntas frequentes</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary data-i18n="faq1q">O cadastro já me torna Empresa Fundadora Ativa?</summary>
+            <p data-i18n="faq1a">Não. Primeiro há assinatura, pagamento da adesão e período oficial de integração de 30 dias.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq2q">A adesão é reembolsável?</summary>
+            <p data-i18n="faq2a">Sim, conforme as condições e prazos definidos no Termo de Adesão NFU v3.0.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq3q">Quando começa a CDE?</summary>
+            <p data-i18n="faq3a">Somente após a confirmação definitiva, ao fim do período de integração, caso não haja desistência.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq4q">Os serviços da UrbanWatch.app estão incluídos?</summary>
+            <p data-i18n="faq4a">Não. Consultorias, portais, projetos e demais serviços são independentes e dependem de contratação própria.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq5q">A participação garante novos clientes?</summary>
+            <p data-i18n="faq5a">Não. O UEDN é um ambiente de oportunidades, conexões e cooperação, sem garantia de resultados comerciais.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>UrbanWatch.app</h3>
+        <p data-i18n="footerText">Ecossistema de Desenvolvimento de Negócios UrbanWatch. Inteligência para quem não improvisa.</p>
+        <a class="btn btn-secondary btn-small" href="#inicio" data-i18n="backTop">Voltar ao início</a>
+      </div>
+
+      <div>
+        <h3 data-i18n="footerDocs">Documentos</h3>
+        <div class="footer-links">
+          <a href="#documentos" data-i18n="doc1Title">Documento Fundador</a>
+          <a href="#documentos" data-i18n="doc2Title">Regulamento Geral NFU</a>
+          <a href="#documentos" data-i18n="doc3Title">Termo de Adesão NFU</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 data-i18n="footerContact">Contato</h3>
+        <div class="footer-links">
+          <a id="contactEmail" href="mailto:urbanwatch.app@gmail.com">urbanwatch.app@gmail.com</a>
+          <a id="contactWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://urbanwatch.app/" target="_blank" rel="noopener">UrbanWatch.app</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-bar" aria-label="Barra flutuante UrbanWatch">
+    <a class="floating-brand" href="https://urbanwatch.app/" target="_blank" rel="noopener">UrbanWatch.app</a>
+    <div class="lang-group" aria-label="Idiomas">
+      <button class="lang-btn active" type="button" data-lang="pt-BR">PT</button>
+      <button class="lang-btn" type="button" data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="zh-CN">中文</button>
+    </div>
+    <button class="btn btn-secondary btn-small" type="button" id="shareBtn" aria-label="Compartilhar">↗</button>
+  </div>
+
+  <div class="modal" id="termModal" role="dialog" aria-modal="true" aria-labelledby="termModalTitle">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <h2 id="termModalTitle" data-i18n="termPreviewTitle">Prévia do Termo preenchido</h2>
+        <button class="close-btn" type="button" id="closeTermModal" aria-label="Fechar">×</button>
+      </div>
+
+      <div id="termPreview" class="term-preview"></div>
+
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button" id="printTermBtn" data-i18n="printPdf">Imprimir / salvar em PDF</button>
+        <button class="btn btn-secondary" type="button" id="downloadTermHtmlBtn" data-i18n="downloadFilled">Baixar Termo preenchido</button>
+        <button class="btn btn-secondary" type="button" id="sendZapsignBtn" data-i18n="sendZapsign">Enviar para ZapSign</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    /* =========================================================
+       CONFIGURAÇÃO DO PORTAL UEDN
+       Substitua os links abaixo antes da publicação.
+       ========================================================= */
+    const CONFIG = {
+      docs: {
+        founderView: "docs/documento-fundador-nfu.pdf",
+        founderDownload: "docs/documento-fundador-nfu.pdf",
+        rulesView: "docs/regulamento-geral-nfu-v2.1.pdf",
+        rulesDownload: "docs/regulamento-geral-nfu-v2.1.pdf",
+        termView: "docs/termo-adesao-nfu-v3.0.pdf",
+        termDownload: "docs/termo-adesao-nfu-v3.0.pdf"
+      },
+      zapsign: {
+        trackingUrl: "",
+        submissionEndpoint: ""
+      },
+      infinityPay: {
+        adhesionPaymentUrl: "",
+        cdeSubscriptionUrl: ""
+      },
+      contact: {
+        email: "urbanwatch.app@gmail.com",
+        whatsapp: "5585999999999"
+      },
+      backend: {
+        leadEndpoint: ""
+      }
+    };
+
+    const translations = {
+      "pt-BR": {
+        navDocs:"Documentos",navJoin:"Quero integrar o NFU",heroEyebrow:"Portal oficial dos parceiros",
+        heroCopy:"O Ecossistema de Desenvolvimento de Negócios UrbanWatch conecta empresas, desenvolve oportunidades e cria um ambiente permanente de cooperação estratégica.",
+        heroJoin:"Iniciar adesão ao NFU",heroDocs:"Consultar documentos",nfuTitle:"Núcleo Fundador UrbanWatch",
+        nfuDesc:"Programa inaugural do UEDN para empresas que desejam participar da construção do Ecossistema desde sua origem.",
+        mini1:"Leitura dos documentos",mini2:"Cadastro e geração do Termo",mini3:"Assinatura digital",mini4:"Adesão e integração por 30 dias",
+        aboutEyebrow:"O que é o UEDN",aboutTitle:"Um ambiente estruturado para empresas crescerem juntas.",
+        aboutText:"O UEDN organiza conexões estratégicas, inteligência empresarial, networking qualificado e projetos colaborativos, sem substituir contratos comerciais específicos entre as partes.",
+        pillar1Title:"Inteligência Estratégica",pillar1Text:"Leitura de oportunidades, contexto e caminhos para crescimento sustentável.",
+        pillar2Title:"Desenvolvimento de Negócios",pillar2Text:"Criação de conexões e canais capazes de gerar novas oportunidades.",
+        pillar3Title:"Networking Qualificado",pillar3Text:"Relacionamentos empresariais com propósito, contexto e acompanhamento.",
+        pillar4Title:"Projetos Colaborativos",pillar4Text:"Iniciativas conjuntas construídas de acordo com a aderência entre parceiros.",
+        docsEyebrow:"Documentação institucional",docsTitle:"Três documentos. Uma jornada clara.",
+        docsText:"Consulte os documentos oficiais do NFU antes de iniciar o cadastro.",
+        doc1Title:"Documento Fundador",doc1Version:"Documento Institucional Oficial",doc1Text:"Apresenta propósito, visão e princípios que orientam o NFU.",
+        doc2Title:"Regulamento Geral NFU",doc2Text:"Define regras, governança, confidencialidade, ética e desligamento.",
+        doc3Title:"Termo de Adesão NFU",doc3Text:"Formaliza adesão, reembolso, integração, vigência e CDE.",
+        read:"Ler",download:"Baixar",flowEyebrow:"Jornada de adesão",flowTitle:"Do primeiro acesso à Empresa Fundadora Ativa.",
+        flow1Title:"Conheça o UEDN",flow1Text:"Entenda o propósito e consulte os documentos institucionais.",
+        flow2Title:"Preencha o cadastro",flow2Text:"Informe dados da empresa e do representante legal.",
+        flow3Title:"Assine digitalmente",flow3Text:"O Termo preenchido será encaminhado pela ZapSign.",
+        flow4Title:"Pague a adesão",flow4Text:"Cobrança única de R$ 1.000, reembolsável conforme o Termo.",
+        flow5Title:"Integração",flow5Text:"Período oficial de 30 dias corridos para onboarding e alinhamento.",
+        flow6Title:"Confirmação",flow6Text:"Sem desistência, a empresa torna-se Empresa Fundadora Ativa.",
+        flow7Title:"CDE recorrente",flow7Text:"Ativação da assinatura mensal de 12 meses pela InfinityPay.",
+        flow8Title:"Acompanhamento",flow8Text:"Documentos, status, financeiro e suporte no Portal do Parceiro.",
+        joinEyebrow:"Cadastro institucional",joinTitle:"Inicie sua adesão ao Núcleo Fundador UrbanWatch.",
+        joinText:"Após o envio, o portal gera uma prévia do Termo de Adesão preenchido. A assinatura oficial ocorrerá pela ZapSign.",
+        statusStart:"Status inicial: cadastro",whatNext:"O que acontece depois?",status1:"Cadastro recebido",status1b:"Dados enviados para validação.",
+        status2:"Termo gerado",status2b:"Documento preenchido automaticamente.",status3:"Assinatura ZapSign",status3b:"Link enviado ao representante legal.",
+        status4:"Adesão InfinityPay",status4b:"Cobrança única de R$ 1.000.",status5:"Integração de 30 dias",status5b:"Onboarding e acompanhamento institucional.",
+        integrationNotice:"O cadastro não ativa automaticamente a CDE mensal. A assinatura recorrente será liberada somente após a confirmação definitiva da adesão.",
+        companyName:"Razão social *",tradeName:"Nome fantasia",address:"Endereço completo *",city:"Cidade *",state:"Estado *",zip:"CEP *",
+        representative:"Representante legal *",role:"Cargo *",dueDay:"Dia preferencial da CDE *",notes:"Observações",
+        check1:"Declaro que li o Documento Fundador.",check2:"Declaro que li o Regulamento Geral NFU v2.1.",
+        check3:"Declaro que li e concordo com o Termo de Adesão NFU v3.0.",
+        check4:"Autorizo o tratamento dos dados para adesão, comunicação, assinatura eletrônica e gestão institucional.",
+        formNotice:"Ao gerar o Termo, nenhuma cobrança recorrente será criada. O pagamento inicial será exclusivamente da Contribuição de Adesão.",
+        generateTerm:"Gerar Termo preenchido",saveDraft:"Salvar rascunho neste aparelho",
+        signatureEyebrow:"Assinatura digital",signatureTitle:"Segurança e rastreabilidade com ZapSign.",
+        signatureText:"Após a validação do cadastro, o Termo preenchido será encaminhado ao representante legal para assinatura digital.",
+        signatureCardTitle:"Fluxo de assinatura",signatureCardText:"A UrbanWatch.app cria o documento, define os signatários e acompanha o status até a conclusão.",
+        trackSignature:"Acompanhar assinatura",configStatus:"Integração externa",configTitle:"Configuração necessária",
+        configText:"Inclua no CONFIG do arquivo o link ou endpoint utilizado pela conta institucional da UrbanWatch.app na ZapSign.",
+        financeEyebrow:"Portal financeiro",financeTitle:"Pagamento por etapa, sem confusão.",phase1:"Fase 1 — adesão",
+        adhesionPayment:"Contribuição de Adesão",adhesionPaymentText:"Cobrança única. Reembolsável dentro das condições previstas no Termo.",
+        payAdhesion:"Pagar adesão",phase2:"Fase 2 — após 30 dias",cdePayment:"CDE mensal",
+        cdePaymentText:"Assinatura recorrente de 12 meses, liberada somente após a confirmação definitiva.",
+        activateCde:"Ativar CDE",faqTitle:"Perguntas frequentes",faq1q:"O cadastro já me torna Empresa Fundadora Ativa?",
+        faq1a:"Não. Primeiro há assinatura, pagamento da adesão e período oficial de integração de 30 dias.",
+        faq2q:"A adesão é reembolsável?",faq2a:"Sim, conforme as condições e prazos definidos no Termo de Adesão NFU v3.0.",
+        faq3q:"Quando começa a CDE?",faq3a:"Somente após a confirmação definitiva, ao fim do período de integração, caso não haja desistência.",
+        faq4q:"Os serviços da UrbanWatch.app estão incluídos?",faq4a:"Não. Consultorias, portais, projetos e demais serviços são independentes e dependem de contratação própria.",
+        faq5q:"A participação garante novos clientes?",faq5a:"Não. O UEDN é um ambiente de oportunidades, conexões e cooperação, sem garantia de resultados comerciais.",
+        footerText:"Ecossistema de Desenvolvimento de Negócios UrbanWatch. Inteligência para quem não improvisa.",
+        backTop:"Voltar ao início",footerDocs:"Documentos",footerContact:"Contato",termPreviewTitle:"Prévia do Termo preenchido",
+        printPdf:"Imprimir / salvar em PDF",downloadFilled:"Baixar Termo preenchido",sendZapsign:"Enviar para ZapSign"
+      },
+      "en": {
+        navDocs:"Documents",navJoin:"Join the NFU",heroEyebrow:"Official partner portal",
+        heroCopy:"The UrbanWatch Business Development Ecosystem connects companies, develops opportunities and creates a permanent environment for strategic cooperation.",
+        heroJoin:"Start NFU application",heroDocs:"View documents",nfuTitle:"UrbanWatch Founding Core",
+        nfuDesc:"The UEDN inaugural program for companies wishing to help build the Ecosystem from its origin.",
+        mini1:"Read the documents",mini2:"Registration and Term generation",mini3:"Digital signature",mini4:"30-day adhesion and integration",
+        aboutEyebrow:"What is UEDN",aboutTitle:"A structured environment for companies to grow together.",
+        aboutText:"UEDN organizes strategic connections, business intelligence, qualified networking and collaborative projects without replacing specific commercial agreements.",
+        pillar1Title:"Strategic Intelligence",pillar1Text:"Opportunity reading, context and paths for sustainable growth.",
+        pillar2Title:"Business Development",pillar2Text:"Connections and channels capable of generating new opportunities.",
+        pillar3Title:"Qualified Networking",pillar3Text:"Business relationships with purpose, context and follow-up.",
+        pillar4Title:"Collaborative Projects",pillar4Text:"Joint initiatives built according to partner alignment.",
+        docsEyebrow:"Institutional documents",docsTitle:"Three documents. One clear journey.",docsText:"Review the official NFU documents before registering.",
+        doc1Title:"Founding Document",doc1Version:"Official Institutional Document",doc1Text:"Purpose, vision and principles of the NFU.",
+        doc2Title:"NFU General Regulations",doc2Text:"Rules, governance, confidentiality, ethics and exit.",
+        doc3Title:"NFU Adhesion Term",doc3Text:"Adhesion, refund, integration, term and CDE.",
+        read:"Read",download:"Download",flowEyebrow:"Adhesion journey",flowTitle:"From first access to Active Founding Company.",
+        flow1Title:"Discover UEDN",flow1Text:"Understand its purpose and review institutional documents.",
+        flow2Title:"Register",flow2Text:"Provide company and legal representative data.",
+        flow3Title:"Sign digitally",flow3Text:"The completed Term will be sent through ZapSign.",
+        flow4Title:"Pay adhesion",flow4Text:"One-time BRL 1,000 payment, refundable under the Term.",
+        flow5Title:"Integration",flow5Text:"Official 30-day onboarding and alignment period.",
+        flow6Title:"Confirmation",flow6Text:"Without withdrawal, the company becomes an Active Founding Company.",
+        flow7Title:"Recurring CDE",flow7Text:"Activation of the 12-month InfinityPay subscription.",
+        flow8Title:"Monitoring",flow8Text:"Documents, status, finance and support in the Partner Portal.",
+        joinEyebrow:"Institutional registration",joinTitle:"Start your NFU adhesion.",
+        joinText:"After submission, the portal generates a preview of the completed Adhesion Term. Official signature is made through ZapSign.",
+        statusStart:"Initial status: registration",whatNext:"What happens next?",status1:"Registration received",status1b:"Data sent for validation.",
+        status2:"Term generated",status2b:"Document automatically completed.",status3:"ZapSign signature",status3b:"Link sent to the legal representative.",
+        status4:"InfinityPay adhesion",status4b:"One-time BRL 1,000 payment.",status5:"30-day integration",status5b:"Institutional onboarding and monitoring.",
+        integrationNotice:"Registration does not automatically activate the monthly CDE. The recurring subscription is released only after final confirmation.",
+        companyName:"Legal company name *",tradeName:"Trade name",address:"Full address *",city:"City *",state:"State *",zip:"Postal code *",
+        representative:"Legal representative *",role:"Role *",dueDay:"Preferred CDE due day *",notes:"Notes",
+        check1:"I have read the Founding Document.",check2:"I have read the NFU General Regulations v2.1.",
+        check3:"I have read and agree to the NFU Adhesion Term v3.0.",
+        check4:"I authorize data processing for adhesion, communication, electronic signature and institutional management.",
+        formNotice:"Generating the Term does not create recurring billing. The initial payment is only the Adhesion Contribution.",
+        generateTerm:"Generate completed Term",saveDraft:"Save draft on this device",
+        signatureEyebrow:"Digital signature",signatureTitle:"Security and traceability with ZapSign.",
+        signatureText:"After registration validation, the completed Term will be sent to the legal representative for digital signature.",
+        signatureCardTitle:"Signature flow",signatureCardText:"UrbanWatch.app creates the document, defines signatories and tracks completion.",
+        trackSignature:"Track signature",configStatus:"External integration",configTitle:"Configuration required",
+        configText:"Add the institutional UrbanWatch.app ZapSign URL or endpoint in CONFIG.",
+        financeEyebrow:"Financial portal",financeTitle:"Payment by stage, without confusion.",phase1:"Phase 1 — adhesion",
+        adhesionPayment:"Adhesion Contribution",adhesionPaymentText:"One-time payment. Refundable under the Term.",
+        payAdhesion:"Pay adhesion",phase2:"Phase 2 — after 30 days",cdePayment:"Monthly CDE",
+        cdePaymentText:"12-month recurring subscription, released only after final confirmation.",
+        activateCde:"Activate CDE",faqTitle:"Frequently asked questions",faq1q:"Does registration make me an Active Founding Company?",
+        faq1a:"No. Signature, adhesion payment and the official 30-day integration period come first.",
+        faq2q:"Is adhesion refundable?",faq2a:"Yes, according to the conditions and deadlines in the NFU Adhesion Term v3.0.",
+        faq3q:"When does CDE start?",faq3a:"Only after final confirmation, at the end of the integration period, if there is no withdrawal.",
+        faq4q:"Are UrbanWatch.app services included?",faq4a:"No. Consulting, portals, projects and other services are independent and require separate contracting.",
+        faq5q:"Does participation guarantee new clients?",faq5a:"No. UEDN is an environment of opportunities, connections and cooperation, without guaranteed business results.",
+        footerText:"UrbanWatch Business Development Ecosystem. Intelligence for those who do not improvise.",
+        backTop:"Back to top",footerDocs:"Documents",footerContact:"Contact",termPreviewTitle:"Completed Term preview",
+        printPdf:"Print / save as PDF",downloadFilled:"Download completed Term",sendZapsign:"Send to ZapSign"
+      },
+      "zh-CN": {
+        navDocs:"文件",navJoin:"加入 NFU",heroEyebrow:"合作伙伴官方门户",
+        heroCopy:"UrbanWatch 商业发展生态系统连接企业、开发机会，并建立长期战略合作环境。",
+        heroJoin:"开始 NFU 加入流程",heroDocs:"查看文件",nfuTitle:"UrbanWatch 创始核心",
+        nfuDesc:"UEDN 的首个项目，面向希望从起源阶段参与生态系统建设的企业。",
+        mini1:"阅读文件",mini2:"登记并生成协议",mini3:"电子签署",mini4:"30 天加入与整合",
+        aboutEyebrow:"什么是 UEDN",aboutTitle:"让企业共同成长的结构化环境。",
+        aboutText:"UEDN 组织战略连接、商业情报、高质量社交与协作项目，但不取代各方之间的具体商业合同。",
+        pillar1Title:"战略情报",pillar1Text:"识别机会、理解环境并制定可持续增长路径。",
+        pillar2Title:"业务发展",pillar2Text:"建立能够创造新机会的连接和渠道。",
+        pillar3Title:"高质量社交",pillar3Text:"有目标、有背景、有跟进的企业关系。",
+        pillar4Title:"协作项目",pillar4Text:"根据合作伙伴匹配度共同建设项目。",
+        docsEyebrow:"机构文件",docsTitle:"三份文件，一条清晰路径。",docsText:"登记前请先阅读 NFU 官方文件。",
+        doc1Title:"创始文件",doc1Version:"官方机构文件",doc1Text:"介绍 NFU 的宗旨、愿景和原则。",
+        doc2Title:"NFU 总则",doc2Text:"规定规则、治理、保密、伦理与退出。",
+        doc3Title:"NFU 加入协议",doc3Text:"规定加入、退款、整合、期限和 CDE。",
+        read:"阅读",download:"下载",flowEyebrow:"加入流程",flowTitle:"从首次访问到正式创始企业。",
+        flow1Title:"了解 UEDN",flow1Text:"了解宗旨并阅读机构文件。",
+        flow2Title:"填写登记",flow2Text:"提供企业和法定代表人信息。",
+        flow3Title:"电子签署",flow3Text:"已填写的协议将通过 ZapSign 发送。",
+        flow4Title:"支付加入款",flow4Text:"一次性支付 1,000 雷亚尔，可按协议退款。",
+        flow5Title:"整合期",flow5Text:"30 天正式入驻与对接期。",
+        flow6Title:"确认",flow6Text:"如无退出，企业成为正式创始企业。",
+        flow7Title:"定期 CDE",flow7Text:"通过 InfinityPay 启动 12 个月月度订阅。",
+        flow8Title:"持续跟进",flow8Text:"在合作伙伴门户查看文件、状态、财务和支持。",
+        joinEyebrow:"机构登记",joinTitle:"开始加入 UrbanWatch 创始核心。",
+        joinText:"提交后，门户将生成已填写协议预览。正式签署通过 ZapSign 完成。",
+        statusStart:"初始状态：登记",whatNext:"之后会发生什么？",status1:"已收到登记",status1b:"数据送交审核。",
+        status2:"协议已生成",status2b:"文件自动填写。",status3:"ZapSign 签署",status3b:"链接发送给法定代表人。",
+        status4:"InfinityPay 加入付款",status4b:"一次性支付 1,000 雷亚尔。",status5:"30 天整合",status5b:"机构入驻与跟进。",
+        integrationNotice:"登记不会自动启动月度 CDE。定期订阅仅在最终确认后开放。",
+        companyName:"公司法定名称 *",tradeName:"商业名称",address:"完整地址 *",city:"城市 *",state:"州 *",zip:"邮编 *",
+        representative:"法定代表人 *",role:"职务 *",dueDay:"CDE 首选到期日 *",notes:"备注",
+        check1:"我已阅读创始文件。",check2:"我已阅读 NFU 总则 v2.1。",
+        check3:"我已阅读并同意 NFU 加入协议 v3.0。",
+        check4:"我授权处理用于加入、沟通、电子签署和机构管理的数据。",
+        formNotice:"生成协议不会创建定期扣款。初始付款仅为加入贡献金。",
+        generateTerm:"生成已填写协议",saveDraft:"在本设备保存草稿",
+        signatureEyebrow:"电子签署",signatureTitle:"通过 ZapSign 实现安全与可追踪。",
+        signatureText:"登记审核后，已填写协议将发送给法定代表人进行电子签署。",
+        signatureCardTitle:"签署流程",signatureCardText:"UrbanWatch.app 创建文件、设置签署人并跟踪至完成。",
+        trackSignature:"跟踪签署",configStatus:"外部集成",configTitle:"需要配置",
+        configText:"请在 CONFIG 中填写 UrbanWatch.app 机构 ZapSign 链接或端点。",
+        financeEyebrow:"财务门户",financeTitle:"按阶段付款，清晰明确。",phase1:"阶段 1 — 加入",
+        adhesionPayment:"加入贡献金",adhesionPaymentText:"一次性付款。按协议条件可退款。",
+        payAdhesion:"支付加入款",phase2:"阶段 2 — 30 天后",cdePayment:"月度 CDE",
+        cdePaymentText:"12 个月定期订阅，仅在最终确认后开放。",
+        activateCde:"启动 CDE",faqTitle:"常见问题",faq1q:"登记后我就是正式创始企业吗？",
+        faq1a:"不是。需要先完成签署、支付加入款并经过 30 天正式整合期。",
+        faq2q:"加入款可以退款吗？",faq2a:"可以，依据 NFU 加入协议 v3.0 规定的条件和期限。",
+        faq3q:"CDE 何时开始？",faq3a:"仅在整合期结束并最终确认、且没有退出时开始。",
+        faq4q:"是否包含 UrbanWatch.app 的服务？",faq4a:"不包含。咨询、门户、项目及其他服务均独立签约。",
+        faq5q:"参与是否保证获得新客户？",faq5a:"不保证。UEDN 提供机会、连接与合作环境，不保证商业结果。",
+        footerText:"UrbanWatch 商业发展生态系统。为不依赖即兴的人提供智慧。",
+        backTop:"返回顶部",footerDocs:"文件",footerContact:"联系",termPreviewTitle:"已填写协议预览",
+        printPdf:"打印 / 保存为 PDF",downloadFilled:"下载已填写协议",sendZapsign:"发送至 ZapSign"
+      }
+    };
+
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+    function showToast(message){
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove("show"), 4200);
+    }
+
+    function applyConfig(){
+      $("#viewDocFounder").href = CONFIG.docs.founderView;
+      $("#downloadDocFounder").href = CONFIG.docs.founderDownload;
+      $("#viewDocRules").href = CONFIG.docs.rulesView;
+      $("#downloadDocRules").href = CONFIG.docs.rulesDownload;
+      $("#viewDocTerm").href = CONFIG.docs.termView;
+      $("#downloadDocTerm").href = CONFIG.docs.termDownload;
+
+      $("#contactEmail").href = `mailto:${CONFIG.contact.email}`;
+      $("#contactEmail").textContent = CONFIG.contact.email;
+      $("#contactWhatsapp").href = `https://wa.me/${CONFIG.contact.whatsapp}`;
+
+      setupExternalLink("#trackSignatureBtn", CONFIG.zapsign.trackingUrl, "Configure o link de acompanhamento da ZapSign no objeto CONFIG.");
+      setupExternalAnchor("#payAdhesionBtn", CONFIG.infinityPay.adhesionPaymentUrl, "Configure o link de cobrança única da InfinityPay no objeto CONFIG.");
+      setupExternalAnchor("#activateCdeBtn", CONFIG.infinityPay.cdeSubscriptionUrl, "Configure o link de assinatura recorrente da InfinityPay no objeto CONFIG.");
+    }
+
+    function setupExternalLink(selector,url,warning){
+      const el = $(selector);
+      el.addEventListener("click", () => {
+        if(!url){ showToast(warning); return; }
+        window.open(url,"_blank","noopener");
+      });
+    }
+
+    function setupExternalAnchor(selector,url,warning){
+      const el = $(selector);
+      el.href = url || "#";
+      el.addEventListener("click", (event) => {
+        if(!url){ event.preventDefault(); showToast(warning); }
+      });
+    }
+
+    function setLanguage(lang){
+      document.documentElement.lang = lang;
+      const dict = translations[lang] || translations["pt-BR"];
+      $$("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if(dict[key]) el.textContent = dict[key];
+      });
+      $$(".lang-btn").forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
+    }
+
+    function maskCnpj(value){
+      return value.replace(/\D/g,"").slice(0,14)
+        .replace(/^(\d{2})(\d)/,"$1.$2")
+        .replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
+        .replace(/\.(\d{3})(\d)/,".$1/$2")
+        .replace(/(\d{4})(\d)/,"$1-$2");
+    }
+
+    function maskCpf(value){
+      return value.replace(/\D/g,"").slice(0,11)
+        .replace(/(\d{3})(\d)/,"$1.$2")
+        .replace(/(\d{3})(\d)/,"$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/,"$1-$2");
+    }
+
+    function maskZip(value){
+      return value.replace(/\D/g,"").slice(0,8).replace(/(\d{5})(\d)/,"$1-$2");
+    }
+
+    function formDataObject(){
+      return Object.fromEntries(new FormData($("#adhesionForm")).entries());
+    }
+
+    function safe(value){
+      return String(value || "").replace(/[&<>"']/g, char => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      })[char]);
+    }
+
+    function buildTerm(data){
+      const today = new Date().toLocaleDateString("pt-BR");
+      return `
+        <h1>TERMO DE ADESÃO AO NÚCLEO FUNDADOR URBANWATCH (NFU)</h1>
+        <p style="text-align:center"><strong>VERSÃO 3.0</strong><br>Documento Institucional Oficial<br>Ecossistema de Desenvolvimento de Negócios UrbanWatch (UEDN)</p>
+
+        <h2>IDENTIFICAÇÃO DAS PARTES</h2>
+        <p><strong>ORGANIZADORA:</strong> UrbanWatch.app, representada por Elias Silva, Founder, Consultor de Inovação Estratégica e Business Development Partner.</p>
+
+        <p><strong>EMPRESA FUNDADORA EM ADESÃO:</strong><br>
+        Razão social: ${safe(data.companyName)}<br>
+        Nome fantasia: ${safe(data.tradeName)}<br>
+        CNPJ: ${safe(data.cnpj)}<br>
+        Endereço: ${safe(data.address)}, ${safe(data.city)}/${safe(data.state)}, CEP ${safe(data.zip)}<br>
+        Representante legal: ${safe(data.representative)}<br>
+        CPF: ${safe(data.cpf)}<br>
+        Cargo: ${safe(data.role)}<br>
+        E-mail: ${safe(data.email)}<br>
+        WhatsApp: ${safe(data.whatsapp)}</p>
+
+        <h2>CLÁUSULA PRIMEIRA — DO OBJETO</h2>
+        <p>O presente Termo formaliza o ingresso da EMPRESA no Núcleo Fundador UrbanWatch (NFU), primeiro programa oficial do Ecossistema de Desenvolvimento de Negócios UrbanWatch (UEDN).</p>
+
+        <h2>CLÁUSULA SEGUNDA — DO PERÍODO DE INTEGRAÇÃO</h2>
+        <p>O período oficial de integração será de 30 (trinta) dias corridos, contados da formalização da adesão.</p>
+
+        <h2>CLÁUSULA TERCEIRA — DA CONTRIBUIÇÃO DE ADESÃO</h2>
+        <p>A Contribuição de Adesão será de R$ 1.000,00 (mil reais), em pagamento único, de natureza institucional.</p>
+
+        <h2>CLÁUSULA QUARTA — DO REEMBOLSO</h2>
+        <p>Durante os primeiros 30 (trinta) dias corridos, qualquer das partes poderá desistir. O reembolso integral será realizado em até 30 (trinta) dias corridos após solicitação formal, conforme o Termo oficial.</p>
+
+        <h2>CLÁUSULA QUINTA — DA CONFIRMAÇÃO</h2>
+        <p>Não havendo desistência, a EMPRESA passará à condição de Empresa Fundadora Ativa.</p>
+
+        <h2>CLÁUSULA SEXTA — DA VIGÊNCIA</h2>
+        <p>A adesão terá vigência inicial de 12 (doze) meses, com renovação conforme o instrumento oficial.</p>
+
+        <h2>CLÁUSULA SÉTIMA — DA CDE</h2>
+        <p>Após a confirmação definitiva, a Empresa Fundadora Ativa contribuirá com a Contribuição de Desenvolvimento do Ecossistema (CDE), no valor de R$ 1.000,00 mensais, com vencimento preferencial no dia ${safe(data.dueDay)}.</p>
+
+        <h2>DECLARAÇÃO</h2>
+        <p>A EMPRESA declara conhecer o Documento Fundador, o Regulamento Geral NFU v2.1 e o Termo de Adesão NFU v3.0.</p>
+
+        <p>Observações: ${safe(data.notes) || "Não informadas."}</p>
+        <p>Fortaleza/CE, ${today}.</p>
+
+        <p style="margin-top:48px">____________________________________<br><strong>UrbanWatch.app</strong><br>Elias Silva</p>
+        <p style="margin-top:36px">____________________________________<br><strong>${safe(data.companyName)}</strong><br>${safe(data.representative)}</p>
+
+        <p style="margin-top:30px;font-size:12px;color:#555">
+          Esta é uma prévia gerada pelo portal. A versão oficial para assinatura será emitida pela UrbanWatch.app e enviada pela ZapSign.
+        </p>
+      `;
+    }
+
+    function validateForm(){
+      const form = $("#adhesionForm");
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return false;
+      }
+      return true;
+    }
+
+    async function submitLead(data){
+      if(!CONFIG.backend.leadEndpoint) return { skipped:true };
+      const response = await fetch(CONFIG.backend.leadEndpoint,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(data)
+      });
+      if(!response.ok) throw new Error("Falha ao enviar o cadastro.");
+      return response.json();
+    }
+
+    $("#adhesionForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      if(!validateForm()) return;
+
+      const data = formDataObject();
+      $("#termPreview").innerHTML = buildTerm(data);
+      $("#termModal").classList.add("open");
+
+      try{
+        await submitLead(data);
+      }catch(error){
+        showToast(error.message || "Não foi possível enviar o cadastro ao servidor.");
+      }
+    });
+
+    $("#saveDraftBtn").addEventListener("click", () => {
+      const data = formDataObject();
+      localStorage.setItem("uednAdhesionDraft", JSON.stringify(data));
+      showToast("Rascunho salvo neste aparelho.");
+    });
+
+    function restoreDraft(){
+      const raw = localStorage.getItem("uednAdhesionDraft");
+      if(!raw) return;
+      try{
+        const data = JSON.parse(raw);
+        Object.entries(data).forEach(([key,value]) => {
+          const field = $("#adhesionForm").elements[key];
+          if(!field) return;
+          if(field.type === "checkbox") field.checked = value === "on" || value === true;
+          else field.value = value;
+        });
+      }catch{}
+    }
+
+    $("#closeTermModal").addEventListener("click", () => $("#termModal").classList.remove("open"));
+    $("#termModal").addEventListener("click", event => {
+      if(event.target === $("#termModal")) $("#termModal").classList.remove("open");
+    });
+
+    $("#printTermBtn").addEventListener("click", () => window.print());
+
+    $("#downloadTermHtmlBtn").addEventListener("click", () => {
+      const content = `<!DOCTYPE html><html lang="pt-BR"><meta charset="UTF-8"><title>Termo de Adesão NFU</title><body>${$("#termPreview").innerHTML}</body></html>`;
+      const blob = new Blob([content],{type:"text/html;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Termo_de_Adesao_NFU_Preenchido.html";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    $("#sendZapsignBtn").addEventListener("click", async () => {
+      if(!CONFIG.zapsign.submissionEndpoint){
+        showToast("Configure o endpoint de envio para a ZapSign no objeto CONFIG.");
+        return;
+      }
+      try{
+        const response = await fetch(CONFIG.zapsign.submissionEndpoint,{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({
+            form:formDataObject(),
+            html:$("#termPreview").innerHTML
+          })
+        });
+        if(!response.ok) throw new Error("Falha ao enviar para ZapSign.");
+        showToast("Documento enviado para assinatura.");
+      }catch(error){
+        showToast(error.message);
+      }
+    });
+
+    $("#cnpj").addEventListener("input", e => e.target.value = maskCnpj(e.target.value));
+    $("#cpf").addEventListener("input", e => e.target.value = maskCpf(e.target.value));
+    $("#zip").addEventListener("input", e => e.target.value = maskZip(e.target.value));
+
+    $$(".lang-btn").forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.lang)));
+
+    $("#shareBtn").addEventListener("click", async () => {
+      const data = {title:document.title,text:"Conheça o UEDN e o Núcleo Fundador UrbanWatch.",url:location.href};
+      try{
+        if(navigator.share) await navigator.share(data);
+        else{
+          await navigator.clipboard.writeText(location.href);
+          showToast("Link copiado.");
+        }
+      }catch{}
+    });
+
+    applyConfig();
+    restoreDraft();
+    setLanguage("pt-BR");
+  </script>
+</body>
+</html>
