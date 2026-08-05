@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UEDN | UrbanWatch.app</title>
+<style>
+:root{
+--bg:#0a0a0a;--panel:#151515;--gold:#D4AF37;--champ:#F1E5AC;--txt:#f7f7f7;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Montserrat,Arial,sans-serif;background:linear-gradient(#0a0a0a,#111);color:var(--txt)}
+header{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(10,10,10,.95);border-bottom:1px solid #2e2e2e;z-index:10}
+.logo{font-weight:700;color:var(--gold);font-size:1.05rem}
+.menu{font-size:1.8rem;color:#fff}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:96px 22px 48px;text-align:center}
+.wrap{max-width:760px;margin:auto}
+h1{font-size:clamp(2.3rem,10vw,4.8rem);line-height:1.08;margin:0 0 20px;color:var(--champ);text-wrap:balance}
+.lead{font-size:clamp(1rem,4vw,1.35rem);line-height:1.7;color:#ddd;margin-bottom:34px}
+.btn{display:block;max-width:360px;margin:14px auto;padding:16px;border-radius:14px;background:linear-gradient(135deg,#b88f22,var(--gold));text-decoration:none;color:#111;font-weight:700}
+section{padding:48px 22px;max-width:900px;margin:auto}
+.card{background:var(--panel);border:1px solid #303030;border-radius:16px;padding:22px;margin:18px 0}
+.docs a{display:block;color:var(--champ);text-decoration:none;padding:10px 0}
+.float{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px;background:#151515;border:1px solid #333;border-radius:18px;padding:10px 12px}
+.float a{text-decoration:none;color:#fff;font-size:.95rem;padding:8px}
+footer{padding:50px 22px 90px;text-align:center;color:#aaa}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">UrbanWatch.app | UEDN</div>
+<div class="menu">☰</div>
+</header>
+
+<section class="hero">
+<div class="wrap">
+<h1>Ecossistema de Desenvolvimento de Negócios</h1>
+<p class="lead">Conectando empresas. Desenvolvendo oportunidades. Construindo futuros.</p>
+<a class="btn" href="#uedn">Conhecer o Ecossistema</a>
+<a class="btn" href="#cadastro">Quero fazer parte do NFU</a>
+</div>
+</section>
+
+<section id="uedn">
+<div class="card">
+<h2>O que é o UEDN?</h2>
+<p>O Ecossistema de Desenvolvimento de Negócios UrbanWatch conecta empresas, cria oportunidades e fortalece parcerias estratégicas.</p>
+</div>
+
+<div class="card">
+<h2>Núcleo Fundador UrbanWatch (NFU)</h2>
+<p>Primeiro programa oficial do UEDN.</p>
+</div>
+
+<div class="card docs">
+<h2>Documentação Oficial</h2>
+<a href="#">📘 Documento Fundador</a>
+<a href="#">📑 Regulamento Geral NFU</a>
+<a href="#">✍️ Termo de Adesão</a>
+</div>
+
+<div class="card" id="cadastro">
+<h2>Solicitação de Adesão</h2>
+<p>Preencha seus dados para gerar o Documento Oficial de Adesão.</p>
+<a class="btn" href="#">Gerar Documento de Adesão</a>
+</div>
+
+<div class="card">
+<h2>Contribuição de Adesão</h2>
+<p><strong>R$ 1.000,00</strong><br>Pagamento único, conforme o Termo de Adesão.</p>
+</div>
+</section>
+
+<footer>
+UrbanWatch.app<br>Ecossistema de Desenvolvimento de Negócios
+</footer>
+
+<div class="float">
+<a href="#">🏠</a>
+<a href="#">PT</a>
+<a href="#">EN</a>
+<a href="#">中文</a>
+<a href="#">⬆</a>
+</div>
+</body>
+</html>
