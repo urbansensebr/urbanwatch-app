@@ -1,0 +1,28 @@
+PORTAL PREMIUM PATRÍCIA LIMA — SPRINT 2.2
+
+CORREÇÃO PRINCIPAL
+O seletor de idiomas foi substituído pelo componente do portal de Christopher:
+- PT
+- EN
+- ES
+- 中文
+
+FUNCIONAMENTO
+- altera data-language no elemento HTML;
+- troca o idioma dos textos preparados;
+- altera o atributo lang;
+- altera o título da página;
+- salva a preferência em localStorage;
+- restaura o idioma escolhido ao reabrir o portal.
+
+COMPARTILHAMENTO
+Permanece no padrão do Christopher:
+- Compartilhar Portal;
+- QR Code;
+- copiar link;
+- compartilhamento nativo.
+
+ESTRUTURA
+- CSS dentro do index.html;
+- JavaScript dentro do index.html;
+- imagens dentro da pasta images/.
