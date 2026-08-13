@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-language="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+
+  <title>Dr. Ruan Almeida | Portal Premium</title>
+  <meta name="description" content="Portal profissional do Dr. Ruan Almeida — advogado com atuação em desbloqueio de contas de motoristas de aplicativo e atendimento nacional.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Ruan Almeida | Portal Premium">
+  <meta property="og:description" content="Advocacia voltada a motoristas de aplicativo, com atuação em desbloqueio de contas e atendimento nacional.">
+  <meta property="og:image" content="perfil.jpg">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+
+  <style>
+    :root{
+      --black:#050505;
+      --black2:#0d0d0f;
+      --graphite:#171719;
+      --red:#b20d14;
+      --red2:#e31b23;
+      --red-soft:#ff686d;
+      --white:#f7f7f7;
+      --muted:#b8b8bd;
+      --line:rgba(227,27,35,.25);
+      --shadow:0 18px 55px rgba(0,0,0,.46);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 85% 8%,rgba(227,27,35,.13),transparent 31%),
+        radial-gradient(circle at 8% 45%,rgba(178,13,20,.08),transparent 27%),
+        linear-gradient(180deg,#030303,#0b0b0c 55%,#050505);
+      color:var(--white);
+      font-family:Arial,"Microsoft YaHei","PingFang SC","Noto Sans SC",Helvetica,sans-serif;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+    body.modal-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;max-width:100%}
+
+    .shell{
+      width:min(1120px,calc(100% - 28px));
+      margin:auto;
+      padding:18px 0 46px;
+    }
+
+    /* Sem marca UrbanWatch.app no topo, conforme solicitado pelo cliente. */
+    .topbar{
+      min-height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding:8px 10px;
+      position:sticky;
+      top:8px;
+      z-index:20;
+      pointer-events:none;
+    }
+
+    .lang-switch{
+      pointer-events:auto;
+      display:flex;
+      padding:4px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(8,8,8,.88);
+      backdrop-filter:blur(14px);
+      gap:2px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .lang-btn{
+      border:0;
+      color:var(--muted);
+      background:transparent;
+      border-radius:999px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:.72rem;
+    }
+
+    .lang-btn.active{
+      color:#fff;
+      background:linear-gradient(135deg,var(--red2),var(--red));
+    }
+
+    .hero{
+      margin-top:4px;
+      display:grid;
+      grid-template-columns:1fr;
+      min-height:580px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(112deg,rgba(7,7,8,.98),rgba(15,15,17,.95) 58%,rgba(40,7,9,.88));
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      padding:58px 46px 48px;
+      align-items:center;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      width:max-content;
+      color:#ffd9da;
+      border:1px solid rgba(227,27,35,.34);
+      background:rgba(227,27,35,.08);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.73rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+    }
+
+    .eyebrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+
+    h1{
+      margin-top:22px;
+      font-size:clamp(2.6rem,6.2vw,5.4rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+    }
+    h1 span{display:block;color:var(--red2)}
+    .hero-name{
+      text-align:center;
+      white-space:nowrap;
+      font-size:clamp(2.3rem,7vw,5rem);
+      letter-spacing:-.055em;
+    }
+    @media(max-width:560px){
+      .hero-name{
+        font-size:clamp(2.15rem,10.3vw,3.15rem);
+        white-space:nowrap;
+      }
+    }
+
+    .role{
+      margin-top:20px;
+      color:#ffd4d5;
+      font-size:clamp(1rem,2vw,1.26rem);
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    .intro{
+      margin-top:14px;
+      text-align:center;
+      max-width:680px;
+      color:#d7d7da;
+      line-height:1.7;
+    }
+
+
+    .mission{
+      max-width:760px;
+      font-size:clamp(1.05rem,2.2vw,1.35rem);
+      font-weight:700;
+      color:#f0f0f2;
+      line-height:1.6;
+    }
+
+    .highlights{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px;justify-content:center}
+    .highlight{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 11px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.075);
+      background:rgba(255,255,255,.025);
+      color:#dfdfe2;
+      font-size:.83rem;
+    }
+    .highlight svg{width:16px;height:16px;color:var(--red2);fill:none;stroke:currentColor;stroke-width:1.9}
+
+    .actions,.extra-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;width:100%}
+    .actions{margin-top:30px}
+    .extra-actions{margin-top:12px}
+    .extra-actions .btn{flex:1 1 220px}
+
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:15px;
+      padding:12px 18px;
+      font-weight:900;
+      font-size:.86rem;
+      color:#fff;
+      text-decoration:none;
+      cursor:pointer;
+      transition:transform .2s ease,border-color .2s ease,background .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn span{color:inherit}
+    .btn svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8}
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--red2),var(--red));
+      box-shadow:0 12px 30px rgba(227,27,35,.2);
+      border:1px solid transparent;
+    }
+    .btn-secondary{
+      color:#fff;
+      border:1px solid rgba(227,27,35,.34);
+      background:rgba(255,255,255,.025);
+    }
+
+    .hero-photo{
+      position:relative;
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:5px;
+      background:#070707;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-photo::before{
+      content:"";
+      position:absolute;
+      inset:-42%;
+      z-index:-2;
+      background:conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(227,27,35,.12) 38deg,
+        #ff7479 72deg,
+        var(--red2) 104deg,
+        transparent 145deg,
+        transparent 230deg,
+        rgba(227,27,35,.16) 268deg,
+        var(--red) 312deg,
+        transparent 360deg
+      );
+      animation:premiumOrbit 7s linear infinite;
+    }
+
+    .hero-photo::after{
+      content:"";
+      position:absolute;
+      inset:5px;
+      z-index:-1;
+      background:
+        linear-gradient(to top,rgba(4,4,4,.98),rgba(4,4,4,.05) 55%),
+        radial-gradient(circle at 50% 39%,rgba(227,27,35,.31),transparent 38%),
+        #080808;
+    }
+
+    @keyframes premiumOrbit{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){.hero-photo::before{animation:none}}
+
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      min-height:570px;
+      object-fit:cover;
+      object-position:center;
+      image-rendering:auto;
+      position:relative;
+      z-index:1;
+      filter:contrast(1.03) saturate(1.03);
+    }
+
+    .photo-label{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      z-index:2;
+      padding:15px 16px;
+      border:1px solid rgba(227,27,35,.35);
+      border-radius:17px;
+      background:rgba(5,5,5,.8);
+      backdrop-filter:blur(10px);
+    }
+    .photo-label strong,.photo-label span{display:block}
+    .photo-label strong{color:#ffe1e2;font-size:.94rem;margin-bottom:4px;line-height:1.4}
+    .photo-label span{color:var(--muted);font-size:.76rem;margin-top:3px}
+
+    .section{
+      margin-top:18px;
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(145deg,rgba(18,18,20,.92),rgba(8,8,9,.96));
+      box-shadow:0 14px 46px rgba(0,0,0,.22);
+    }
+
+    .section-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:22px}
+    .kicker{display:block;color:var(--red2);text-transform:uppercase;font-size:.7rem;font-weight:900;letter-spacing:.14em;margin-bottom:8px}
+    .section h2{font-size:clamp(1.45rem,4vw,2.15rem);letter-spacing:-.035em}
+    .section-description{color:var(--muted);max-width:530px;font-size:.9rem;margin-top:10px;line-height:1.65}
+
+    .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .tile{
+      min-height:145px;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:17px;
+      border:1px solid rgba(227,27,35,.19);
+      border-radius:18px;
+      background:radial-gradient(circle at 100% 0,rgba(227,27,35,.09),transparent 44%),rgba(255,255,255,.018);
+      transition:transform .22s ease,border-color .22s ease;
+    }
+    .tile:hover{transform:translateY(-4px);border-color:rgba(227,27,35,.55)}
+    .tile-icon{
+      width:42px;height:42px;display:grid;place-items:center;
+      border:1px solid rgba(227,27,35,.31);
+      border-radius:13px;background:rgba(227,27,35,.08);color:var(--red2);
+    }
+    .tile svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+    .tile strong,.tile small{display:block}
+    .tile strong{font-size:.96rem;margin-bottom:5px;line-height:1.35}
+    .tile small{color:var(--muted);font-size:.78rem;line-height:1.5}
+
+    .international-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .international-card{
+      min-height:250px;padding:26px;border-radius:20px;
+      border:1px solid rgba(227,27,35,.23);
+      background:linear-gradient(145deg,rgba(227,27,35,.11),rgba(11,11,12,.35)),#0b0b0c;
+    }
+    .international-card svg{width:38px;height:38px;color:var(--red2);fill:none;stroke:currentColor;stroke-width:1.5;margin-bottom:17px}
+    .international-card h3{color:#ffe0e1;font-size:1.22rem;margin-bottom:10px;line-height:1.35}
+    .international-card p{color:#d1d1d4;font-size:.91rem;line-height:1.65}
+    .cities{margin-top:18px;display:flex;gap:9px;flex-wrap:wrap}
+    .city{border:1px solid rgba(227,27,35,.26);background:rgba(0,0,0,.25);border-radius:999px;padding:7px 10px;color:#ffd5d7;font-size:.76rem;font-weight:800}
+
+    .contact-band{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center;padding:31px;
+      border:1px solid rgba(227,27,35,.31);border-radius:24px;
+      background:radial-gradient(circle at 85% 30%,rgba(227,27,35,.16),transparent 32%),linear-gradient(135deg,#101012,#080809);
+    }
+    .contact-band h2{font-size:clamp(1.65rem,4.5vw,2.65rem);line-height:1.08;letter-spacing:-.045em}
+    .contact-band h2 span{color:var(--red2)}
+    .contact-band p{color:var(--muted);margin-top:14px;line-height:1.65}
+    .contact-actions{display:flex;flex-direction:column;gap:10px}
+
+    .footer{
+      padding:28px 10px 8px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:18px;
+      color:#85858a;
+      font-size:.72rem;
+    }
+    .footer strong{color:#d2d2d5}
+    .footer a{color:#ff9b9f}
+    .trust-center-link{
+      width:100%;margin-top:10px;padding-top:14px;border-top:1px solid rgba(227,27,35,.18);
+      display:inline-flex;justify-content:center;align-items:center;gap:8px;
+      color:#ffb0b3;font-weight:800;text-align:center;line-height:1.45;
+    }
+
+    .share-modal{position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.78);backdrop-filter:blur(10px)}
+    .share-modal.open{display:flex}
+    .share-dialog{width:min(440px,100%);border:1px solid rgba(227,27,35,.36);border-radius:24px;background:linear-gradient(145deg,#161618,#080809);box-shadow:0 28px 80px rgba(0,0,0,.58);padding:24px;position:relative}
+    .share-close{position:absolute;top:12px;right:12px;width:38px;height:38px;border:1px solid rgba(227,27,35,.25);border-radius:12px;background:rgba(255,255,255,.03);color:var(--white);cursor:pointer;display:grid;place-items:center;font-size:1.15rem}
+    .share-dialog h2{margin-right:42px;font-size:1.45rem;line-height:1.2;color:#ffe0e1}
+    .share-dialog p{margin-top:10px;color:var(--muted);line-height:1.65;font-size:.9rem}
+    .qr-wrap{width:230px;max-width:100%;aspect-ratio:1;margin:22px auto 18px;padding:14px;border-radius:20px;background:#fff;display:grid;place-items:center}
+    .qr-wrap img{width:100%;height:100%;object-fit:contain}
+    .share-link-box{display:flex;align-items:center;gap:10px;margin-top:14px;padding:12px;border:1px solid rgba(227,27,35,.22);border-radius:14px;background:#090909}
+    .share-link{flex:1;min-width:0;color:#d8d8dc;font-size:.78rem;line-height:1.4;overflow-wrap:anywhere}
+    .copy-link-btn{flex:0 0 auto;border:1px solid rgba(227,27,35,.3);border-radius:10px;background:rgba(227,27,35,.08);color:#ffd7d8;padding:9px 10px;cursor:pointer;font-weight:800;font-size:.72rem}
+    .share-dialog-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:16px}
+
+    html[data-language="pt"] [data-lang]:not([data-lang="pt"]),
+    html[data-language="en"] [data-lang]:not([data-lang="en"]),
+    html[data-language="es"] [data-lang]:not([data-lang="es"]),
+    html[data-language="zh"] [data-lang]:not([data-lang="zh"]){display:none!important}
+
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr}
+      .hero-copy{padding:44px 25px 34px}
+      .hero-photo,.hero-photo img{min-height:470px}
+      .tiles{grid-template-columns:repeat(2,1fr)}
+      .international-grid,.contact-band{grid-template-columns:1fr}
+      .contact-actions{flex-direction:row;flex-wrap:wrap}
+      .contact-actions .btn{flex:1}
+    }
+    @media(max-width:620px){
+      .extra-actions{flex-direction:column}
+      .extra-actions .btn{width:100%;flex-basis:auto}
+    }
+    @media(max-width:560px){
+      .shell{width:calc(100% - 18px);padding-top:5px}
+      .topbar{top:5px;min-height:50px;padding:5px 2px}
+      .lang-btn{padding:7px 8px;font-size:.67rem}
+      .hero{border-radius:23px}
+      .hero-copy{padding:36px 20px 28px}
+      h1{font-size:clamp(2.45rem,15vw,4.25rem)}
+      .actions{flex-direction:column}
+      .btn{width:100%}
+      .hero-photo,.hero-photo img{min-height:420px}
+      .section{padding:23px 16px;border-radius:21px}
+      .section-head{display:block}
+      .tiles{grid-template-columns:1fr 1fr;gap:10px}
+      .tile{min-height:138px;padding:16px}
+      .international-grid{grid-template-columns:1fr}
+      .contact-band{padding:24px 18px}
+      .contact-actions{flex-direction:column}
+      .footer{flex-direction:column;text-align:center}
+      .share-dialog{padding:22px 16px 18px}
+      .qr-wrap{width:210px}
+      .share-link-box{align-items:flex-start;flex-direction:column}
+      .copy-link-btn{width:100%}
+    }
+    @media(max-width:390px){
+      .tiles{grid-template-columns:1fr}
+      .tile{min-height:120px}
+    }
+
+    /* ===== 05: foto principal no topo, preservando a linguagem visual do 01 ===== */
+    .hero-profile{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      margin-bottom:24px;
+    }
+
+    .hero-profile-ring{
+      width:190px;
+      height:190px;
+      padding:4px;
+      border-radius:50%;
+      position:relative;
+      background:
+        conic-gradient(
+          from 210deg,
+          #ff9da1,
+          var(--red2) 42%,
+          #66070b 72%,
+          #ff9da1
+        );
+      box-shadow:
+        0 0 0 1px rgba(227,27,35,.15),
+        0 20px 55px rgba(0,0,0,.42),
+        0 0 34px rgba(227,27,35,.15);
+    }
+
+    .hero-profile-ring::after{
+      content:"";
+      position:absolute;
+      inset:-7px;
+      border-radius:50%;
+      border:1px solid rgba(227,27,35,.18);
+      pointer-events:none;
+    }
+
+    .hero-profile-ring img{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center;
+      border:4px solid #070707;
+    }
+
+    .hero-firm{
+      margin-top:10px;
+      color:#ffb5b8;
+      font-size:.76rem;
+      font-weight:900;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+
+    .hero-firm i{
+      color:var(--red2);
+      margin-right:5px;
+    }
+
+    /* Complementos do 02 adaptados ao 01 */
+    .evidence-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .evidence-card{
+      min-height:128px;
+      padding:19px 13px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:center;
+      border-radius:18px;
+      border:1px solid rgba(227,27,35,.18);
+      background:
+        radial-gradient(circle at 50% 0,rgba(227,27,35,.09),transparent 54%),
+        rgba(255,255,255,.018);
+    }
+
+    .evidence-number{
+      color:var(--red2);
+      font-size:clamp(1.55rem,4vw,2.15rem);
+      line-height:1;
+      font-weight:900;
+    }
+
+    .evidence-label{
+      margin-top:9px;
+      color:var(--muted);
+      font-size:.73rem;
+      line-height:1.35;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+
+    .google-row{
+      margin-top:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:11px;
+      padding:13px 15px;
+      border:1px solid rgba(227,27,35,.2);
+      border-radius:16px;
+      background:rgba(255,255,255,.02);
+      text-align:center;
+    }
+
+    .google-row .stars{
+      color:#ff767b;
+      letter-spacing:2px;
+      white-space:nowrap;
+    }
+
+    .credentials-row{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:9px;
+      margin-top:14px;
+    }
+
+    .credential-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      border:1px solid rgba(227,27,35,.2);
+      border-radius:999px;
+      background:rgba(255,255,255,.02);
+      padding:8px 12px;
+      color:#d3d3d6;
+      font-size:.79rem;
+    }
+
+    .credential-pill i{
+      color:var(--red2);
+    }
+
+    .case-types{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .case-chip{
+      border:1px solid rgba(227,27,35,.22);
+      border-radius:999px;
+      background:rgba(227,27,35,.055);
+      color:#ffd4d6;
+      padding:7px 10px;
+      font-size:.75rem;
+      font-weight:800;
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .step-card{
+      min-height:190px;
+      padding:20px;
+      border-radius:18px;
+      border:1px solid rgba(227,27,35,.18);
+      background:rgba(255,255,255,.018);
+    }
+
+    .step-number{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      border:1px solid rgba(227,27,35,.43);
+      color:#ff9da1;
+      font-weight:900;
+      margin-bottom:15px;
+    }
+
+    .step-card h3{
+      margin:0 0 7px;
+      font-size:1rem;
+      color:#f5f5f5;
+    }
+
+    .step-card p{
+      color:var(--muted);
+      font-size:.84rem;
+      line-height:1.55;
+    }
+
+    .no-commitment{
+      margin-top:15px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      color:#ffb8ba;
+      text-align:center;
+      font-size:.85rem;
+    }
+
+    .resource-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .resource-card{
+      min-height:96px;
+      display:flex;
+      align-items:center;
+      gap:15px;
+      padding:16px;
+      border-radius:17px;
+      border:1px solid rgba(227,27,35,.18);
+      background:rgba(255,255,255,.018);
+      transition:transform .2s ease,border-color .2s ease;
+    }
+
+    .resource-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(227,27,35,.5);
+    }
+
+    .resource-icon{
+      width:46px;
+      height:46px;
+      flex:0 0 46px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      border:1px solid rgba(227,27,35,.28);
+      background:rgba(227,27,35,.08);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.015);
+    }
+    .resource-icon svg{
+      width:27px;
+      height:27px;
+      display:block;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:1.9;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      color:var(--red2);
+    }
+
+    .resource-icon-youtube svg path:first-child{
+      fill:rgba(227,27,35,.12);
+    }
+.resource-card strong,
+    .resource-card small{
+      display:block;
+    }
+
+    .resource-card small{
+      color:var(--muted);
+      font-size:.76rem;
+      margin-top:3px;
+      line-height:1.4;
+    }
+
+    .ebook{
+      margin-top:18px;
+      padding:26px;
+      border-radius:20px;
+      border:1px solid rgba(227,27,35,.36);
+      background:
+        radial-gradient(circle at 100% 0,rgba(227,27,35,.18),transparent 45%),
+        linear-gradient(145deg,#171012,#0a090a);
+    }
+
+
+    .ebook-cover{
+      width:min(100%,520px);
+      margin:0 auto 20px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(227,27,35,.28);
+      box-shadow:0 18px 46px rgba(0,0,0,.34);
+      background:#090909;
+    }
+
+    .ebook-cover img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .ebook-copy{
+      text-align:center;
+    }
+
+    .ebook-tag{
+      color:var(--red2);
+      font-size:.72rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+
+    .ebook h3{
+      margin-top:11px;
+      font-size:clamp(1.35rem,4vw,1.95rem);
+      line-height:1.2;
+    }
+
+    .ebook p{
+      margin-top:11px;
+      color:#d1d1d4;
+      line-height:1.65;
+    }
+
+    .ebook-price{
+      color:#ff9da1;
+      font-weight:900;
+    }
+
+    .ebook .btn{
+      margin-top:18px;
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .review-card{
+      padding:20px;
+      border-radius:18px;
+      border:1px solid rgba(227,27,35,.18);
+      background:rgba(255,255,255,.018);
+    }
+
+    .review-head{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin-bottom:12px;
+    }
+
+    .review-avatar{
+      width:42px;
+      height:42px;
+      flex:0 0 auto;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--red2),#7a070c);
+      color:#fff;
+      font-weight:900;
+    }
+
+    .review-name{
+      font-size:.92rem;
+      line-height:1.25;
+      font-weight:800;
+    }
+
+    .review-stars{
+      margin-top:3px;
+      color:#ff767b;
+      font-size:.8rem;
+      letter-spacing:1px;
+    }
+
+    .review-card p{
+      color:#d1d1d4;
+      font-size:.84rem;
+      line-height:1.62;
+    }
+
+    .review-source{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:.72rem;
+    }
+
+    @media(max-width:760px){
+      .evidence-grid,
+      .steps-grid,
+      .reviews-grid,
+      .resource-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:560px){
+      .hero-profile-ring{
+        width:220px;
+        height:220px;
+      }
+
+      .hero-firm{
+        margin-top:9px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="lang-switch" aria-label="Selecionar idioma">
+        <button class="lang-btn active" type="button" data-set-language="pt">PT</button>
+        <button class="lang-btn" type="button" data-set-language="en">EN</button>
+        <button class="lang-btn" type="button" data-set-language="es">ES</button>
+        <button class="lang-btn" type="button" data-set-language="zh">中文</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+
+          <div class="hero-profile">
+            <div class="hero-profile-ring">
+              <img src="perfil.jpg" alt="Dr. Ruan Almeida">
+            </div>
+            <div class="hero-firm">
+              <i class="ti ti-building-bank"></i>
+              Fundador do escritório ACR Advogados
+            </div>
+          </div>
+<h1 class="hero-name">Dr. Ruan Almeida</h1>
+
+          <p class="role" data-lang="pt">Advogado | Desbloqueio de Contas de Aplicativos</p>
+          <p class="role" data-lang="en">Attorney | App Account Reinstatement</p>
+          <p class="role" data-lang="es">Abogado | Desbloqueo de Cuentas de Aplicaciones</p>
+          <p class="role" data-lang="zh">律师 | 应用平台账户恢复</p>
+
+          <p class="intro mission" data-lang="pt">Devolvo o trabalho e a renda aos motoristas de aplicativo bloqueados injustamente em todo o Brasil.</p>
+          <p class="intro mission" data-lang="en">I help app drivers unfairly blocked across Brazil recover their work and income.</p>
+          <p class="intro mission" data-lang="es">Devuelvo el trabajo y los ingresos a los conductores de aplicaciones bloqueados injustamente en todo Brasil.</p>
+          <p class="intro mission" data-lang="zh">帮助在巴西各地遭到不公封禁的网约车司机恢复工作与收入。</p>
+
+          <div class="highlights">
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1-6h10l1 6M8 11l2-4h4l2 4"></path><circle cx="8" cy="18" r="1.5"></circle><circle cx="16" cy="18" r="1.5"></circle></svg>
+              <span data-lang="pt">Foco em motoristas de aplicativo</span>
+              <span data-lang="en">Focused on app-based drivers</span>
+              <span data-lang="es">Enfoque en conductores de aplicaciones</span>
+              <span data-lang="zh">专注网约车司机</span>
+            </div>
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M8 12h8M12 8v8"></path></svg>
+              <span data-lang="pt">Desbloqueio de contas de app</span>
+              <span data-lang="en">App account reinstatement</span>
+              <span data-lang="es">Desbloqueo de cuentas de app</span>
+              <span data-lang="zh">平台账户恢复</span>
+            </div>
+            <div class="highlight">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+              <span data-lang="pt">Atuação nacional</span>
+              <span data-lang="en">Nationwide service</span>
+              <span data-lang="es">Atención nacional</span>
+              <span data-lang="zh">全国服务</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/5511995852493?text=Ol%C3%A1%2C%20Dr.%20Ruan%20Almeida!%20Conheci%20seu%20portal%20profissional%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg>
+              <span data-lang="pt">Falar com Dr. Ruan</span>
+              <span data-lang="en">Talk to Dr. Ruan</span>
+              <span data-lang="es">Hablar con Dr. Ruan</span>
+              <span data-lang="zh">联系 Ruan 律师</span>
+            </a>
+
+            <a class="btn btn-secondary" href="https://www.instagram.com/ruanalmeidaadvogado/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7"></circle></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+
+          <div class="extra-actions">
+            <a class="btn btn-secondary" href="https://share.google/svXaLENC7FOxfccFb" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 10v6M12 7h.01"></path></svg>
+              <span data-lang="pt">Conhecer escritório</span>
+              <span data-lang="en">Professional practice</span>
+              <span data-lang="es">Conocer actuación</span>
+              <span data-lang="zh">了解业务领域</span>
+            </a>
+            <button class="btn btn-secondary" id="openSharePortal" type="button">
+              <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"></circle><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="19" r="2.5"></circle><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"></path></svg>
+              <span data-lang="pt">Compartilhar Portal</span>
+              <span data-lang="en">Share Portal</span>
+              <span data-lang="es">Compartir portal</span>
+              <span data-lang="zh">分享门户</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" id="credibilidade">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Credibilidade</div>
+            <h2>Experiência aplicada a casos de bloqueio em plataformas</h2>
+          </div>
+        </div>
+
+        <div class="evidence-grid">
+          <div class="evidence-card">
+            <span class="evidence-number">+6.000</span>
+            <span class="evidence-label">Pessoas atendidas</span>
+          </div>
+          <div class="evidence-card">
+            <span class="evidence-number">+2.000</span>
+            <span class="evidence-label">Processos contra plataformas</span>
+          </div>
+          <div class="evidence-card">
+            <span class="evidence-number">100%</span>
+            <span class="evidence-label">Atendimento individualizado</span>
+          </div>
+        </div>
+
+        <a class="google-row" href="#depoimentos">
+          <span class="stars">★★★★★</span>
+          <span>Centenas de avaliações 5 estrelas no <strong>Google</strong></span>
+          <span>›</span>
+        </a>
+
+        <div class="credentials-row">
+          <span class="credential-pill"><i class="ti ti-scale"></i> OAB/CE 52.489</span>
+          <span class="credential-pill"><i class="ti ti-building"></i> CNPJ 61.708.755/0001-30</span>
+        </div>
+
+        <div class="case-types">
+          <span class="case-chip">Uber</span>
+          <span class="case-chip">99</span>
+          <span class="case-chip">iFood</span>
+          <span class="case-chip">InDrive</span>
+          <span class="case-chip">Conta duplicada</span>
+          <span class="case-chip">Atividade suspeita</span>
+          <span class="case-chip">Bloqueio “definitivo”</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Conecte-se</div>
+            <div class="kicker" data-lang="en">Connect</div>
+            <div class="kicker" data-lang="es">Conéctese</div>
+            <div class="kicker" data-lang="zh">建立联系</div>
+            <h2 data-lang="pt">Tudo em um só lugar</h2>
+            <h2 data-lang="en">Everything in one place</h2>
+            <h2 data-lang="es">Todo en un solo lugar</h2>
+            <h2 data-lang="zh">一站式连接</h2>
+          </div>
+          <p class="section-description" data-lang="pt">Acesse os principais canais do Dr. Ruan Almeida e conheça sua atuação profissional.</p>
+          <p class="section-description" data-lang="en">Access Dr. Ruan Almeida's main channels and learn about his professional practice.</p>
+          <p class="section-description" data-lang="es">Acceda a los principales canales del Dr. Ruan Almeida y conozca su actuación profesional.</p>
+          <p class="section-description" data-lang="zh">访问 Ruan Almeida 律师的主要联系方式并了解其专业服务。</p>
+        </div>
+
+        <div class="tiles">
+          <a class="tile" href="https://wa.me/5511995852493?text=Ol%C3%A1%2C%20Dr.%20Ruan%20Almeida!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path></svg></span>
+            <span><strong>WhatsApp</strong><small data-lang="pt">Atendimento direto</small><small data-lang="en">Direct assistance</small><small data-lang="es">Atención directa</small><small data-lang="zh">直接咨询</small></span>
+          </a>
+
+          <a class="tile" href="tel:+5511995852493">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M7 3h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2L21 14v3c0 2-2 4-4 4C9 20 4 15 3 7c0-2 2-4 4-4Z"></path></svg></span>
+            <span><strong data-lang="pt">Ligar</strong><strong data-lang="en">Call</strong><strong data-lang="es">Llamar</strong><strong data-lang="zh">电话</strong><small>+55 11 99585-2493</small></span>
+          </a>
+
+          <a class="tile" href="https://www.instagram.com/ruanalmeidaadvogado/" target="_blank" rel="noopener">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".7"></circle></svg></span>
+            <span><strong>Instagram</strong><small>@ruanalmeidaadvogado</small></span>
+          </a>
+
+          <a class="tile" href="#atuacao">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"></path></svg></span>
+            <span><strong data-lang="pt">Atuação</strong><strong data-lang="en">Practice</strong><strong data-lang="es">Actuación</strong><strong data-lang="zh">业务领域</strong><small data-lang="pt">Conheça as principais frentes</small><small data-lang="en">Explore key areas</small><small data-lang="es">Conozca las áreas principales</small><small data-lang="zh">了解主要服务</small></span>
+          </a>
+
+          <a class="tile" href="https://www.instagram.com/ruanalmeidaadvogado/" target="_blank" rel="noopener">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V6l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+            <span><strong data-lang="pt">Resultados</strong><strong data-lang="en">Results</strong><strong data-lang="es">Resultados</strong><strong data-lang="zh">案例成果</strong><small data-lang="pt">Conteúdos publicados no perfil</small><small data-lang="en">Content published on profile</small><small data-lang="es">Contenido publicado en el perfil</small><small data-lang="zh">查看公开内容</small></span>
+          </a>
+
+          <a class="tile" href="#sobre">
+            <span class="tile-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>
+            <span><strong data-lang="pt">Sobre</strong><strong data-lang="en">About</strong><strong data-lang="es">Sobre mí</strong><strong data-lang="zh">关于</strong><small>Dr. Ruan Almeida</small></span>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="section" id="como-funciona">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Como funciona</div>
+            <h2>Primeiros passos para entender o bloqueio</h2>
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Você me chama no WhatsApp</h3>
+            <p>Me conta o que aconteceu com a sua conta — sem termo difícil, na sua língua.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Eu analiso o seu caso</h3>
+            <p>Olho os prints e o motivo do bloqueio pra entender o que dá pra fazer.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Te falo com sinceridade</h3>
+            <p>Se tiver caminho pro desbloqueio, eu te explico como. Se não tiver, também te falo — sem te enrolar.</p>
+          </article>
+        </div>
+
+        <div class="no-commitment">
+          <i class="ti ti-shield-check"></i>
+          Primeira análise do seu caso sem compromisso.
+        </div>
+      </section>
+
+      <section class="section" id="atuacao">
+        <div class="section-head">
+          <div>
+            <div class="kicker" data-lang="pt">Atuação profissional</div>
+            <div class="kicker" data-lang="en">Professional practice</div>
+            <div class="kicker" data-lang="es">Actuación profesional</div>
+            <div class="kicker" data-lang="zh">专业领域</div>
+            <h2 data-lang="pt">Advocacia focada em quem depende do aplicativo para trabalhar</h2>
+            <h2 data-lang="en">Legal services focused on people who depend on apps for work</h2>
+            <h2 data-lang="es">Abogacía enfocada en quienes dependen de las aplicaciones para trabajar</h2>
+            <h2 data-lang="zh">专注于依赖平台工作的司机法律服务</h2>
+          </div>
+        </div>
+
+        <div class="international-grid">
+          <article class="international-card">
+            <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3"></rect><path d="M9 7h6M8 12h8M10 17h4"></path></svg>
+            <h3 data-lang="pt">Desbloqueio de contas de aplicativo</h3>
+            <h3 data-lang="en">App account reinstatement</h3>
+            <h3 data-lang="es">Desbloqueo de cuentas de aplicaciones</h3>
+            <h3 data-lang="zh">应用平台账户恢复</h3>
+            <p data-lang="pt">Orientação e atuação jurídica para situações envolvendo bloqueio ou suspensão de contas utilizadas por motoristas de aplicativo.</p>
+            <p data-lang="en">Legal guidance and representation in situations involving blocked or suspended accounts used by app-based drivers.</p>
+            <p data-lang="es">Orientación y actuación jurídica en situaciones de bloqueo o suspensión de cuentas utilizadas por conductores de aplicaciones.</p>
+            <p data-lang="zh">针对网约车司机平台账户被封禁或暂停的情况提供法律指导与服务。</p>
+            <div class="cities"><span class="city">Motoristas de App</span><span class="city">Contas bloqueadas</span></div>
+          </article>
+
+          <article class="international-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+            <h3 data-lang="pt">Atendimento nacional</h3>
+            <h3 data-lang="en">Nationwide assistance</h3>
+            <h3 data-lang="es">Atención nacional</h3>
+            <h3 data-lang="zh">全国服务</h3>
+            <p data-lang="pt">Atendimento a motoristas em diferentes regiões do Brasil, com comunicação direta pelos canais digitais.</p>
+            <p data-lang="en">Assistance for drivers across different regions of Brazil, with direct communication through digital channels.</p>
+            <p data-lang="es">Atención a conductores de diferentes regiones de Brasil, con comunicación directa por canales digitales.</p>
+            <p data-lang="zh">通过数字渠道，为巴西不同地区的司机提供直接沟通与法律服务。</p>
+            <div class="cities"><span class="city">Brasil</span><span class="city">Atendimento digital</span></div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="section" id="recursos">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Recursos</div>
+            <h2>Conteúdos e páginas complementares</h2>
+          </div>
+          <p class="section-description">
+            Apenas canais que ainda não aparecem em outras áreas do portal.
+          </p>
+        </div>
+
+        <div class="resource-grid">
+          <a class="resource-card" href="https://acradvogadoss.com.br/desbloqueio-motoristas/" target="_blank" rel="noopener">
+            <div class="resource-icon resource-icon-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 9.8-1.4"/><path d="M17 10h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h7"/><path d="m12 15 2-2"/><path d="M12 15v2"/></svg></div>
+            <span>
+              <strong>Desbloqueio de conta</strong>
+              <small>Página específica para motoristas de aplicativo</small>
+            </span>
+          </a>
+
+          <a class="resource-card" href="https://www.tiktok.com/@advogadoruanalmeida" target="_blank" rel="noopener">
+            <div class="resource-icon resource-icon-tiktok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4c1 3 3 5 6 5"/></svg></div>
+            <span>
+              <strong>TikTok</strong>
+              <small>@advogadoruanalmeida</small>
+            </span>
+          </a>
+
+          <a class="resource-card" href="https://www.youtube.com/@ACRAdvogados" target="_blank" rel="noopener">
+            <div class="resource-icon resource-icon-youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12s0-4-1-6c-.3-1-1-1.7-2-2C17 3 12 3 12 3s-5 0-7 1c-1 .3-1.7 1-2 2-1 2-1 6-1 6s0 4 1 6c.3 1 1 1.7 2 2 2 1 7 1 7 1s5 0 7-1c1-.3 1.7-1 2-2 1-2 1-6 1-6Z"/><path d="m10 9 5 3-5 3Z"/></svg></div>
+            <span>
+              <strong>YouTube</strong>
+              <small>ACR Advogados · casos e conteúdos</small>
+            </span>
+          </a>
+
+          <a class="resource-card" href="https://acradvogadoss.com.br/" target="_blank" rel="noopener">
+            <div class="resource-icon resource-icon-building"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M6 21V8l6-4 6 4v13"/><path d="M9 10h1"/><path d="M14 10h1"/><path d="M9 14h1"/><path d="M14 14h1"/><path d="M10 21v-3h4v3"/></svg></div>
+            <span>
+              <strong>Página institucional</strong>
+              <small>ACR Advogados</small>
+            </span>
+          </a>
+        </div>
+
+        <div class="ebook">
+          <div class="ebook-cover">
+            <img src="manual-antibloqueio.png" alt="Manual Antibloqueio para Motoristas">
+          </div>
+
+          <div class="ebook-copy">
+            <div class="ebook-tag"><i class="ti ti-book-2"></i> Manual Antibloqueio</div>
+
+            <h3>Por menos de 20 reais você protege a sua fonte de renda de um bloqueio injusto.</h3>
+
+            <a class="btn btn-primary" href="https://ruanalmeidaadv.lovable.app/" target="_blank" rel="noopener">
+              <span>Adquira agora</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="contact-band">
+          <div>
+            <div class="kicker" data-lang="pt">Sobre Dr. Ruan Almeida</div>
+            <div class="kicker" data-lang="en">About Dr. Ruan Almeida</div>
+            <div class="kicker" data-lang="es">Sobre Dr. Ruan Almeida</div>
+            <div class="kicker" data-lang="zh">关于 Ruan Almeida 律师</div>
+
+            <h2 data-lang="pt">Direito aplicado a um problema <span>real e urgente.</span></h2>
+            <h2 data-lang="en">Law applied to a <span>real and urgent problem.</span></h2>
+            <h2 data-lang="es">Derecho aplicado a un problema <span>real y urgente.</span></h2>
+            <h2 data-lang="zh">以法律应对<span>真实而紧迫的问题。</span></h2>
+
+            <p data-lang="pt">Dr. Ruan Almeida atua na advocacia e apresenta como foco profissional o desbloqueio de contas de motoristas de aplicativo, com atendimento nacional. Seu posicionamento é direto: ajudar profissionais bloqueados a recuperarem o acesso à plataforma e retomarem sua atividade.</p>
+            <p data-lang="en">Dr. Ruan Almeida practices law with a professional focus on reinstating app-driver accounts and providing nationwide assistance. His positioning is direct: helping blocked professionals restore platform access and return to work.</p>
+            <p data-lang="es">El Dr. Ruan Almeida ejerce la abogacía con enfoque profesional en el desbloqueo de cuentas de conductores de aplicaciones y atención nacional. Su posicionamiento es directo: ayudar a profesionales bloqueados a recuperar el acceso y volver a trabajar.</p>
+            <p data-lang="zh">Ruan Almeida 律师专注于网约车司机账户恢复并提供全国服务，帮助被封禁的从业者恢复平台访问并重新工作。</p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/5511995852493?text=Ol%C3%A1%2C%20Dr.%20Ruan%20Almeida!%20Gostaria%20de%20agendar%20uma%20conversa." target="_blank" rel="noopener">
+              <span data-lang="pt">Iniciar conversa</span>
+              <span data-lang="en">Start a conversation</span>
+              <span data-lang="es">Iniciar conversación</span>
+              <span data-lang="zh">开始沟通</span>
+            </a>
+            <a class="btn btn-secondary" href="tel:+5511995852493">
+              <span data-lang="pt">Ligar</span>
+              <span data-lang="en">Call</span>
+              <span data-lang="es">Llamar</span>
+              <span data-lang="zh">致电</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="depoimentos">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Depoimentos</div>
+            <h2>Experiências de quem já foi atendido</h2>
+          </div>
+          <p class="section-description">
+            Avaliações publicadas por clientes no Google.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar">W</div>
+              <div>
+                <div class="review-name">Wellington Gomes Da Vitoria De Souza</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <p>Fui acusado de assédio por uma passageira que nem sequer viajou no meu carro e a Uber deu razão a passageira e me bloqueou permanentemente da plataforma pois queria que o apresentasse provas que não existia. ACR-Almeida, Carvalho & Ribeiro advogados entrou com processo de reativação da conta com sucesso danos morais e juros acessíveis. Muito obrigado escritório de advocacia eu como motorista do cinco estrelas e de 1 a 10 como MC Marcinho eu dou 100.</p>
+            <div class="review-source">★★★★★ · via Google</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar">J</div>
+              <div>
+                <div class="review-name">Joseman Santos</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <p>Sou de Piracicaba SP, fui em busca de resolver meu problema com a 99 e a acr agiu de forma excepcional com meu caso e com muita confiança em mim eu indico totalmente estão de parabéns toda a equipe e advogados muito obrigado a todos.</p>
+            <div class="review-source">★★★★★ · via Google</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-head">
+              <div class="review-avatar">J</div>
+              <div>
+                <div class="review-name">jose helio ribeiro</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <p>Excelente trabalho, competentes e sempre me dando satisfação do processo, me colocando sempre sabedor...resolveram meu problema, que eu pensei que não seria mais desbloqueado...muito bom, recomendo ACR Almeida...</p>
+            <div class="review-source">★★★★★ · via Google</div>
+          </article>
+        </div>
+
+        <p class="section-description" style="max-width:none;text-align:center;margin-top:18px;">
+          Avaliações reais e verificáveis no perfil do Google do escritório. Cada caso é analisado individualmente; resultados variam conforme a situação.
+        </p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span><strong>Dr. Ruan Almeida</strong> • ACR Advogados • OAB/CE 52.489</span>
+      <span>
+        <span data-lang="pt">Tecnologia do portal por</span>
+        <span data-lang="en">Portal technology by</span>
+        <span data-lang="es">Tecnología del portal por</span>
+        <span data-lang="zh">门户技术支持</span>
+        <a href="https://urbanwatch.app/" target="_blank" rel="noopener">UrbanWatch.app</a>
+      </span>
+      <a class="trust-center-link" href="https://urbanwatch.app/ccu/" target="_blank" rel="noopener">
+        <span data-lang="pt">Centro de Confiança UrbanWatch.app</span>
+        <span data-lang="en">UrbanWatch.app Trust Center</span>
+        <span data-lang="es">Centro de Confianza UrbanWatch.app</span>
+        <span data-lang="zh">UrbanWatch.app 信任中心</span>
+      </a>
+    </footer>
+  </div>
+
+  <div class="share-modal" id="sharePortalModal" aria-hidden="true">
+    <div class="share-dialog" role="dialog" aria-modal="true">
+      <button class="share-close" id="closeSharePortal" type="button" aria-label="Fechar">×</button>
+      <h2 data-lang="pt">Compartilhar Portal</h2>
+      <h2 data-lang="en">Share Portal</h2>
+      <h2 data-lang="es">Compartir portal</h2>
+      <h2 data-lang="zh">分享门户</h2>
+      <p data-lang="pt">Copie o link ou compartilhe diretamente o portal profissional do Dr. Ruan Almeida.</p>
+      <p data-lang="en">Copy the link or directly share Dr. Ruan Almeida's professional portal.</p>
+      <p data-lang="es">Copie el enlace o comparta directamente el portal profesional del Dr. Ruan Almeida.</p>
+      <p data-lang="zh">复制链接或直接分享 Ruan Almeida 律师的专业门户。</p>
+
+      <div class="qr-wrap">
+        <img id="portalQr" alt="QR Code do portal do Dr. Ruan Almeida">
+      </div>
+
+      <div class="share-link-box">
+        <span class="share-link" id="portalShareLink"></span>
+        <button class="copy-link-btn" id="copyPortalLink" type="button">
+          <span data-lang="pt">Copiar link</span><span data-lang="en">Copy link</span><span data-lang="es">Copiar enlace</span><span data-lang="zh">复制链接</span>
+        </button>
+      </div>
+
+      <div class="share-dialog-actions">
+        <button class="btn btn-primary" id="nativeSharePortal" type="button">
+          <span data-lang="pt">Compartilhar agora</span><span data-lang="en">Share now</span><span data-lang="es">Compartir ahora</span><span data-lang="zh">立即分享</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const root=document.documentElement;
+      const buttons=document.querySelectorAll("[data-set-language]");
+      const allowed=["pt","en","es","zh"];
+      const htmlLanguages={pt:"pt-BR",en:"en",es:"es",zh:"zh-CN"};
+      const titles={
+        pt:"Dr. Ruan Almeida | Portal Premium",
+        en:"Dr. Ruan Almeida | Premium Portal",
+        es:"Dr. Ruan Almeida | Portal Premium",
+        zh:"Dr. Ruan Almeida | 尊享门户"
+      };
+
+      function setLanguage(language){
+        const lang=allowed.includes(language)?language:"pt";
+        root.dataset.language=lang;
+        root.lang=htmlLanguages[lang];
+        document.title=titles[lang];
+        buttons.forEach(function(button){
+          const active=button.dataset.setLanguage===lang;
+          button.classList.toggle("active",active);
+          button.setAttribute("aria-pressed",String(active));
+        });
+        try{localStorage.setItem("urbanwatch-language",lang)}catch(error){}
+      }
+
+      buttons.forEach(function(button){
+        button.addEventListener("click",function(){setLanguage(button.dataset.setLanguage);});
+      });
+
+      let saved="pt";
+      try{saved=localStorage.getItem("urbanwatch-language")||"pt"}catch(error){}
+      setLanguage(saved);
+    })();
+
+    document.addEventListener("DOMContentLoaded",function(){
+      const portalUrl=window.location.href.split("#")[0];
+      const modal=document.getElementById("sharePortalModal");
+      const openButton=document.getElementById("openSharePortal");
+      const closeButton=document.getElementById("closeSharePortal");
+      const copyButton=document.getElementById("copyPortalLink");
+      const shareButton=document.getElementById("nativeSharePortal");
+      const linkBox=document.getElementById("portalShareLink");
+      const qr=document.getElementById("portalQr");
+
+      linkBox.textContent=portalUrl;
+      qr.src="https://quickchart.io/qr?text="+encodeURIComponent(portalUrl)+"&size=420&margin=1";
+
+      function currentLanguage(){return document.documentElement.dataset.language||"pt";}
+      function openModal(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.classList.add("modal-open");}
+      function closeModal(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open");}
+
+      openButton.addEventListener("click",openModal);
+      closeButton.addEventListener("click",closeModal);
+      modal.addEventListener("click",function(event){if(event.target===modal) closeModal();});
+      document.addEventListener("keydown",function(event){if(event.key==="Escape"&&modal.classList.contains("open")) closeModal();});
+
+      copyButton.addEventListener("click",async function(){
+        const lang=currentLanguage();
+        try{
+          await navigator.clipboard.writeText(portalUrl);
+          copyButton.textContent=lang==="en"?"Copied":lang==="es"?"Copiado":lang==="zh"?"已复制":"Copiado";
+        }catch(error){window.prompt(lang==="en"?"Copy the link:":lang==="es"?"Copie el enlace:":lang==="zh"?"复制链接：":"Copie o link:",portalUrl);}
+      });
+
+      shareButton.addEventListener("click",async function(){
+        const lang=currentLanguage();
+        const text=lang==="en"?"Access Dr. Ruan Almeida's professional portal.":lang==="es"?"Acceda al portal profesional del Dr. Ruan Almeida.":lang==="zh"?"访问 Ruan Almeida 律师的专业门户。":"Acesse o portal profissional do Dr. Ruan Almeida.";
+        if(navigator.share){
+          try{await navigator.share({title:"Dr. Ruan Almeida",text:text,url:portalUrl});}catch(error){}
+        }else{
+          try{await navigator.clipboard.writeText(portalUrl);alert(lang==="en"?"Link copied.":lang==="es"?"Enlace copiado.":lang==="zh"?"链接已复制。":"Link copiado.");}
+          catch(error){window.prompt("Copie o link:",portalUrl);}
+        }
+      });
+    });
+  </script>
+</body>
+</html>
