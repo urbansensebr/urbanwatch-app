@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html data-language="pt" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#070707" name="theme-color"/>
+<title>China no Outono 2027 | Patrícia Lima - Lefer Viagens</title>
+<meta content="China no Outono 2027, de 30/10 a 16/11. Informações do orçamento Lefer Viagens: cidades visitadas, itens incluídos e não incluídos, valor e forma de pagamento." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --black:#070707;
+  --black2:#0d0d0d;
+  --graphite:#171717;
+  --gold:#d4af37;
+  --gold-light:#f1e5ac;
+  --white:#fff;
+  --muted:#b8b8b8;
+  --radius:28px;
+  --container:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--black)}
+body{
+  color:var(--white);
+  background:
+    radial-gradient(circle at 10% 8%,rgba(212,175,55,.08),transparent 26%),
+    var(--black);
+  font-family:"Montserrat",sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+.container{width:min(100% - 32px,var(--container));margin:auto}
+.section{padding:92px 0}
+.section-soft{background:var(--black2)}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  color:var(--gold-light);font-size:.73rem;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px
+}
+.eyebrow:before{content:"";width:48px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+.section-title{
+  max-width:900px;font-size:clamp(2.8rem,6vw,5.5rem);
+  line-height:.95;letter-spacing:-.035em
+}
+.section-description{max-width:760px;color:var(--muted);margin-top:22px}
+.btn{
+  min-height:54px;padding:15px 22px;display:inline-flex;align-items:center;
+  justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;
+  color:#fff;background:#222;font-weight:800;transition:.22s ease
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{color:#080808;background:linear-gradient(135deg,var(--gold-light),var(--gold))}
+.btn-outline{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+
+/* header */
+header{
+  position:fixed;inset:0 0 auto;z-index:1000;
+  background:rgba(7,7,7,.9);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.07)
+}
+.header-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-mark{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid rgba(212,175,55,.5);color:var(--gold-light);
+  font:700 1.2rem "Cormorant Garamond",serif
+}
+.brand-copy strong{display:block;font-size:.88rem}
+.brand-copy span{display:block;color:var(--muted);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.back{padding:10px 14px;font-size:.72rem}
+
+/* hero - photo extracted from page 1 of the PDF */
+.hero{
+  position:relative;min-height:100svh;display:grid;align-items:end;
+  overflow:hidden;padding:130px 0 72px
+}
+.hero-media{position:absolute;inset:0}
+.hero-media img{height:100%;object-fit:cover;object-position:center}
+.hero-media:after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.86) 78%),
+    linear-gradient(90deg,rgba(0,0,0,.58),rgba(0,0,0,.05))
+}
+.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-kicker{color:var(--gold-light);font-size:.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.hero h1{margin-top:10px;font-size:clamp(4.5rem,14vw,9.5rem);line-height:.78;letter-spacing:-.06em}
+.hero h1 span{
+  display:block;margin-top:22px;color:var(--gold-light);
+  font:600 clamp(1.15rem,3vw,1.8rem) "Montserrat",sans-serif;
+  letter-spacing:.07em
+}
+.date{
+  width:fit-content;margin-top:26px;padding:10px 16px;border-radius:999px;
+  border:1px solid rgba(212,175,55,.55);background:rgba(0,0,0,.4);font-weight:800
+}
+.hero-text{max-width:720px;margin-top:20px;color:rgba(255,255,255,.84)}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}
+.fact{
+  padding:18px;border:1px solid rgba(255,255,255,.11);border-radius:18px;
+  background:rgba(6,6,6,.45);backdrop-filter:blur(12px)
+}
+.fact strong{display:block;color:var(--gold-light);font:600 1.45rem "Cormorant Garamond",serif}
+.fact span{color:var(--muted);font-size:.72rem}
+
+/* visual story */
+.visual-strip{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin-top:44px
+}
+.visual-strip img{height:520px;object-fit:cover;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.visual-strip .stack{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+.visual-strip .stack img{height:253px}
+
+/* cities */
+.city-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:42px}
+.city{
+  padding:27px;border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--radius);background:
+  linear-gradient(145deg,rgba(212,175,55,.06),transparent 45%),var(--graphite)
+}
+.city h3{color:var(--gold-light);font-size:2rem;line-height:1}
+.city p{color:var(--muted);margin-top:12px;font-size:.89rem}
+
+/* gallery */
+.gallery{
+  display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:170px;
+  gap:12px;margin-top:42px
+}
+.gallery figure{overflow:hidden;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:#111}
+.gallery img{height:100%;object-fit:cover}
+.gallery figure:nth-child(1){grid-column:span 7;grid-row:span 2}
+.gallery figure:nth-child(2){grid-column:span 5;grid-row:span 2}
+.gallery figure:nth-child(3),
+.gallery figure:nth-child(4),
+.gallery figure:nth-child(5){grid-column:span 4;grid-row:span 2}
+.gallery figure:nth-child(6),
+.gallery figure:nth-child(7){grid-column:span 6;grid-row:span 2}
+
+/* includes/excludes */
+.two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px}
+.panel{padding:30px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.1);background:#111}
+.panel h3{font-size:2.15rem;line-height:1}
+.list{display:grid;gap:11px;margin-top:22px;list-style:none}
+.list li{position:relative;padding-left:29px;color:var(--muted);font-size:.89rem}
+.yes li:before{content:"✓";position:absolute;left:0;color:var(--gold-light);font-weight:800}
+.no li:before{content:"×";position:absolute;left:2px;color:#ddd;font-weight:800;font-size:1.08rem}
+
+/* price */
+.price-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:42px}
+.price-card{
+  padding:32px;border-radius:var(--radius);border:1px solid rgba(212,175,55,.27);
+  background:radial-gradient(circle at 20% 8%,rgba(212,175,55,.11),transparent 34%),#0d0d0d
+}
+.price-label{color:var(--muted);font-size:.73rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.price{color:var(--gold-light);font:600 clamp(3.2rem,7vw,6rem) "Cormorant Garamond",serif;line-height:.9;margin-top:8px}
+.price-sub{color:var(--muted);font-size:.8rem;margin-top:12px}
+.payment{display:grid;gap:11px;margin-top:22px}
+.payment div,.note{padding:15px;border-radius:15px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);color:var(--muted);font-size:.82rem}
+.payment strong{color:#fff}
+.note{margin-top:12px;border-color:rgba(212,175,55,.16);background:rgba(212,175,55,.035)}
+
+/* PDF */
+.pdf-box{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  margin-top:42px;padding:28px;border-radius:var(--radius);
+  border:1px solid rgba(212,175,55,.28);
+  background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(255,255,255,.02))
+}
+.pdf-box h3{font-size:2rem}
+.pdf-box p{color:var(--muted);margin-top:6px;font-size:.87rem}
+
+/* CTA */
+.final{
+  padding:94px 0;text-align:center;
+  background:radial-gradient(circle at center,rgba(212,175,55,.11),transparent 36%),#080808
+}
+.final h2{max-width:850px;margin:auto;font-size:clamp(3rem,7vw,6rem);line-height:.92}
+.final p{max-width:630px;margin:20px auto 0;color:var(--muted)}
+.final-actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:28px}
+.footer{padding:34px 0 42px;text-align:center;border-top:1px solid rgba(255,255,255,.07);color:#777;font-size:.7rem}
+.footer strong{color:var(--gold-light)}
+.whatsapp{
+  position:fixed;right:18px;bottom:18px;z-index:1000;width:58px;height:58px;
+  display:grid;place-items:center;border-radius:50%;background:#25d366;color:white;
+  box-shadow:0 16px 42px rgba(37,211,102,.28);font-size:1.35rem;font-weight:800
+}
+
+@media(max-width:850px){
+  .facts,.city-grid,.two-col,.price-grid,.visual-strip{grid-template-columns:1fr}
+  .visual-strip img{height:420px}
+  .visual-strip .stack{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .visual-strip .stack img{height:250px}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:260px}
+  .gallery figure:nth-child(n){grid-column:span 1;grid-row:span 1}
+  .pdf-box{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 24px,var(--container))}
+  .brand-copy span{display:none}
+  .back{font-size:0;width:42px;height:42px;padding:0}
+  .back:before{content:"←";font-size:1.1rem}
+  .section{padding:74px 0}
+  .hero{min-height:94svh;padding-top:112px}
+  .hero h1{font-size:clamp(4rem,22vw,6rem)}
+  .visual-strip img{height:330px}
+  .visual-strip .stack{grid-template-columns:1fr}
+  .visual-strip .stack img{height:300px}
+  .gallery{grid-template-columns:1fr;grid-auto-rows:340px}
+  .panel,.price-card{padding:24px}
+}
+
+.header-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.back-packs,.back{padding:10px 14px;font-size:.72rem}
+.whatsapp svg{width:28px;height:28px;fill:#fff;display:block}
+.gallery-title{font-size:clamp(2.25rem,5vw,4.6rem)}
+@media(max-width:560px){.header-actions{gap:6px}.back-packs,.back{width:auto;height:42px;min-height:42px;padding:0 11px;font-size:.64rem}}
+
+
+/* ===== Padrão UrbanWatch.app: idiomas + compartilhar ===== */
+.package-header-controls{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+.lang-switch{
+  display:flex;
+  gap:2px;
+  padding:4px;
+  border:1px solid rgba(212,175,55,.24);
+  border-radius:999px;
+  background:#090909;
+}
+.lang-btn{
+  border:0;
+  padding:8px 10px;
+  border-radius:999px;
+  color:var(--muted);
+  background:transparent;
+  font:800 .72rem "Montserrat",sans-serif;
+  cursor:pointer;
+}
+.lang-btn.active{
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+}
+.share-header-btn{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  flex:0 0 46px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  color:#fff;
+  background:#111;
+  cursor:pointer;
+}
+.share-header-btn svg{
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.package-subnav{
+  border-top:1px solid rgba(255,255,255,.055);
+  background:rgba(7,7,7,.88);
+}
+.package-subnav-inner{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:20px;
+}
+.package-subnav a{
+  color:var(--muted);
+  font-size:.68rem;
+  font-weight:700;
+}
+.package-subnav a:hover{color:var(--gold-light)}
+
+.share-modal{
+  position:fixed;
+  inset:0;
+  z-index:2500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  background:rgba(0,0,0,.76);
+  backdrop-filter:blur(12px);
+}
+.share-modal.open{display:flex}
+.share-dialog{
+  position:relative;
+  width:min(100%,480px);
+  padding:34px;
+  border:1px solid rgba(212,175,55,.28);
+  border-radius:28px;
+  background:#0b0b0b;
+  box-shadow:0 28px 90px rgba(0,0,0,.58);
+  text-align:center;
+}
+.share-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  color:#fff;
+  background:#151515;
+  font-size:1.3rem;
+  cursor:pointer;
+}
+.share-dialog h2{
+  padding-right:35px;
+  font:600 2.25rem/1 "Cormorant Garamond",serif;
+}
+.share-dialog p{
+  margin:13px auto 0;
+  color:var(--muted);
+  font-size:.84rem;
+}
+.qr-wrap{
+  width:190px;
+  margin:24px auto 18px;
+  padding:10px;
+  border-radius:20px;
+  background:#fff;
+}
+.qr-wrap img{width:100%;height:auto}
+.share-link-box{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+  align-items:center;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  background:#111;
+}
+.share-link{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:var(--muted);
+  font-size:.72rem;
+  text-align:left;
+}
+.copy-link-btn{
+  min-height:40px;
+  padding:0 13px;
+  border:0;
+  border-radius:12px;
+  color:#080808;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  font-weight:800;
+  cursor:pointer;
+}
+.share-dialog-actions{margin-top:14px}
+.modal-open{overflow:hidden}
+
+@media(max-width:760px){
+  header .header-inner{min-height:76px}
+  .brand-copy span{display:none}
+  .lang-btn{padding:7px 8px;font-size:.66rem}
+  .share-header-btn{width:44px;height:44px;flex-basis:44px}
+  .package-subnav-inner{justify-content:center;gap:24px}
+}
+@media(max-width:470px){
+  .brand-copy{display:none}
+  .brand-mark{width:40px;height:40px}
+  .package-header-controls{gap:7px}
+  .lang-btn{padding:7px 7px;font-size:.63rem}
+  .share-header-btn{width:42px;height:42px;flex-basis:42px}
+  .share-dialog{padding:30px 20px 22px}
+  .share-link-box{grid-template-columns:1fr}
+  .copy-link-btn{width:100%}
+}
+
+/* Marca da Patrícia no topo do pacote */
+.brand{
+  flex-shrink:0;
+}
+.brand-copy{
+  display:block !important;
+}
+.brand-copy strong{
+  display:block;
+  white-space:nowrap;
+  font-size:.9rem;
+  line-height:1.15;
+}
+@media(max-width:470px){
+  .brand{
+    gap:8px;
+  }
+  .brand-copy{
+    display:block !important;
+  }
+  .brand-copy strong{
+    font-size:.8rem;
+  }
+  .package-header-controls{
+    margin-left:auto;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<a class="brand" href="../../">
+<span class="brand-mark">PL</span>
+<span class="brand-copy">
+<strong>Patrícia Lima</strong>
+
+</span>
+</a>
+<div class="package-header-controls">
+<div aria-label="Selecionar idioma" class="lang-switch">
+<button class="lang-btn active" data-set-language="pt" type="button">PT</button>
+<button class="lang-btn" data-set-language="en" type="button">EN</button>
+<button class="lang-btn" data-set-language="es" type="button">ES</button>
+<button class="lang-btn" data-set-language="zh" type="button">中文</button>
+</div>
+<button aria-label="Compartilhar página" class="share-header-btn" id="openSharePackage" type="button">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="2.5"></circle>
+<circle cx="6" cy="12" r="2.5"></circle>
+<circle cx="18" cy="19" r="2.5"></circle>
+<path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="package-subnav">
+<div class="container package-subnav-inner">
+<a data-i18n="other_destinations" href="../../#experiencias">Ver outros destinos</a>
+<a data-i18n="back_portal" href="../../">Voltar ao Portal</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-media">
+<img alt="Grande Muralha da China no outono" src="china-01.jpg"/>
+</div>
+<div class="container hero-content">
+<div class="hero-kicker" data-i18n="hero_kicker">Lefer Viagens • 2027</div>
+<h1>China<span data-i18n="hero_season">no Outono 2027</span></h1>
+<div class="date" data-i18n="date">30/10 a 16/11</div>
+<p class="hero-text" data-i18n="hero_route">Um roteiro por Pequim, Xi'an, Chengdu, Chongqing, Zhangjiajie, Xangai e Suzhou.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" data-i18n="want_package" href="https://wa.me/5585988830747?text=Ol%C3%A1%2C%20Patr%C3%ADcia%21%20Vi%20o%20pacote%20China%20no%20Outono%202027%20%2830/10%20a%2016/11%29%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Quero este pacote</a>
+<a class="btn btn-outline" data-i18n="download_pdf" download="" href="china-no-outono-2027-orcamento-lefer.pdf">Baixar PDF do pacote</a>
+</div>
+<div class="facts">
+<div class="fact"><strong data-i18n="seven_cities">7 cidades</strong><span data-i18n="cities_list">Pequim, Xi'an, Chengdu, Chongqing, Zhangjiajie, Xangai e Suzhou.</span></div>
+<div class="fact"><strong>USD 4.650</strong><span data-i18n="price_fact">por pessoa, em apartamento duplo - pacote terrestre.</span></div>
+<div class="fact"><strong data-i18n="airfare">Aéreo</strong><span data-i18n="on_request">sob consulta.</span></div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="eyebrow" data-i18n="lefer_records">Registros da Lefer Viagens</div>
+<h2 class="section-title" data-i18n="china_up_close">A China vista de perto.</h2>
+<p class="section-description" data-i18n="lefer_records_desc">Registros de experiências da Lefer Viagens na China.</p>
+<div class="visual-strip">
+<img alt="Grupo em viagem pela China" src="china-10.jpg"/>
+<div class="stack">
+<img alt="Patrícia Lima em registro de viagem pela China" src="china-11.jpg"/>
+<img alt="Exército de Terracota" src="china-17.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-soft" id="roteiro">
+<div class="container">
+<div class="eyebrow" data-i18n="visited_cities">Cidades visitadas</div>
+<h2 class="section-title" data-i18n="seven_route">Sete cidades no roteiro.</h2>
+<div class="city-grid">
+<article class="city"><h3 data-i18n="city_beijing">Pequim</h3><p data-i18n="city_beijing_desc">O coração histórico da China reúne palácios imperiais, templos milenares e avenidas monumentais. Em Pequim, cada passo revela séculos de tradição ao lado da grandiosidade da China moderna.</p></article>
+<article class="city"><h3 data-i18n="city_xian">Xi'an</h3><p data-i18n="city_xian_desc">Berço da antiga Rota da Seda, Xi'an impressiona por seu legado histórico. Muralhas preservadas, bairros tradicionais e o famoso Exército de Terracota fazem da cidade uma verdadeira viagem no tempo.</p></article>
+<article class="city"><h3 data-i18n="city_chengdu">Chengdu</h3><p data-i18n="city_chengdu_desc">Muito além dos adoráveis pandas-gigantes, Chengdu conquista pelo ritmo tranquilo, templos históricos e gastronomia marcante. Um destino onde tradição, natureza e cultura convivem em perfeita harmonia.</p></article>
+<article class="city"><h3 data-i18n="city_chongqing">Chongqing</h3><p data-i18n="city_chongqing_desc">Conhecida como a cidade das montanhas, Chongqing encanta com seu cenário urbano impressionante, rios grandiosos e uma atmosfera vibrante. Um destino que revela a China mais autêntica e surpreendente.</p></article>
+<article class="city"><h3 data-i18n="city_zhangjiajie">Zhangjiajie</h3><p data-i18n="city_zhangjiajie_desc">Paisagens que parecem saídas de um filme. Os imensos pilares de pedra envoltos por névoa criam um dos cenários naturais mais espetaculares do mundo, repleto de trilhas e vistas inesquecíveis.</p></article>
+<article class="city"><h3 data-i18n="city_shanghai">Xangai</h3><p data-i18n="city_shanghai_desc">Cosmopolita e fascinante, Xangai reúne arranha-céus futuristas, bairros históricos e uma energia contagiante. Um destino onde o passado e o futuro caminham lado a lado.</p></article>
+<article class="city"><h3 data-i18n="city_suzhou">Suzhou</h3><p data-i18n="city_suzhou_desc">Conhecida como a “Veneza do Oriente”, Suzhou encanta com seus canais, jardins clássicos e pontes de pedra. Um refúgio de beleza, elegância e tradição no coração da China.</p></article>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="eyebrow" data-i18n="gallery">Galeria</div>
+<h2 class="section-title gallery-title" data-i18n="gallery_title">Um pouco da China que espera por você.</h2>
+<p class="section-description" data-i18n="gallery_desc">Imagens que antecipam alguns dos cenários, culturas e experiências desta jornada.</p>
+<div class="gallery">
+<figure><img alt="Registro fotográfico do material China 2027" src="china-04.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-05.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-06.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-07.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-08.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-12.jpg"/></figure>
+<figure><img alt="Registro fotográfico do material China 2027" src="china-14.jpg"/></figure>
+</div>
+</div>
+</section>
+<section class="section section-soft">
+<div class="container">
+<div class="eyebrow" data-i18n="the_package">O pacote</div>
+<h2 class="section-title" data-i18n="included_excluded_title">O que está incluído e o que não está.</h2>
+<div class="two-col">
+<article class="panel">
+<h3 data-i18n="included_title">Nosso pacote inclui</h3>
+<ul class="list yes">
+<li data-i18n="inc_hotel">Hospedagem em hotéis selecionados, em apartamento duplo, com café da manhã.</li>
+<li data-i18n="inc_ground_transport">Transporte terrestre completo conforme programa.</li>
+<li data-i18n="inc_transfers">Transfers de chegada e saída em todos os destinos.</li>
+<li data-i18n="inc_train">Trem de alta velocidade, classe econômica, nos trechos Pequim - Xi'an | Xi'an - Chengdu | Chengdu → Chongqing | Chongqing - Zhangjiajie.</li>
+<li data-i18n="inc_tickets">Ingressos para todos os passeios conforme programa.</li>
+<li data-i18n="inc_guide">Guia em espanhol durante os passeios.</li>
+<li data-i18n="inc_meals">Refeições incluídas conforme programa.</li>
+<li data-i18n="inc_support">Suporte presencial de um acompanhante Lefer Viagens durante toda a viagem, desde o Brasil.</li>
+<li data-i18n="inc_kit">Kit de viagem exclusivo.</li>
+</ul>
+</article>
+<article class="panel">
+<h3 data-i18n="excluded_title">Nosso pacote não inclui</h3>
+<ul class="list no">
+<li data-i18n="exc_international_air">Passagem aérea internacional.</li>
+<li data-i18n="exc_internal_air">Passagem aérea interna Zhangjiajie → Xangai.</li>
+<li data-i18n="exc_unlisted_meals">Refeições não mencionadas no roteiro.</li>
+<li data-i18n="exc_drinks">Bebidas durante as refeições.</li>
+<li data-i18n="exc_personal">Despesas de caráter pessoal, como lavanderia, telefonemas e frigobar.</li>
+<li data-i18n="exc_optional">Passeios opcionais e atividades em dias livres.</li>
+<li data-i18n="exc_tips">Gorjetas para guias, motoristas e carregadores de bagagem.</li>
+<li data-i18n="exc_other">Qualquer serviço não mencionado como incluso.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="investimento">
+<div class="container">
+<div class="eyebrow" data-i18n="investment">Investimento</div>
+<h2 class="section-title" data-i18n="price_payment_title">Valor e forma de pagamento.</h2>
+<div class="price-grid">
+<article class="price-card">
+<div class="price-label" data-i18n="land_package_value">Valor do pacote terrestre</div>
+<div class="price">USD 4.650,00*</div>
+<div class="price-sub" data-i18n="per_person_double">por pessoa, em apartamento duplo.</div>
+<div class="payment">
+<div data-i18n="pay_entry"><strong>Entrada:</strong> 20% do valor total.</div>
+<div data-i18n="pay_balance"><strong>Saldo restante:</strong> parcelado.</div>
+<div data-i18n="pay_airfare"><strong>Aéreo:</strong> sob consulta.</div>
+<div data-i18n="pay_single"><strong>Suplemento para quarto individual:</strong> sob consulta.</div>
+</div>
+</article>
+<article class="price-card">
+<div class="price-label" data-i18n="budget_notes">Observações do orçamento</div>
+<div class="note" data-i18n="note_availability">Valores sujeitos a alteração conforme disponibilidade aérea.</div>
+<div class="note" data-i18n="note_currency">*O pagamento é feito na moeda brasileira (real). No ato do contrato faz-se a conversão pelo câmbio do dólar comercial do dia.</div>
+<div class="note" data-i18n="note_example">Exemplo informado no PDF: dólar a R$ 5,27 → 4.650 × 5,27 = R$ 24.505,50.</div>
+</article>
+</div>
+<div class="pdf-box">
+<div>
+<h3 data-i18n="original_budget">Orçamento original Lefer Viagens</h3>
+<p data-i18n="pdf_desc">Consulte o PDF enviado pela Patrícia com as informações originais do pacote China no Outono 2027.</p>
+</div>
+<a class="btn btn-primary" data-i18n="download_pdf_short" download="" href="china-no-outono-2027-orcamento-lefer.pdf">Baixar PDF</a>
+</div>
+</div>
+</section>
+<section class="final">
+<div class="container">
+<div class="eyebrow" data-i18n="china_autumn_2027">China no Outono 2027</div>
+<h2 data-i18n="talk_patricia">Quer conversar com Patrícia sobre este pacote?</h2>
+<p data-i18n="whatsapp_desc">O botão abre o WhatsApp já identificando o pacote China no Outono 2027.</p>
+<div class="final-actions">
+<a class="btn btn-primary" data-i18n="want_package" href="https://wa.me/5585988830747?text=Ol%C3%A1%2C%20Patr%C3%ADcia%21%20Vi%20o%20pacote%20China%20no%20Outono%202027%20%2830/10%20a%2016/11%29%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Quero este pacote</a>
+<a class="btn btn-outline" data-i18n="download_budget_pdf" download="" href="china-no-outono-2027-orcamento-lefer.pdf">Baixar orçamento em PDF</a>
+</div>
+</div>
+</section>
+</main>
+<a aria-label="WhatsApp" class="whatsapp" href="https://wa.me/5585988830747?text=Ol%C3%A1%2C%20Patr%C3%ADcia%21%20Vi%20o%20pacote%20China%20no%20Outono%202027%20%2830/10%20a%2016/11%29%20e%20gostaria%20de%20receber%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M19.11 17.35c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.08-1.28-.77-.68-1.29-1.53-1.44-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.93-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3z"></path><path d="M16.03 3.2c-7.05 0-12.78 5.72-12.78 12.77 0 2.25.59 4.45 1.7 6.38L3.14 28.8l6.6-1.73a12.72 12.72 0 0 0 6.29 1.6h.01c7.04 0 12.77-5.73 12.77-12.78 0-3.41-1.33-6.62-3.74-9.03A12.68 12.68 0 0 0 16.03 3.2zm0 23.31h-.01a10.56 10.56 0 0 1-5.38-1.47l-.39-.23-3.92 1.03 1.05-3.82-.25-.39a10.56 10.56 0 0 1-1.62-5.66c0-5.8 4.72-10.52 10.53-10.52 2.81 0 5.45 1.09 7.44 3.08a10.45 10.45 0 0 1 3.08 7.45c-.01 5.81-4.73 10.53-10.53 10.53z"></path></svg></a>
+<footer class="footer">
+<div class="container">
+    Patrícia Lima • (85) 98883-0747 • @patricialima.leferviagens<br/>
+<strong>UrbanWatch.app</strong>
+</div>
+</footer>
+<div aria-hidden="true" class="share-modal" id="sharePackageModal">
+<div aria-modal="true" class="share-dialog" role="dialog">
+<button aria-label="Fechar" class="share-close" id="closeSharePackage" type="button">×</button>
+<h2 data-i18n="share_page_title">Compartilhar pacote</h2>
+<p data-i18n="share_page_desc">Use o QR Code, copie o link ou compartilhe diretamente esta página da China no Outono 2027.</p>
+<div class="qr-wrap">
+<img alt="QR Code da página China no Outono 2027" src="https://quickchart.io/qr?text=https%3A%2F%2Furbanwatch.app%2Ftravel%2Fpremium%2Fpatricia-lima%2Fpacotes%2Fchina%2F&amp;size=420&amp;margin=1"/>
+</div>
+<div class="share-link-box">
+<span class="share-link" id="packageShareLink">https://urbanwatch.app/travel/premium/patricia-lima/pacotes/china/</span>
+<button class="copy-link-btn" data-i18n="copy_link" id="copyPackageLink" type="button">Copiar link</button>
+</div>
+<div class="share-dialog-actions">
+<button class="btn btn-primary" data-i18n="share_now" id="nativeSharePackage" type="button">Compartilhar agora</button>
+</div>
+</div>
+</div>
+<script>
+(function(){
+  const translations = {"pt": {"other_destinations": "Ver outros destinos", "back_portal": "Voltar ao Portal", "hero_kicker": "Lefer Viagens • 2027", "hero_season": "no Outono 2027", "date": "30/10 a 16/11", "hero_route": "Um roteiro por Pequim, Xi'an, Chengdu, Chongqing, Zhangjiajie, Xangai e Suzhou.", "want_package": "Quero este pacote", "download_pdf": "Baixar PDF do pacote", "seven_cities": "7 cidades", "cities_list": "Pequim, Xi'an, Chengdu, Chongqing, Zhangjiajie, Xangai e Suzhou.", "price_fact": "por pessoa, em apartamento duplo - pacote terrestre.", "airfare": "Aéreo", "on_request": "sob consulta.", "lefer_records": "Registros da Lefer Viagens", "china_up_close": "A China vista de perto.", "lefer_records_desc": "Registros de experiências da Lefer Viagens na China.", "visited_cities": "Cidades visitadas", "seven_route": "Sete cidades no roteiro.", "gallery": "Galeria", "gallery_title": "Um pouco da China que espera por você.", "gallery_desc": "Imagens que antecipam alguns dos cenários, culturas e experiências desta jornada.", "the_package": "O pacote", "included_excluded_title": "O que está incluído e o que não está.", "included_title": "Nosso pacote inclui", "excluded_title": "Nosso pacote não inclui", "investment": "Investimento", "price_payment_title": "Valor e forma de pagamento.", "land_package_value": "Valor do pacote terrestre", "per_person_double": "por pessoa, em apartamento duplo.", "budget_notes": "Observações do orçamento", "original_budget": "Orçamento original Lefer Viagens", "pdf_desc": "Consulte o PDF enviado pela Patrícia com as informações originais do pacote China no Outono 2027.", "download_pdf_short": "Baixar PDF", "china_autumn_2027": "China no Outono 2027", "talk_patricia": "Quer conversar com Patrícia sobre este pacote?", "whatsapp_desc": "O botão abre o WhatsApp já identificando o pacote China no Outono 2027.", "download_budget_pdf": "Baixar orçamento em PDF", "city_beijing": "Pequim", "city_xian": "Xi'an", "city_chengdu": "Chengdu", "city_chongqing": "Chongqing", "city_zhangjiajie": "Zhangjiajie", "city_shanghai": "Xangai", "city_suzhou": "Suzhou", "city_beijing_desc": "O coração histórico da China reúne palácios imperiais, templos milenares e avenidas monumentais. Em Pequim, cada passo revela séculos de tradição ao lado da grandiosidade da China moderna.", "city_xian_desc": "Berço da antiga Rota da Seda, Xi'an impressiona por seu legado histórico. Muralhas preservadas, bairros tradicionais e o famoso Exército de Terracota fazem da cidade uma verdadeira viagem no tempo.", "city_chengdu_desc": "Muito além dos adoráveis pandas-gigantes, Chengdu conquista pelo ritmo tranquilo, templos históricos e gastronomia marcante. Um destino onde tradição, natureza e cultura convivem em perfeita harmonia.", "city_chongqing_desc": "Conhecida como a cidade das montanhas, Chongqing encanta com seu cenário urbano impressionante, rios grandiosos e uma atmosfera vibrante. Um destino que revela a China mais autêntica e surpreendente.", "city_zhangjiajie_desc": "Paisagens que parecem saídas de um filme. Os imensos pilares de pedra envoltos por névoa criam um dos cenários naturais mais espetaculares do mundo, repleto de trilhas e vistas inesquecíveis.", "city_shanghai_desc": "Cosmopolita e fascinante, Xangai reúne arranha-céus futuristas, bairros históricos e uma energia contagiante. Um destino onde o passado e o futuro caminham lado a lado.", "city_suzhou_desc": "Conhecida como a “Veneza do Oriente”, Suzhou encanta com seus canais, jardins clássicos e pontes de pedra. Um refúgio de beleza, elegância e tradição no coração da China.", "inc_hotel": "Hospedagem em hotéis selecionados, em apartamento duplo, com café da manhã.", "inc_ground_transport": "Transporte terrestre completo conforme programa.", "inc_transfers": "Transfers de chegada e saída em todos os destinos.", "inc_train": "Trem de alta velocidade, classe econômica, nos trechos Pequim - Xi'an | Xi'an - Chengdu | Chengdu → Chongqing | Chongqing - Zhangjiajie.", "inc_tickets": "Ingressos para todos os passeios conforme programa.", "inc_guide": "Guia em espanhol durante os passeios.", "inc_meals": "Refeições incluídas conforme programa.", "inc_support": "Suporte presencial de um acompanhante Lefer Viagens durante toda a viagem, desde o Brasil.", "inc_kit": "Kit de viagem exclusivo.", "exc_international_air": "Passagem aérea internacional.", "exc_internal_air": "Passagem aérea interna Zhangjiajie → Xangai.", "exc_unlisted_meals": "Refeições não mencionadas no roteiro.", "exc_drinks": "Bebidas durante as refeições.", "exc_personal": "Despesas de caráter pessoal, como lavanderia, telefonemas e frigobar.", "exc_optional": "Passeios opcionais e atividades em dias livres.", "exc_tips": "Gorjetas para guias, motoristas e carregadores de bagagem.", "exc_other": "Qualquer serviço não mencionado como incluso.", "pay_entry": "Entrada: 20% do valor total.", "pay_balance": "Saldo restante: parcelado.", "pay_airfare": "Aéreo: sob consulta.", "pay_single": "Suplemento para quarto individual: sob consulta.", "note_availability": "Valores sujeitos a alteração conforme disponibilidade aérea.", "note_currency": "*O pagamento é feito na moeda brasileira (real). No ato do contrato faz-se a conversão pelo câmbio do dólar comercial do dia.", "note_example": "Exemplo informado no PDF: dólar a R$ 5,27 → 4.650 × 5,27 = R$ 24.505,50.", "share_page_title": "Compartilhar pacote", "share_page_desc": "Use o QR Code, copie o link ou compartilhe diretamente esta página da China no Outono 2027.", "copy_link": "Copiar link", "share_now": "Compartilhar agora"}, "en": {"other_destinations": "View other destinations", "back_portal": "Back to Portal", "hero_kicker": "Lefer Viagens • 2027", "hero_season": "Autumn 2027", "date": "30 Oct to 16 Nov", "hero_route": "An itinerary through Beijing, Xi'an, Chengdu, Chongqing, Zhangjiajie, Shanghai and Suzhou.", "want_package": "I want this package", "download_pdf": "Download package PDF", "seven_cities": "7 cities", "cities_list": "Beijing, Xi'an, Chengdu, Chongqing, Zhangjiajie, Shanghai and Suzhou.", "price_fact": "per person, double occupancy - land package.", "airfare": "Airfare", "on_request": "on request.", "lefer_records": "Lefer Viagens records", "china_up_close": "China up close.", "lefer_records_desc": "Records of Lefer Viagens experiences in China.", "visited_cities": "Cities visited", "seven_route": "Seven cities on the itinerary.", "gallery": "Gallery", "gallery_title": "A glimpse of the China waiting for you.", "gallery_desc": "Images that offer a preview of some of the scenery, cultures and experiences on this journey.", "the_package": "The package", "included_excluded_title": "What is included and what is not.", "included_title": "Our package includes", "excluded_title": "Our package does not include", "investment": "Investment", "price_payment_title": "Price and payment terms.", "land_package_value": "Land package price", "per_person_double": "per person, double occupancy.", "budget_notes": "Quote notes", "original_budget": "Original Lefer Viagens quote", "pdf_desc": "See the PDF sent by Patrícia with the original information for the China in Autumn 2027 package.", "download_pdf_short": "Download PDF", "china_autumn_2027": "China in Autumn 2027", "talk_patricia": "Would you like to talk to Patrícia about this package?", "whatsapp_desc": "The button opens WhatsApp with the China in Autumn 2027 package already identified.", "download_budget_pdf": "Download quote PDF", "city_beijing": "Beijing", "city_xian": "Xi'an", "city_chengdu": "Chengdu", "city_chongqing": "Chongqing", "city_zhangjiajie": "Zhangjiajie", "city_shanghai": "Shanghai", "city_suzhou": "Suzhou", "city_beijing_desc": "China's historic heart brings together imperial palaces, ancient temples and monumental avenues. In Beijing, every step reveals centuries of tradition alongside the grandeur of modern China.", "city_xian_desc": "Birthplace of the ancient Silk Road, Xi'an impresses with its historical legacy. Preserved walls, traditional neighborhoods and the famous Terracotta Army make the city a true journey through time.", "city_chengdu_desc": "Far beyond its adorable giant pandas, Chengdu wins visitors over with its relaxed pace, historic temples and distinctive cuisine. A destination where tradition, nature and culture live in harmony.", "city_chongqing_desc": "Known as the city of mountains, Chongqing captivates with its impressive urban scenery, great rivers and vibrant atmosphere. A destination that reveals a more authentic and surprising China.", "city_zhangjiajie_desc": "Landscapes that seem to come straight from a film. Immense stone pillars wrapped in mist create one of the world's most spectacular natural settings, filled with trails and unforgettable views.", "city_shanghai_desc": "Cosmopolitan and fascinating, Shanghai combines futuristic skyscrapers, historic neighborhoods and contagious energy. A destination where past and future walk side by side.", "city_suzhou_desc": "Known as the “Venice of the East”, Suzhou enchants with its canals, classical gardens and stone bridges. A refuge of beauty, elegance and tradition in the heart of China.", "inc_hotel": "Accommodation in selected hotels, in a double room, with breakfast.", "inc_ground_transport": "Complete ground transportation according to the program.", "inc_transfers": "Arrival and departure transfers at all destinations.", "inc_train": "High-speed train, economy class, on the routes Beijing - Xi'an | Xi'an - Chengdu | Chengdu → Chongqing | Chongqing - Zhangjiajie.", "inc_tickets": "Admission tickets for all tours according to the program.", "inc_guide": "Spanish-speaking guide during the tours.", "inc_meals": "Meals included according to the program.", "inc_support": "In-person support from a Lefer Viagens companion throughout the entire trip, starting in Brazil.", "inc_kit": "Exclusive travel kit.", "exc_international_air": "International airfare.", "exc_internal_air": "Domestic airfare Zhangjiajie → Shanghai.", "exc_unlisted_meals": "Meals not mentioned in the itinerary.", "exc_drinks": "Drinks during meals.", "exc_personal": "Personal expenses such as laundry, phone calls and minibar.", "exc_optional": "Optional tours and activities on free days.", "exc_tips": "Tips for guides, drivers and baggage handlers.", "exc_other": "Any service not mentioned as included.", "pay_entry": "Deposit: 20% of the total amount.", "pay_balance": "Remaining balance: installment payments.", "pay_airfare": "Airfare: on request.", "pay_single": "Single-room supplement: on request.", "note_availability": "Prices are subject to change according to air availability.", "note_currency": "*Payment is made in Brazilian reais. At the time of contracting, conversion is made using the commercial US dollar exchange rate of the day.", "note_example": "Example stated in the PDF: US dollar at R$ 5.27 → 4,650 × 5.27 = R$ 24,505.50.", "share_page_title": "Share package", "share_page_desc": "Use the QR Code, copy the link or share this China in Autumn 2027 page directly.", "copy_link": "Copy link", "share_now": "Share now"}, "es": {"other_destinations": "Ver otros destinos", "back_portal": "Volver al Portal", "hero_kicker": "Lefer Viagens • 2027", "hero_season": "en Otoño 2027", "date": "30/10 al 16/11", "hero_route": "Un itinerario por Pekín, Xi'an, Chengdu, Chongqing, Zhangjiajie, Shanghái y Suzhou.", "want_package": "Quiero este paquete", "download_pdf": "Descargar PDF del paquete", "seven_cities": "7 ciudades", "cities_list": "Pekín, Xi'an, Chengdu, Chongqing, Zhangjiajie, Shanghái y Suzhou.", "price_fact": "por persona, en habitación doble - paquete terrestre.", "airfare": "Aéreo", "on_request": "bajo consulta.", "lefer_records": "Registros de Lefer Viagens", "china_up_close": "China de cerca.", "lefer_records_desc": "Registros de experiencias de Lefer Viagens en China.", "visited_cities": "Ciudades visitadas", "seven_route": "Siete ciudades en el itinerario.", "gallery": "Galería", "gallery_title": "Un poco de la China que te espera.", "gallery_desc": "Imágenes que anticipan algunos de los paisajes, culturas y experiencias de este viaje.", "the_package": "El paquete", "included_excluded_title": "Qué está incluido y qué no.", "included_title": "Nuestro paquete incluye", "excluded_title": "Nuestro paquete no incluye", "investment": "Inversión", "price_payment_title": "Valor y forma de pago.", "land_package_value": "Valor del paquete terrestre", "per_person_double": "por persona, en habitación doble.", "budget_notes": "Observaciones del presupuesto", "original_budget": "Presupuesto original Lefer Viagens", "pdf_desc": "Consulta el PDF enviado por Patrícia con la información original del paquete China en Otoño 2027.", "download_pdf_short": "Descargar PDF", "china_autumn_2027": "China en Otoño 2027", "talk_patricia": "¿Quieres hablar con Patrícia sobre este paquete?", "whatsapp_desc": "El botón abre WhatsApp identificando el paquete China en Otoño 2027.", "download_budget_pdf": "Descargar presupuesto en PDF", "city_beijing": "Pekín", "city_xian": "Xi'an", "city_chengdu": "Chengdu", "city_chongqing": "Chongqing", "city_zhangjiajie": "Zhangjiajie", "city_shanghai": "Shanghái", "city_suzhou": "Suzhou", "city_beijing_desc": "El corazón histórico de China reúne palacios imperiales, templos milenarios y avenidas monumentales. En Pekín, cada paso revela siglos de tradición junto a la grandeza de la China moderna.", "city_xian_desc": "Cuna de la antigua Ruta de la Seda, Xi'an impresiona por su legado histórico. Murallas preservadas, barrios tradicionales y el famoso Ejército de Terracota hacen de la ciudad un verdadero viaje en el tiempo.", "city_chengdu_desc": "Mucho más allá de sus adorables pandas gigantes, Chengdu conquista por su ritmo tranquilo, templos históricos y gastronomía marcada. Un destino donde tradición, naturaleza y cultura conviven en armonía.", "city_chongqing_desc": "Conocida como la ciudad de las montañas, Chongqing encanta con su impresionante paisaje urbano, grandes ríos y una atmósfera vibrante. Un destino que revela una China más auténtica y sorprendente.", "city_zhangjiajie_desc": "Paisajes que parecen salidos de una película. Inmensos pilares de piedra envueltos en niebla crean uno de los escenarios naturales más espectaculares del mundo, lleno de senderos y vistas inolvidables.", "city_shanghai_desc": "Cosmopolita y fascinante, Shanghái reúne rascacielos futuristas, barrios históricos y una energía contagiosa. Un destino donde pasado y futuro caminan lado a lado.", "city_suzhou_desc": "Conocida como la “Venecia de Oriente”, Suzhou encanta con sus canales, jardines clásicos y puentes de piedra. Un refugio de belleza, elegancia y tradición en el corazón de China.", "inc_hotel": "Alojamiento en hoteles seleccionados, en habitación doble, con desayuno.", "inc_ground_transport": "Transporte terrestre completo según el programa.", "inc_transfers": "Traslados de llegada y salida en todos los destinos.", "inc_train": "Tren de alta velocidad, clase económica, en los tramos Pekín - Xi'an | Xi'an - Chengdu | Chengdu → Chongqing | Chongqing - Zhangjiajie.", "inc_tickets": "Entradas para todos los paseos según el programa.", "inc_guide": "Guía en español durante los paseos.", "inc_meals": "Comidas incluidas según el programa.", "inc_support": "Acompañamiento presencial de un representante de Lefer Viagens durante todo el viaje, desde Brasil.", "inc_kit": "Kit de viaje exclusivo.", "exc_international_air": "Pasaje aéreo internacional.", "exc_internal_air": "Pasaje aéreo interno Zhangjiajie → Shanghái.", "exc_unlisted_meals": "Comidas no mencionadas en el itinerario.", "exc_drinks": "Bebidas durante las comidas.", "exc_personal": "Gastos personales, como lavandería, llamadas telefónicas y minibar.", "exc_optional": "Paseos opcionales y actividades en días libres.", "exc_tips": "Propinas para guías, conductores y maleteros.", "exc_other": "Cualquier servicio no mencionado como incluido.", "pay_entry": "Entrada: 20% del valor total.", "pay_balance": "Saldo restante: parcelado.", "pay_airfare": "Aéreo: bajo consulta.", "pay_single": "Suplemento para habitación individual: bajo consulta.", "note_availability": "Valores sujetos a cambios según disponibilidad aérea.", "note_currency": "*El pago se realiza en moneda brasileña (real). Al contratar, se hace la conversión según el tipo de cambio comercial del dólar del día.", "note_example": "Ejemplo informado en el PDF: dólar a R$ 5,27 → 4.650 × 5,27 = R$ 24.505,50.", "share_page_title": "Compartir paquete", "share_page_desc": "Usa el código QR, copia el enlace o comparte directamente esta página de China en Otoño 2027.", "copy_link": "Copiar enlace", "share_now": "Compartir ahora"}, "zh": {"other_destinations": "查看其他目的地", "back_portal": "返回主页", "hero_kicker": "Lefer Viagens • 2027", "hero_season": "2027年秋季", "date": "10月30日至11月16日", "hero_route": "行程涵盖北京、西安、成都、重庆、张家界、上海和苏州。", "want_package": "我想了解此行程", "download_pdf": "下载行程 PDF", "seven_cities": "7座城市", "cities_list": "北京、西安、成都、重庆、张家界、上海和苏州。", "price_fact": "每人价格，双人间住宿 — 地接套餐。", "airfare": "机票", "on_request": "需咨询。", "lefer_records": "Lefer Viagens 旅行记录", "china_up_close": "近距离感受中国。", "lefer_records_desc": "Lefer Viagens 在中国的旅行体验记录。", "visited_cities": "到访城市", "seven_route": "行程涵盖七座城市。", "gallery": "图库", "gallery_title": "提前感受等待你的中国。", "gallery_desc": "这些图片带你预览本次旅程中的部分风景、文化与体验。", "the_package": "套餐", "included_excluded_title": "包含与不包含项目。", "included_title": "套餐包含", "excluded_title": "套餐不包含", "investment": "费用", "price_payment_title": "价格与付款方式。", "land_package_value": "地接套餐价格", "per_person_double": "每人，双人间住宿。", "budget_notes": "报价说明", "original_budget": "Lefer Viagens 原始报价", "pdf_desc": "查看 Patrícia 提供的 PDF，了解“2027年秋季中国之旅”套餐的原始信息。", "download_pdf_short": "下载 PDF", "china_autumn_2027": "2027年秋季中国之旅", "talk_patricia": "想和 Patrícia 进一步了解这个套餐吗？", "whatsapp_desc": "点击按钮将打开 WhatsApp，并自动标注“2027年秋季中国之旅”套餐。", "download_budget_pdf": "下载报价 PDF", "city_beijing": "北京", "city_xian": "西安", "city_chengdu": "成都", "city_chongqing": "重庆", "city_zhangjiajie": "张家界", "city_shanghai": "上海", "city_suzhou": "苏州", "city_beijing_desc": "中国的历史核心汇聚了皇家宫殿、千年古寺和宏伟大道。在北京，每一步都能看到悠久传统与现代中国的恢宏并存。", "city_xian_desc": "作为古丝绸之路的重要起点，西安以深厚的历史底蕴令人印象深刻。保存完好的城墙、传统街区以及著名的兵马俑，让这座城市成为一场穿越时光的旅程。", "city_chengdu_desc": "成都不只有可爱的大熊猫，还以悠闲节奏、历史寺庙和鲜明美食文化吸引游客。这里让传统、自然与文化和谐共存。", "city_chongqing_desc": "重庆以山城著称，壮观的城市景观、浩荡江河和活力氛围令人着迷，展现出更真实而令人惊喜的中国。", "city_zhangjiajie_desc": "这里的景观仿佛来自电影。巨大的石柱笼罩在云雾之中，构成世界上最壮观的自然景观之一，并拥有步道和难忘的视野。", "city_shanghai_desc": "国际化而迷人的上海汇聚未来感摩天大楼、历史街区和充满感染力的城市能量，是过去与未来并肩而行的地方。", "city_suzhou_desc": "苏州素有“东方威尼斯”之称，以河道、古典园林和石桥令人着迷，是中国腹地兼具美感、优雅与传统的城市。", "inc_hotel": "入住精选酒店，双人间，含早餐。", "inc_ground_transport": "按行程安排提供全程地面交通。", "inc_transfers": "所有目的地的抵达与离开接送服务。", "inc_train": "高铁二等座，包含北京－西安 | 西安－成都 | 成都→重庆 | 重庆－张家界路段。", "inc_tickets": "按行程安排包含所有游览项目门票。", "inc_guide": "游览期间配备西班牙语导游。", "inc_meals": "按行程安排包含餐食。", "inc_support": "Lefer Viagens 陪同人员从巴西出发，全程提供现场支持。", "inc_kit": "专属旅行套装。", "exc_international_air": "国际机票。", "exc_internal_air": "张家界→上海的中国境内机票。", "exc_unlisted_meals": "行程中未注明的餐食。", "exc_drinks": "用餐期间的饮料。", "exc_personal": "个人消费，如洗衣、电话和迷你吧。", "exc_optional": "自由活动日的自费游览与活动。", "exc_tips": "导游、司机和行李员小费。", "exc_other": "任何未注明为包含项目的服务。", "pay_entry": "首付：总金额的20%。", "pay_balance": "剩余金额：可分期支付。", "pay_airfare": "机票：需咨询。", "pay_single": "单人间附加费：需咨询。", "note_availability": "价格可能根据航空资源情况调整。", "note_currency": "*付款以巴西雷亚尔结算。签约时按当天美元商业汇率进行换算。", "note_example": "PDF 中的示例：若美元汇率为 R$ 5.27，则 4,650 × 5.27 = R$ 24,505.50。", "share_page_title": "分享套餐", "share_page_desc": "可使用二维码、复制链接或直接分享“2027年秋季中国之旅”页面。", "copy_link": "复制链接", "share_now": "立即分享"}};
+  const root = document.documentElement;
+  const langButtons = document.querySelectorAll("[data-set-language]");
+  const allowed = ["pt","en","es","zh"];
+  const htmlLang = {pt:"pt-BR",en:"en",es:"es",zh:"zh-CN"};
+  const titles = {
+    pt:"China no Outono 2027 | Patrícia Lima - Lefer Viagens",
+    en:"China in Autumn 2027 | Patrícia Lima - Lefer Viagens",
+    es:"China en Otoño 2027 | Patrícia Lima - Lefer Viagens",
+    zh:"2027年秋季中国之旅 | Patrícia Lima - Lefer Viagens"
+  };
+
+  function setLanguage(lang){
+    lang = allowed.includes(lang) ? lang : "pt";
+    root.dataset.language = lang;
+    root.lang = htmlLang[lang];
+    document.title = titles[lang];
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    langButtons.forEach(btn => {
+      const active = btn.dataset.setLanguage === lang;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
+    });
+
+    try { localStorage.setItem("urbanwatch-language", lang); } catch(e) {}
+  }
+
+  langButtons.forEach(btn => btn.addEventListener("click", () => setLanguage(btn.dataset.setLanguage)));
+
+  let saved = "pt";
+  try { saved = localStorage.getItem("urbanwatch-language") || "pt"; } catch(e) {}
+  setLanguage(saved);
+
+  const pageUrl = "https://urbanwatch.app/travel/premium/patricia-lima/pacotes/china/";
+  const modal = document.getElementById("sharePackageModal");
+  const openBtn = document.getElementById("openSharePackage");
+  const closeBtn = document.getElementById("closeSharePackage");
+  const copyBtn = document.getElementById("copyPackageLink");
+  const shareBtn = document.getElementById("nativeSharePackage");
+
+  function openShare(){
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-open");
+  }
+  function closeShare(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-open");
+  }
+
+  openBtn.addEventListener("click", openShare);
+  closeBtn.addEventListener("click", closeShare);
+  modal.addEventListener("click", e => { if(e.target === modal) closeShare(); });
+  document.addEventListener("keydown", e => { if(e.key === "Escape" && modal.classList.contains("open")) closeShare(); });
+
+  copyBtn.addEventListener("click", async () => {
+    const lang = root.dataset.language || "pt";
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+      copyBtn.textContent = lang === "en" ? "Copied" : lang === "es" ? "Copiado" : lang === "zh" ? "已复制" : "Copiado";
+    } catch(e) {
+      window.prompt(lang === "en" ? "Copy the link:" : lang === "es" ? "Copia el enlace:" : lang === "zh" ? "复制链接：" : "Copie o link:", pageUrl);
+    }
+    setTimeout(() => {
+      copyBtn.textContent = translations[lang].copy_link;
+    }, 1800);
+  });
+
+  shareBtn.addEventListener("click", async () => {
+    const lang = root.dataset.language || "pt";
+    const shareData = {
+      title: titles[lang],
+      text: lang === "en" ? "China in Autumn 2027 — 30 Oct to 16 Nov." :
+            lang === "es" ? "China en Otoño 2027 — 30/10 al 16/11." :
+            lang === "zh" ? "2027年秋季中国之旅 — 10月30日至11月16日。" :
+            "China no Outono 2027 — 30/10 a 16/11.",
+      url: pageUrl
+    };
+    if(navigator.share){
+      try { await navigator.share(shareData); } catch(e) {}
+    } else {
+      try {
+        await navigator.clipboard.writeText(pageUrl);
+        alert(lang === "en" ? "Link copied." : lang === "es" ? "Enlace copiado." : lang === "zh" ? "链接已复制。" : "Link copiado.");
+      } catch(e) {
+        window.prompt("Link:", pageUrl);
+      }
+    }
+  });
+})();
+</script></body>
+</html>
