@@ -1,0 +1,1670 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="description" content="Portal Profissional Premium UrbanWatch.app: presença digital personalizada, cartão NFC, QR Code e WhatsApp integrado. R$ 350 à vista ou R$ 400 em 2x de R$ 200 no cartão de crédito. Hospedagem e manutenção por R$ 50/mês.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Portal Profissional Premium | UrbanWatch.app">
+  <meta property="og:description" content="Muito mais que um cartão digital. Sua presença profissional em um portal inteligente.">
+  <meta property="og:url" content="https://urbanwatch.app/portal/premium/">
+  <meta property="og:image" content="https://urbanwatch.app/portal/premium/portal-premium-urbanwatch.png">
+  <title>Portal Profissional Premium | UrbanWatch.app</title>
+  <link rel="canonical" href="https://urbanwatch.app/portal/premium/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--black:#0a0a0a;--graphite:#161616;--card:#111113;--stroke:rgba(212,175,55,.22);--gold:#d4af37;--champagne:#f1e5ac;--white:#f6f5f1;--muted:#afaead;--deep:#070707;--radius:22px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--black);color:var(--white);font-family:Montserrat,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body::before{content:"";z-index:-1;position:absolute;inset:0 0 auto;height:850px;pointer-events:none;background:radial-gradient(ellipse 53% 43% at 74% 20%,rgba(212,175,55,.13),transparent 83%),radial-gradient(ellipse 36% 26% at 18% 34%,rgba(212,175,55,.07),transparent 88%)}
+    a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--champagne);outline-offset:4px}
+    img{max-width:100%;height:auto;display:block}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(9,9,9,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(212,175,55,.16)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-symbol{position:relative;display:grid;place-items:center;width:42px;height:42px;border:1.5px solid var(--gold);border-radius:12px;color:var(--gold);font-weight:900;font-size:23px;letter-spacing:-.16em;padding-right:5px;transform:rotate(-3deg)}
+    .brand-name{font-weight:900;font-size:18px;line-height:1.1;letter-spacing:.02em;white-space:nowrap}.brand-name span{color:var(--gold)}.brand-tag{font-size:9px;color:var(--muted);font-weight:500;letter-spacing:.035em;margin-top:4px}
+    .nav-actions{display:flex;align-items:center;gap:10px}.nav-back{font-size:12px;color:#bbb;transition:color .2s}.nav-back:hover{color:var(--gold)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:800 12px/1.3 Montserrat,Arial,sans-serif;letter-spacing:.02em;border-radius:12px;padding:16px 20px;border:1px solid transparent;cursor:pointer;transition:transform .2s,filter .2s,border-color .2s,background .2s;text-align:center}.btn:hover{transform:translateY(-2px);filter:brightness(1.09)}
+    .btn-primary{background:linear-gradient(120deg,#e9bf42,#b78d20 62%,#efc96b);color:#101010;box-shadow:0 9px 28px rgba(212,175,55,.14)}
+    .btn-outline{border-color:rgba(212,175,55,.5);color:var(--champagne);background:rgba(212,175,55,.055)}
+    .btn svg{width:17px;height:17px;flex:none}
+    .share-icon{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .share-nav{white-space:nowrap}
+    .share-nav .share-icon{width:16px;height:16px}
+    .share-feedback{position:fixed;z-index:80;left:50%;bottom:90px;transform:translate(-50%,12px);width:max-content;max-width:calc(100vw - 36px);padding:12px 18px;border:1px solid rgba(212,175,55,.48);border-radius:12px;background:#191714;box-shadow:0 12px 35px #000b;color:var(--champagne);font-weight:700;font-size:12px;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s,visibility .2s}
+    .share-feedback.visible{opacity:1;visibility:visible;transform:translate(-50%,0)}
+    .final-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);gap:48px;align-items:center;padding:94px 0 84px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-weight:800;letter-spacing:.19em;font-size:10px;text-transform:uppercase}
+    .eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(36px,5vw,67px);font-weight:900;line-height:1.12;letter-spacing:-.047em;margin:22px 0 22px}
+    h1 .line-gold{color:var(--gold);display:block}h1 .smaller{display:block;font-size:.44em;letter-spacing:-.016em;line-height:1.45;font-weight:700;margin-top:12px;color:var(--champagne)}
+    .hero-desc{font-size:15px;color:#c6c5c2;max-width:550px;line-height:1.8}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:29px 0 23px}
+    .tiny-assurance{color:#9b9a97;font-size:11px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.tiny-assurance span::before{content:'✓';color:var(--gold);font-weight:900;margin-right:6px}
+    .visual{position:relative;min-height:490px;display:grid;place-items:center}.visual::before{position:absolute;content:"";width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.14),transparent 68%);filter:blur(10px)}
+    .phone{position:relative;width:273px;max-width:85%;background:#080808;padding:11px;border:5px solid #353535;border-radius:37px;box-shadow:0 35px 95px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.14),0 0 60px rgba(212,175,55,.08);transform:rotate(5deg)}
+    .phone-screen{border:1px solid #2b261b;border-radius:25px;background:linear-gradient(140deg,#141313,#030303);min-height:445px;padding:28px 17px 20px;text-align:center;overflow:hidden}
+    .speaker{position:absolute;top:14px;left:50%;transform:translateX(-50%);height:8px;width:63px;background:#010101;border-radius:15px}
+    .phone-logo{font-size:15px;color:var(--gold);font-weight:900;letter-spacing:.22em}.avatar{margin:23px auto 14px;border-radius:50%;width:75px;height:75px;display:grid;place-items:center;font-weight:800;font-size:33px;color:var(--gold);border:2px solid var(--gold);background:#222}
+    .phone-title{font-size:19px;font-weight:800}.phone-sub{font-size:10px;color:#b8b4ab;margin-top:3px}.quicklinks{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:25px 0 18px}.quicklinks span{border:1px solid var(--stroke);font-size:9px;border-radius:8px;padding:10px 0;color:var(--gold)}
+    .phone-btn{border:1px solid var(--gold);padding:11px;border-radius:12px;color:var(--champagne);font-size:11px;font-weight:800}.phone-lines{margin:20px 0 10px;border-radius:13px;height:110px;background:linear-gradient(160deg,rgba(212,175,55,.25),rgba(0,0,0,.12)),repeating-linear-gradient(90deg,transparent 0 20px,rgba(212,175,55,.16) 21px 23px,transparent 24px 35px);position:relative;overflow:hidden}.phone-lines::after{content:"INTELIGÊNCIA QUE CONECTA";font-size:9px;font-weight:900;letter-spacing:.2em;position:absolute;bottom:15px;left:0;right:0;text-align:center;color:var(--champagne)}
+    .nfc-card{position:absolute;left:12px;bottom:52px;width:170px;height:265px;transform:rotate(-13deg);border-radius:15px;border:1px solid rgba(212,175,55,.5);background:linear-gradient(135deg,#26211b,#070707 70%);box-shadow:0 25px 40px #000b;padding:22px 17px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center}
+    .nfc-card b{font-size:15px;color:var(--gold);letter-spacing:.04em}.nfc-card .nfc-icon{font-size:53px;color:var(--gold);line-height:1}.nfc-card small{font-size:9px;letter-spacing:.14em;color:var(--muted)}
+    .hero-badge{position:absolute;right:3px;bottom:20px;font-size:11px;letter-spacing:.07em;color:var(--gold);background:#16130f;border:1px solid rgba(212,175,55,.4);padding:11px 14px;border-radius:9px;font-weight:800}
+    .divider{border:0;border-top:1px solid var(--stroke);margin:0}
+    .section{padding:80px 0}.section-heading{margin-bottom:32px;max-width:760px}.section-heading h2{font-size:clamp(25px,3.5vw,39px);line-height:1.18;letter-spacing:-.03em;font-weight:900;margin:13px 0 12px}.section-heading p{color:var(--muted);font-size:14px;margin:0}.gold{color:var(--gold)}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{border:1px solid var(--stroke);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.026),rgba(255,255,255,.012));padding:25px 24px;min-height:192px}.feature-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:rgba(212,175,55,.095);color:var(--gold);font-size:21px;font-weight:900;margin-bottom:17px}.feature h3{font-size:14px;line-height:1.45;font-weight:800;margin:0 0 9px}.feature p{color:#b7b5b0;font-size:12px;line-height:1.75;margin:0}
+    .price-section{padding:82px 0;background:linear-gradient(180deg,#0f0f10,#090909)}.price-grid{display:grid;grid-template-columns:1fr .87fr;gap:20px}.price-card{position:relative;padding:34px 32px;border-radius:var(--radius);background:var(--card);border:1px solid var(--stroke)}.price-card.primary{border-color:rgba(212,175,55,.6);box-shadow:inset 0 1px 0 rgba(241,229,172,.08)}.price-label{text-transform:uppercase;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.12em;margin:0 0 10px}.price-card h3{font-size:22px;letter-spacing:-.025em;line-height:1.25;margin:0 0 18px}.price-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:11px}.price-large{font-size:clamp(39px,5vw,56px);font-weight:900;letter-spacing:-.045em;line-height:1.05;color:var(--champagne)}.price-large small{font-size:17px;letter-spacing:-.02em;color:#f3e7b6}.was{color:#92908c;font-size:14px}.monthly-desc{margin-top:17px;color:#c5c3bc;font-size:12px;line-height:1.8}.price-sub{margin:13px 0 25px;color:#bbb8af;font-size:12px}.price-sub strong{color:white}.price-card .btn{width:100%;margin-top:17px}.bullets{padding:0;margin:22px 0 0;list-style:none;display:grid;gap:10px}.bullets li{position:relative;padding-left:24px;font-size:12px;color:#d3d0ca;line-height:1.65}.bullets li::before{content:"✓";color:var(--gold);position:absolute;left:0;top:0;font-weight:900}.note{margin:17px 0 0;padding:12px 14px;border-radius:10px;border:1px solid var(--stroke);background:rgba(212,175,55,.04);font-size:11px;color:#a9a49b;line-height:1.7}
+    .timing{display:grid;grid-template-columns:1fr 1fr;gap:18px}.timing-card{border-radius:var(--radius);padding:26px 29px;border:1px solid var(--stroke);background:linear-gradient(145deg,#19170f,#101010)}.timing-card strong{font-size:27px;color:var(--champagne);font-weight:900;display:block;margin:7px 0}.timing-card p{font-size:12px;color:#b8b5af;margin:0;line-height:1.7}.info-strip{padding:14px 18px;margin-top:16px;border-radius:12px;border:1px solid var(--stroke);color:#b8b3a8;font-size:11px}
+    .extras{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}.extra-box{background:var(--card);border-radius:var(--radius);border:1px solid var(--stroke);padding:26px}.extra-box h3{font-size:16px;margin:0 0 19px}.rows{display:grid;gap:0}.row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px solid rgba(212,175,55,.16);padding:13px 0;font-size:12px}.row:last-child{border-bottom:0}.row b{color:var(--champagne);white-space:nowrap}.row span{color:#c7c3b9}
+    .proposal{display:grid;grid-template-columns:1fr 360px;gap:38px;align-items:start}.proposal-text p{color:#bdb9b0;font-size:14px;line-height:1.85}.poster-link{border:1px solid rgba(212,175,55,.4);border-radius:16px;display:block;overflow:hidden;background:#060606;box-shadow:0 14px 35px #0006;transition:transform .2s}.poster-link:hover{transform:translateY(-4px)}.poster-link img{width:100%;height:450px;object-fit:cover;object-position:top;border-bottom:1px solid var(--stroke)}.poster-link strong{display:block;color:var(--champagne);text-align:center;padding:13px;font-size:11px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.step{border-top:2px solid var(--gold);padding:16px 4px}.step b{font-size:25px;color:var(--gold);display:block}.step strong{font-size:12px;display:block;margin:3px 0 7px}.step span{color:var(--muted);font-size:11px;line-height:1.7;display:block}
+    .final-cta{background:linear-gradient(130deg,#1f1b0f,#0c0c0c 75%);border:1px solid rgba(212,175,55,.55);border-radius:var(--radius);padding:46px 40px;text-align:center}.final-cta h2{font-size:clamp(24px,4vw,39px);letter-spacing:-.04em;margin:10px auto 18px;max-width:780px}.final-cta p{font-size:13px;color:#bbb6a9;margin:0 auto 25px;max-width:640px}.final-cta .btn{min-width:250px}
+    .footer{border-top:1px solid var(--stroke);padding:30px 0 100px}.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px;align-items:center}.footer-logo{font-size:16px;font-weight:900}.footer-logo span{color:var(--gold)}.footer p{color:#89847b;font-size:11px;margin:4px 0}.footer-links{display:flex;gap:18px;font-size:11px;color:#aaa}
+    .whatsapp-float{position:fixed;right:22px;bottom:20px;width:59px;height:59px;border-radius:50%;display:grid;place-items:center;color:#101010;background:linear-gradient(135deg,#f1e5ac,#d4af37);box-shadow:0 10px 29px #0009,0 0 0 5px rgba(212,175,55,.10);z-index:35;transition:transform .2s}.whatsapp-float:hover{transform:translateY(-4px)}.whatsapp-float svg{width:26px;height:26px}.whatsapp-float .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .mobile-action{display:none}
+    @media(max-width:900px){.hero{gap:17px;padding:65px 0}.hero h1{font-size:clamp(36px,5.6vw,56px)}.nfc-card{left:-2px}.feature-grid{grid-template-columns:repeat(2,1fr)}.proposal{grid-template-columns:1fr 300px;gap:22px}.extras{grid-template-columns:1fr 1fr}}
+    @media(max-width:700px){.container{width:min(100% - 32px,520px)}.nav{min-height:66px;gap:6px}.nav-back{display:none}.nav-actions .btn{padding:10px 9px;font-size:9px}.share-nav{min-width:36px}.share-nav .share-label{display:none}.mobile-action{gap:9px}.mobile-action .btn[data-whatsapp]{flex:1.65;min-width:0}.mobile-action .btn[data-share]{flex:1;min-width:0;font-size:11px}.final-actions .btn{width:100%}.brand-symbol{width:35px;height:35px;font-size:19px}.brand{gap:7px}.brand-name{font-size:12px}.brand-tag{font-size:7px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:52px 0 35px}.hero h1{font-size:clamp(34px,9vw,53px)}.hero-desc{font-size:13px}.visual{margin-top:19px;min-height:400px}.phone{width:230px;transform:rotate(4deg) translateX(33px)}.phone-screen{min-height:368px;padding:24px 12px 17px}.avatar{width:60px;height:60px;margin:15px auto 9px}.quicklinks{margin:17px 0 12px}.phone-lines{height:73px}.nfc-card{left:4%;bottom:30px;width:132px;height:211px}.hero-badge{right:1%;bottom:13px}.section,.price-section{padding:54px 0}.section-heading{margin-bottom:23px}.section-heading h2{font-size:28px}.feature-grid,.price-grid,.timing,.extras,.proposal{grid-template-columns:1fr}.feature-grid{gap:10px}.feature{min-height:auto;padding:21px}.price-card{padding:27px 23px}.poster-link{max-width:365px}.steps{grid-template-columns:repeat(2,1fr)}.final-cta{padding:32px 22px}.footer{padding-bottom:115px}.whatsapp-float{display:none}.mobile-action{position:fixed;display:flex;bottom:0;left:0;right:0;z-index:34;background:linear-gradient(0deg,#060606 64%,rgba(6,6,6,.95));padding:11px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--stroke)}.mobile-action .btn{font-size:13px;padding:14px 9px}.hero-cta .btn{width:100%}.footer-inner{flex-direction:column;align-items:flex-start}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.poster-link,.whatsapp-float{transition:none}}
+    /* Central de compartilhamento — padrão UrbanWatch.app */
+    body.uw-share-open{overflow:hidden}
+    .uw-share-overlay[hidden]{display:none!important}
+    .uw-share-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.84);backdrop-filter:blur(9px);display:grid;place-items:center;padding:20px 14px;overflow-y:auto}
+    .uw-share-panel{width:min(460px,100%);max-height:min(94dvh,790px);overflow-y:auto;border:1px solid rgba(212,175,55,.47);border-radius:22px;background:linear-gradient(155deg,#292215 0%,#151515 25%,#0e0e0e 92%);box-shadow:0 24px 95px rgba(0,0,0,.85);padding:25px 26px 22px;outline:none;position:relative;text-align:center}
+    .uw-share-close{position:absolute;right:13px;top:12px;border:1px solid rgba(212,175,55,.27);border-radius:50%;background:#202020;color:var(--champagne);font:500 25px/1 Montserrat,Arial,sans-serif;cursor:pointer;width:39px;height:39px;display:grid;place-items:center}
+    .uw-share-eyebrow{font-size:10px;letter-spacing:.19em;font-weight:800;color:var(--gold);margin:3px 32px 9px;text-transform:uppercase}
+    .uw-share-title{font-size:25px;line-height:1.2;letter-spacing:-.035em;color:var(--white);margin:0 0 5px;font-weight:800}
+    .uw-share-description{font-size:12px;color:#c7c2b6;margin:0 auto 16px;max-width:320px;line-height:1.6}
+    .uw-qr-shell{display:table;margin:0 auto 14px;padding:12px;border-radius:16px;background:#fff;border:3px solid #cda63c;box-shadow:0 8px 24px #0009}
+    .uw-qr-shell canvas{display:block;width:min(58vw,228px);height:auto;aspect-ratio:1;background:#fff;image-rendering:pixelated}
+    .uw-share-brandline{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:800;margin:0 0 14px}
+    .uw-share-link-label{display:block;text-align:left;color:#bcb6a6;font-size:10px;letter-spacing:.09em;margin:0 0 6px;text-transform:uppercase;font-weight:700}
+    .uw-share-url{display:block;width:100%;min-width:0;border:1px solid rgba(212,175,55,.32);background:#080808;border-radius:10px;padding:12px;color:var(--champagne);font:500 12px Montserrat,Arial,sans-serif;text-overflow:ellipsis;outline:none;margin:0 0 14px}
+    .uw-share-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .uw-share-action{display:flex;justify-content:center;align-items:center;min-height:45px;padding:11px 7px;border:1px solid rgba(212,175,55,.45);border-radius:10px;background:rgba(212,175,55,.075);color:var(--champagne);font:700 11px Montserrat,Arial,sans-serif;cursor:pointer;text-decoration:none;text-align:center;gap:6px;transition:background .18s,transform .18s}
+    .uw-share-action:hover{background:rgba(212,175,55,.16);transform:translateY(-1px)}
+    .uw-share-action.prominent{background:linear-gradient(115deg,#f0cf72,#d4af37 60%,#ae8320);border-color:#d4af37;color:#111}
+    .uw-share-action:focus-visible,.uw-share-close:focus-visible,.uw-share-url:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+    .uw-share-foot{color:#817e77;font-size:10px;line-height:1.5;margin:15px 0 0}
+    @media(max-width:570px){.uw-share-overlay{align-items:center;padding:12px}.uw-share-panel{border-radius:19px;padding:20px 17px 17px;max-height:92dvh}.uw-share-title{font-size:22px}.uw-share-description{font-size:11px}.uw-share-buttons{gap:8px}.uw-share-action{font-size:10px}.uw-qr-shell{padding:9px}.uw-qr-shell canvas{width:min(56vw,210px)}.uw-share-overlay .uw-share-brandline{margin-bottom:11px}}
+
+    .share-feedback{z-index:120}
+  </style>
+</head>
+<body>
+  <!-- WhatsApp comercial UrbanWatch.app (DDI 55 + DDD 85 + telefone): para alterar, edite a constante abaixo. -->
+  <script>
+    const WHATSAPP_NUMBER = '5585920089357';
+    const WHATSAPP_MESSAGE = 'Olá! Tenho interesse no Portal Profissional Premium da UrbanWatch.app. Gostaria de saber como contratar.';
+  </script>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="https://urbanwatch.app/" aria-label="UrbanWatch.app — página inicial">
+        <span class="brand-symbol" aria-hidden="true">U</span>
+        <span><span class="brand-name">URBAN<span>WATCH</span>.APP</span><span class="brand-tag" style="display:block">Inteligência para quem não improvisa.</span></span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-back" href="https://urbanwatch.app/portal/">← Portais UrbanWatch</a>
+        <a class="btn btn-outline" data-whatsapp href="#contato">Falar no WhatsApp ↗</a>
+        <button type="button" class="btn btn-outline share-nav" data-share aria-label="Compartilhar Portal Profissional Premium" title="Compartilhar portal"><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10.5 6-4M9 13.5l6 4"/></svg><span class="share-label">Compartilhar</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" aria-labelledby="titulo">
+      <div>
+        <span class="eyebrow">Portal Profissional Premium</span>
+        <h1 id="titulo">Muito mais que um <span class="line-gold">cartão digital.</span><span class="smaller">Sua presença profissional em um portal inteligente.</span></h1>
+        <p class="hero-desc">Apresente seus serviços, reúna seus canais de contato e valorize sua imagem com uma solução digital personalizada, elegante e fácil de compartilhar.</p>
+        <div class="hero-cta">
+          <a href="#investimento" class="btn btn-primary">Conhecer valores e benefícios ↓</a>
+          <a href="#contato" data-whatsapp class="btn btn-outline">Quero meu Portal Premium ↗</a>
+          <button type="button" class="btn btn-outline" data-share><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10.5 6-4M9 13.5l6 4"/></svg>Compartilhar portal</button>
+        </div>
+        <div class="tiny-assurance"><span>Portal exclusivo</span><span>QR Code + cartão NFC</span><span>Suporte de implantação</span></div>
+      </div>
+      <div class="visual" aria-label="Ilustração de um portal digital em celular com cartão NFC">
+        <div class="phone" aria-hidden="true"><div class="speaker"></div><div class="phone-screen"><div class="phone-logo">URBANWATCH</div><div class="avatar">✦</div><div class="phone-title">Seu Nome</div><div class="phone-sub">Profissão / Empresa</div><div class="quicklinks"><span>WhatsApp</span><span>E-mail</span><span>Site</span><span>Redes</span></div><div class="phone-btn">Conheça meu trabalho ↗</div><div class="phone-lines"></div></div></div>
+        <div class="nfc-card" aria-hidden="true"><b>URBANWATCH.APP</b><span class="nfc-icon">◉</span><small>CARTÃO NFC</small></div>
+        <div class="hero-badge">DESIGN PREMIUM ✦</div>
+      </div>
+    </section>
+
+    <hr class="divider">
+    <section class="section container" id="vantagens">
+      <div class="section-heading"><span class="eyebrow">O que você recebe</span><h2>Sua marca mais profissional. <span class="gold">Suas conexões mais simples.</span></h2><p>Uma experiência digital organizada e personalizada para facilitar o contato com seus clientes.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon" aria-hidden="true">▣</div><h3>Apresentação completa</h3><p>Perfil profissional, serviços, fotos, vídeos e portfólio em um portal exclusivo.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">↗</div><h3>Todos os canais em um só lugar</h3><p>Links para WhatsApp, telefone, e-mail, redes sociais e localização.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">⌗</div><h3>Compartilhamento imediato</h3><p>Link exclusivo e QR Code para divulgar seu portal com praticidade.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">◇</div><h3>Design Premium</h3><p>Visual personalizado e adaptado para celulares, tablets e computadores.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">↗</div><h3>Mais visibilidade</h3><p>Uma apresentação moderna que fortalece sua imagem e facilita novos contatos.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">▢</div><h3>Estrutura profissional</h3><p>Hospedagem e manutenção para preservar a disponibilidade do seu portal.</p></article>
+      </div>
+    </section>
+
+    <section class="price-section" id="investimento">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">Condições comerciais</span><h2>Um investimento em sua <span class="gold">presença digital.</span></h2><p>Transparência do início à manutenção: valores de implantação e mensalidade apresentados separadamente.</p></div>
+        <div class="price-grid">
+          <article class="price-card primary">
+            <div class="price-label">Investimento inicial · condição à vista</div>
+            <h3>Portal Premium + 1 cartão NFC personalizado</h3>
+            <div class="price-line"><span class="price-large">R$ 350,00</span><span class="was">à vista</span></div>
+            <div class="price-sub">Ou <strong>R$ 400,00 em 2x de R$ 200,00 no cartão de crédito</strong>.</div>
+            <ul class="bullets"><li>Portal Profissional Digital personalizado</li><li>1 cartão NFC personalizado e QR Code</li><li>Links de contato, redes sociais e serviços</li><li>Design Premium e suporte de implantação</li></ul>
+            <p class="note">A implantação começa após a confirmação do pagamento e o recebimento das informações necessárias.</p>
+            <a class="btn btn-primary" href="#contato" data-whatsapp>Quero contratar o Portal Premium ↗</a>
+          </article>
+          <article class="price-card">
+            <div class="price-label">Mensalidade · hospedagem e manutenção</div>
+            <h3>Seu portal ativo, atualizado e acompanhado.</h3>
+            <div class="price-line"><span class="price-large">R$ 50,00<small>/mês</small></span></div>
+            <p class="monthly-desc">Mensalidade necessária para manutenção e hospedagem do Portal Premium.</p>
+            <ul class="bullets"><li>Hospedagem do Portal Profissional</li><li>Manutenção técnica e operacional</li><li>Monitoramento básico de funcionamento</li><li>Suporte por WhatsApp ou e-mail</li><li>Até 5 pequenas atualizações por ano, incluídas na mensalidade</li></ul>
+            <p class="note">Novas seções, páginas, recursos e solicitações além das atualizações incluídas são orçados separadamente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="prazos">
+      <div class="section-heading"><span class="eyebrow">Agilidade com qualidade</span><h2>Prazos de <span class="gold">entrega.</span></h2></div>
+      <div class="timing">
+        <div class="timing-card"><div class="price-label">Portal Profissional Digital</div><strong>Até 2 dias úteis</strong><p>Desenvolvimento da arte, configuração, revisões de implantação e publicação do portal, a partir das informações e aprovações necessárias.</p></div>
+        <div class="timing-card"><div class="price-label">Cartão NFC personalizado</div><strong>Até 2 dias úteis</strong><p>Criação da arte, gravação e testes do cartão NFC. Prazo de entrega física ou envio pode variar conforme a localidade.</p></div>
+      </div>
+      <div class="info-strip">ⓘ A implantação começa após confirmação do pagamento e recebimento das informações necessárias. Os prazos são contados em dias úteis após a aprovação do material. Demandas adicionais podem alterar o cronograma mediante alinhamento prévio.</div>
+    </section>
+
+    <section class="section container" id="extras" style="padding-top:0">
+      <div class="section-heading"><span class="eyebrow">Personalização conforme sua necessidade</span><h2>Serviços <span class="gold">complementares.</span></h2><p>Adicione cartões ou amplie seu portal quando fizer sentido para o seu negócio.</p></div>
+      <div class="extras">
+        <div class="extra-box"><h3>Cartões NFC adicionais</h3><div class="rows"><div class="row"><span>5 cartões</span><b>+ R$ 100</b></div><div class="row"><span>10 cartões</span><b>+ R$ 200</b></div><div class="row"><span>15 cartões</span><b>+ R$ 300</b></div></div><p class="monthly-desc">Cartões adicionais vinculados ao mesmo portal. Ideais para equipes, colaboradores e pontos de atendimento.</p></div>
+        <div class="extra-box"><h3>Expansões do portal</h3><div class="rows"><div class="row"><span>Pequena atualização adicional</span><b>R$ 20</b></div><div class="row"><span>Nova seção no portal</span><b>A partir de R$ 80</b></div><div class="row"><span>Nova página</span><b>A partir de R$ 150</b></div><div class="row"><span>Traduções, formulários e integrações</span><b>Sob consulta</b></div><div class="row"><span>Recursos personalizados</span><b>Sob consulta</b></div></div><p class="monthly-desc">Valores de referência; podem variar conforme a complexidade da solicitação.</p></div>
+      </div>
+    </section>
+
+    <hr class="divider">
+    <section class="section container" id="proposta">
+      <div class="proposal">
+        <div class="proposal-text">
+          <span class="eyebrow">Apresentação completa</span><div class="section-heading"><h2>Explore todos os detalhes da <span class="gold">proposta Premium.</span></h2></div>
+          <p>Veja em uma única arte os benefícios, preços, manutenção, serviços complementares e etapas de contratação.</p>
+          <p>A imagem pode ser aberta em tamanho maior para consultar e compartilhar os detalhes.</p>
+          <a class="btn btn-outline" href="./portal-premium-urbanwatch.png" target="_blank" rel="noopener noreferrer">Abrir proposta completa ↗</a>
+          <div class="steps" aria-label="Etapas de contratação">
+            <div class="step"><b>01</b><strong>Você contrata</strong><span>Confirma o pagamento e envia as informações.</span></div>
+            <div class="step"><b>02</b><strong>Nós criamos</strong><span>Personalizamos o seu portal.</span></div>
+            <div class="step"><b>03</b><strong>Você aprova</strong><span>Revisa os detalhes finais.</span></div>
+            <div class="step"><b>04</b><strong>Publicamos</strong><span>Seu portal fica pronto para compartilhar.</span></div>
+          </div>
+        </div>
+        <a class="poster-link" href="./portal-premium-urbanwatch.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir arte completa do Portal Premium em nova aba"><img src="./portal-premium-urbanwatch.png" alt="Proposta ilustrada do Portal Profissional Premium UrbanWatch.app com valores, vantagens e serviços" loading="lazy" width="1024" height="1536"><strong>TOQUE PARA AMPLIAR A PROPOSTA ↗</strong></a>
+      </div>
+    </section>
+
+    <section class="container" id="contato" style="padding-bottom:86px">
+      <div class="final-cta"><span class="eyebrow">Vamos começar?</span><h2>Sua próxima oportunidade pode começar com <span class="gold">um simples contato.</span></h2><p>Solicite seu Portal Profissional Premium e receba orientação sobre personalização, implantação e condições comerciais.</p><div class="final-actions">
+          <a class="btn btn-primary" href="#contato" data-whatsapp>Conversar sobre meu Portal no WhatsApp ↗</a>
+          <button type="button" class="btn btn-outline" data-share><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10.5 6-4M9 13.5l6 4"/></svg>Compartilhar este portal</button>
+        </div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><div><div class="footer-logo">URBAN<span>WATCH</span>.APP</div><p>Inteligência para quem não improvisa.</p><p>© <span id="ano">2026</span> UrbanWatch.app · Fortaleza, Ceará, Brasil.</p></div><div class="footer-links"><a href="https://urbanwatch.app/portal/">Página de portais</a><a href="https://urbanwatch.app/">Página inicial</a><a href="#investimento">Investimento</a></div></div></footer>
+
+  <a href="#contato" data-whatsapp class="whatsapp-float" aria-label="Entrar em contato pelo WhatsApp" title="Solicitar pelo WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .95C5.93.95 1 5.88 1 11.95c0 1.94.51 3.85 1.49 5.53L1 23l5.69-1.48a10.93 10.93 0 0 0 5.31 1.36h.01C18.08 22.88 23 17.95 23 11.88A10.95 10.95 0 0 0 12 .95Zm0 19.98a9 9 0 0 1-4.6-1.26l-.33-.2-3.37.88.9-3.28-.22-.34A8.95 8.95 0 0 1 3 11.95c0-4.96 4.04-9 9-9s9 4.04 9 9-4.04 8.98-9 8.98Zm4.94-6.72c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.14-.18.27-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.42.12-.55.12-.12.27-.31.41-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.61-1.47-.83-2.01-.22-.52-.44-.45-.61-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.25 0 1.33.97 2.61 1.1 2.79.14.18 1.9 2.9 4.6 4.06.65.28 1.16.45 1.56.57.66.21 1.27.18 1.75.11.53-.08 1.6-.65 1.82-1.29.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"/></svg><span class="sr-only">WhatsApp</span></a>
+  <div class="mobile-action">
+    <a class="btn btn-primary" href="#contato" data-whatsapp>Falar no WhatsApp ↗</a>
+    <button type="button" class="btn btn-outline" data-share><svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10.5 6-4M9 13.5l6 4"/></svg>Compartilhar</button>
+  </div>
+  <!-- Modal UrbanWatch Premium: QR Code gerado no navegador a partir do endereço atual. -->
+  <div class="uw-share-overlay" id="uwShareOverlay" hidden>
+    <section class="uw-share-panel" id="uwSharePanel" role="dialog" aria-modal="true" aria-labelledby="uwShareTitle" aria-describedby="uwShareDescription" tabindex="-1">
+      <button class="uw-share-close" type="button" id="uwShareClose" aria-label="Fechar compartilhamento">×</button>
+      <div class="uw-share-eyebrow">URBANWATCH.APP · PORTAL PROFISSIONAL</div>
+      <h2 class="uw-share-title" id="uwShareTitle">Compartilhe este Portal</h2>
+      <p class="uw-share-description" id="uwShareDescription">Aponte a câmera para o QR Code ou envie o acesso diretamente para alguém.</p>
+      <div class="uw-qr-shell"><canvas id="uwQrCanvas" width="520" height="520" role="img" aria-label="QR Code para abrir o Portal Profissional Premium UrbanWatch.app"></canvas></div>
+      <p class="uw-share-brandline">Inteligência para quem não improvisa.</p>
+      <label class="uw-share-link-label" for="uwShareUrl">Link do portal</label>
+      <input class="uw-share-url" id="uwShareUrl" type="text" readonly spellcheck="false" aria-label="Endereço do portal para compartilhar">
+      <div class="uw-share-buttons">
+        <button class="uw-share-action prominent" type="button" id="uwShareCopy">🔗 Copiar link</button>
+        <button class="uw-share-action" type="button" id="uwShareNative">↗ Compartilhar</button>
+        <a class="uw-share-action" id="uwShareWhatsApp" target="_blank" rel="noopener noreferrer">✆ WhatsApp</a>
+        <button class="uw-share-action" type="button" id="uwShareDownload">▣ Baixar QR Code</button>
+      </div>
+      <p class="uw-share-foot">Um portal. Mais conexões. UrbanWatch.app</p>
+    </section>
+  </div>
+  <div id="share-feedback" class="share-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+  /* Gerador QR Code embutido: Kazuhiko Arase, licença MIT (d-project.com).
+     Sem dependência de servidor externo ou serviço de QR de terceiros. */
+  const UrbanWatchQRCode = (() => {
+    const modules = Object.create(null);
+    function require(name) { return modules[name.replace(/^\.\//, '')]; }
+    (() => {
+      const module = {exports:{}};
+module.exports = {
+    MODE_NUMBER :       1 << 0,
+    MODE_ALPHA_NUM :    1 << 1,
+    MODE_8BIT_BYTE :    1 << 2,
+    MODE_KANJI :        1 << 3
+};
+
+      modules['QRMode'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+module.exports = {
+	PATTERN000 : 0,
+	PATTERN001 : 1,
+	PATTERN010 : 2,
+	PATTERN011 : 3,
+	PATTERN100 : 4,
+	PATTERN101 : 5,
+	PATTERN110 : 6,
+	PATTERN111 : 7
+};
+
+      modules['QRMaskPattern'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+module.exports = {
+	L : 1,
+	M : 0,
+	Q : 3,
+	H : 2
+};
+
+
+      modules['QRErrorCorrectLevel'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+var QRMath = {
+
+	glog : function(n) {
+	
+		if (n < 1) {
+			throw new Error("glog(" + n + ")");
+		}
+		
+		return QRMath.LOG_TABLE[n];
+	},
+	
+	gexp : function(n) {
+	
+		while (n < 0) {
+			n += 255;
+		}
+	
+		while (n >= 256) {
+			n -= 255;
+		}
+	
+		return QRMath.EXP_TABLE[n];
+	},
+	
+	EXP_TABLE : new Array(256),
+	
+	LOG_TABLE : new Array(256)
+
+};
+	
+for (var i = 0; i < 8; i++) {
+	QRMath.EXP_TABLE[i] = 1 << i;
+}
+for (var i = 8; i < 256; i++) {
+	QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4]
+		^ QRMath.EXP_TABLE[i - 5]
+		^ QRMath.EXP_TABLE[i - 6]
+		^ QRMath.EXP_TABLE[i - 8];
+}
+for (var i = 0; i < 255; i++) {
+	QRMath.LOG_TABLE[QRMath.EXP_TABLE[i] ] = i;
+}
+
+module.exports = QRMath;
+
+      modules['QRMath'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+function QRBitBuffer() {
+	this.buffer = [];
+	this.length = 0;
+}
+
+QRBitBuffer.prototype = {
+
+	get : function(index) {
+		var bufIndex = Math.floor(index / 8);
+		return ( (this.buffer[bufIndex] >>> (7 - index % 8) ) & 1) == 1;
+	},
+	
+	put : function(num, length) {
+		for (var i = 0; i < length; i++) {
+			this.putBit( ( (num >>> (length - i - 1) ) & 1) == 1);
+		}
+	},
+	
+	getLengthInBits : function() {
+		return this.length;
+	},
+	
+	putBit : function(bit) {
+	
+		var bufIndex = Math.floor(this.length / 8);
+		if (this.buffer.length <= bufIndex) {
+			this.buffer.push(0);
+		}
+	
+		if (bit) {
+			this.buffer[bufIndex] |= (0x80 >>> (this.length % 8) );
+		}
+	
+		this.length++;
+	}
+};
+
+module.exports = QRBitBuffer;
+
+      modules['QRBitBuffer'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+var QRMath = require('./QRMath');
+
+function QRPolynomial(num, shift) {
+	if (num.length === undefined) {
+		throw new Error(num.length + "/" + shift);
+	}
+
+	var offset = 0;
+
+	while (offset < num.length && num[offset] === 0) {
+		offset++;
+	}
+
+	this.num = new Array(num.length - offset + shift);
+	for (var i = 0; i < num.length - offset; i++) {
+		this.num[i] = num[i + offset];
+	}
+}
+
+QRPolynomial.prototype = {
+
+	get : function(index) {
+		return this.num[index];
+	},
+	
+	getLength : function() {
+		return this.num.length;
+	},
+	
+	multiply : function(e) {
+	
+		var num = new Array(this.getLength() + e.getLength() - 1);
+	
+		for (var i = 0; i < this.getLength(); i++) {
+			for (var j = 0; j < e.getLength(); j++) {
+				num[i + j] ^= QRMath.gexp(QRMath.glog(this.get(i) ) + QRMath.glog(e.get(j) ) );
+			}
+		}
+	
+		return new QRPolynomial(num, 0);
+	},
+	
+	mod : function(e) {
+	
+		if (this.getLength() - e.getLength() < 0) {
+			return this;
+		}
+	
+		var ratio = QRMath.glog(this.get(0) ) - QRMath.glog(e.get(0) );
+	
+		var num = new Array(this.getLength() );
+		
+		for (var i = 0; i < this.getLength(); i++) {
+			num[i] = this.get(i);
+		}
+		
+		for (var x = 0; x < e.getLength(); x++) {
+			num[x] ^= QRMath.gexp(QRMath.glog(e.get(x) ) + ratio);
+		}
+	
+		// recursive call
+		return new QRPolynomial(num, 0).mod(e);
+	}
+};
+
+module.exports = QRPolynomial;
+
+      modules['QRPolynomial'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+var QRMode = require('./QRMode');
+
+function QR8bitByte(data) {
+	this.mode = QRMode.MODE_8BIT_BYTE;
+	this.data = data;
+}
+
+QR8bitByte.prototype = {
+
+	getLength : function() {
+		return this.data.length;
+	},
+	
+	write : function(buffer) {
+		for (var i = 0; i < this.data.length; i++) {
+			// not JIS ...
+			buffer.put(this.data.charCodeAt(i), 8);
+		}
+	}
+};
+
+module.exports = QR8bitByte;
+
+      modules['QR8bitByte'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+var QRErrorCorrectLevel = require('./QRErrorCorrectLevel');
+
+function QRRSBlock(totalCount, dataCount) {
+	this.totalCount = totalCount;
+	this.dataCount  = dataCount;
+}
+
+QRRSBlock.RS_BLOCK_TABLE = [
+
+	// L
+	// M
+	// Q
+	// H
+
+	// 1
+	[1, 26, 19],
+	[1, 26, 16],
+	[1, 26, 13],
+	[1, 26, 9],
+	
+	// 2
+	[1, 44, 34],
+	[1, 44, 28],
+	[1, 44, 22],
+	[1, 44, 16],
+
+	// 3
+	[1, 70, 55],
+	[1, 70, 44],
+	[2, 35, 17],
+	[2, 35, 13],
+
+	// 4		
+	[1, 100, 80],
+	[2, 50, 32],
+	[2, 50, 24],
+	[4, 25, 9],
+	
+	// 5
+	[1, 134, 108],
+	[2, 67, 43],
+	[2, 33, 15, 2, 34, 16],
+	[2, 33, 11, 2, 34, 12],
+	
+	// 6
+	[2, 86, 68],
+	[4, 43, 27],
+	[4, 43, 19],
+	[4, 43, 15],
+	
+	// 7		
+	[2, 98, 78],
+	[4, 49, 31],
+	[2, 32, 14, 4, 33, 15],
+	[4, 39, 13, 1, 40, 14],
+	
+	// 8
+	[2, 121, 97],
+	[2, 60, 38, 2, 61, 39],
+	[4, 40, 18, 2, 41, 19],
+	[4, 40, 14, 2, 41, 15],
+	
+	// 9
+	[2, 146, 116],
+	[3, 58, 36, 2, 59, 37],
+	[4, 36, 16, 4, 37, 17],
+	[4, 36, 12, 4, 37, 13],
+	
+	// 10		
+	[2, 86, 68, 2, 87, 69],
+	[4, 69, 43, 1, 70, 44],
+	[6, 43, 19, 2, 44, 20],
+	[6, 43, 15, 2, 44, 16],
+
+	// 11
+	[4, 101, 81],
+	[1, 80, 50, 4, 81, 51],
+	[4, 50, 22, 4, 51, 23],
+	[3, 36, 12, 8, 37, 13],
+
+	// 12
+	[2, 116, 92, 2, 117, 93],
+	[6, 58, 36, 2, 59, 37],
+	[4, 46, 20, 6, 47, 21],
+	[7, 42, 14, 4, 43, 15],
+
+	// 13
+	[4, 133, 107],
+	[8, 59, 37, 1, 60, 38],
+	[8, 44, 20, 4, 45, 21],
+	[12, 33, 11, 4, 34, 12],
+
+	// 14
+	[3, 145, 115, 1, 146, 116],
+	[4, 64, 40, 5, 65, 41],
+	[11, 36, 16, 5, 37, 17],
+	[11, 36, 12, 5, 37, 13],
+
+	// 15
+	[5, 109, 87, 1, 110, 88],
+	[5, 65, 41, 5, 66, 42],
+	[5, 54, 24, 7, 55, 25],
+	[11, 36, 12],
+
+	// 16
+	[5, 122, 98, 1, 123, 99],
+	[7, 73, 45, 3, 74, 46],
+	[15, 43, 19, 2, 44, 20],
+	[3, 45, 15, 13, 46, 16],
+
+	// 17
+	[1, 135, 107, 5, 136, 108],
+	[10, 74, 46, 1, 75, 47],
+	[1, 50, 22, 15, 51, 23],
+	[2, 42, 14, 17, 43, 15],
+
+	// 18
+	[5, 150, 120, 1, 151, 121],
+	[9, 69, 43, 4, 70, 44],
+	[17, 50, 22, 1, 51, 23],
+	[2, 42, 14, 19, 43, 15],
+
+	// 19
+	[3, 141, 113, 4, 142, 114],
+	[3, 70, 44, 11, 71, 45],
+	[17, 47, 21, 4, 48, 22],
+	[9, 39, 13, 16, 40, 14],
+
+	// 20
+	[3, 135, 107, 5, 136, 108],
+	[3, 67, 41, 13, 68, 42],
+	[15, 54, 24, 5, 55, 25],
+	[15, 43, 15, 10, 44, 16],
+
+	// 21
+	[4, 144, 116, 4, 145, 117],
+	[17, 68, 42],
+	[17, 50, 22, 6, 51, 23],
+	[19, 46, 16, 6, 47, 17],
+
+	// 22
+	[2, 139, 111, 7, 140, 112],
+	[17, 74, 46],
+	[7, 54, 24, 16, 55, 25],
+	[34, 37, 13],
+
+	// 23
+	[4, 151, 121, 5, 152, 122],
+	[4, 75, 47, 14, 76, 48],
+	[11, 54, 24, 14, 55, 25],
+	[16, 45, 15, 14, 46, 16],
+
+	// 24
+	[6, 147, 117, 4, 148, 118],
+	[6, 73, 45, 14, 74, 46],
+	[11, 54, 24, 16, 55, 25],
+	[30, 46, 16, 2, 47, 17],
+
+	// 25
+	[8, 132, 106, 4, 133, 107],
+	[8, 75, 47, 13, 76, 48],
+	[7, 54, 24, 22, 55, 25],
+	[22, 45, 15, 13, 46, 16],
+
+	// 26
+	[10, 142, 114, 2, 143, 115],
+	[19, 74, 46, 4, 75, 47],
+	[28, 50, 22, 6, 51, 23],
+	[33, 46, 16, 4, 47, 17],
+
+	// 27
+	[8, 152, 122, 4, 153, 123],
+	[22, 73, 45, 3, 74, 46],
+	[8, 53, 23, 26, 54, 24],
+	[12, 45, 15, 28, 46, 16],
+
+	// 28
+	[3, 147, 117, 10, 148, 118],
+	[3, 73, 45, 23, 74, 46],
+	[4, 54, 24, 31, 55, 25],
+	[11, 45, 15, 31, 46, 16],
+
+	// 29
+	[7, 146, 116, 7, 147, 117],
+	[21, 73, 45, 7, 74, 46],
+	[1, 53, 23, 37, 54, 24],
+	[19, 45, 15, 26, 46, 16],
+
+	// 30
+	[5, 145, 115, 10, 146, 116],
+	[19, 75, 47, 10, 76, 48],
+	[15, 54, 24, 25, 55, 25],
+	[23, 45, 15, 25, 46, 16],
+
+	// 31
+	[13, 145, 115, 3, 146, 116],
+	[2, 74, 46, 29, 75, 47],
+	[42, 54, 24, 1, 55, 25],
+	[23, 45, 15, 28, 46, 16],
+
+	// 32
+	[17, 145, 115],
+	[10, 74, 46, 23, 75, 47],
+	[10, 54, 24, 35, 55, 25],
+	[19, 45, 15, 35, 46, 16],
+
+	// 33
+	[17, 145, 115, 1, 146, 116],
+	[14, 74, 46, 21, 75, 47],
+	[29, 54, 24, 19, 55, 25],
+	[11, 45, 15, 46, 46, 16],
+
+	// 34
+	[13, 145, 115, 6, 146, 116],
+	[14, 74, 46, 23, 75, 47],
+	[44, 54, 24, 7, 55, 25],
+	[59, 46, 16, 1, 47, 17],
+
+	// 35
+	[12, 151, 121, 7, 152, 122],
+	[12, 75, 47, 26, 76, 48],
+	[39, 54, 24, 14, 55, 25],
+	[22, 45, 15, 41, 46, 16],
+
+	// 36
+	[6, 151, 121, 14, 152, 122],
+	[6, 75, 47, 34, 76, 48],
+	[46, 54, 24, 10, 55, 25],
+	[2, 45, 15, 64, 46, 16],
+
+	// 37
+	[17, 152, 122, 4, 153, 123],
+	[29, 74, 46, 14, 75, 47],
+	[49, 54, 24, 10, 55, 25],
+	[24, 45, 15, 46, 46, 16],
+
+	// 38
+	[4, 152, 122, 18, 153, 123],
+	[13, 74, 46, 32, 75, 47],
+	[48, 54, 24, 14, 55, 25],
+	[42, 45, 15, 32, 46, 16],
+
+	// 39
+	[20, 147, 117, 4, 148, 118],
+	[40, 75, 47, 7, 76, 48],
+	[43, 54, 24, 22, 55, 25],
+	[10, 45, 15, 67, 46, 16],
+
+	// 40
+	[19, 148, 118, 6, 149, 119],
+	[18, 75, 47, 31, 76, 48],
+	[34, 54, 24, 34, 55, 25],
+	[20, 45, 15, 61, 46, 16]
+];
+
+QRRSBlock.getRSBlocks = function(typeNumber, errorCorrectLevel) {
+	
+	var rsBlock = QRRSBlock.getRsBlockTable(typeNumber, errorCorrectLevel);
+	
+	if (rsBlock === undefined) {
+		throw new Error("bad rs block @ typeNumber:" + typeNumber + "/errorCorrectLevel:" + errorCorrectLevel);
+	}
+
+	var length = rsBlock.length / 3;
+	
+	var list = [];
+	
+	for (var i = 0; i < length; i++) {
+
+		var count = rsBlock[i * 3 + 0];
+		var totalCount = rsBlock[i * 3 + 1];
+		var dataCount  = rsBlock[i * 3 + 2];
+
+		for (var j = 0; j < count; j++) {
+			list.push(new QRRSBlock(totalCount, dataCount) );	
+		}
+	}
+	
+	return list;
+};
+
+QRRSBlock.getRsBlockTable = function(typeNumber, errorCorrectLevel) {
+
+	switch(errorCorrectLevel) {
+	case QRErrorCorrectLevel.L :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+	case QRErrorCorrectLevel.M :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+	case QRErrorCorrectLevel.Q :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+	case QRErrorCorrectLevel.H :
+		return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+	default :
+		return undefined;
+	}
+};
+
+module.exports = QRRSBlock;
+
+      modules['QRRSBlock'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+var QRMode = require('./QRMode');
+var QRPolynomial = require('./QRPolynomial');
+var QRMath = require('./QRMath');
+var QRMaskPattern = require('./QRMaskPattern');
+
+var QRUtil = {
+
+    PATTERN_POSITION_TABLE : [
+        [],
+        [6, 18],
+        [6, 22],
+        [6, 26],
+        [6, 30],
+        [6, 34],
+        [6, 22, 38],
+        [6, 24, 42],
+        [6, 26, 46],
+        [6, 28, 50],
+        [6, 30, 54],        
+        [6, 32, 58],
+        [6, 34, 62],
+        [6, 26, 46, 66],
+        [6, 26, 48, 70],
+        [6, 26, 50, 74],
+        [6, 30, 54, 78],
+        [6, 30, 56, 82],
+        [6, 30, 58, 86],
+        [6, 34, 62, 90],
+        [6, 28, 50, 72, 94],
+        [6, 26, 50, 74, 98],
+        [6, 30, 54, 78, 102],
+        [6, 28, 54, 80, 106],
+        [6, 32, 58, 84, 110],
+        [6, 30, 58, 86, 114],
+        [6, 34, 62, 90, 118],
+        [6, 26, 50, 74, 98, 122],
+        [6, 30, 54, 78, 102, 126],
+        [6, 26, 52, 78, 104, 130],
+        [6, 30, 56, 82, 108, 134],
+        [6, 34, 60, 86, 112, 138],
+        [6, 30, 58, 86, 114, 142],
+        [6, 34, 62, 90, 118, 146],
+        [6, 30, 54, 78, 102, 126, 150],
+        [6, 24, 50, 76, 102, 128, 154],
+        [6, 28, 54, 80, 106, 132, 158],
+        [6, 32, 58, 84, 110, 136, 162],
+        [6, 26, 54, 82, 110, 138, 166],
+        [6, 30, 58, 86, 114, 142, 170]
+    ],
+
+    G15 : (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0),
+    G18 : (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0),
+    G15_MASK : (1 << 14) | (1 << 12) | (1 << 10)    | (1 << 4) | (1 << 1),
+
+    getBCHTypeInfo : function(data) {
+        var d = data << 10;
+        while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) >= 0) {
+            d ^= (QRUtil.G15 << (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) ) );    
+        }
+        return ( (data << 10) | d) ^ QRUtil.G15_MASK;
+    },
+
+    getBCHTypeNumber : function(data) {
+        var d = data << 12;
+        while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) >= 0) {
+            d ^= (QRUtil.G18 << (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) ) );    
+        }
+        return (data << 12) | d;
+    },
+
+    getBCHDigit : function(data) {
+
+        var digit = 0;
+
+        while (data !== 0) {
+            digit++;
+            data >>>= 1;
+        }
+
+        return digit;
+    },
+
+    getPatternPosition : function(typeNumber) {
+        return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
+    },
+
+    getMask : function(maskPattern, i, j) {
+        
+        switch (maskPattern) {
+            
+        case QRMaskPattern.PATTERN000 : return (i + j) % 2 === 0;
+        case QRMaskPattern.PATTERN001 : return i % 2 === 0;
+        case QRMaskPattern.PATTERN010 : return j % 3 === 0;
+        case QRMaskPattern.PATTERN011 : return (i + j) % 3 === 0;
+        case QRMaskPattern.PATTERN100 : return (Math.floor(i / 2) + Math.floor(j / 3) ) % 2 === 0;
+        case QRMaskPattern.PATTERN101 : return (i * j) % 2 + (i * j) % 3 === 0;
+        case QRMaskPattern.PATTERN110 : return ( (i * j) % 2 + (i * j) % 3) % 2 === 0;
+        case QRMaskPattern.PATTERN111 : return ( (i * j) % 3 + (i + j) % 2) % 2 === 0;
+
+        default :
+            throw new Error("bad maskPattern:" + maskPattern);
+        }
+    },
+
+    getErrorCorrectPolynomial : function(errorCorrectLength) {
+
+        var a = new QRPolynomial([1], 0);
+
+        for (var i = 0; i < errorCorrectLength; i++) {
+            a = a.multiply(new QRPolynomial([1, QRMath.gexp(i)], 0) );
+        }
+
+        return a;
+    },
+
+    getLengthInBits : function(mode, type) {
+
+        if (1 <= type && type < 10) {
+
+            // 1 - 9
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 10;
+            case QRMode.MODE_ALPHA_NUM  : return 9;
+            case QRMode.MODE_8BIT_BYTE  : return 8;
+            case QRMode.MODE_KANJI      : return 8;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else if (type < 27) {
+
+            // 10 - 26
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 12;
+            case QRMode.MODE_ALPHA_NUM  : return 11;
+            case QRMode.MODE_8BIT_BYTE  : return 16;
+            case QRMode.MODE_KANJI      : return 10;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else if (type < 41) {
+
+            // 27 - 40
+
+            switch(mode) {
+            case QRMode.MODE_NUMBER     : return 14;
+            case QRMode.MODE_ALPHA_NUM  : return 13;
+            case QRMode.MODE_8BIT_BYTE  : return 16;
+            case QRMode.MODE_KANJI      : return 12;
+            default :
+                throw new Error("mode:" + mode);
+            }
+
+        } else {
+            throw new Error("type:" + type);
+        }
+    },
+
+    getLostPoint : function(qrCode) {
+        
+        var moduleCount = qrCode.getModuleCount();
+        var lostPoint = 0;
+        var row = 0; 
+        var col = 0;
+
+        
+        // LEVEL1
+        
+        for (row = 0; row < moduleCount; row++) {
+
+            for (col = 0; col < moduleCount; col++) {
+
+                var sameCount = 0;
+                var dark = qrCode.isDark(row, col);
+
+                for (var r = -1; r <= 1; r++) {
+
+                    if (row + r < 0 || moduleCount <= row + r) {
+                        continue;
+                    }
+
+                    for (var c = -1; c <= 1; c++) {
+
+                        if (col + c < 0 || moduleCount <= col + c) {
+                            continue;
+                        }
+
+                        if (r === 0 && c === 0) {
+                            continue;
+                        }
+
+                        if (dark === qrCode.isDark(row + r, col + c) ) {
+                            sameCount++;
+                        }
+                    }
+                }
+
+                if (sameCount > 5) {
+                    lostPoint += (3 + sameCount - 5);
+                }
+            }
+        }
+
+        // LEVEL2
+
+        for (row = 0; row < moduleCount - 1; row++) {
+            for (col = 0; col < moduleCount - 1; col++) {
+                var count = 0;
+                if (qrCode.isDark(row,     col    ) ) count++;
+                if (qrCode.isDark(row + 1, col    ) ) count++;
+                if (qrCode.isDark(row,     col + 1) ) count++;
+                if (qrCode.isDark(row + 1, col + 1) ) count++;
+                if (count === 0 || count === 4) {
+                    lostPoint += 3;
+                }
+            }
+        }
+
+        // LEVEL3
+
+        for (row = 0; row < moduleCount; row++) {
+            for (col = 0; col < moduleCount - 6; col++) {
+                if (qrCode.isDark(row, col) && 
+                        !qrCode.isDark(row, col + 1) && 
+                         qrCode.isDark(row, col + 2) && 
+                         qrCode.isDark(row, col + 3) && 
+                         qrCode.isDark(row, col + 4) && 
+                        !qrCode.isDark(row, col + 5) && 
+                         qrCode.isDark(row, col + 6) ) {
+                    lostPoint += 40;
+                }
+            }
+        }
+
+        for (col = 0; col < moduleCount; col++) {
+            for (row = 0; row < moduleCount - 6; row++) {
+                if (qrCode.isDark(row, col) &&
+                        !qrCode.isDark(row + 1, col) &&
+                         qrCode.isDark(row + 2, col) &&
+                         qrCode.isDark(row + 3, col) &&
+                         qrCode.isDark(row + 4, col) &&
+                        !qrCode.isDark(row + 5, col) &&
+                         qrCode.isDark(row + 6, col) ) {
+                    lostPoint += 40;
+                }
+            }
+        }
+
+        // LEVEL4
+        
+        var darkCount = 0;
+
+        for (col = 0; col < moduleCount; col++) {
+            for (row = 0; row < moduleCount; row++) {
+                if (qrCode.isDark(row, col) ) {
+                    darkCount++;
+                }
+            }
+        }
+        
+        var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+        lostPoint += ratio * 10;
+
+        return lostPoint;       
+    }
+
+};
+
+module.exports = QRUtil;
+
+      modules['QRUtil'] = module.exports;
+    })();
+    (() => {
+      const module = {exports:{}};
+//---------------------------------------------------------------------
+// QRCode for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: http://www.d-project.com/
+//
+// Licensed under the MIT license:
+//   http://www.opensource.org/licenses/mit-license.php
+//
+// The word "QR Code" is registered trademark of 
+// DENSO WAVE INCORPORATED
+//   http://www.denso-wave.com/qrcode/faqpatent-e.html
+//
+//---------------------------------------------------------------------
+// Modified to work in node for this project (and some refactoring)
+//---------------------------------------------------------------------
+
+var QR8bitByte = require('./QR8bitByte');
+var QRUtil = require('./QRUtil');
+var QRPolynomial = require('./QRPolynomial');
+var QRRSBlock = require('./QRRSBlock');
+var QRBitBuffer = require('./QRBitBuffer');
+
+function QRCode(typeNumber, errorCorrectLevel) {
+	this.typeNumber = typeNumber;
+	this.errorCorrectLevel = errorCorrectLevel;
+	this.modules = null;
+	this.moduleCount = 0;
+	this.dataCache = null;
+	this.dataList = [];
+}
+
+QRCode.prototype = {
+	
+	addData : function(data) {
+		var newData = new QR8bitByte(data);
+		this.dataList.push(newData);
+		this.dataCache = null;
+	},
+	
+	isDark : function(row, col) {
+		if (row < 0 || this.moduleCount <= row || col < 0 || this.moduleCount <= col) {
+			throw new Error(row + "," + col);
+		}
+		return this.modules[row][col];
+	},
+
+	getModuleCount : function() {
+		return this.moduleCount;
+	},
+	
+	make : function() {
+		// Calculate automatically typeNumber if provided is < 1
+		if (this.typeNumber < 1 ){
+			var typeNumber = 1;
+			for (typeNumber = 1; typeNumber < 40; typeNumber++) {
+				var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, this.errorCorrectLevel);
+
+				var buffer = new QRBitBuffer();
+				var totalDataCount = 0;
+				for (var i = 0; i < rsBlocks.length; i++) {
+					totalDataCount += rsBlocks[i].dataCount;
+				}
+
+				for (var x = 0; x < this.dataList.length; x++) {
+					var data = this.dataList[x];
+					buffer.put(data.mode, 4);
+					buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber) );
+					data.write(buffer);
+				}
+				if (buffer.getLengthInBits() <= totalDataCount * 8)
+					break;
+			}
+			this.typeNumber = typeNumber;
+		}
+		this.makeImpl(false, this.getBestMaskPattern() );
+	},
+	
+	makeImpl : function(test, maskPattern) {
+		
+		this.moduleCount = this.typeNumber * 4 + 17;
+		this.modules = new Array(this.moduleCount);
+		
+		for (var row = 0; row < this.moduleCount; row++) {
+			
+			this.modules[row] = new Array(this.moduleCount);
+			
+			for (var col = 0; col < this.moduleCount; col++) {
+				this.modules[row][col] = null;//(col + row) % 3;
+			}
+		}
+	
+		this.setupPositionProbePattern(0, 0);
+		this.setupPositionProbePattern(this.moduleCount - 7, 0);
+		this.setupPositionProbePattern(0, this.moduleCount - 7);
+		this.setupPositionAdjustPattern();
+		this.setupTimingPattern();
+		this.setupTypeInfo(test, maskPattern);
+		
+		if (this.typeNumber >= 7) {
+			this.setupTypeNumber(test);
+		}
+	
+		if (this.dataCache === null) {
+			this.dataCache = QRCode.createData(this.typeNumber, this.errorCorrectLevel, this.dataList);
+		}
+	
+		this.mapData(this.dataCache, maskPattern);
+	},
+
+	setupPositionProbePattern : function(row, col)  {
+		
+		for (var r = -1; r <= 7; r++) {
+			
+			if (row + r <= -1 || this.moduleCount <= row + r) continue;
+			
+			for (var c = -1; c <= 7; c++) {
+				
+				if (col + c <= -1 || this.moduleCount <= col + c) continue;
+				
+				if ( (0 <= r && r <= 6 && (c === 0 || c === 6) ) || 
+                     (0 <= c && c <= 6 && (r === 0 || r === 6) ) || 
+                     (2 <= r && r <= 4 && 2 <= c && c <= 4) ) {
+					this.modules[row + r][col + c] = true;
+				} else {
+					this.modules[row + r][col + c] = false;
+				}
+			}		
+		}		
+	},
+	
+	getBestMaskPattern : function() {
+	
+		var minLostPoint = 0;
+		var pattern = 0;
+	
+		for (var i = 0; i < 8; i++) {
+			
+			this.makeImpl(true, i);
+	
+			var lostPoint = QRUtil.getLostPoint(this);
+	
+			if (i === 0 || minLostPoint >  lostPoint) {
+				minLostPoint = lostPoint;
+				pattern = i;
+			}
+		}
+	
+		return pattern;
+	},
+	
+	createMovieClip : function(target_mc, instance_name, depth) {
+	
+		var qr_mc = target_mc.createEmptyMovieClip(instance_name, depth);
+		var cs = 1;
+	
+		this.make();
+
+		for (var row = 0; row < this.modules.length; row++) {
+			
+			var y = row * cs;
+			
+			for (var col = 0; col < this.modules[row].length; col++) {
+	
+				var x = col * cs;
+				var dark = this.modules[row][col];
+			
+				if (dark) {
+					qr_mc.beginFill(0, 100);
+					qr_mc.moveTo(x, y);
+					qr_mc.lineTo(x + cs, y);
+					qr_mc.lineTo(x + cs, y + cs);
+					qr_mc.lineTo(x, y + cs);
+					qr_mc.endFill();
+				}
+			}
+		}
+		
+		return qr_mc;
+	},
+
+	setupTimingPattern : function() {
+		
+		for (var r = 8; r < this.moduleCount - 8; r++) {
+			if (this.modules[r][6] !== null) {
+				continue;
+			}
+			this.modules[r][6] = (r % 2 === 0);
+		}
+	
+		for (var c = 8; c < this.moduleCount - 8; c++) {
+			if (this.modules[6][c] !== null) {
+				continue;
+			}
+			this.modules[6][c] = (c % 2 === 0);
+		}
+	},
+	
+	setupPositionAdjustPattern : function() {
+	
+		var pos = QRUtil.getPatternPosition(this.typeNumber);
+		
+		for (var i = 0; i < pos.length; i++) {
+		
+			for (var j = 0; j < pos.length; j++) {
+			
+				var row = pos[i];
+				var col = pos[j];
+				
+				if (this.modules[row][col] !== null) {
+					continue;
+				}
+				
+				for (var r = -2; r <= 2; r++) {
+				
+					for (var c = -2; c <= 2; c++) {
+					
+						if (Math.abs(r) === 2 || 
+                            Math.abs(c) === 2 ||
+                            (r === 0 && c === 0) ) {
+							this.modules[row + r][col + c] = true;
+						} else {
+							this.modules[row + r][col + c] = false;
+						}
+					}
+				}
+			}
+		}
+	},
+	
+	setupTypeNumber : function(test) {
+	
+		var bits = QRUtil.getBCHTypeNumber(this.typeNumber);
+        var mod;
+	
+		for (var i = 0; i < 18; i++) {
+			mod = (!test && ( (bits >> i) & 1) === 1);
+			this.modules[Math.floor(i / 3)][i % 3 + this.moduleCount - 8 - 3] = mod;
+		}
+	
+		for (var x = 0; x < 18; x++) {
+			mod = (!test && ( (bits >> x) & 1) === 1);
+			this.modules[x % 3 + this.moduleCount - 8 - 3][Math.floor(x / 3)] = mod;
+		}
+	},
+	
+	setupTypeInfo : function(test, maskPattern) {
+	
+		var data = (this.errorCorrectLevel << 3) | maskPattern;
+		var bits = QRUtil.getBCHTypeInfo(data);
+        var mod;
+	
+		// vertical		
+		for (var v = 0; v < 15; v++) {
+	
+			mod = (!test && ( (bits >> v) & 1) === 1);
+	
+			if (v < 6) {
+				this.modules[v][8] = mod;
+			} else if (v < 8) {
+				this.modules[v + 1][8] = mod;
+			} else {
+				this.modules[this.moduleCount - 15 + v][8] = mod;
+			}
+		}
+	
+		// horizontal
+		for (var h = 0; h < 15; h++) {
+	
+			mod = (!test && ( (bits >> h) & 1) === 1);
+			
+			if (h < 8) {
+				this.modules[8][this.moduleCount - h - 1] = mod;
+			} else if (h < 9) {
+				this.modules[8][15 - h - 1 + 1] = mod;
+			} else {
+				this.modules[8][15 - h - 1] = mod;
+			}
+		}
+	
+		// fixed module
+		this.modules[this.moduleCount - 8][8] = (!test);
+	
+	},
+	
+	mapData : function(data, maskPattern) {
+		
+		var inc = -1;
+		var row = this.moduleCount - 1;
+		var bitIndex = 7;
+		var byteIndex = 0;
+		
+		for (var col = this.moduleCount - 1; col > 0; col -= 2) {
+	
+			if (col === 6) col--;
+	
+			while (true) {
+	
+				for (var c = 0; c < 2; c++) {
+					
+					if (this.modules[row][col - c] === null) {
+						
+						var dark = false;
+	
+						if (byteIndex < data.length) {
+							dark = ( ( (data[byteIndex] >>> bitIndex) & 1) === 1);
+						}
+	
+						var mask = QRUtil.getMask(maskPattern, row, col - c);
+	
+						if (mask) {
+							dark = !dark;
+						}
+						
+						this.modules[row][col - c] = dark;
+						bitIndex--;
+	
+						if (bitIndex === -1) {
+							byteIndex++;
+							bitIndex = 7;
+						}
+					}
+				}
+								
+				row += inc;
+	
+				if (row < 0 || this.moduleCount <= row) {
+					row -= inc;
+					inc = -inc;
+					break;
+				}
+			}
+		}
+		
+	}
+
+};
+
+QRCode.PAD0 = 0xEC;
+QRCode.PAD1 = 0x11;
+
+QRCode.createData = function(typeNumber, errorCorrectLevel, dataList) {
+	
+	var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectLevel);
+	
+	var buffer = new QRBitBuffer();
+	
+	for (var i = 0; i < dataList.length; i++) {
+		var data = dataList[i];
+		buffer.put(data.mode, 4);
+		buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber) );
+		data.write(buffer);
+	}
+
+	// calc num max data.
+	var totalDataCount = 0;
+	for (var x = 0; x < rsBlocks.length; x++) {
+		totalDataCount += rsBlocks[x].dataCount;
+	}
+
+	if (buffer.getLengthInBits() > totalDataCount * 8) {
+		throw new Error("code length overflow. (" + 
+            buffer.getLengthInBits() + 
+            ">" +  
+            totalDataCount * 8 + 
+            ")");
+	}
+
+	// end code
+	if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+		buffer.put(0, 4);
+	}
+
+	// padding
+	while (buffer.getLengthInBits() % 8 !== 0) {
+		buffer.putBit(false);
+	}
+
+	// padding
+	while (true) {
+		
+		if (buffer.getLengthInBits() >= totalDataCount * 8) {
+			break;
+		}
+		buffer.put(QRCode.PAD0, 8);
+		
+		if (buffer.getLengthInBits() >= totalDataCount * 8) {
+			break;
+		}
+		buffer.put(QRCode.PAD1, 8);
+	}
+
+	return QRCode.createBytes(buffer, rsBlocks);
+};
+
+QRCode.createBytes = function(buffer, rsBlocks) {
+
+	var offset = 0;
+	
+	var maxDcCount = 0;
+	var maxEcCount = 0;
+	
+	var dcdata = new Array(rsBlocks.length);
+	var ecdata = new Array(rsBlocks.length);
+	
+	for (var r = 0; r < rsBlocks.length; r++) {
+
+		var dcCount = rsBlocks[r].dataCount;
+		var ecCount = rsBlocks[r].totalCount - dcCount;
+
+		maxDcCount = Math.max(maxDcCount, dcCount);
+		maxEcCount = Math.max(maxEcCount, ecCount);
+		
+		dcdata[r] = new Array(dcCount);
+		
+		for (var i = 0; i < dcdata[r].length; i++) {
+			dcdata[r][i] = 0xff & buffer.buffer[i + offset];
+		}
+		offset += dcCount;
+		
+		var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+		var rawPoly = new QRPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+		var modPoly = rawPoly.mod(rsPoly);
+		ecdata[r] = new Array(rsPoly.getLength() - 1);
+		for (var x = 0; x < ecdata[r].length; x++) {
+            var modIndex = x + modPoly.getLength() - ecdata[r].length;
+			ecdata[r][x] = (modIndex >= 0)? modPoly.get(modIndex) : 0;
+		}
+
+	}
+	
+	var totalCodeCount = 0;
+	for (var y = 0; y < rsBlocks.length; y++) {
+		totalCodeCount += rsBlocks[y].totalCount;
+	}
+
+	var data = new Array(totalCodeCount);
+	var index = 0;
+
+	for (var z = 0; z < maxDcCount; z++) {
+		for (var s = 0; s < rsBlocks.length; s++) {
+			if (z < dcdata[s].length) {
+				data[index++] = dcdata[s][z];
+			}
+		}
+	}
+
+	for (var xx = 0; xx < maxEcCount; xx++) {
+		for (var t = 0; t < rsBlocks.length; t++) {
+			if (xx < ecdata[t].length) {
+				data[index++] = ecdata[t][xx];
+			}
+		}
+	}
+
+	return data;
+
+};
+
+module.exports = QRCode;
+
+      modules['index'] = module.exports;
+    })();
+    return modules.index;
+  })();
+</script>
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    const whatsappReady = /^\d{12,15}$/.test(WHATSAPP_NUMBER);
+    const contactUrl = whatsappReady
+      ? 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_MESSAGE)
+      : '#contato';
+    document.querySelectorAll('[data-whatsapp]').forEach(link => {
+      link.href = contactUrl;
+      if (whatsappReady) { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+      else link.addEventListener('click', (event) => {
+        event.preventDefault();
+        alert('Configuração pendente: informe o número de WhatsApp comercial da UrbanWatch.app no arquivo index.html.');
+      });
+    });
+  const UW_PUBLIC_URL = 'https://urbanwatch.app/portal/premium/';
+  const overlay = document.getElementById('uwShareOverlay');
+  const panel = document.getElementById('uwSharePanel');
+  const canvas = document.getElementById('uwQrCanvas');
+  const shareField = document.getElementById('uwShareUrl');
+  const shareWhatsApp = document.getElementById('uwShareWhatsApp');
+  const feedback = document.getElementById('share-feedback');
+  let lastFocused = null;
+  let toastTimeout;
+
+  function getPortalUrl() {
+    // Todos os botões e o QR compartilham o endereço oficial do Premium,
+    // sem parâmetros de campanha nem âncoras.
+    return UW_PUBLIC_URL;
+  }
+  function mostrarAviso(msg) {
+    clearTimeout(toastTimeout);
+    feedback.textContent = msg;
+    feedback.classList.add('visible');
+    toastTimeout = setTimeout(() => feedback.classList.remove('visible'), 3300);
+  }
+  function desenharQR(url) {
+    const qr = new UrbanWatchQRCode(0, 0); // nível M, seleção automática do tamanho
+    qr.addData(url);
+    qr.make();
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('Canvas não disponível');
+    const total = qr.getModuleCount();
+    const margem = 4; // zona de silêncio: melhora leitura por câmeras
+    const lado = canvas.width;
+    const bloco = Math.floor(lado / (total + 2 * margem));
+    const inicio = Math.floor((lado - bloco * (total + 2 * margem)) / 2) + margem * bloco;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#090909';
+    for (let y = 0; y < total; y++) {
+      for (let x = 0; x < total; x++) {
+        if (qr.isDark(y, x)) ctx.fillRect(inicio + x * bloco, inicio + y * bloco, bloco, bloco);
+      }
+    }
+  }
+  function abrirCompartilhar(event) {
+    lastFocused = event?.currentTarget || document.activeElement;
+    const url = getPortalUrl();
+    shareField.value = url;
+    shareWhatsApp.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(
+      'Conheça o Portal Profissional Premium da UrbanWatch.app! ' + url
+    );
+    try { desenharQR(url); }
+    catch (err) { console.error('Erro ao gerar QR Code', err); mostrarAviso('Não foi possível gerar o QR Code.'); }
+    overlay.hidden = false;
+    document.body.classList.add('uw-share-open');
+    document.getElementById('uwShareClose').focus();
+  }
+  function fecharCompartilhar() {
+    overlay.hidden = true;
+    document.body.classList.remove('uw-share-open');
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+  async function copiarLink() {
+    const url = getPortalUrl();
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        shareField.focus(); shareField.select();
+        if (!document.execCommand('copy')) throw new Error('Cópia não suportada');
+      }
+      mostrarAviso('✓ Link do Portal copiado!');
+    } catch (e) {
+      shareField.focus(); shareField.select();
+      mostrarAviso('Selecione e copie o endereço exibido.');
+    }
+  }
+  async function compartilharNativo() {
+    const url = getPortalUrl();
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Portal Profissional Premium | UrbanWatch.app',
+          text: 'Muito mais que um cartão digital. Conheça o Portal Premium UrbanWatch.app!',
+          url
+        });
+      } catch (e) {
+        if (e?.name !== 'AbortError') mostrarAviso('Use uma das opções abaixo para compartilhar.');
+      }
+    } else {
+      await copiarLink();
+    }
+  }
+  function baixarQrCode() {
+    try {
+      const link = document.createElement('a');
+      link.download = 'urbanwatch-portal-premium-qrcode.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      mostrarAviso('✓ QR Code pronto para salvar em PNG!');
+    } catch (e) {
+      mostrarAviso('Não foi possível salvar o QR Code neste navegador.');
+    }
+  }
+  document.querySelectorAll('[data-share]').forEach(btn => btn.addEventListener('click', abrirCompartilhar));
+  document.getElementById('uwShareClose').addEventListener('click', fecharCompartilhar);
+  document.getElementById('uwShareCopy').addEventListener('click', copiarLink);
+  document.getElementById('uwShareNative').addEventListener('click', compartilharNativo);
+  document.getElementById('uwShareDownload').addEventListener('click', baixarQrCode);
+  overlay.addEventListener('click', e => { if (e.target === overlay) fecharCompartilhar(); });
+  document.addEventListener('keydown', e => {
+    if (overlay.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); fecharCompartilhar(); }
+    if (e.key !== 'Tab') return;
+    const elements = [...panel.querySelectorAll('button:not([disabled]),a[href],input:not([disabled])')];
+    const first = elements[0], last = elements[elements.length - 1];
+    if (e.shiftKey && document.activeElement === first) {e.preventDefault();last.focus();}
+    else if (!e.shiftKey && document.activeElement === last) {e.preventDefault();first.focus();}
+  });
+</script>
+</body>
+</html>
